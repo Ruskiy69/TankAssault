@@ -6,12 +6,18 @@
 = Version       : 0.5 Alpha                                     =
 = Last Updated  : 6.13.2012                                     =
 =                                                               =
+= Dependencies:                                                 =
+=   - SDL, SDL_image, SDL_mixer, SDL_ttf                        =
+=   - OpenGL                                                    =
+=                                                               =
 = About:                                                        =
 =   Tank Assault is a simple game I made using OpenGL and SDL.  =
-= OpenGL does all of the graphics, SDL does everything else.    =
-= Everything, from the engine to the graphics is all done by    =
-= me. Don't expect too much out of this game, I'm sure there    =
-= are dozens of problems I'm not even aware of...               =
+= OpenGL does all of the rendering, SDL does everything else.   =
+= Nearly everything, including the engine, gameplay, and        =
+= graphics is done by me. Fonts, icons, and sounds are courtesy =
+= of the world wide web. Don't expect too much out of this      = 
+= game, I'm sure there are dozens of problems I'm not even      =
+= aware of...                                                   =
 =                                                               =
 = Gameplay:                                                     =
 =   You are the green tank. Cruise around from level to level   =

@@ -1,14 +1,25 @@
 =================================================================
 ======================== TANK ASSAULT ===========================
 =                                                               =
-= Current Version: 0.2 Alpha                                    =
-= Last Updated  : 6.13.2012                                     =
+= Current Version: 0.3 Alpha                                    =
+= Last Updated   : 6.13.2012                                    =
 =                                                               =
-=   Version 0.2:                                                =
+=   Version 0.3:                                                =
 =       - Added an app icon                                     =
 =       - Fixed menu music                                      =
 =                                                               =
-=   Version 0.1:                                                =
-=       - Initial release                                       =
+=   Version 0.2 (6.12.12):                                      =
+=       - Many classes completely re-written                    =
+=       - Uniform code style adopted (still WIP) (see Style.h)  =
+=       - Map scrolling implemented                             =
+=                                                               =
+=   Version 0.1 (5.24.12):                                      =
+=       - Initial release (not really, but that's when I        =
+=         started this changelog)                               =
+=       - Functional menu ("Options" doesn't work)              =
+=       - ASCII level loading                                   =
+=       - One wall, one floor, two player sprites (animated)    =
+=       - Basic level editor done                               =
+=       - Tank moves, rotates, shoots, etc.                     =
 =                                                               =
 =================================================================
