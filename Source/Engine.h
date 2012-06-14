@@ -1,6 +1,9 @@
 #ifndef ENGINE_H
 #define ENGINE_H
 
+#include <cstdlib>
+#include <ctime>
+
 #include <fstream>
 #include <string>
 #include <iostream>

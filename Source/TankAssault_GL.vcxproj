@@ -87,6 +87,7 @@
     <ClInclude Include="GL_Light.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="SDL_Base.h" />
     <ClInclude Include="SDL_GL_Base.h" />
     <ClInclude Include="SDL_Helper.h" />
@@ -115,6 +116,12 @@
     <ClCompile Include="SOIL.c" />
     <ClCompile Include="stb_image_aug.c" />
     <ClCompile Include="Timer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="TankAssault_GL.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tank_bonus.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

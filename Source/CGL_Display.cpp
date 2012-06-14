@@ -14,6 +14,7 @@ CGL_Display::CGL_Display(const int w, const int h, const char* title): width(w),
      */
     this->Init();
     SDL_WM_SetCaption(title, NULL);
+    SDL_WM_SetIcon(gk_sdl::LoadImage_Alpha("tank_bonus.ico"), NULL);
 }
 
 bool CGL_Display::ToggleFullscreen()

@@ -5,6 +5,8 @@ using namespace gk_sdl;
 
 CEngine::CEngine(): Display(800, 600, "Tank Assault"), Settings("Settings.ini"), Player(Timer)
 {
+    srand((unsigned int)time(NULL));
+
     this->State = CEngine::Menu;
     this->quit  = false;
 
@@ -14,7 +16,7 @@ CEngine::CEngine(): Display(800, 600, "Tank Assault"), Settings("Settings.ini"),
         gk::HandleError("Unable to find 'Map.txt'");
     }
 
-    SDL_Surface* Bg = tile_surface(LoadImage("Data/Images/Wall_Blue.png"), this->Display.GetWidth(), this->Display.GetHeight());
+    SDL_Surface* Bg = create_surface(Display.GetWidth(), Display.GetHeight(), create_color(BLACK));
     this->Background.SetEntity(Bg);
     SDL_FreeSurface(Bg);
 }
