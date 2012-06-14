@@ -26,4 +26,11 @@
 =   alert! Grab power-ups and weapon upgrades to make your tank =
 =   outperform everyone elses. Kill everything in sight.        =
 =                                                               =
+= Special Thanks:                                               =
+=   Don't tell, but I used Daft Punk's TRON Legacy soundtrack   =
+=   in this game. Also, some random orchestal music I found     =
+=   on YouTube. And a ton of sound effects from SoundBible.com. =
+=   The font is called "7th" and was created by Daniel          =
+=   Zadorozny. It's free to distribute for non-commercial use,  =
+=   as long as you e-mail the author at iconian@aol.com.        =
 =================================================================
