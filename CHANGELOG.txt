@@ -5,13 +5,15 @@
 * Last Updated   : 6.15.2012                                    *
 *                                                               *
 *   Version 0.4a (6.15.12):                                     *
+*       + Added a game background, fixed sprite transparency.   *
+*       + Added an Options sub-menu with a music toggle.        *
 *       + Started making enemies and AI; currently there's one, *
 *         and it just stays in one place, panning with the map  *
 *         properly.                                             *
 *       + Code cleanliness improved a tad                       *
 *                                                               *
 *   Version 0.3a (6.13.12):                                     *
-*       + App icon                                              *
+*       + Added an app icon                                     *
 *       + Fixed menu music                                      *
 *                                                               *
 *   Version 0.2a (6.12.12):                                     *

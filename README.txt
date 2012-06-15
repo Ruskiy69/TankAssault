@@ -8,6 +8,7 @@
 * Dependencies:                                                 *
 *   - SDL, SDL_image, SDL_mixer, SDL_ttf                        *
 *   - OpenGL                                                    *
+*   - SOIL                                                      *
 *                                                               *
 * Gameplay:                                                     *
 *   You are the green tank. Cruise around from level to level   *
