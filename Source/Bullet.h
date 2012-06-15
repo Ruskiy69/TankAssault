@@ -19,12 +19,11 @@
 
 #include <list>
 
-#include "CGL_Entity.h"
+#include "GL_Entity.h"
 #include "Events.h"
 
 namespace gk_gl
 {
-
     class CGL_Bullet: public gk_gl::CGL_Entity
     {
     public:

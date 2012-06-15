@@ -9,11 +9,6 @@
 #include <iostream>
 
 #include "SDL_GL_Base.h"
-#include "CGL_Display.h"
-#include "CGL_Menu.h"
-
-#include "CGL_Entity.h"
-#include "CGL_Player.h"
 
 #include "Timer.h"
 #include "Settings.h"
@@ -21,34 +16,47 @@
 #include "Bullet.h"
 #include "Map.h"
 
-class CEngine
+#include "GL_Display.h"
+#include "GL_Menu.h"
+
+#include "GL_Entity.h"
+#include "GL_Player.h"
+#include "GL_Enemy.h"
+
+namespace gk
 {
-public:
-    CEngine();
-    ~CEngine(){}
+    class CEngine
+    {
+    public:
+        CEngine();
+        ~CEngine(){}
 
-    void Run();
+        void Run();
 
-private:
-    void HandleEvents(int&, int&);
-    void Logic(int&, int&);
-    void RenderAll();
+    private:
+        void HandleEvents(int&, int&);
+        void Logic(int&, int&);
+        void RenderAll();
     
-    enum GameState { Play, Menu, Quit } State;
+        enum GameState { Play, Menu, Options, Quit } State;
 
-    gk_gl::CGL_Display Display;
-    gk_gl::CGL_Entity  Background;
-    gk_gl::CGL_Menu    MainMenu;
-    gk_gl::CGL_Player  Player;
-    gk_gl::CGL_Bullets Bullets;
+        gk_gl::CGL_Display  Display;
+        gk_gl::CGL_Entity   Background;
+        gk_gl::CGL_Menu     MainMenu;
+        gk_gl::CGL_Menu     OptionsMenu;
+        gk_gl::CGL_Player   Player;
+        gk_gl::CGL_Bullets  Bullets;
 
-    CTimer      Timer;
-    CSettings   Settings;
-    gk::CMap    Map;
+        gk::CTimer          Timer;
+        gk::CSettings       Settings;
+        gk::CMap            Map;
 
-    TTF_Font*   Menu_Font;
+        TTF_Font*           Menu_Font;
 
-    bool        quit;
-};
+        gk_gl::CGL_Enemies  Enemies;
+
+        bool                quit;
+    };
+}
 
 #endif // ENGINE_H

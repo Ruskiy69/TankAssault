@@ -122,9 +122,7 @@ SDL_Surface* gk_sdl::clip_sprite_sheet(SDL_Surface* sheet, const int x, const in
     const int w, const int h)
 {
     SDL_Surface* sprite = gk_sdl::create_surface(w, h);
-    SDL_Rect offset     = gk_sdl::create_rect(x, y, w, h);
-
-    SDL_BlitSurface(sheet, &offset, sprite, NULL);
+    gk_sdl::blit_surface(sprite, sheet, x, y);
 
     return sprite;
 }

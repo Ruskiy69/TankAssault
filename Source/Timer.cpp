@@ -1,5 +1,6 @@
 #include "Timer.h"
 
+using gk::CTimer;
 
 CTimer::CTimer()
 {
@@ -25,7 +26,7 @@ float CTimer::GetTicks()
     return 1.0f * (this->ticks - oldTicks);
 }
 
-int CTimer::GetFrame()
+int CTimer::GetFrame() const
 {
     return (int)this->frame;
 }

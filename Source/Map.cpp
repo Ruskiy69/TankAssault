@@ -34,8 +34,8 @@ bool CMap::Load(const char* filename)
      * contain W and H data as a part of it.
      */
     SDL_Surface* Map_Surface    = NULL;
-    SDL_Surface* Floor          = gk_sdl::LoadImage("Data/Images/Floor.png");
-    SDL_Surface* Wall           = gk_sdl::LoadImage("Data/Images/Wall_Blue.png");
+    SDL_Surface* Floor          = gk_sdl::LoadImage_Alpha("Data/Images/Floor.png");
+    SDL_Surface* Wall           = gk_sdl::LoadImage_Alpha("Data/Images/Wall_Blue.png");
 
     std::string line;
     int w = 0, h = 0, x = 0, y = 0;
@@ -70,7 +70,9 @@ bool CMap::Load(const char* filename)
      */
     this->map.clear();
     this->map.seekg(0); // Back to the beginning again
-    Map_Surface = gk_sdl::create_surface(w, h);
+    Map_Surface = gk_sdl::create_surface_alpha(w, h);
+    SDL_SetAlpha(Floor, 0, 0);
+    SDL_SetAlpha(Wall, 0, 0);
 
     while(!this->map.eof())
     {
@@ -89,13 +91,13 @@ bool CMap::Load(const char* filename)
             {
             case 'W':
                 Tmp_Tile->type = Tile::Wall;
-                gk_sdl::BlitSurface(Map_Surface, Wall, x, y);
+                gk_sdl::blit_surface(Map_Surface, Wall, x, y);
                 break;
 
             case 'F':
             default:
                 Tmp_Tile->type = Tile::Floor;
-                gk_sdl::BlitSurface(Map_Surface, Floor, x, y);
+                gk_sdl::blit_surface(Map_Surface, Floor, x, y);
                 break;
             }
 
@@ -193,7 +195,7 @@ unsigned int CMap::FindTile_Index(const int x, const int y) const
     return this->FindTile_Index(gk_gl::GL_Vertex2f(x, y));
 }
 
-void CMap::Pan(const gk_gl::CGL_Display& Display, gk_gl::CGL_Player& Player)
+void CMap::Pan(const gk_gl::CGL_Display& Display, const gk_gl::CGL_Player& Player)
 {
     /* CMap::Update() handles rendering of the map, 
      * and pans the map across the screen based
@@ -205,7 +207,8 @@ void CMap::Pan(const gk_gl::CGL_Display& Display, gk_gl::CGL_Player& Player)
      */
     static float dx, dy;
     dx = dy = 0;
-
+    this->Pan_Rate.x = this->Pan_Rate.y = 0;
+    
     if(Player.IsMoving())
     {
         /* If the player is within 200 pixels
@@ -221,19 +224,14 @@ void CMap::Pan(const gk_gl::CGL_Display& Display, gk_gl::CGL_Player& Player)
         else if(Player.GetY() < 200)
             dy = 3.0f;
 
-        /*if(this->MapEntity.GetX() + Display.GetWidth() + dx < this->w && 
-            this->MapEntity.GetX() + dx >= 0 && 
-            this->MapEntity.GetY() + Display.GetHeight() + dy < this->h &&
-            this->MapEntity.GetY() + dy >= 0)  // Is there even more map to render?
-        */
-            for(size_t i = 0; i < this->Tiles.size(); i++)
-            {
-                this->Tiles[i]->x += (int)dx;
-                this->Tiles[i]->y += (int)dy;
-            }
+        for(size_t i = 0; i < this->Tiles.size(); i++)
+        {
+            this->Tiles[i]->x += (int)dx;
+            this->Tiles[i]->y += (int)dy;
+        }
 
-            this->Pan_Rate.x = dx;
-            this->Pan_Rate.y = dy;        
+        this->Pan_Rate.x = dx;
+        this->Pan_Rate.y = dy;        
     }
 }
 
@@ -241,8 +239,6 @@ void CMap::Update(gk_gl::CGL_Player& Player)
 {
     this->MapEntity.Move_Rate(this->Pan_Rate);
 
-    Player.Move_Rate(this->Pan_Rate.x, this->Pan_Rate.y);
+    Player.Move_Rate(this->Pan_Rate);
     this->MapEntity.Render();
-
-    this->Pan_Rate.x = this->Pan_Rate.y = 0;
 }

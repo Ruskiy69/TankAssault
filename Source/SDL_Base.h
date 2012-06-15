@@ -58,8 +58,8 @@ namespace gk_sdl
     SDL_Surface* LoadImage(const char* filename);
     SDL_Surface* LoadImage_Alpha(const char* filename);
 
-    void BlitSurface(SDL_Surface* Dst, SDL_Surface* Src, const int x, const int y);
-    void BlitSurface(SDL_Surface* Dst, SDL_Surface* Src, SDL_Rect& Pos);
+    void blit_surface(SDL_Surface* Dst, SDL_Surface* Src, const int x, const int y);
+    void blit_surface(SDL_Surface* Dst, SDL_Surface* Src, SDL_Rect& Pos);
 }
 
 

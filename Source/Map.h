@@ -7,9 +7,9 @@
 
 #include "SDL_GL_Base.h"
 
-#include "CGL_Display.h"
-#include "CGL_Entity.h"
-#include "CGL_Player.h"
+#include "GL_Display.h"
+#include "GL_Entity.h"
+#include "GL_Player.h"
 
 namespace gk
 {
@@ -58,11 +58,15 @@ namespace gk
          * panning is necessary.
          */
         void Pan(const gk_gl::CGL_Display& Display, 
-            gk_gl::CGL_Player& Player);
+            const gk_gl::CGL_Player& Player);
         void Update(gk_gl::CGL_Player& Player);
 
-        int GetWidth(){return this->w;}
-        int GetHeight(){return this->h;}
+        int GetWidth() const{return this->w;}
+        int GetHeight() const{return this->h;}
+
+        const gk_gl::GL_Vertex2f GetPanRate() const{return this->Pan_Rate;}
+
+        const std::vector<Tile*>& GetTiles() const{return this->Tiles;}
 
     private:
         gk_gl::CGL_Entity MapEntity;

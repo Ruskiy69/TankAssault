@@ -4,7 +4,7 @@
 
 using namespace std;
 
-int num_len(const int number)
+int gk::num_len(const int number)
 {
     int tmp     = number;
     int count   = 0;
@@ -17,28 +17,28 @@ int num_len(const int number)
     return count;
 }
 
-void toupper(string& str)
+void gk::toupper(string& str)
 {
     for(unsigned int i=0; i < str.length(); i++)
-        str[i] = toupper(str[i]);
+        str[i] = ::toupper(str[i]);
 }
 
-string toupper_ret(const string& str)
+string gk::toupper_ret(const string& str)
 {
     string tmp(str);
     for(unsigned int i=0; i < str.length(); i++)
-        tmp[i] = toupper(str[i]);
+        tmp[i] = ::toupper(str[i]);
     return tmp;
 }
 
-string combine(const string& str1, const char* str2)
+string gk::combine(const string& str1, const char* str2)
 {
     stringstream ss;
     ss << str1 << str2;
     return ss.str();
 }
 
-vector<string> split(const string& str, char token)
+vector<string> gk::split(const string& str, char token)
 {
     string tmp(str);
     stringstream ss;

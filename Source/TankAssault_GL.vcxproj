@@ -77,17 +77,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Bullet.h" />
-    <ClInclude Include="CGL_Display.h" />
-    <ClInclude Include="CGL_Entity.h" />
-    <ClInclude Include="CGL_Menu.h" />
-    <ClInclude Include="CGL_Player.h" />
+    <ClInclude Include="GL_Display.h" />
+    <ClInclude Include="GL_Entity.h" />
+    <ClInclude Include="GL_Menu.h" />
+    <ClInclude Include="GL_Player.h" />
     <ClInclude Include="Engine.h" />
     <ClInclude Include="Errors.h" />
     <ClInclude Include="Events.h" />
+    <ClInclude Include="GL_Enemy.h" />
     <ClInclude Include="GL_Light.h" />
     <ClInclude Include="Helpers.h" />
     <ClInclude Include="Map.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="SDL_Base.h" />
     <ClInclude Include="SDL_GL_Base.h" />
     <ClInclude Include="SDL_Helper.h" />
@@ -96,19 +98,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="CGL_Display.cpp" />
-    <ClCompile Include="CGL_Entity.cpp" />
-    <ClCompile Include="CGL_Menu.cpp" />
+    <ClCompile Include="GL_Display.cpp" />
+    <ClCompile Include="GL_Entity.cpp" />
+    <ClCompile Include="GL_Menu.cpp" />
     <ClCompile Include="Engine.cpp" />
     <ClCompile Include="Errors.cpp" />
     <ClCompile Include="Events.cpp" />
+    <ClCompile Include="GL_Enemy.cpp" />
     <ClCompile Include="GL_Light.cpp" />
     <ClCompile Include="Helpers.cpp" />
     <ClCompile Include="image_DXT.c" />
     <ClCompile Include="image_helper.c" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Map.cpp" />
-    <ClCompile Include="CGL_Player.cpp" />
+    <ClCompile Include="GL_Player.cpp" />
     <ClCompile Include="SDL_Base.cpp" />
     <ClCompile Include="SDL_GL_Base.cpp" />
     <ClCompile Include="SDL_Helper.cpp" />
@@ -121,7 +124,7 @@
     <ResourceCompile Include="TankAssault_GL.rc" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="tank_bonus.ico" />
+    <None Include="Data\Images\tank.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

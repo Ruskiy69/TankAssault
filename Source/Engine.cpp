@@ -1,9 +1,11 @@
 #include "Engine.h"
 
+using gk::CEngine;
 using namespace gk_gl; 
 using namespace gk_sdl;
 
-CEngine::CEngine(): Display(800, 600, "Tank Assault"), Settings("Settings.ini"), Player(Timer)
+CEngine::CEngine(): Display(800, 600, "Tank Assault", "Data/Images/tank.ico"),
+    Settings("Settings.ini"), Player(Timer)
 {
     srand((unsigned int)time(NULL));
 
@@ -16,9 +18,11 @@ CEngine::CEngine(): Display(800, 600, "Tank Assault"), Settings("Settings.ini"),
         gk::HandleError("Unable to find 'Map.txt'");
     }
 
-    SDL_Surface* Bg = create_surface(Display.GetWidth(), Display.GetHeight(), create_color(BLACK));
+    SDL_Surface* Bg = LoadImage("Data/Images/Background.png");
     this->Background.SetEntity(Bg);
     SDL_FreeSurface(Bg);
+
+    this->Enemies.push_back(new CGL_Enemy(Timer, Player, Map));
 }
 
 void CEngine::Run()
@@ -31,11 +35,20 @@ void CEngine::Run()
     int opt_id  = this->MainMenu.AddMenuItem(Pos, "Data/Images/Menu/Menu_Options.png", "Data/Images/Menu/Menu_Options_High.png"); Pos.y += 100;
     int quit_id = this->MainMenu.AddMenuItem(Pos, "Data/Images/Menu/Menu_Exit.png", "Data/Images/Menu/Menu_Exit_High.png"); Pos.y += 100;
     
+    Pos.x = 40;
+    Pos.y = 160;
+    int mus_toggle  = this->OptionsMenu.AddMenuItem(Pos, "Data/Images/Menu/Options_Music.png", "Data/Images/Menu/Options_Music_High.png"); Pos.y += 100;
+    int ret_id      = this->OptionsMenu.AddMenuItem(Pos, "Data/Images/Menu/Menu_Return.png", "Data/Images/Menu/Menu_Return_High.png");
+
     this->MainMenu.SetTitle(Settings.GetValueAt("MenuFont").c_str(), atoi(Settings.GetValueAt("MenuFont_Size").c_str()), create_color(55, 170, 250), Title_Pos, "Tank Assault");
     this->MainMenu.SetBackground("Data/Images/Menu/Menu_BG.png");
     this->MainMenu.SetMusic(Settings.ChooseValueAt("MenuMusic").c_str());
     this->MainMenu.SetHoverSound("Data/Sounds/Menu_Hover.wav");
     this->MainMenu.PlayMusic();
+
+    this->OptionsMenu.SetTitle(Settings.GetValueAt("MenuFont").c_str(), atoi(Settings.GetValueAt("MenuFont_Size").c_str()), create_color(55, 170, 250), Title_Pos, "Tank Assault");
+    this->OptionsMenu.SetBackground("Data/Images/Menu/Menu_BG.png");
+    this->OptionsMenu.SetHoverSound("Data/Sounds/Menu_Hover.wav");
 
     int mx = 0, my = 0, dx = 0, dy = 0;
 
@@ -66,8 +79,32 @@ void CEngine::Run()
                     SDL_Delay(100);
                     this->State = CEngine::Play;
                 }
+                else if(status == opt_id)
+                {
+                    SDL_Delay(100);
+                    this->State = CEngine::Options;
+                }
                 else if(status == quit_id)
                     this->quit = true;
+            }
+            break;
+
+        case CEngine::Options:
+            status = this->OptionsMenu.Update();
+
+            if(status == mus_toggle)
+            {
+                if(this->MainMenu.IsPlaying())
+                    this->MainMenu.PauseMusic();
+                else
+                    this->MainMenu.ResumeMusic();
+                SDL_Delay(100); // So the button isn't pressed
+                                // again immediately after play/pause
+            }
+            else if(status == ret_id)
+            {
+                SDL_Delay(100);
+                this->State = CEngine::Menu;
             }
             break;
 
@@ -122,15 +159,15 @@ void CEngine::Logic(int& dx, int& dy)
 {
     if(dy != 0)
     {
-        this->Player.Move(dy);
+        this->Player.Move(dy * 1.0f);
         if(!this->Map.CanPass(this->Player.GetCollisionBox()))
-            this->Player.Move(-dy);
+            this->Player.Move(-dy * 1.0f);
 
         dy = 0;
     }
     if(dx != 0)
     {
-        this->Player.RotateBody(dx);
+        this->Player.RotateBody(dx * 1.0f);
         dx = 0;
     }
 }
@@ -144,6 +181,7 @@ void CEngine::RenderAll()
     this->Map.Pan(this->Display, this->Player);
     this->Map.Update(this->Player);
     this->Player.Update();
+    this->Enemies[0]->Update();
 
     /* Render ALL the bullets.
      * Delete any that're off-screen.

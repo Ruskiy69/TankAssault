@@ -8,7 +8,7 @@ CGL_Bullet::CGL_Bullet(const int x, const int y)
      * location, which should technically be the
      * "barrel" of whatever is shooting.
      */
-    this->Move(x, y);
+    this->Move(x * 1.0f, y * 1.0f);
 
     /* Load the image for the bullet */
     this->LoadEntity("Data/Images/Player_Shot.png");

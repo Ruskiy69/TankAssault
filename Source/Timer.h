@@ -3,23 +3,26 @@
 
 #include "SDL/SDL.h"
 
-class CTimer
+namespace gk
 {
-public:
-    CTimer();
-    ~CTimer();
+    class CTimer
+    {
+    public:
+        CTimer();
+        ~CTimer();
 
-    void Start();
-    float GetTicks();
-    int GetFrame();
-    void SetFrameRate(const unsigned int newFrameRate){ this->FRAME_RATE = newFrameRate; }
-    int  GetFrameRate(){ return this->FRAME_RATE; }
-    void DelayFPS();
+        void Start();
+        float GetTicks();
+        int GetFrame() const;
+        void SetFrameRate(const unsigned int newFrameRate){ this->FRAME_RATE = newFrameRate; }
+        int  GetFrameRate() const{ return this->FRAME_RATE; }
+        void DelayFPS();
 
-private:
-    unsigned int FRAME_RATE;
-    int ticks;
-    double frame;
-};
+    private:
+        unsigned int FRAME_RATE;
+        int ticks;
+        double frame;
+    };
+}
 
 #endif // TIMER_H

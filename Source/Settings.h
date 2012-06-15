@@ -19,18 +19,21 @@
 #include "Errors.h"
 #include "Helpers.h"
 
-class CSettings
+namespace gk
 {
-public:
-    CSettings(const std::string& filename);
-    ~CSettings();
+    class CSettings
+    {
+    public:
+        CSettings(const std::string& filename);
+        ~CSettings();
 
-    std::string GetValueAt(const std::string&);
-    std::string ChooseValueAt(const std::string&);
-    void        CreateValue(const std::string& id, const std::string& value);    
+        std::string GetValueAt(const std::string&);
+        std::string ChooseValueAt(const std::string&);
+        void        CreateValue(const std::string& id, const std::string& value);    
 
-private:
-    std::fstream   settings;
-};
+    private:
+        std::fstream   settings;
+    };
+}
 
 #endif // __SETTINGS_H__

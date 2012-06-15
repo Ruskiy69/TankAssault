@@ -84,7 +84,7 @@ SDL_Surface* gk_sdl::LoadImage_Alpha(const char* filename)
     }
 }
 
-void gk_sdl::BlitSurface(SDL_Surface* Dst, SDL_Surface* Src, const int x, const int y)
+void gk_sdl::blit_surface(SDL_Surface* Dst, SDL_Surface* Src, const int x, const int y)
 {
     /* Blitting is basically placing a surface on another
      * surface at a certain location. 
@@ -94,7 +94,7 @@ void gk_sdl::BlitSurface(SDL_Surface* Dst, SDL_Surface* Src, const int x, const 
     SDL_BlitSurface(Src, NULL, Dst, &offset);
 }
 
-void gk_sdl::BlitSurface(SDL_Surface* Dst, SDL_Surface* Src, SDL_Rect& Pos)
+void gk_sdl::blit_surface(SDL_Surface* Dst, SDL_Surface* Src, SDL_Rect& Pos)
 {
     /* Blitting is basically placing a surface on another
      * surface at a certain location. 

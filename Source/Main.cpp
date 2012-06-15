@@ -17,7 +17,7 @@ int main(int argc, char* argv[])
     Mix_Init(MIX_INIT_OGG);
     Mix_OpenAudio(44100, MIX_DEFAULT_FORMAT, 2, 4096);
 
-    CEngine TankAssault_GL;
+    gk::CEngine TankAssault_GL;
     TankAssault_GL.Run();
     
     return 0;

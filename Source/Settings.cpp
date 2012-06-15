@@ -5,6 +5,10 @@ using std::stringstream;
 using std::string;
 using std::vector;
 
+using gk::split;
+
+using gk::CSettings;
+
 CSettings::CSettings(const string& filename)
 {
     this->settings.open(filename, std::ios::in | std::ios::out);
