@@ -43,7 +43,7 @@ SDL_Rect gk_gl::GL_to_SDL_Rect(const GL_Rect& Rect)
 gk_gl::GL_Rect gk_gl::SDL_to_GL_Rect(const SDL_Rect& Rect)
 {
     gk_gl::GL_Vertex2f Tmp1(Rect.x, Rect.y);
-    gk_gl::GL_Rect Tmp2 = {Tmp1, Rect.w, Rect.h};
+    gk_gl::GL_Rect Tmp2(Tmp1, Rect.w, Rect.h);
 
     return Tmp2;
 }

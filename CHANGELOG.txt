@@ -1,8 +1,21 @@
 *****************************************************************
 ************************ TANK ASSAULT ***************************
 *                                                               *
-* Current Version: 0.4 Alpha                                    *
+* Current Version: 0.5 Alpha                                    *
 * Last Updated   : 6.15.2012                                    *
+*                                                               *
+*   Version 0.5a (6.15.12):                                     *
+*       - Removed font memory leak                              *
+*       + All subsystems quit properly                          *
+*       + More code maintenance                                 *
+*       + A* implemented, no actual AI execution yet            *
+*       + Drawing of primitives added, currently applied (line) *
+*       Note: I've been considering not using A* for my AI,     *
+*       simply because actual path-finding detracts from the    *
+*       point of the enemies. I'm going to use a                *
+*       "line-of-sight" technique to "scan" an area, and        *
+*       if the player is spotted, then employ true AI           *
+*       techniques like swarming and other attack methods.      *
 *                                                               *
 *   Version 0.4a (6.15.12):                                     *
 *       + Added a game background, fixed sprite transparency.   *

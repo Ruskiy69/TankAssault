@@ -41,10 +41,28 @@ namespace gk_gl
 
     struct GL_Rect
     {
+        GL_Rect(){}
+        GL_Rect(int x, int y, int w, int h) : Position(x, y), w(w), h(h){}
+        GL_Rect(const GL_Vertex2f& Pos, int w, int h) : Position(Pos), w(w), h(h){}
         GL_Vertex2f Position;
         unsigned int w, h;
     };
     
+    struct GL_Color3f
+    {
+        GL_Color3f(){}
+        GL_Color3f(float r, float g, float b) : r(r), g(g), b(b){}
+        float r, g, b;
+    };
+
+    struct GL_Pixel
+    {
+        GL_Pixel(){}
+        GL_Pixel(int x, int y) : Pos(x, y){}
+        GL_Vertex2f Pos;
+        GL_Color3f Color;
+    };
+
     bool detect_collision(const GL_Rect& One, const GL_Rect& Two);
     
     SDL_Rect GL_to_SDL_Rect(const GL_Rect& Rect);
@@ -54,6 +72,8 @@ namespace gk_gl
     
     gl_texture LoadTexture(const char* filename, const int flags = SOIL_FLAG_INVERT_Y);
     gl_texture ReloadTexture(const char* filename, const int old_texture, const int flags = SOIL_FLAG_INVERT_Y);
+
+    static const GL_Color3f GL_BLACK(0, 0, 0);
 }
 
 #endif // __SDL_GL_BASE_H__

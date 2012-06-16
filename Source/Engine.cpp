@@ -25,8 +25,15 @@ CEngine::CEngine(): Display(800, 600, "Tank Assault", "Data/Images/tank.ico"),
     this->Enemies.push_back(new CGL_Enemy(Timer, Player, Map));
 }
 
+CEngine::~CEngine()
+{
+    TTF_CloseFont(this->Menu_Font);
+}
+
 void CEngine::Run()
 {
+    CGL_Line Line(GL_Vertex2f(0, 0), GL_Vertex2f(700, 400));
+
     GL_Vertex2f Pos(40, 160);
     GL_Vertex2f Title_Pos(120, 70);
     int status  = -1;
@@ -118,8 +125,11 @@ void CEngine::Run()
                 /* Handle keyboard events */
                 this->HandleEvents(dx, dy);
 
+                if(this->Player.CheckCollision(Line.GetCollisionBox()))
+                    this->Player.Move(400, 400);
                 this->Logic(dx, dy);
                 this->RenderAll();
+                Line.Update();
             }
             break;
 
@@ -174,7 +184,7 @@ void CEngine::Logic(int& dx, int& dy)
 
 void CEngine::RenderAll()
 {
-    static GL_Rect Tile_Rect = {GL_Vertex2f(0, 0), 32, 32};
+    static GL_Rect Tile_Rect(0, 0, 32, 32);
 
     /* Update everything on-screen */
     this->Background.Update();
@@ -207,7 +217,7 @@ void CEngine::RenderAll()
             (*i)->CheckCollision(Tile_Rect) && Tile->type != gk::Tile::Floor)
         {
             (*i)->LoadEntity("Data/Images/Spark.png");
-            (*i)->Render();
+            (*i)->Update();
             delete (*i);
             i = this->Bullets.erase(i);
         }

@@ -128,13 +128,13 @@ bool CMap::Load(const char* filename)
 
 bool CMap::CanPass(const int x, const int y) const
 {
-    const gk_gl::GL_Rect Tmp = {gk_gl::GL_Vertex2f(x, y), 32, 32};
+    const gk_gl::GL_Rect Tmp(x, y, 32, 32);
     return this->CanPass(Tmp);
 }
 
 bool CMap::CanPass(const gk_gl::GL_Rect& Boundary) const
 {
-    gk_gl::GL_Rect Tile_Rect = {gk_gl::GL_Vertex2f(0, 0), 32, 32};
+    gk_gl::GL_Rect Tile_Rect(0, 0, 32, 32);
 
     for(size_t i = 0; i < this->Tiles.size(); i++)
     {
@@ -158,8 +158,8 @@ Tile* CMap::FindTile(const int x, const int y) const
 
 Tile* CMap::FindTile(const gk_gl::GL_Vertex2f& Position) const
 {
-    gk_gl::GL_Rect Finder = {Position, 0, 0};
-    gk_gl::GL_Rect Tile = {gk_gl::GL_Vertex2f(0, 0), 32, 32};
+    gk_gl::GL_Rect Finder(Position, 0, 0);
+    gk_gl::GL_Rect Tile(0, 0, 32, 32);
 
     for(size_t i = 0; i < this->Tiles.size(); i++)
     {
@@ -175,8 +175,8 @@ Tile* CMap::FindTile(const gk_gl::GL_Vertex2f& Position) const
 
 unsigned int CMap::FindTile_Index(const gk_gl::GL_Vertex2f& Pos) const
 {
-    gk_gl::GL_Rect Finder = {Pos, 0, 0};
-    gk_gl::GL_Rect Tile = {gk_gl::GL_Vertex2f(0, 0), 32, 32};
+    gk_gl::GL_Rect Finder(Pos, 0, 0);
+    gk_gl::GL_Rect Tile(0, 0, 32, 32);
 
     for(size_t i = 0; i < this->Tiles.size(); i++)
     {
@@ -240,5 +240,5 @@ void CMap::Update(gk_gl::CGL_Player& Player)
     this->MapEntity.Move_Rate(this->Pan_Rate);
 
     Player.Move_Rate(this->Pan_Rate);
-    this->MapEntity.Render();
+    this->MapEntity.Update();
 }

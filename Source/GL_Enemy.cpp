@@ -13,7 +13,8 @@ CGL_Enemy::CGL_Enemy(const gk::CTimer& Timer,
     this->SetAnimationRate(Timer.GetFrameRate() / 10);
     this->Resize(64, 64);
 
-    this->InitAI();
+    this->SetupAI();
+    this->FindPath();
 }
 
 CGL_Enemy::~CGL_Enemy()
@@ -22,7 +23,7 @@ CGL_Enemy::~CGL_Enemy()
 void CGL_Enemy::Update()
 {
     this->Move_Rate(this->Map.GetPanRate());
-    this->AI();
+    //this->UpdateAI();
     this->Render();
 }
 
@@ -69,67 +70,124 @@ void CGL_Enemy::Render()
     glPopMatrix();
 }
 
-void CGL_Enemy::InitAI()
+void CGL_Enemy::SetupAI()
 {
-    /* Basically set a destination for the 
-     * pathfinding algorithm (A*) and generate
-     * nodes based on map data.
-     */
-    this->RenewLists();
-    this->Destination = this->Player.GetPosition();
+    this->ResetLists();
 
-    for(size_t i = 0; i < this->Tiles.size(); i++)
-    {
-        if(this->Tiles[i]->type != gk::Tile::Wall)
-        {
-            Node* Tmp_Node = new Node();
-            Tmp_Node->Tile = this->Tiles[i];
-            Tmp_Node->f = Tmp_Node->g = Tmp_Node->h = 0;
-            this->Open_List.push_back(Tmp_Node);
-        }
-    }
+    this->Start = new CNode();
+    this->Start->Tile = this->Map.FindTile(this->Position);
+    this->Start->x = this->Start->Tile->x;
+    this->Start->y = this->Start->Tile->y;
 
-    /* Remove the tile the enemy is currently
-     * standing on from the open list, and
-     * add it to the closed list.
-     * I use the index 'current_tile' because
-     * technically, after initial creation
-     * of the Open_List, the index of the tiles
-     * matches with the index of the Open_List Nodes.
-     * An alternative, and more reliable, method would
-     * be to use gk::CMap::FindTile() to find the Tile*
-     * and then loop through Open_List to find the
-     * matching Node::Tile* element. Currently the
-     * gk::CMap::FindTile_Index() method causes no issues.
-     */
-    int current_tile = this->Map.FindTile_Index(this->Position);
-    Node* Tmp_Node = new Node();
-    Tmp_Node->Tile = this->Tiles[current_tile];
-    Tmp_Node->f = Tmp_Node->g = Tmp_Node->h = 0;
-    
-    delete this->Open_List[current_tile];
-    this->Open_List[current_tile] = 0;
+    this->Destination = new CNode();
+    this->Destination->Tile = this->Map.FindTile(this->Player.GetPosition());
+    this->Destination->x = this->Destination->Tile->x;
+    this->Destination->y = this->Destination->Tile->y;
+
+    this->Open_List.push_back(*this->Start);
+    this->Closed_List.push_back(*this->Start);
+    this->Path.push_back(*this->Start);
 }
 
-void CGL_Enemy::RenewLists()
+void CGL_Enemy::ResetLists()
 {
-    for(size_t i = 0; i < this->Open_List.size(); i++)
-        if(this->Open_List[i])
-            delete this->Open_List[i];
-
-    for(size_t i = 0; i < this->Closed_List.size(); i++)
-        if(this->Closed_List[i])
-            delete this->Closed_List[i];
-
     this->Open_List.clear();
     this->Closed_List.clear();
 }
 
-void CGL_Enemy::AI()
+void CGL_Enemy::FindPath()
 {
-    do
+    while(!this->Open_List.empty())
     {
+        for(size_t i = 0; i < this->Open_List.size(); i++)
+        {
+            if(this->Open_List[i].Tile->x == this->Destination->Tile->x &&
+                this->Open_List[i].Tile->y == this->Destination->Tile->y)
+            {
+                return;
+            }
 
+            std::priority_queue<CNode> Node_Queue;
+
+            for(int x = -32; x <= 32; x += 32)
+            {
+                for(int y = -32; y <= 32; y += 32)
+                {
+                    /* Check each adjacent node */
+                    const int node_x = this->Open_List[i].x + x;
+                    const int node_y = this->Open_List[i].y + y;
+
+                    if(node_x == this->Destination->x && node_y == this->Destination->y)
+                        return;
+
+                    bool checked = false;
+                    for(size_t j = 0; j < this->Closed_List.size(); j++)
+                    {
+                        if(node_x == this->Closed_List[i].x &&
+                            node_y == this->Closed_List[i].y)
+                        {
+                            checked = true;
+                            break;
+                        }
+                    }
+
+                    if(checked)
+                        continue;
+
+                    gk::Tile* Wall = this->Map.FindTile(node_x+1, node_y+1);
+                    if(Wall->type == gk::Tile::Wall)
+                        continue;
+
+                    const int x_diff = abs(node_x - this->Open_List[i].x);
+                    const int y_diff = abs(node_y - this->Open_List[i].y);
+
+                    const int dir = (x_diff >= 32 && y_diff >= 32) ? 45 : 32;
+
+                    const int cost = (abs(node_x - this->Destination->x) + abs(node_y - this->Destination->y));
+
+                    Node_Queue.push(CNode(node_x, node_y, cost, Wall));
+                }
+            }
+
+            if(!Node_Queue.empty())
+            {
+                this->Open_List.push_back(Node_Queue.top());                
+                this->Path.push_back(Node_Queue.top());
+
+                while(!Node_Queue.empty())
+                {
+                    this->Closed_List.push_back(Node_Queue.top());
+                    Node_Queue.pop();
+                }
+            }
+        }
     }
-    while(0);
+}
+
+void CGL_Enemy::UpdateAI()
+{
+    static int index = 0;
+    if(index >= this->Path.size() - 1)
+    {
+        this->SetupAI();
+        this->FindPath();
+        index = 0;
+    }
+
+    CNode* Current_Node = &this->Path[index+1];
+    
+    if(Current_Node->x > this->GetX())
+        this->Move_Rate(3.0f, 0.0f);
+    else
+        this->Move_Rate(-3.0f, 0.0f);
+
+    if(Current_Node->y > this->GetY())
+        this->Move_Rate(0.0f, 3.0f);
+    else
+        this->Move_Rate(0.0f, -3.0f);
+
+    GL_Rect Next(this->Path[index+1].x, this->Path[index+1].y, 32, 32);
+
+    if(gk_gl::detect_collision(Next, this->GetCollisionBox()))
+        index++;
 }

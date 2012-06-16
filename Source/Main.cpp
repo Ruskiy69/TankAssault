@@ -20,5 +20,13 @@ int main(int argc, char* argv[])
     gk::CEngine TankAssault_GL;
     TankAssault_GL.Run();
     
+    std::cerr << "Last error (if any) was: " << SDL_GetError() << std::endl;
+
+    Mix_CloseAudio();
+    Mix_Quit();
+    TTF_Quit();
+    IMG_Quit();
+    SDL_Quit();
+
     return 0;
 }

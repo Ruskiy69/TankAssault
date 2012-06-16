@@ -20,6 +20,7 @@
 #include "GL_Menu.h"
 
 #include "GL_Entity.h"
+#include "GL_Primitives.h"
 #include "GL_Player.h"
 #include "GL_Enemy.h"
 
@@ -29,7 +30,7 @@ namespace gk
     {
     public:
         CEngine();
-        ~CEngine(){}
+        ~CEngine();
 
         void Run();
 

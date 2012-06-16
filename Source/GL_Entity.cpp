@@ -142,9 +142,57 @@ bool CGL_Entity::CheckCollision(const GL_Rect& Obj) const
     return detect_collision(Obj, this->CollisionBox);
 }
 
+bool CGL_Entity::CheckCollision(const GL_Pixel& Pixel) const
+{
+    const GL_Rect Pix_Rect(Pixel.Pos.x, Pixel.Pos.y, 1, 1);
+    return this->CheckCollision(Pix_Rect);
+}
+
+bool CGL_Entity::CheckCollision(const std::vector<GL_Pixel>& Pixels) const
+{
+    bool done = false;
+
+    for(size_t i = 0; i < Pixels.size(); i++)
+    {
+        done = this->CheckCollision(Pixels[i]);
+        if(done)
+            break;
+    }
+
+    return done;
+}
+
+bool CGL_Entity::CheckCollision(const std::vector<GL_Pixel*>& Pixels) const
+{
+    bool done = false;
+
+    for(size_t i = 0; i < Pixels.size(); i++)
+    {
+        done = this->CheckCollision(*Pixels[i]);
+        if(done)
+            break;
+    }
+
+    return done;
+}
+
+bool CGL_Entity::CheckCollision(const std::vector<GL_Rect>& Boxes) const
+{
+    bool done = false;
+
+    for(int i = 0; i < Boxes.size(); i++)
+    {
+        done = this->CheckCollision(Boxes[i]);
+        if(done)
+            break;
+    }
+
+    return done;
+}
+
 bool CGL_Entity::CheckCollision(const int x, const int y) const
 {
-    GL_Rect Tmp = {gk_gl::GL_Vertex2f(x, y), 0, 0};
+    GL_Rect Tmp(x, y, 0, 0);
     return detect_collision(Tmp, this->CollisionBox);
 }
 
@@ -229,7 +277,9 @@ void CGL_Entity::Render() const
 void CGL_Entity::Animate()
 {
     static int frame = 0;
-    static int index = 0;
+    static std::vector<gk_gl::gl_texture>::size_type index = 0; // Just how ridiculously verbose C++ can be...
+    // the alternative is:
+    // static int index = 0;
     frame++;
     
     if(frame % this->anim_rate == 0)

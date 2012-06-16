@@ -51,6 +51,10 @@ namespace gk_gl
         /* Collision detection with other objects, or locations */
         bool CheckCollision(const CGL_Entity& Entity) const;
         bool CheckCollision(const GL_Rect& Box) const;
+        bool CheckCollision(const GL_Pixel& Pixel) const;
+        bool CheckCollision(const std::vector<GL_Rect>& Boxes) const;
+        bool CheckCollision(const std::vector<GL_Pixel>& Pixels) const;
+        bool CheckCollision(const std::vector<GL_Pixel*>& Pixels) const;
         bool CheckCollision(const int x, const int y) const;
 
         /* Various get/set attributes */
@@ -67,11 +71,12 @@ namespace gk_gl
 
 
         /* Render the entity on-screen */
-        virtual void Render() const;
-        virtual void Animate();
         virtual void Update();
 
     protected:
+        virtual void Render() const;
+        virtual void Animate();
+
         GL_Vertex2f Position;
         GL_Rect CollisionBox;
 
