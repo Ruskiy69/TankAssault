@@ -3,7 +3,7 @@
 using Game::Game_Engine;
 
 Game_Engine::Game_Engine() : Window(800, 600, "Collapse", "Data/Images/tank.ico"), 
-    World(Timer, Window), Events(World), Game_State(Events.GetState())
+    World(Timer, Window), Events(World, HUD), Game_State(Events.GetState())
 {
     GLenum err = glewInit();
     if(err != GLEW_OK)
@@ -219,10 +219,10 @@ void Game_Engine::GameIntro()
     MediaManager::Music IntroSong;              // Sinister music
     if(!IntroSong.Load("Data/Sounds/Intro.ogg"))// Load it
         gk::handle_error(Mix_GetError());
-    IntroSong.SetVolume(69);                    // Not too loud, plus it's 69
+    IntroSong.SetVolume(MIX_MAX_VOLUME);        // Loud as fuck
 
     /* First fade out the menu */
-    alpha = 1.0f, rate = 0.05f;
+    alpha = 1.0f, rate = 0.02f;
     while(this->Game_State != Game_Events::Quit && alpha >= 0.0f)
     {
         this->Timer.Start();

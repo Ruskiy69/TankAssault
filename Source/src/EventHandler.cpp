@@ -1,10 +1,11 @@
-#include "Events.h"
+#include "EventHandler.h"
 
 using Game::Game_Events;
 
 void Game_Events::HandleGameEvents()
 {
     static int speed = 0, angle = 0;
+    static int ammo = 100;
 
     while(SDL_PollEvent(&Evt))
     {
@@ -20,7 +21,12 @@ void Game_Events::HandleGameEvents()
             {
                 if(this->State == Game_Events::Play)
                 {
-                    this->World.Shoot();
+                    if(ammo > 0 && this->World.Shoot())
+                    {
+                        ammo -= 2;
+                        static Game::element_id ammo_id = this->HUD.FindHUDElement(Game::Bar, "Ammo");
+                        this->HUD.UpdateElement(ammo_id, ammo);
+                    }
                 }
             }
             break;
@@ -88,59 +94,4 @@ void Game_Events::HandleGameEvents()
 Game::Game_Events::Game_State& Game_Events::GetState()
 {
     return this->State;
-}
-
-Uint8* Game::GetKeyState()
-{
-    return SDL_GetKeyState(NULL);
-}
-
-bool Game::IsDown(const SDLKey KEY)
-{
-    return Game::GetKeyState()[KEY];
-}
-
-bool Game::IsPressed(const int button)
-{
-    return (bool)(SDL_GetMouseState(NULL, NULL) & SDL_BUTTON(button));
-}
-
-void Game::GetMousePosition(int& x, int& y)
-{
-    SDL_GetMouseState(&x, &y);
-}
-
-bool Game::CheckQuit()
-{
-    return Game::GetKeyState()[Game::QUIT_KEY];
-}
-
-bool Game::CheckQuit(SDLKey key)
-{
-    return Game::IsDown(key);
-}
-
-bool Game::CheckQuit_Event()
-{
-    static SDL_Event evt;
-    while(SDL_PollEvent(&evt))
-    {
-        if(evt.type == SDL_QUIT)
-            return true;
-    }
-
-    return false;
-}
-
-bool Game::IsDown_Event(const SDLKey key)
-{
-    SDL_Event evt;
-    while(SDL_PollEvent(&evt))
-    {
-        if(evt.type == SDL_KEYDOWN)
-            if(evt.key.keysym.sym == key)
-                return true;
-    }
-
-    return false;
 }

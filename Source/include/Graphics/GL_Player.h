@@ -29,7 +29,7 @@ namespace Game
             this->GL_Entity::Move(x, y);
         }
 
-        void Shoot(Game::GL_Bullets& Bullets);
+        bool Shoot(Game::GL_Bullets& Bullets);
 
         void Render();
         void Update();

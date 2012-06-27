@@ -53,7 +53,7 @@ void GL_Player::Move(const float speed)
         this->moving = false;
 }
 
-void GL_Player::Shoot(Game::GL_Bullets& Bullets)
+bool GL_Player::Shoot(Game::GL_Bullets& Bullets)
 {
     static int x = 0, y = 0;
 
@@ -61,7 +61,7 @@ void GL_Player::Shoot(Game::GL_Bullets& Bullets)
     {
         /* Play the firing sound */
         this->shot_delay = GL_Player::SHOT_DELAY;
-        this->Shot.Play();
+        this->Shot.Play_Force();
 
         /* Get target */
         SDL_GetMouseState(&x, &y);
@@ -90,7 +90,11 @@ void GL_Player::Shoot(Game::GL_Bullets& Bullets)
 
         /* Finally, add the bullet to the vector */
         Bullets.push_back(Bullet);
+
+        return true;
     }
+
+    return false;
 }
 
 void GL_Player::Render()

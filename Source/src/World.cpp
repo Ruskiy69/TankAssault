@@ -39,9 +39,9 @@ bool Game_World::RotatePlayer(const float angle)
     return true;
 }
 
-void Game_World::Shoot()
+bool Game_World::Shoot()
 {
-    this->Player.Shoot(this->Bullets);
+    return this->Player.Shoot(this->Bullets);
 }
 
 void Game_World::Update()

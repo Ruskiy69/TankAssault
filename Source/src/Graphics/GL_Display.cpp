@@ -7,11 +7,11 @@ GL_Display::GL_Display(const int w, const int h, const char* title, const char* 
     /* If you want fullscreen off the bat, 
      * call this:
      */
-    //this->ToggleFullscreen();
+    this->ToggleFullscreen();
     /* Otherwise, you wanna just call
      * the basic Init() method.
      */
-    this->Init();
+    //this->Init();
     SDL_WM_SetCaption(title, NULL);
 
     if(icon)

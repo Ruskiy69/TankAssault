@@ -26,8 +26,8 @@ namespace MediaManager
         void IncreaseVolume();
         void DecreaseVolume();
 
-        /* Call this before SetVolume() for better results */
         void Play();
+        void Play_Force();
         void Stop();
         
     private:

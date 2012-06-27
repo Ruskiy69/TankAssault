@@ -83,7 +83,8 @@
   <ItemGroup>
     <ClCompile Include="src\Engine.cpp" />
     <ClCompile Include="src\Errors.cpp" />
-    <ClCompile Include="src\Events.cpp" />
+    <ClCompile Include="src\EventHandler.cpp" />
+    <ClCompile Include="src\GenericEvents.cpp" />
     <ClCompile Include="src\Graphics\GFX_Base.cpp" />
     <ClCompile Include="src\Graphics\GL_Bullet.cpp" />
     <ClCompile Include="src\Graphics\GL_Display.cpp" />
@@ -106,7 +107,8 @@
   <ItemGroup>
     <ClInclude Include="include\Engine.h" />
     <ClInclude Include="include\Errors.h" />
-    <ClInclude Include="include\Events.h" />
+    <ClInclude Include="include\EventHandler.h" />
+    <ClInclude Include="include\GenericEvents.h" />
     <ClInclude Include="include\Graphics\GFX_Base.h" />
     <ClInclude Include="include\Graphics\GL_Bullet.h" />
     <ClInclude Include="include\Graphics\GL_Display.h" />
@@ -124,8 +126,15 @@
     <ClInclude Include="include\Media\Music.h" />
     <ClInclude Include="include\Media\MusicPlayer.h" />
     <ClInclude Include="include\Media\SoundEffect.h" />
+    <ClInclude Include="include\resource.h" />
     <ClInclude Include="include\Timer.h" />
     <ClInclude Include="include\World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Collapse.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tank.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

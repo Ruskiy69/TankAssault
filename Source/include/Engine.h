@@ -15,8 +15,10 @@
 #include "Graphics/GL_Player.h"
 #include "Graphics/HUD.h"
 
+#include "EventHandler.h"
+
 #include "Timer.h"
-#include "Events.h"
+#include "GenericEvents.h"
 #include "World.h"
 
 namespace Game
@@ -64,11 +66,11 @@ namespace Game
         Game::GL_Menu       OptionsMenu;
         Game::GL_Menu       PauseMenu;
 
-        Game::Game_Events   Events;
-        Game::Game_World    World;
-        
         Game::Game_HUD      HUD;
+        Game::Game_World    World;
 
+        Game::Game_Events   Events;
+        
         //Game_AI           MasterAI;
         GFX::GL_Entity      Background;
         GFX::GL_Entity      Light;

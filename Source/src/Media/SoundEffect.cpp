@@ -50,8 +50,18 @@ void SoundEffect::IncreaseVolume()
 
 void SoundEffect::Play()
 {
+    if(!Mix_Playing(this->channel))
+        Mix_PlayChannel(this->channel, this->Sound, 0);
+}
+
+void SoundEffect::Play_Force()
+{
+    /* Plays sound regardless of whether or not
+     * it is already currently playing.
+     */
     Mix_PlayChannel(this->channel, this->Sound, 0);
 }
+
 
 void SoundEffect::Stop()
 {

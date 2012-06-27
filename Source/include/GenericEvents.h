@@ -1,38 +1,11 @@
-#ifndef EVENTS_H
-#define EVENTS_H
+#ifndef GENERIC_EVENTS_H
+#define GENERIC_EVENTS_H
 
 #include "SDL/SDL.h"
 
-#include "World.h"
-
 namespace Game
 {
-    class Game_Events
-    {
-    public:
-        Game_Events(Game::Game_World& World) : World(World), State(Main_Menu) {}
-
-        enum Game_State
-        {
-            Main_Menu,
-            Options_Menu,
-            Intro,
-            Play,
-            Pause_Menu,
-            Quit
-        };
-
-        void HandleGameEvents();
-
-        Game_State& GetState();
-
-    private:
-        Game::Game_World& World;
-        SDL_Event Evt;
-        Game_State State;
-    };
-
-    const int QUIT_KEY = SDLK_ESCAPE;
+    static const int QUIT_KEY = SDLK_ESCAPE;
 
     /* Get the current state of the keyboard */
     Uint8*  GetKeyState();
@@ -57,4 +30,4 @@ namespace Game
     bool    CheckQuit_Event();
 }
 
-#endif // EVENTS_H
+#endif // GENERIC_EVENTS_H

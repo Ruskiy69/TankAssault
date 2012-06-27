@@ -21,7 +21,7 @@ namespace Game
 
         bool MovePlayer(const float speed);
         bool RotatePlayer(const float angle);
-        void Shoot();
+        bool Shoot();
 
         void Update();
 

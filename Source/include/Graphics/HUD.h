@@ -5,7 +5,7 @@
 
 #include "SDL/SDL_gfxBlitFunc.h"
 
-#include "Events.h"
+#include "GenericEvents.h"
 
 #include "Graphics/GFX_Base.h"
 #include "Media/MediaManager.h"
