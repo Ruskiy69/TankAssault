@@ -1,8 +1,33 @@
-*****************************************************************
-************************ TANK ASSAULT ***************************
+************************** COLLAPSE *****************************
 *                                                               *
-* Current Version: 0.5 Alpha                                    *
-* Last Updated   : 6.15.2012                                    *
+* Current Version: 0.6.5 Alpha                                  *
+* Last Updated   : 6.26.2012                                    *
+*                                                               *
+*   KNOWN BUGS:                                                 *
+*       - After quitting, the game seg-faults due to an unknown *
+*         memory leak.                                          *
+*       - The player shoots a missile when hitting the button   *
+*         for the in-game pause menu. This is due to the mouse  *
+*         click being registered twice: once in the main game   *
+*         event loop, and once more in the HUD subsystem.       *
+*                                                               *
+*   Version 0.6.5 (6.26.2012):                                  *
+*       + Added shooting                                        *
+*       + Several memory leaks removed, segfault still occurs   *
+*       + Modified intro scene                                  *
+*       - Removed old menu songs                                *
+*       + Added a new, spookier menu song                       *
+*                                                               *
+*   Version 0.6a (6.25.12):                                     *
+*       + Complete re-write of the code base, again.            *
+*       - No more enemies                                       *
+*       - No longer depends on SOIL library                     *
+*       + Now depends on the SDL_gfx library (RGBA blitting)    *
+*       + Intro scene that explains the storyline               *
+*       + Intro music                                           *
+*       + HUD system with health/ammo bars                      *
+*       + In-game pause menu                                    *
+*       + Re-named to "Collapse"                                *
 *                                                               *
 *   Version 0.5a (6.15.12):                                     *
 *       - Removed font memory leak                              *
