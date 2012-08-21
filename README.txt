@@ -2,8 +2,8 @@
 *                                                               *
 * Created By    : George Kudrayvtsev                            *
 * Platform      : Windows                                       *
-* Version       : 0.6.5 Alpha                                   *
-* Last Updated  : 6.26.2012                                     *
+* Version       : 0.6.6 Alpha                                   *
+* Last Updated  : 6.27.2012                                     *
 *                                                               *
 * Dependencies:                                                 *
 *   - SDL, SDL_image, SDL_mixer, SDL_ttf, SDL_gfx               *

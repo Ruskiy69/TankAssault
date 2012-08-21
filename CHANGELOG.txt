@@ -1,7 +1,7 @@
 ************************** COLLAPSE *****************************
 *                                                               *
-* Current Version: 0.6.5 Alpha                                  *
-* Last Updated   : 6.26.2012                                    *
+* Current Version: 0.6.6 Alpha                                  *
+* Last Updated   : 6.27.2012                                    *
 *                                                               *
 *   KNOWN BUGS:                                                 *
 *       - After quitting, the game seg-faults due to an unknown *
@@ -10,6 +10,11 @@
 *         for the in-game pause menu. This is due to the mouse  *
 *         click being registered twice: once in the main game   *
 *         event loop, and once more in the HUD subsystem.       *
+*                                                               *
+*   Version 0.6.6 (6.27.2012):                                  *
+*       + Fullscreen mode by default                            *
+*       + Sound effects fixed                                   *
+*       + Split event system into generic and specific          *
 *                                                               *
 *   Version 0.6.5 (6.26.2012):                                  *
 *       + Added shooting                                        *

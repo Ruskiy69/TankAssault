@@ -1,5 +1,5 @@
     TankAssault -- Cruising, killing, exploding fun
-        version 0.6.5a, June 26th, 2012
+        version 0.6.6a, June 27th, 2012
 
     Copyright (C) 2012 George Kudrayvtsev
 
