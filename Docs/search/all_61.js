@@ -6,20 +6,10 @@ var searchData=
   ['al_5fassetmanager',['AL_AssetManager',['../classasset_1_1_a_l___sound2_d.html#a99b4670aa970f16b9eb3140c886719a2',1,'asset::AL_Sound2D']]],
   ['al_5fmusicplayer',['AL_MusicPlayer',['../classasset_1_1_a_l___music_player.html',1,'asset']]],
   ['al_5fsound2d',['AL_Sound2D',['../classasset_1_1_a_l___sound2_d.html',1,'asset']]],
-  ['alloc_5fchain',['alloc_chain',['../structalloc__chain.html',1,'']]],
-  ['alpha',['alpha',['../struct_s_d_l___pixel_format.html#a0b0fd9deaec730811212ecdeaa24c7ea',1,'SDL_PixelFormat']]],
-  ['area',['area',['../struct_s_d_l___cursor.html#afefd14bbad7b59dbf22d63352ced7378',1,'SDL_Cursor']]],
   ['asset',['asset',['../namespaceasset.html',1,'']]],
   ['asset_2ecpp',['Asset.cpp',['../_asset_8cpp.html',1,'']]],
   ['asset_2eh',['Asset.h',['../_asset_8h.html',1,'']]],
   ['assetmanagers_2eh',['AssetManagers.h',['../_asset_managers_8h.html',1,'']]],
   ['assets',['Assets',['../group___assets.html',1,'']]],
-  ['audio_5fs16lsb',['AUDIO_S16LSB',['../_s_d_l__audio_8h.html#a23838d612e88ce72d82c3e51460f831b',1,'SDL_audio.h']]],
-  ['audio_5fs16msb',['AUDIO_S16MSB',['../_s_d_l__audio_8h.html#a3109dfb1d7aab29dff2b62d630e690ca',1,'SDL_audio.h']]],
-  ['audio_5fs8',['AUDIO_S8',['../_s_d_l__audio_8h.html#a883b3d4539451e49bf014dde0f9cca29',1,'SDL_audio.h']]],
-  ['audio_5fu16lsb',['AUDIO_U16LSB',['../_s_d_l__audio_8h.html#a06808f806896c4d211314990c354b7fc',1,'SDL_audio.h']]],
-  ['audio_5fu16msb',['AUDIO_U16MSB',['../_s_d_l__audio_8h.html#a3b8052d0c49d14a2e3edf08eade52d3a',1,'SDL_audio.h']]],
-  ['audio_5fu8',['AUDIO_U8',['../_s_d_l__audio_8h.html#a6468b4b3fc53ada655eca866e491d75f',1,'SDL_audio.h']]],
-  ['audioassetmanager_2eh',['AudioAssetManager.h',['../_audio_asset_manager_8h.html',1,'']]],
-  ['axis',['axis',['../struct_s_d_l___joy_axis_event.html#a0beac2fb161e45771c424bd0b6daeabb',1,'SDL_JoyAxisEvent']]]
+  ['audioassetmanager_2eh',['AudioAssetManager.h',['../_audio_asset_manager_8h.html',1,'']]]
 ];

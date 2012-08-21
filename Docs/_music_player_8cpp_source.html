@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -111,12 +111,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;{</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    m_allSongs.clear();</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mp_CurrentSong = <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    mp_CurrentSong = NULL;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno"><a class="code" href="classasset_1_1_a_l___music_player.html#ab2fb50d8ce066382c39cd567b2cf767f">   49</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classasset_1_1_a_l___music_player.html#ab2fb50d8ce066382c39cd567b2cf767f" title="Starts playing music.">AL_MusicPlayer::Play</a>()</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;{</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(mp_CurrentSong == <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(mp_CurrentSong == NULL)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    {</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">if</span>(!this-&gt;NextSong())   <span class="comment">// No songs available</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;            <span class="keywordflow">return</span>;</div>
@@ -128,7 +128,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno"><a class="code" href="classasset_1_1_a_l___music_player.html#aa11f3320a24ab6b3413f2885976533b2">   64</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classasset_1_1_a_l___music_player.html#aa11f3320a24ab6b3413f2885976533b2" title="Pauses music.">AL_MusicPlayer::Pause</a>()</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;{</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span>(mp_CurrentSong == <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)      <span class="comment">// Can&#39;t pause no song</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordflow">if</span>(mp_CurrentSong == NULL)      <span class="comment">// Can&#39;t pause no song</span></div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordflow">if</span>(mp_CurrentSong-&gt;<a class="code" href="classasset_1_1_a_l___sound2_d.html#a669b012722bb0afa1c2b6a1790593055" title="Returns the current audio state.">GetAudioState</a>() == AL_PAUSED)    <span class="comment">// Resume if paused</span></div>
@@ -139,7 +139,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno"><a class="code" href="classasset_1_1_a_l___music_player.html#a7acd66ebeb2ce9e6c5965a05afe39cbc">   78</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classasset_1_1_a_l___music_player.html#a7acd66ebeb2ce9e6c5965a05afe39cbc" title="Stops music.">AL_MusicPlayer::Stop</a>()</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;{</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(mp_CurrentSong == <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordflow">if</span>(mp_CurrentSong == NULL)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    mp_CurrentSong-&gt;<a class="code" href="classasset_1_1_a_l___sound2_d.html#abd7cad85419b0e3ee5def65f5d1e4e98" title="Stops the audio from playing.">Stop</a>();</div>
@@ -152,7 +152,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <span class="keywordflow">if</span>(frame % 120)     <span class="comment">// Approx. every 2 seconds</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    {</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span>(mp_CurrentSong == <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <span class="keywordflow">if</span>(mp_CurrentSong == NULL)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        {</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            this-&gt;NextSong();</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;            <span class="keywordflow">return</span>;</div>
@@ -197,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 15:11:42 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 15:14:09 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

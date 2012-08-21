@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -129,7 +129,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    wglSwapIntervalEXT(0);</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">long</span> frame = 0;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Uint32 start_time = <a class="code" href="_s_d_l__timer_8h.html#a0b9bc71d6287e0ffafdc3419760fe2b3" title="Get the number of milliseconds since the SDL library initialization.">SDL_GetTicks</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    Uint32 start_time = SDL_GetTicks();</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif // _WIN32</span></div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif // REGULATE_FPS</span></div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor"></span></div>
@@ -236,7 +236,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;                        <span class="comment">// so I don&#39;t want to call CL_Timer::DelayFPS()</span></div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                        <span class="comment">// because it&#39;d be extremely off.</span></div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;<span class="preprocessor">#else</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor"></span>            <a class="code" href="_s_d_l__mouse_8h.html#a00286ec15cd56dee1fd71ed4e6e7a585" title="Toggle whether or not the cursor is shown on the screen.">SDL_ShowCursor</a>(0);</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor"></span>            SDL_ShowCursor(0);</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            m_state = game::e_GAME;</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif // _DEBUG</span></div>
@@ -265,7 +265,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        m_Timer.<a class="code" href="classgame_1_1_c_l___timer.html#a306c8b4c1a94c4ca6e427247b8012993" title="Delays the current frame to be in accordance with the frame rate.">DelayFPS</a>();</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;<span class="preprocessor"></span>        <span class="comment">// Show frame-rate in debug builds</span></div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        Uint32 elapsed = <a class="code" href="_s_d_l__timer_8h.html#a0b9bc71d6287e0ffafdc3419760fe2b3" title="Get the number of milliseconds since the SDL library initialization.">SDL_GetTicks</a>() - start_time;</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;        Uint32 elapsed = SDL_GetTicks() - start_time;</div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;        <span class="keywordtype">double</span> fps = frame / (elapsed / 1000.0);</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        printf(<span class="stringliteral">&quot;Frame Rate: %0.2f\r&quot;</span>, fps);</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="preprocessor">#endif // REGULATE_FPS</span></div>
@@ -296,7 +296,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        <a class="code" href="namespaceasset.html#a28ebd8d7cf2a21aa8d11205d85d2512d" title="Globally accessible AudioAssetManager.">g_AudioAssets</a>.LoadAudioFromFile(<span class="stringliteral">&quot;Data/Sounds/Intro.ogg&quot;</span>));</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;</div>
 <div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;    <span class="comment">// Text color, blue-ish</span></div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="struct_s_d_l___color.html">gfx::Color</a> Color = gfx::create_color(55, 170, 250);</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    gfx::Color Color = gfx::create_color(55, 170, 250);</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="comment">// The actual object representing each line</span></div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    std::vector&lt;asset::GL_Entity*&gt; linepEntities, faderpLine;</div>
@@ -424,14 +424,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;    <span class="comment">// Only change state if we are exiting loops properly</span></div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;    <span class="keywordflow">if</span>(m_state == game::e_INTRO)</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;    {</div>
-<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        <a class="code" href="_s_d_l__mouse_8h.html#a00286ec15cd56dee1fd71ed4e6e7a585" title="Toggle whether or not the cursor is shown on the screen.">SDL_ShowCursor</a>(0);</div>
+<div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;        SDL_ShowCursor(0);</div>
 <div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;        m_state = game::e_GAME;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;    }</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160;}</div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;<span class="keywordtype">void</span> CL_Engine::HandleSystemEvents()</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;{</div>
-<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    <a class="code" href="union_s_d_l___event.html" title="General event structure.">SDL_Event</a> Evt;</div>
+<div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160;    SDL_Event Evt;</div>
 <div class="line"><a name="l00361"></a><span class="lineno">  361</span>&#160;</div>
 <div class="line"><a name="l00362"></a><span class="lineno">  362</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="namespacegame.html#aec15c3c57df337778d2abd6e13c36b88" title="Checks if a key is being held down.">game::IsDown</a>(SDLK_ESCAPE) &amp;&amp; m_state != e_INTRO)</div>
 <div class="line"><a name="l00363"></a><span class="lineno">  363</span>&#160;    {</div>
@@ -440,11 +440,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;        m_state = game::e_QUIT;</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;    }</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160;</div>
-<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="_s_d_l__events_8h.html#acfa517963c25f8b71acc6b56721c5d9b" title="Polls for currently pending events, and returns 1 if there are any pending events, or 0 if there are none available.">SDL_PollEvent</a>(&amp;Evt))</div>
+<div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;    <span class="keywordflow">while</span>(SDL_PollEvent(&amp;Evt))</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;    {</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;        <span class="keywordflow">switch</span>(Evt.type)</div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;        {</div>
-<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="_s_d_l__events_8h.html#a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603" title="User-requested quit.">SDL_QUIT</a>:</div>
+<div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;        <span class="keywordflow">case</span> SDL_QUIT:</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;            <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a>.Flush();</div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;            <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a> &lt;&lt; <span class="stringliteral">&quot;[INFO] Quitting.\n&quot;</span>;</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;</div>
@@ -463,7 +463,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 15:11:42 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 15:14:09 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

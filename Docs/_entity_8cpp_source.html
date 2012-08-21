@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -152,14 +152,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">bool</span> GL_Entity::LoadFromSDLSurface(<a class="code" href="struct_s_d_l___surface.html" title="This structure should be treated as read-only, except for &#39;pixels&#39;, which, if not NULL...">SDL_Surface</a>* p_Surface)</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="keywordtype">bool</span> GL_Entity::LoadFromSDLSurface(SDL_Surface* p_Surface)</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="comment">// Unload previous texture.</span></div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    this-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#a84369776d8b7d4163c52fd77babcaea0" title="Unloads the currently loaded texture.">UnloadEntity</a>();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="comment">// Convert SDL_Surface to an OpenGL texture and resize it.</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    m_texture = gfx::SDL_Surface_to_texture(p_Surface);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    m_CollisionBox.<a class="code" href="structmath_1_1_m_l___rect.html#a84a3190a99feb02fbe318e8588cd73b7" title="Changes the dimensions of the rectangle.">Resize</a>(p_Surface-&gt;w, p_Surface-&gt;<a class="code" href="struct_s_d_l___surface.html#af33bcf87a1f5e10a99b3c7e8626b38c8" title="Read-only.">h</a>);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    m_CollisionBox.<a class="code" href="structmath_1_1_m_l___rect.html#a84a3190a99feb02fbe318e8588cd73b7" title="Changes the dimensions of the rectangle.">Resize</a>(p_Surface-&gt;w, p_Surface-&gt;h);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00099"></a><span class="lineno"><a class="code" href="classasset_1_1_g_l___entity.html#a2ab5b3703ab66b88c56333b24bb794c6">   99</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classasset_1_1_g_l___entity.html#a2ab5b3703ab66b88c56333b24bb794c6" title="Creates a copy of another entity.">GL_Entity::LoadFromEntity</a>(<a class="code" href="classasset_1_1_g_l___entity.html">GL_Entity</a>* <span class="keyword">const</span> p_Other)</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;{</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="comment">// Check for validity.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span>(p_Other == <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keywordflow">if</span>(p_Other == NULL)</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="comment">// Unload old.</span></div>
@@ -476,7 +476,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 15:11:42 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 15:14:09 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

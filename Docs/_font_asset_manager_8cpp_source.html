@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -142,14 +142,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            <span class="keywordflow">return</span> i-&gt;second;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    }</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<a class="code" href="classasset_1_1_f_l___font.html" title="Wrapper around TTF_Font.">asset::FL_Font</a>* FL_AssetManager::GetFontByID(<span class="keyword">const</span> asset::asset_id <span class="keywordtype">id</span>)</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;{</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    FL_asset_iterator i = mp_fontAssets.find(<span class="keywordtype">id</span>);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keywordflow">if</span>(i == mp_fontAssets.end())</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keywordflow">return</span> NULL;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span> i-&gt;second;</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;}</div>
@@ -167,7 +167,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <span class="comment">/* no third */</span>)</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    {</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        <span class="keyword">delete</span> i-&gt;second;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        i-&gt;second = <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        i-&gt;second = NULL;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        i = mp_fontAssets.erase(i);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    }</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 15:11:42 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 15:14:09 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

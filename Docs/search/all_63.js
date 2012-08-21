@@ -1,9 +1,6 @@
 var searchData=
 [
-  ['cd_5findrive',['CD_INDRIVE',['../_s_d_l__cdrom_8h.html#a124d20fb441acc8db9f838ddef5864f5',1,'SDL_cdrom.h']]],
-  ['cdstatus',['CDstatus',['../_s_d_l__cdrom_8h.html#ae689551deb9bd434bce7e4c39e45e15d',1,'SDL_cdrom.h']]],
   ['changeelement',['ChangeElement',['../classmath_1_1_m_l___matrix.html#a1730d0b5414ca2c6e123de878062c8e1',1,'math::ML_Matrix']]],
-  ['channels',['channels',['../struct_s_d_l___audio_spec.html#a31fe8b3710cf23bbef24be8a1749fe46',1,'SDL_AudioSpec']]],
   ['checkcollision',['CheckCollision',['../classasset_1_1_g_l___entity.html#a2bd8052787ec6e94ef3e2f274b7b2251',1,'asset::GL_Entity::CheckCollision()'],['../classmath_1_1_m_l___ray2.html#a6e03bd3ff11586da92daa5e9fc6cd0dc',1,'math::ML_Ray2::CheckCollision()'],['../structmath_1_1_m_l___rect.html#a6ba131104c9cc3dabb45c09089e60b30',1,'math::ML_Rect::CheckCollision()'],['../structmath_1_1_m_l___rectf.html#ae366f3676aa39404751dc88345d7343d',1,'math::ML_Rectf::CheckCollision()'],['../structmath_1_1_m_l___circle.html#a3aca8f8600822e444b2f0da14af9b2e9',1,'math::ML_Circle::CheckCollision()']]],
   ['checkquit_5fevent',['CheckQuit_Event',['../namespacegame.html#a655a947c9a4e56455cb45f06939b1a26',1,'game']]],
   ['cl_5fengine',['CL_Engine',['../classgame_1_1_c_l___engine.html',1,'game']]],
@@ -15,19 +12,11 @@ var searchData=
   ['cl_5fmenumanager',['CL_MenuManager',['../classgame_1_1_c_l___menu_manager.html',1,'game']]],
   ['cl_5ftimer',['CL_Timer',['../classgame_1_1_c_l___timer.html',1,'game']]],
   ['clear',['Clear',['../classgfx_1_1_g_l___window.html#a846f328e8511ff738b1889418f7f2d69',1,'gfx::GL_Window']]],
-  ['clip_5frect',['clip_rect',['../struct_s_d_l___surface.html#aa9a0da3b38261dad6cf0cc4e3bb5b0c3',1,'SDL_Surface']]],
-  ['close_5fcode_2eh',['close_code.h',['../close__code_8h.html',1,'']]],
-  ['code',['code',['../struct_s_d_l___user_event.html#aed0990a34143309d42e9d0f20a7a9cd4',1,'SDL_UserEvent']]],
   ['collapse2200_2ecpp',['Collapse2200.cpp',['../_collapse2200_8cpp.html',1,'']]],
   ['collapsedef_2eh',['CollapseDef.h',['../_collapse_def_8h.html',1,'']]],
   ['collider_2eh',['Collider.h',['../_collider_8h.html',1,'']]],
-  ['colorkey',['colorkey',['../struct_s_d_l___pixel_format.html#a1413d87ed860296a49f8b2d8fd8ad778',1,'SDL_PixelFormat']]],
   ['combine',['combine',['../namespacegk.html#a93ed67c037c5af4241fd0756e9665d7f',1,'gk::combine(const std::string &amp;str1, const char *str2)'],['../namespacegk.html#aea5adcd8540d1d92e3441efe01caf2d4',1,'gk::combine(const char *str2, const std::string &amp;str1)']]],
   ['cross',['Cross',['../structmath_1_1_m_l___vector2.html#a4e19c6625b61812817c60b795f0dec07',1,'math::ML_Vector2']]],
-  ['cur_5fframe',['cur_frame',['../struct_s_d_l___c_d.html#a42123aeca413aa581c1403843d1a5809',1,'SDL_CD']]],
-  ['cur_5ftrack',['cur_track',['../struct_s_d_l___c_d.html#afe5a3ca65be47b34c72ac21ce28de31e',1,'SDL_CD']]],
   ['current_5fasset_5fid',['CURRENT_ASSET_ID',['../namespaceasset.html#afaaee3295d6fc9bce4caa64548b38dcf',1,'asset']]],
-  ['current_5fh',['current_h',['../struct_s_d_l___video_info.html#ae797099dc83c35aa6fa9a157fee4c120',1,'SDL_VideoInfo']]],
-  ['current_5fw',['current_w',['../struct_s_d_l___video_info.html#add58e29175b54818092e9dea416fdc7f',1,'SDL_VideoInfo']]],
   ['collapse_20documentation',['Collapse Documentation',['../index.html',1,'']]]
 ];

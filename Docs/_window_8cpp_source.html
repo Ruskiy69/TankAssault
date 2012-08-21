@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -110,13 +110,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor"></span>    this-&gt;<a class="code" href="classgfx_1_1_g_l___window.html#a7c94d4fb6be6a560d3959b9f7d200c4c" title="Toggles full screen mode.">ToggleFullscreen</a>();</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#endif // _DEBUG</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor"></span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#a3c68abe491c620fadb50d267d586b1bc" title="These functions allow interaction with the window manager, if any.">SDL_WM_SetCaption</a>(ptitle, <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    SDL_WM_SetCaption(ptitle, NULL);</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordflow">if</span>(picon)</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    {</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <a class="code" href="struct_s_d_l___surface.html" title="This structure should be treated as read-only, except for &#39;pixels&#39;, which, if not NULL...">SDL_Surface</a>* pIcon_Surface = gfx::load_image(picon);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        SDL_Surface* pIcon_Surface = gfx::load_image(picon);</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        pIcon_Surface = gfx::optimize_surface_alpha(pIcon_Surface);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="_s_d_l__video_8h.html#ac16d7d1c3c6efdec28683c07a14634ef" title="Sets the icon for the display window.">SDL_WM_SetIcon</a>(pIcon_Surface, <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>);</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        SDL_WM_SetIcon(pIcon_Surface, NULL);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;}</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
@@ -126,13 +126,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a> &lt;&lt; <span class="stringliteral">&quot;[INFO] Creating OpenGL window in full-screen mode.\n&quot;</span>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    m_fs = !m_fs;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    this-&gt;Init(<a class="code" href="_s_d_l__video_8h.html#ac96afe7a08477c328bc0f3dbf483b756" title="Surface is in video memory.">SDL_HWSURFACE</a> | SDL_GL_DOUBLEBUFFER | <a class="code" href="_s_d_l__video_8h.html#af2cb4a2748fc1095ea5f7710abf3e348" title="Create an OpenGL rendering context.">SDL_OPENGL</a> | (m_fs ? <a class="code" href="_s_d_l__video_8h.html#ad113101076cec2715ac629d0b2eb44ad" title="Surface is a full screen display.">SDL_FULLSCREEN</a> : 0));</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    this-&gt;Init(SDL_HWSURFACE | SDL_GL_DOUBLEBUFFER | SDL_OPENGL | (m_fs ? SDL_FULLSCREEN : 0));</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">return</span> m_fs;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno"><a class="code" href="classgfx_1_1_g_l___window.html#a2f7f8d22c6ef3b031885c24904a6e823">   66</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgfx_1_1_g_l___window.html#a2f7f8d22c6ef3b031885c24904a6e823" title="Updates everything that was rendered on the OpenGL context till this point.">GL_Window::Update</a>()</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;{</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#ac928f4440899850e2f1c773c3d38356d" title="Swap the OpenGL buffers, if double-buffering is supported.">SDL_GL_SwapBuffers</a>();</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    SDL_GL_SwapBuffers();</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;}</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="code" href="classgfx_1_1_g_l___window.html#a846f328e8511ff738b1889418f7f2d69">   74</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgfx_1_1_g_l___window.html#a846f328e8511ff738b1889418f7f2d69" title="Clears the screen.">GL_Window::Clear</a>()</div>
@@ -152,20 +152,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="keywordtype">void</span> GL_Window::Init(<span class="keyword">const</span> <span class="keywordtype">int</span> flags)</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;{</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_RED_SIZE,            8);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_GREEN_SIZE,          8);</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_BLUE_SIZE,           8);</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_ALPHA_SIZE,          8);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_DEPTH_SIZE,          16);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_BUFFER_SIZE,         32);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_ACCUM_RED_SIZE,      8);</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_ACCUM_GREEN_SIZE,    8);</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_ACCUM_BLUE_SIZE,     8);</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_ACCUM_ALPHA_SIZE,    8);</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_MULTISAMPLEBUFFERS,  1);</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <a class="code" href="_s_d_l__video_8h.html#aed4d4347f2d5def1532bc22893e0e0d9" title="Set an attribute of the OpenGL subsystem before intialization.">SDL_GL_SetAttribute</a>(SDL_GL_MULTISAMPLESAMPLES,  2);</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    SDL_GL_SetAttribute(SDL_GL_RED_SIZE,            8);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    SDL_GL_SetAttribute(SDL_GL_GREEN_SIZE,          8);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    SDL_GL_SetAttribute(SDL_GL_BLUE_SIZE,           8);</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    SDL_GL_SetAttribute(SDL_GL_ALPHA_SIZE,          8);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE,          16);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    SDL_GL_SetAttribute(SDL_GL_BUFFER_SIZE,         32);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    SDL_GL_SetAttribute(SDL_GL_ACCUM_RED_SIZE,      8);</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    SDL_GL_SetAttribute(SDL_GL_ACCUM_GREEN_SIZE,    8);</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    SDL_GL_SetAttribute(SDL_GL_ACCUM_BLUE_SIZE,     8);</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    SDL_GL_SetAttribute(SDL_GL_ACCUM_ALPHA_SIZE,    8);</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLEBUFFERS,  1);</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    SDL_GL_SetAttribute(SDL_GL_MULTISAMPLESAMPLES,  2);</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    mp_Display = <a class="code" href="_s_d_l__video_8h.html#a6ef2b117d8295ba60dc07d038fead288" title="Set up a video mode with the specified width, height and bits-per-pixel.">SDL_SetVideoMode</a>(m_width, m_height, 32, flags);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    mp_Display = SDL_SetVideoMode(m_width, m_height, 32, flags);</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordflow">if</span>(!mp_Display)</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    {</div>
@@ -190,7 +190,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 15:11:42 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 15:14:09 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>
