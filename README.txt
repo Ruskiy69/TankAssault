@@ -2,12 +2,15 @@
 *                                                               *
 * Created By    : George Kudrayvtsev                            *
 * Platform      : Windows                                       *
-* Version       : 0.6.6 Alpha                                   *
-* Last Updated  : 6.27.2012                                     *
+* Version       : 0.7.0 Alpha                                   *
+* Last Updated  : 08.21.2012                                    *
 *                                                               *
 * Dependencies:                                                 *
-*   - SDL, SDL_image, SDL_mixer, SDL_ttf, SDL_gfx               *
+*   - SDL, SDL_image, SDL_ttf                                   *
 *   - OpenGL                                                    *
+*   - OpenAL                                                    *
+*   - libvorbis                                                 *
+*   - libogg                                                    *
 *                                                               *
 * Gameplay:                                                     *
 *   The year is 2200. The earth is now a barren wastland after  *
@@ -20,9 +23,4 @@
 *   complete his final mission: free the Earth of the Mechs.    *
 *                                                               *
 *                                                               *
-* Credits:                                                      *
-*   - Audio: YouTube, SoundBible                                *
-*   - Artwork: Google Images, Photoshop, me                     *
-*   - Code: All me :)                                           *
-*   - Fonts: Daniel Zadorozny (iconian@aol.com)                 *
 *****************************************************************

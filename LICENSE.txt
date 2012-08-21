@@ -1,5 +1,5 @@
-    TankAssault -- Cruising, killing, exploding fun
-        version 0.6.6a, June 27th, 2012
+    Collapse 2200 -- Cruising, killing, exploding fun
+        version 0.7.0a, August 21st, 2012
 
     Copyright (C) 2012 George Kudrayvtsev
 

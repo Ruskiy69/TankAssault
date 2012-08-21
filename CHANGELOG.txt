@@ -1,15 +1,19 @@
 ************************** COLLAPSE *****************************
 *                                                               *
-* Current Version: 0.6.6 Alpha                                  *
-* Last Updated   : 6.27.2012                                    *
+* Current Version: 0.1.0 Alpha                                  *
+* Last Updated   : 08.21.2012                                   *
 *                                                               *
 *   KNOWN BUGS:                                                 *
 *       - After quitting, the game seg-faults due to an unknown *
 *         memory leak.                                          *
-*       - The player shoots a missile when hitting the button   *
-*         for the in-game pause menu. This is due to the mouse  *
-*         click being registered twice: once in the main game   *
-*         event loop, and once more in the HUD subsystem.       *
+*       - The main menu cannot be used while fading is in       *
+*         progress.                                             *
+*                                                               *
+*   Version 0.7.0 (08.21.2012):                                 *
+*       + Re-write nearing completion                           *
+*       + Asset managers implemented                            *
+*       + Splash screen added                                   *
+*       + Replaced SDL_mixer with OpenAL                        *
 *                                                               *
 *   Version 0.6.6 (6.27.2012):                                  *
 *       + Fullscreen mode by default                            *
