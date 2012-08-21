@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Collapse: Data Fields</title>
+<title>Collapse 2200: Data Fields</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,12 +20,11 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Collapse
+   <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 4900 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 3580 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -75,11 +74,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions.html"><span>All</span></a></li>
       <li><a href="functions_func.html"><span>Functions</span></a></li>
       <li><a href="functions_vars.html"><span>Variables</span></a></li>
+      <li><a href="functions_rela.html"><span>Related&#160;Functions</span></a></li>
     </ul>
   </div>
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="functions.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_0x62.html#index_b"><span>b</span></a></li>
       <li><a href="functions_0x63.html#index_c"><span>c</span></a></li>
       <li><a href="functions_0x64.html#index_d"><span>d</span></a></li>
       <li><a href="functions_0x66.html#index_f"><span>f</span></a></li>
@@ -95,6 +96,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="functions_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="functions_0x78.html#index_x"><span>x</span></a></li>
+      <li><a href="functions_0x79.html#index_y"><span>y</span></a></li>
       <li><a href="functions_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
@@ -104,7 +109,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,60 +122,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="textblock">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field:</div>
 
 <h3><a class="anchor" id="index_o"></a>- o -</h3><ul>
-<li>Obj_Bullet()
-: <a class="el" href="classobj_1_1_obj___bullet.html#aacdbfbcf03d016e3c218d9efc444d926">obj::Obj_Bullet</a>
-</li>
-<li>Obj_Player()
-: <a class="el" href="classobj_1_1_obj___player.html#a62b4d555a23e9297e4fe1662c4ee92b8">obj::Obj_Player</a>
-</li>
-<li>Obj_Tank()
-: <a class="el" href="classobj_1_1_obj___tank.html#a1c9f8f96d4399e3e1f1b8333c269d0db">obj::Obj_Tank</a>
+<li>offset
+: <a class="el" href="struct_s_d_l___c_dtrack.html#a5c0875650889c529cefee6c2684901f5">SDL_CDtrack</a>
+, <a class="el" href="struct_s_d_l___surface.html#ab40c060fa976dbb25bebc7869132ffda">SDL_Surface</a>
 </li>
 <li>OnRay()
-: <a class="el" href="classmath_1_1_ray2.html#ab5dcc4992c2179cd788c63d6fdc82180">math::Ray2</a>
+: <a class="el" href="classmath_1_1_m_l___ray2.html#adc0d575961a26c6039cdbcaefeef7ac5">math::ML_Ray2</a>
 </li>
 <li>operator!=()
-: <a class="el" href="structmath_1_1_vector2.html#a57ab512ee16df7a6c5a4a044d06f126f">math::Vector2</a>
+: <a class="el" href="structmath_1_1_m_l___vector2.html#a60d34f6ce5f90cdaf3dde67825091cd9">math::ML_Vector2</a>
 </li>
 <li>operator*()
-: <a class="el" href="structmath_1_1_vector2.html#a5cd6e261b80796590c6eead4ba4f848a">math::Vector2</a>
-, <a class="el" href="classmath_1_1_matrix.html#a07829afd0622ba504dc8e1e4fc4a0b48">math::Matrix</a>
+: <a class="el" href="structmath_1_1_m_l___vector2.html#a3976015765087d9873486ef58836c0e3">math::ML_Vector2</a>
+, <a class="el" href="classmath_1_1_m_l___matrix.html#a41aefcb833adf6ffad646ba5baba798c">math::ML_Matrix</a>
+, <a class="el" href="structmath_1_1_m_l___vector2.html#ab6a3a924f467497eeb233a31fded312c">math::ML_Vector2</a>
 </li>
 <li>operator+()
-: <a class="el" href="classmath_1_1_matrix.html#ac6017d7ae97cb9e89b91ba1fb847865b">math::Matrix</a>
-, <a class="el" href="structmath_1_1_vector2.html#aef0fd50e294980bb42dec6d44ba69250">math::Vector2</a>
+: <a class="el" href="classmath_1_1_m_l___matrix.html#a967c7124b224a34a996ed0445846ca3f">math::ML_Matrix</a>
+, <a class="el" href="structmath_1_1_m_l___vector2.html#a233af9d1012664d7efa3fb97e4c69134">math::ML_Vector2</a>
 </li>
 <li>operator-()
-: <a class="el" href="classmath_1_1_matrix.html#a05d3efe6843be6a2f75e4dec8452d298">math::Matrix</a>
-, <a class="el" href="structmath_1_1_vector2.html#a5339fb80bf21238c3b56254a826c0511">math::Vector2</a>
+: <a class="el" href="classmath_1_1_m_l___matrix.html#ae113812c3b4a8e4de02fe9b5162ceb4a">math::ML_Matrix</a>
+, <a class="el" href="structmath_1_1_m_l___vector2.html#ab7ae896845aad03ebf8f19bebaf826ef">math::ML_Vector2</a>
 </li>
 <li>operator/()
-: <a class="el" href="structmath_1_1_vector2.html#abf30425dec61d704f16411e526969e3b">math::Vector2</a>
+: <a class="el" href="structmath_1_1_m_l___vector2.html#a27f4de30db7fcef1a68c22352a19eaee">math::ML_Vector2</a>
 </li>
 <li>operator&lt;()
-: <a class="el" href="structmath_1_1_vector2.html#a3934b645e988157134125862f44a0e72">math::Vector2</a>
+: <a class="el" href="structmath_1_1_m_l___vector2.html#afe6101be223ab37e5227e5e00961d58d">math::ML_Vector2</a>
 </li>
 <li>operator=()
-: <a class="el" href="classmath_1_1_matrix.html#aefb04f56d99d1e641490113ba5f3ccbc">math::Matrix</a>
-, <a class="el" href="structmath_1_1_vector2.html#a751f6e78c7d4dd881e0e0b1b112fb8ff">math::Vector2</a>
+: <a class="el" href="classmath_1_1_m_l___matrix.html#ac25222b0d5b0440ca45ed9cd53b1070b">math::ML_Matrix</a>
+, <a class="el" href="structmath_1_1_m_l___vector2.html#a092d743e7a08dfcb7f6ff93741fda359">math::ML_Vector2</a>
 </li>
 <li>operator==()
-: <a class="el" href="structmath_1_1_rectf.html#af6ae3e61f256a873f08a1446b42aa75c">math::Rectf</a>
-, <a class="el" href="classmath_1_1_matrix.html#adb7d27763e953cacc06e8682b217b71f">math::Matrix</a>
-, <a class="el" href="structmath_1_1_vector2.html#a998eff96e4f130495092b821a83aca89">math::Vector2</a>
-, <a class="el" href="structmath_1_1_rect.html#a0b151eb6ab3a27dec5dd56f136e29bb9">math::Rect</a>
+: <a class="el" href="structmath_1_1_m_l___rectf.html#aa73ed8276b43563a13574965704955e4">math::ML_Rectf</a>
+, <a class="el" href="structmath_1_1_m_l___vector2.html#a43ecd283b4f6f5d8f8055c8ed1c4fd89">math::ML_Vector2</a>
+, <a class="el" href="classmath_1_1_m_l___matrix.html#ab3b0160e045baf42a66bb30c378f3b95">math::ML_Matrix</a>
+, <a class="el" href="structmath_1_1_m_l___rect.html#ad35aa59bb28afb938d5a0100754a54b2">math::ML_Rect</a>
 </li>
 <li>operator&gt;()
-: <a class="el" href="structmath_1_1_vector2.html#a82f3a0f9e1a18a35912efd7749a3a23a">math::Vector2</a>
+: <a class="el" href="structmath_1_1_m_l___vector2.html#af1454092485abc44dcc7b446406c0b3c">math::ML_Vector2</a>
 </li>
 <li>OptionsMenu()
-: <a class="el" href="classgame_1_1_game___menu_manager.html#a22ef67d30ae7a9d496d6d774e5a5dc46">game::Game_MenuManager</a>
+: <a class="el" href="classgame_1_1_c_l___menu_manager.html#afc33178d11e6cfa6b498fefc839ca6de">game::CL_MenuManager</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Aug 2 2012 21:45:58 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 15:11:44 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

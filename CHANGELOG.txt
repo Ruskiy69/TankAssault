@@ -12,6 +12,7 @@
 *   Version 0.7.0 (08.21.2012):                                 *
 *       + Re-write nearing completion                           *
 *       + Asset managers implemented                            *
+*       + Logging implemented                                   *
 *       + Splash screen added                                   *
 *       + Replaced SDL_mixer with OpenAL                        *
 *                                                               *
