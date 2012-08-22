@@ -88,6 +88,7 @@ void AL_AssetManager::Update()
             g_Log.Flush();
             g_Log << "[INFO] Unloading audio file: ";
             g_Log << i->second->GetFilename() << ".\n";
+            g_Log.ShowLastLog();
             i->second->UnloadSource();
         }
     }

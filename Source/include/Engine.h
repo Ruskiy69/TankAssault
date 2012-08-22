@@ -70,7 +70,11 @@ namespace game
         
         asset::GL_Entity*       mp_Cursor;
         asset::AL_MusicPlayer   m_MusicPlayer;
+
+        // Assets used by intro/splash screens
         asset::asset_id         m_introfont_id;
+        asset::asset_id         m_introsong_id;
+        gfx::Color              m_OffBlue;
 
         game::CL_Timer          m_Timer;
         game::CL_MenuManager    m_Menus;

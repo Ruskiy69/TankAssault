@@ -4,6 +4,11 @@
  *
  * @author George Kudrayvtsev
  * @version 0.1
+ * 
+ * @todo Fix menu glitch in Release build (after splash screen)
+ * @todo Add fadeout from loading screen.
+ * @todo [MAYBE] Create a separate thread for loading while
+ *       the screen fades in/out.
  */
 
 #include "Engine.h"
@@ -20,14 +25,18 @@ using asset::g_TextureAssets;
  */
 void CL_Engine::Init()
 {
+    m_Timer.SetFrameRate(60);
+
     // Menu font.
     m_introfont_id = g_FontAssets.LoadFontFromFile(
         "Data/Fonts/GameFont.ttf", 72);
 
+    // Text color, blue-ish.
+    m_OffBlue = gfx::create_color(55, 170, 250);
+
     // Loading screen.
-    gfx::Color Color = gfx::create_color(55, 170, 250);
     asset::GL_Entity* pLoad = g_FontAssets.GetFontByID(
-        m_introfont_id)->RenderText("Loading...", Color);
+        m_introfont_id)->RenderText("Loading...", m_OffBlue);
     pLoad->Move(m_Window.GetWidth() / 2 - pLoad->GetW() / 2, 
         m_Window.GetHeight() / 2);
     g_FontAssets.GetFontByID(m_introfont_id)->Resize(32);
@@ -36,11 +45,18 @@ void CL_Engine::Init()
     pLoad->Update();
     m_Window.Update();
 
+    // Intro song.
+    m_introsong_id = g_AudioAssets.LoadAudioFromFile("Data/Sounds/Intro.ogg");
+
+    // Menu song #1.
     m_MusicPlayer.AddSongToQueue("Data/Sounds/Menu_Music1.ogg");
 
-    m_Timer.SetFrameRate(60);
-    m_Menus.Init();
+    // In-game 'aim' cursor.
+    mp_Cursor = g_TextureAssets.GetEntityByID(
+        g_TextureAssets.LoadEntityFromFile(
+        "Data/Images/Crosshairs.png"));
 
+    m_Menus.Init();
     m_state = game::e_SPLASH;
 }
 
@@ -50,10 +66,6 @@ void CL_Engine::Init()
 void CL_Engine::GameLoop()
 {
     bool first = true;
-
-    mp_Cursor = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile(
-        "Data/Images/Crosshairs.png"));
 
 #if !REGULATE_FPS
 #ifdef _WIN32
@@ -156,6 +168,8 @@ void CL_Engine::GameLoop()
                     m_Timer.DelayFPS();
                 }
 
+                m_Window.Clear();
+                continue;
 #else
                 m_state = game::e_MAINMENU;
                 m_MusicPlayer.Play();
@@ -194,6 +208,7 @@ void CL_Engine::GameLoop()
             break;
         }
 
+        g_AudioAssets.Update();
         m_Window.Update();
 
 #if REGULATE_FPS
@@ -230,12 +245,9 @@ void CL_Engine::Intro()
     asset::FL_Font* p_IntroFont = g_FontAssets.GetFontByID(m_introfont_id);
 
     // Song
-    asset::AL_Sound2D* p_IntroSong = g_AudioAssets.GetAudioByID(
-        g_AudioAssets.LoadAudioFromFile("Data/Sounds/Intro.ogg"));
-
-    // Text color, blue-ish
-    gfx::Color Color = gfx::create_color(55, 170, 250);
-
+    asset::AL_Sound2D* p_IntroSong = 
+        g_AudioAssets.GetAudioByID(m_introsong_id);
+    
     // The actual object representing each line
     std::vector<asset::GL_Entity*> linepEntities, faderpLine;
 
@@ -243,7 +255,7 @@ void CL_Engine::Intro()
     char* current_line = (char*)INTRO_STR[index];
 
     // Add the first line to fade
-    faderpLine.push_back(p_IntroFont->RenderText(current_line, Color));
+    faderpLine.push_back(p_IntroFont->RenderText(current_line, m_OffBlue));
     faderpLine[0]->Move(100.0f, h);
     
     // Fade out the main menu
@@ -289,7 +301,7 @@ void CL_Engine::Intro()
             
             linepEntities.push_back(faderpLine[0]);
             h += p_IntroFont->GetTextHeight(current_line);
-            faderpLine[0] = p_IntroFont->RenderText(current_line, Color);
+            faderpLine[0] = p_IntroFont->RenderText(current_line, m_OffBlue);
             faderpLine[0]->Move(100.0f, h);
         }
         
@@ -315,7 +327,7 @@ void CL_Engine::Intro()
 
     p_IntroFont->Resize(64);
     faderpLine[0] = p_IntroFont->RenderText(
-        "Year 2200 - 6 Days Post-Collapse", Color);
+        "Year 2200 - 6 Days Post-Collapse", m_OffBlue);
     faderpLine[0]->Move(
         m_Window.GetWidth() / 2.0f - faderpLine[0]->GetW() / 2.0f,
         200.0f);
