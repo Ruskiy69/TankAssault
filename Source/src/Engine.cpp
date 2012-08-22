@@ -20,6 +20,22 @@ using asset::g_TextureAssets;
  */
 void CL_Engine::Init()
 {
+    // Menu font.
+    m_introfont_id = g_FontAssets.LoadFontFromFile(
+        "Data/Fonts/GameFont.ttf", 72);
+
+    // Loading screen.
+    gfx::Color Color = gfx::create_color(55, 170, 250);
+    asset::GL_Entity* pLoad = g_FontAssets.GetFontByID(
+        m_introfont_id)->RenderText("Loading...", Color);
+    pLoad->Move(m_Window.GetWidth() / 2 - pLoad->GetW() / 2, 
+        m_Window.GetHeight() / 2);
+    g_FontAssets.GetFontByID(m_introfont_id)->Resize(32);
+    
+    m_Window.Clear();
+    pLoad->Update();
+    m_Window.Update();
+
     m_MusicPlayer.AddSongToQueue("Data/Sounds/Menu_Music1.ogg");
 
     m_Timer.SetFrameRate(60);
@@ -97,7 +113,7 @@ void CL_Engine::GameLoop()
             break;
 
         case game::e_OPTIONSMENU:
-            m_Menus.OptionsMenu();//m_MusicPlayer);
+            m_Menus.OptionsMenu(m_MusicPlayer);
             break;
 
         case game::e_PAUSEMENU:
@@ -163,7 +179,7 @@ void CL_Engine::GameLoop()
 
         case game::e_GAME:
             glColor4f(1, 1, 1, alpha);
-            //m_World.Update();
+            m_World.Update();
             mp_Cursor->Move(game::GetMousePosition());
             mp_Cursor->Move_Rate(-16, -16);
             mp_Cursor->Update();
@@ -200,8 +216,8 @@ void CL_Engine::Intro()
     g_Log.Flush();
     g_Log << "[INFO] Playing intro sequence.\n";
 
-    //m_MusicPlayer.PurgeQueue();
-    //m_MusicPlayer.Stop();
+    m_MusicPlayer.PurgeQueue();
+    m_MusicPlayer.Stop();
 
     // Current line, height
     u_int index = 0;
@@ -211,8 +227,7 @@ void CL_Engine::Intro()
     float rate = 0.0028f;
 
     // Font
-    asset::FL_Font* p_IntroFont = g_FontAssets.GetFontByID(
-        g_FontAssets.LoadFontFromFile("Data/Fonts/GameFont.ttf", 36));
+    asset::FL_Font* p_IntroFont = g_FontAssets.GetFontByID(m_introfont_id);
 
     // Song
     asset::AL_Sound2D* p_IntroSong = g_AudioAssets.GetAudioByID(
@@ -379,10 +394,10 @@ void CL_Engine::HandleSystemEvents()
 
         default:
             if(m_state == game::e_GAME)
-                ;//m_World.HandleEvent(Evt);
+                m_World.HandleEvent(Evt);
             break;
         }
     }
 
-    ;//m_World.HandleEvent(Evt);
+    m_World.HandleEvent(Evt);
 }

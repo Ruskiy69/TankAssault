@@ -4,6 +4,7 @@ var searchData=
   ['ray_2eh',['Ray.h',['../_ray_8h.html',1,'']]],
   ['ray2_2ecpp',['Ray2.cpp',['../_ray2_8cpp.html',1,'']]],
   ['regulate_5ffps',['REGULATE_FPS',['../group___game.html#ga3141ff951c5930021c762d335ea390df',1,'Engine.h']]],
+  ['removetile',['RemoveTile',['../classgame_1_1_c_l___map.html#a6deec579acd229d0b634e7161dc2cb06',1,'game::CL_Map']]],
   ['render',['Render',['../classasset_1_1_g_l___entity.html#aef318300fc34e777b93ec851f66c6028',1,'asset::GL_Entity']]],
   ['rendertext',['RenderText',['../classasset_1_1_f_l___font.html#ab65b6ce2a25434d6369ef9ba25c3b394',1,'asset::FL_Font']]],
   ['rendertext_5fsdl',['RenderText_SDL',['../classasset_1_1_f_l___font.html#a69b58625cc47f025489db489d4ed4889',1,'asset::FL_Font::RenderText_SDL(const char *ptext) const '],['../classasset_1_1_f_l___font.html#a18d2c02c4285263e11246de89392ed6b',1,'asset::FL_Font::RenderText_SDL(const char *ptext, const gfx::Color &amp;Text_Color) const ']]],

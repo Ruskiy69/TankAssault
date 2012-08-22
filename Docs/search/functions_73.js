@@ -1,10 +1,12 @@
 var searchData=
 [
+  ['save',['Save',['../classgame_1_1_c_l___objective_map.html#a1586127c7b0456523ac05e222fad1a24',1,'game::CL_ObjectiveMap::Save()'],['../classgame_1_1_c_l___collision_map.html#a77ff2dc2f75399a340b6eb4f02c19dce',1,'game::CL_CollisionMap::Save()'],['../classgame_1_1_c_l___terrain_map.html#a4a03f9cc905fbe4928ff4c3da93455ea',1,'game::CL_TerrainMap::Save()']]],
   ['setbackground',['SetBackground',['../classgame_1_1_c_l___menu.html#a5d953272ad1e3964f2d4acab8a321bc7',1,'game::CL_Menu']]],
   ['setdirection',['SetDirection',['../classasset_1_1_a_l___sound2_d.html#ae45626cec4c6744f5b1cfd3c72affe8b',1,'asset::AL_Sound2D']]],
   ['setfilename',['SetFilename',['../classasset_1_1_g_l___entity.html#af50d1bccadf15973b70bbcfec95ef335',1,'asset::GL_Entity']]],
   ['setframerate',['SetFrameRate',['../classgame_1_1_c_l___timer.html#a3e9be9eb7d45d7851911154a596c5e34',1,'game::CL_Timer']]],
   ['sethoversound',['SetHoverSound',['../classgame_1_1_c_l___menu.html#a6743af2892978734fe42d8ec0273bdba',1,'game::CL_Menu']]],
+  ['setpanrate',['SetPanRate',['../classgame_1_1_c_l___map.html#afe2da0dd502ff3f9d52a7b64339772ff',1,'game::CL_Map']]],
   ['setposition',['SetPosition',['../classasset_1_1_a_l___sound2_d.html#a82943044cbc8ffcc62d76d0ab5909847',1,'asset::AL_Sound2D']]],
   ['setrenderdimensions',['SetRenderDimensions',['../classasset_1_1_g_l___entity.html#afb69d572f0786d8c4595217e5fb4874e',1,'asset::GL_Entity']]],
   ['settitle',['SetTitle',['../classgame_1_1_c_l___menu.html#ae9df9f889975100d9c22e20a7c566c13',1,'game::CL_Menu']]],

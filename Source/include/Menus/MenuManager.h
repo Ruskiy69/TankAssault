@@ -17,9 +17,8 @@
 
 #include "Window.h"
 
-#include "Assets/Entity.h"
-#include "Assets/Font.h"
-#include "Assets/Sound2D.h"
+#include "Assets/AssetManagers.h"
+#include "Assets/MusicPlayer.h"
 
 #include "Menus/Menu.h"
 
@@ -38,7 +37,7 @@ namespace game
         void Init();
 
         void MainMenu();
-        void OptionsMenu();//media::MusicPlayer& Music);
+        void OptionsMenu(asset::AL_MusicPlayer& Music);
         void CreditsMenu();
         void PauseMenu();
 

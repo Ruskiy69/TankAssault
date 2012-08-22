@@ -2,6 +2,21 @@
 
 using asset::GL_AssetManager;
 
+GL_AssetManager::~GL_AssetManager()
+{
+    asset::GL_asset_iterator i;
+    for(i = mp_assetPool.begin();
+        i != mp_assetPool.end();
+        /* no third */)
+    {
+        delete i->second;
+        i = mp_assetPool.erase(i);
+    }
+
+    mp_assetPool.clear();
+    mp_allAssets.clear();
+}
+
 GL_AssetManager& GL_AssetManager::GetInstance()
 {
     static GL_AssetManager g_GLAssets;
@@ -90,8 +105,19 @@ asset::GL_Entity* GL_AssetManager::GetEntityByID(const asset::asset_id id)
         return i->second;
 }
 
-u_int GL_AssetManager::GetEntityCount() const
+u_int GL_AssetManager::GetEntityCount()// const
 {
+    printf("Calculating maximum texture #...\n");
+    GL_asset_iterator i = mp_allAssets.begin();
+    int tex_max = i->second->GetTexture();
+    for( ; i != mp_allAssets.end(); ++i)
+    {
+        if((*i).second->GetTexture() > tex_max)
+            tex_max = i->second->GetTexture();
+    }
+
+    printf("Maximum texture # is '%d'.\n", tex_max);
+
     return m_assetcount;
 }
 
@@ -105,17 +131,53 @@ bool GL_AssetManager::UnloadEntityByID(const asset::asset_id id)
     return true;
 }
 
-asset::GL_AssetManager::~GL_AssetManager()
+asset::asset_id GL_AssetManager::LoadEntityFromTexture(
+    const u_int texture, const math::ML_Rect& Dimensions)
 {
-    asset::GL_asset_iterator i;
-    for(i = mp_assetPool.begin();
-        i != mp_assetPool.end();
-        /* no third */)
+    g_Log.Flush();
+    g_Log << "[INFO] Creating texture asset from existing texture.\n";
+
+    asset::GL_asset_iterator finder;
+
+    // Figure out if the requested asset exists in the asset pool.
+    for(finder = mp_assetPool.begin();
+        finder != mp_assetPool.end();
+        ++finder)
     {
-        delete i->second;
-        i = mp_assetPool.erase(i);
+        if(finder->second->GetTexture() == texture)
+        {
+            // If it exists, make a copy, add to all assets,
+            // and return it.
+            GL_Entity* p_Tmp = new GL_Entity;
+            p_Tmp->LoadFromEntity(finder->second);
+            mp_allAssets[p_Tmp->GetID()] = p_Tmp;
+            m_assetcount++;
+            return p_Tmp->GetID();
+        }
+    }
+    
+    GL_Entity* p_ToPool = new GL_Entity;
+    if(!p_ToPool->LoadFromExistingTexture(texture, Dimensions))
+    {
+        g_Log.Flush();
+        g_Log << "[ERROR] Failed to load existing texture: ";
+        g_Log << texture << ".\n";
+        g_Log << "[ERROR] OpenGL error: " << gluGetString(glGetError());
+        g_Log << "\n[ERROR] SDL error: " << SDL_GetError() << ".\n";
+        gk::handle_error(g_Log.GetLastLog().c_str());
     }
 
-    mp_assetPool.clear();
-    mp_allAssets.clear();
+    mp_assetPool[p_ToPool->GetID()] = p_ToPool;
+
+    GL_Entity* p_ToAll = new GL_Entity;
+    if(!p_ToAll->LoadFromEntity(p_ToPool))
+    {
+        g_Log.Flush();
+        g_Log << "[ERROR] Failed to create entity from texture.\n";
+        g_Log << "[ERROR] SDL error: " << SDL_GetError() << ".\n";
+        gk::handle_error(g_Log.GetLastLog().c_str());
+    }
+    mp_allAssets[p_ToAll->GetID()] = p_ToAll;
+    m_assetcount++;
+    return p_ToAll->GetID();
 }

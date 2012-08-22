@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 3580 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 4579 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -83,6 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
+      <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
@@ -131,9 +132,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>CheckCollision()
 : <a class="el" href="classasset_1_1_g_l___entity.html#a2bd8052787ec6e94ef3e2f274b7b2251">asset::GL_Entity</a>
 , <a class="el" href="structmath_1_1_m_l___rect.html#a6ba131104c9cc3dabb45c09089e60b30">math::ML_Rect</a>
-, <a class="el" href="structmath_1_1_m_l___circle.html#a3aca8f8600822e444b2f0da14af9b2e9">math::ML_Circle</a>
 , <a class="el" href="structmath_1_1_m_l___rectf.html#ae366f3676aa39404751dc88345d7343d">math::ML_Rectf</a>
 , <a class="el" href="classmath_1_1_m_l___ray2.html#a6e03bd3ff11586da92daa5e9fc6cd0dc">math::ML_Ray2</a>
+, <a class="el" href="structmath_1_1_m_l___circle.html#a3aca8f8600822e444b2f0da14af9b2e9">math::ML_Circle</a>
+</li>
+<li>CL_CollisionMap()
+: <a class="el" href="classgame_1_1_c_l___collision_map.html#a942951d42733785750b65447eb86bd2e">game::CL_CollisionMap</a>
+</li>
+<li>CL_ObjectiveMap()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#ac84b697dfbbaef7b938821987f843989">game::CL_ObjectiveMap</a>
+</li>
+<li>CL_TerrainMap()
+: <a class="el" href="classgame_1_1_c_l___terrain_map.html#a59a0c6be0ec209df2a60a84f70c55a2b">game::CL_TerrainMap</a>
+</li>
+<li>CL_World()
+: <a class="el" href="classgame_1_1_c_l___world.html#ae13d5ab237ca9ff101a5bb0ec1afc66d">game::CL_World</a>
 </li>
 <li>Clear()
 : <a class="el" href="classgfx_1_1_g_l___window.html#a846f328e8511ff738b1889418f7f2d69">gfx::GL_Window</a>
@@ -164,6 +177,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>FadeOut()
 : <a class="el" href="classgame_1_1_c_l___menu_manager.html#aa76a9419eacff973b489a52152afa79e">game::CL_MenuManager</a>
 </li>
+<li>FindTile()
+: <a class="el" href="classgame_1_1_c_l___map.html#acc4c6a2ae0317564716b8c4484ca8c4d">game::CL_Map</a>
+</li>
 </ul>
 
 
@@ -173,6 +189,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>GetAudioState()
 : <a class="el" href="classasset_1_1_a_l___sound2_d.html#a669b012722bb0afa1c2b6a1790593055">asset::AL_Sound2D</a>
+</li>
+<li>GetAvailableEnemySpawn()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#adecbfbacc01f9df2a31467b0cef8c938">game::CL_ObjectiveMap</a>
 </li>
 <li>GetCollisionBox()
 : <a class="el" href="classasset_1_1_g_l___entity.html#a2b34ddb31a6e1c2c2c4592515045a67a">asset::GL_Entity</a>
@@ -200,6 +219,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>GetLength()
 : <a class="el" href="classmath_1_1_m_l___ray2.html#ac1fadaf2b9535cf1a96592faa9d2dd7c">math::ML_Ray2</a>
+</li>
+<li>GetNearestPOI()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#affa53963dba9ff7cc1535758f4394a14">game::CL_ObjectiveMap</a>
+</li>
+<li>GetPanRate()
+: <a class="el" href="classgame_1_1_c_l___map.html#a5dec9af739f1890c7fbc86b1b49cd8e2">game::CL_Map</a>
+</li>
+<li>GetPlayerSpawn()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#ac992c13bdfc7cc1885742cf49d7ba94a">game::CL_ObjectiveMap</a>
 </li>
 <li>GetPoints()
 : <a class="el" href="classmath_1_1_m_l___ray2.html#ac3c50f1da48d050b27136eaabe1cb017">math::ML_Ray2</a>
@@ -232,6 +260,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>GetTicks()
 : <a class="el" href="classgame_1_1_c_l___timer.html#adff9a58804006c82fe32b8c4960773a9">game::CL_Timer</a>
 </li>
+<li>GetTiles()
+: <a class="el" href="classgame_1_1_c_l___map.html#a53294615778d98d61a9a6ee5c22d0de2">game::CL_Map</a>
+</li>
 <li>GetW()
 : <a class="el" href="classasset_1_1_g_l___entity.html#a9c6f4087a82cffd138d8dfc0fd90ab47">asset::GL_Entity</a>
 </li>
@@ -245,10 +276,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classasset_1_1_g_l___entity.html#a2aab34cbed1ec1a2b696329030051ca0">asset::GL_Entity</a>
 </li>
 <li>GL_Entity()
-: <a class="el" href="classasset_1_1_g_l___entity.html#afbc30e71a3479bb519fc0f8da9bc8e99">asset::GL_Entity</a>
+: <a class="el" href="classasset_1_1_g_l___entity.html#a64db8ef61a2e7769b867db9ca2b2fedc">asset::GL_Entity</a>
 </li>
 <li>GL_Window()
 : <a class="el" href="classgfx_1_1_g_l___window.html#ae860630d92a473556638478b546b8300">gfx::GL_Window</a>
+</li>
+</ul>
+
+
+<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
+<li>HandleEvent()
+: <a class="el" href="classgame_1_1_c_l___world.html#ac751b349b16601a44225b2377d9bf39d">game::CL_World</a>
 </li>
 </ul>
 
@@ -271,6 +309,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_l"></a>- l -</h3><ul>
+<li>Load()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#aa88bfc312c0ea404dd39d1f3dea3d3a6">game::CL_ObjectiveMap</a>
+, <a class="el" href="classgame_1_1_c_l___collision_map.html#a6bbe221910d0e725086a48dbe1a4b5db">game::CL_CollisionMap</a>
+, <a class="el" href="classgame_1_1_c_l___terrain_map.html#a156be568ec7c675c1d58e38544331b9d">game::CL_TerrainMap</a>
+</li>
 <li>LoadFromEntity()
 : <a class="el" href="classasset_1_1_g_l___entity.html#a2ab5b3703ab66b88c56333b24bb794c6">asset::GL_Entity</a>
 </li>
@@ -306,6 +349,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_n"></a>- n -</h3><ul>
+<li>NextTile()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#a444a92e97f2867a73cdc05db69b40cc2">game::CL_ObjectiveMap</a>
+, <a class="el" href="classgame_1_1_c_l___terrain_map.html#a4cc26415e7c530bdff6cec980f304416">game::CL_TerrainMap</a>
+</li>
 <li>Normal()
 : <a class="el" href="structmath_1_1_m_l___vector2.html#a903a2d2b4273b6df4355634ad63daa96">math::ML_Vector2</a>
 </li>
@@ -356,12 +403,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="structmath_1_1_m_l___vector2.html#af1454092485abc44dcc7b446406c0b3c">math::ML_Vector2</a>
 </li>
 <li>OptionsMenu()
-: <a class="el" href="classgame_1_1_c_l___menu_manager.html#afc33178d11e6cfa6b498fefc839ca6de">game::CL_MenuManager</a>
+: <a class="el" href="classgame_1_1_c_l___menu_manager.html#a74db88286e2bfc47d6994125d77ab3c2">game::CL_MenuManager</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_p"></a>- p -</h3><ul>
+<li>Pan()
+: <a class="el" href="classgame_1_1_c_l___map.html#ac237b23b1808929f7f6557ddb98c9fa5">game::CL_Map</a>
+</li>
 <li>Pause()
 : <a class="el" href="classasset_1_1_a_l___music_player.html#aa11f3320a24ab6b3413f2885976533b2">asset::AL_MusicPlayer</a>
 , <a class="el" href="classasset_1_1_a_l___sound2_d.html#a1d78f8eddf58e12d16bc2693a14fb889">asset::AL_Sound2D</a>
@@ -369,14 +419,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>PauseMenu()
 : <a class="el" href="classgame_1_1_c_l___menu_manager.html#a0c1610142d00ea89f8131929ae59b221">game::CL_MenuManager</a>
 </li>
+<li>PlaceTile()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#a852d44729810c9d82a912c0b083111fb">game::CL_ObjectiveMap</a>
+, <a class="el" href="classgame_1_1_c_l___collision_map.html#aef3e2c9d4d05730e865962c9ba62a6a1">game::CL_CollisionMap</a>
+, <a class="el" href="classgame_1_1_c_l___terrain_map.html#a2b687c6039e8c28b69c6a743372270f8">game::CL_TerrainMap</a>
+</li>
 <li>Play()
 : <a class="el" href="classasset_1_1_a_l___music_player.html#ab2fb50d8ce066382c39cd567b2cf767f">asset::AL_MusicPlayer</a>
 , <a class="el" href="classasset_1_1_a_l___sound2_d.html#af9a0aee74faaa0ed0b8d733ebe0a4203">asset::AL_Sound2D</a>
 </li>
 <li>Print()
 : <a class="el" href="classmath_1_1_m_l___ray2.html#ab7682cb9d8d742b8b919f89bd3532628">math::ML_Ray2</a>
-, <a class="el" href="structmath_1_1_m_l___vector2.html#a0ac153979d214bba39574e6f54bdf360">math::ML_Vector2</a>
 , <a class="el" href="classmath_1_1_m_l___matrix.html#add45f51b6cc89bea830197e583d1843e">math::ML_Matrix</a>
+, <a class="el" href="structmath_1_1_m_l___vector2.html#a0ac153979d214bba39574e6f54bdf360">math::ML_Vector2</a>
 </li>
 <li>PurgeQueue()
 : <a class="el" href="classasset_1_1_a_l___music_player.html#ada417962988c4708c4d18cdb8b98ac3e">asset::AL_MusicPlayer</a>
@@ -385,6 +440,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_r"></a>- r -</h3><ul>
+<li>RemoveTile()
+: <a class="el" href="classgame_1_1_c_l___map.html#a6deec579acd229d0b634e7161dc2cb06">game::CL_Map</a>
+</li>
 <li>Render()
 : <a class="el" href="classasset_1_1_g_l___entity.html#aef318300fc34e777b93ec851f66c6028">asset::GL_Entity</a>
 </li>
@@ -392,20 +450,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classasset_1_1_f_l___font.html#ab65b6ce2a25434d6369ef9ba25c3b394">asset::FL_Font</a>
 </li>
 <li>RenderText_SDL()
-: <a class="el" href="classasset_1_1_f_l___font.html#a18d2c02c4285263e11246de89392ed6b">asset::FL_Font</a>
+: <a class="el" href="classasset_1_1_f_l___font.html#a69b58625cc47f025489db489d4ed4889">asset::FL_Font</a>
 </li>
 <li>Resize()
-: <a class="el" href="structmath_1_1_m_l___rect.html#a84a3190a99feb02fbe318e8588cd73b7">math::ML_Rect</a>
-, <a class="el" href="structmath_1_1_m_l___circle.html#a9256dba60b4aee8484250c1799b9e31a">math::ML_Circle</a>
-, <a class="el" href="structmath_1_1_m_l___rectf.html#a4f4bc938067aedd9c43fe9e9682217c1">math::ML_Rectf</a>
-, <a class="el" href="classasset_1_1_g_l___entity.html#a5acdce8942d0f5b5e3e1b49e5c983681">asset::GL_Entity</a>
+: <a class="el" href="structmath_1_1_m_l___circle.html#a9256dba60b4aee8484250c1799b9e31a">math::ML_Circle</a>
 , <a class="el" href="classasset_1_1_f_l___font.html#a7cb572e2535e1bf94b3f0d228d1736cf">asset::FL_Font</a>
+, <a class="el" href="structmath_1_1_m_l___rect.html#a84a3190a99feb02fbe318e8588cd73b7">math::ML_Rect</a>
+, <a class="el" href="structmath_1_1_m_l___rectf.html#a4f4bc938067aedd9c43fe9e9682217c1">math::ML_Rectf</a>
 , <a class="el" href="classasset_1_1_g_l___entity.html#a27e5c89b06bbbbc9daa3453610dd5eb9">asset::GL_Entity</a>
 </li>
 <li>Rotate()
-: <a class="el" href="structmath_1_1_m_l___vector2.html#a0ce54089b59f7bdb7bb588bf507bb5e9">math::ML_Vector2</a>
-, <a class="el" href="classasset_1_1_g_l___entity.html#a974a00be0488536ea102d86605b28f87">asset::GL_Entity</a>
+: <a class="el" href="classasset_1_1_g_l___entity.html#a974a00be0488536ea102d86605b28f87">asset::GL_Entity</a>
 , <a class="el" href="classmath_1_1_m_l___ray2.html#a29ee42906055a292e3da2a34eba79d00">math::ML_Ray2</a>
+, <a class="el" href="structmath_1_1_m_l___vector2.html#a0ce54089b59f7bdb7bb588bf507bb5e9">math::ML_Vector2</a>
 </li>
 <li>Rotate_Rate()
 : <a class="el" href="classasset_1_1_g_l___entity.html#a0cadc5719b11cad39db97d2f23973635">asset::GL_Entity</a>
@@ -414,6 +471,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
+<li>Save()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#a1586127c7b0456523ac05e222fad1a24">game::CL_ObjectiveMap</a>
+, <a class="el" href="classgame_1_1_c_l___collision_map.html#a77ff2dc2f75399a340b6eb4f02c19dce">game::CL_CollisionMap</a>
+, <a class="el" href="classgame_1_1_c_l___terrain_map.html#a4a03f9cc905fbe4928ff4c3da93455ea">game::CL_TerrainMap</a>
+</li>
 <li>SetBackground()
 : <a class="el" href="classgame_1_1_c_l___menu.html#a5d953272ad1e3964f2d4acab8a321bc7">game::CL_Menu</a>
 </li>
@@ -428,6 +490,9 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </li>
 <li>SetHoverSound()
 : <a class="el" href="classgame_1_1_c_l___menu.html#a6743af2892978734fe42d8ec0273bdba">game::CL_Menu</a>
+</li>
+<li>SetPanRate()
+: <a class="el" href="classgame_1_1_c_l___map.html#afe2da0dd502ff3f9d52a7b64339772ff">game::CL_Map</a>
 </li>
 <li>SetPosition()
 : <a class="el" href="classasset_1_1_a_l___sound2_d.html#a82943044cbc8ffcc62d76d0ab5909847">asset::AL_Sound2D</a>
@@ -445,8 +510,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classgame_1_1_c_l___timer.html#acb02f1e9513f65a60bca88e241d15412">game::CL_Timer</a>
 </li>
 <li>Stop()
-: <a class="el" href="classasset_1_1_a_l___sound2_d.html#abd7cad85419b0e3ee5def65f5d1e4e98">asset::AL_Sound2D</a>
-, <a class="el" href="classasset_1_1_a_l___music_player.html#a7acd66ebeb2ce9e6c5965a05afe39cbc">asset::AL_MusicPlayer</a>
+: <a class="el" href="classasset_1_1_a_l___music_player.html#a7acd66ebeb2ce9e6c5965a05afe39cbc">asset::AL_MusicPlayer</a>
+, <a class="el" href="classasset_1_1_a_l___sound2_d.html#abd7cad85419b0e3ee5def65f5d1e4e98">asset::AL_Sound2D</a>
 </li>
 </ul>
 
@@ -463,7 +528,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classasset_1_1_g_l___entity.html#a84369776d8b7d4163c52fd77babcaea0">asset::GL_Entity</a>
 </li>
 <li>Update()
-: <a class="el" href="classgfx_1_1_g_l___window.html#a2f7f8d22c6ef3b031885c24904a6e823">gfx::GL_Window</a>
+: <a class="el" href="classgame_1_1_c_l___world.html#a26852de355d72dd7dc4e48c9b498a906">game::CL_World</a>
+, <a class="el" href="classgame_1_1_c_l___terrain_map.html#a60e963d99292c73e8addf9ec3af2e869">game::CL_TerrainMap</a>
+, <a class="el" href="classgame_1_1_c_l___collision_map.html#af5e80e7f59d10303e5b76184df97d1d3">game::CL_CollisionMap</a>
+, <a class="el" href="classgame_1_1_c_l___objective_map.html#a1fbf6bbddbb262ebf89915c62806e789">game::CL_ObjectiveMap</a>
+, <a class="el" href="classgfx_1_1_g_l___window.html#a2f7f8d22c6ef3b031885c24904a6e823">gfx::GL_Window</a>
 , <a class="el" href="classgame_1_1_c_l___menu.html#ac782ad4635139ccd9b96f295394abe62">game::CL_Menu</a>
 , <a class="el" href="classasset_1_1_a_l___music_player.html#a782399eaf7fd78e6fd42ff34ba08c264">asset::AL_MusicPlayer</a>
 , <a class="el" href="classasset_1_1_g_l___entity.html#a25e4cd1f013144a86482c1b7c3dea34f">asset::GL_Entity</a>
@@ -475,8 +544,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>~AL_MusicPlayer()
 : <a class="el" href="classasset_1_1_a_l___music_player.html#a1977d6b60769c8c7d4f46f90aec4a3a5">asset::AL_MusicPlayer</a>
 </li>
+<li>~CL_CollisionMap()
+: <a class="el" href="classgame_1_1_c_l___collision_map.html#a991ca9f1609a748dff13cfcd2540217f">game::CL_CollisionMap</a>
+</li>
+<li>~CL_Map()
+: <a class="el" href="classgame_1_1_c_l___map.html#a510b4703455a87c379093008b4dc1389">game::CL_Map</a>
+</li>
 <li>~CL_Menu()
 : <a class="el" href="classgame_1_1_c_l___menu.html#aa0530fc335147a4ea1b607870f9ebf8e">game::CL_Menu</a>
+</li>
+<li>~CL_ObjectiveMap()
+: <a class="el" href="classgame_1_1_c_l___objective_map.html#a24643a637d908f5fc115254c4e60df21">game::CL_ObjectiveMap</a>
+</li>
+<li>~CL_TerrainMap()
+: <a class="el" href="classgame_1_1_c_l___terrain_map.html#a7893ce3c0a7616034e278305520ff0a2">game::CL_TerrainMap</a>
 </li>
 <li>~FL_Font()
 : <a class="el" href="classasset_1_1_f_l___font.html#aa8fbc2a5465315e3e42f754256d3b2f0">asset::FL_Font</a>
@@ -488,7 +569,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 15:14:10 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 18:27:58 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

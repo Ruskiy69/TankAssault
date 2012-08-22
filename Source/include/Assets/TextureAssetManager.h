@@ -33,10 +33,12 @@ namespace asset
 
         asset_id LoadEntityFromFile(const char* p_filename);
         asset_id LoadEntityFromSurface(SDL_Surface* const p_Surface);
+        asset_id LoadEntityFromTexture(const u_int texture,
+            const math::ML_Rect& Dimensions);
         bool UnloadEntityByID(const asset_id id);
 
         GL_Entity*  GetEntityByID(const asset_id id);
-        u_int       GetEntityCount() const;
+        u_int       GetEntityCount();// const;
 
         void Update();
 

@@ -109,6 +109,10 @@
     <ClInclude Include="include\Window.h" />
     <ClInclude Include="include\SystemEvents.h" />
     <ClInclude Include="include\Timer.h" />
+    <ClInclude Include="include\World\Levels\AIMap.h" />
+    <ClInclude Include="include\World\Levels\CollisionMap.h" />
+    <ClInclude Include="include\World\Levels\Map.h" />
+    <ClInclude Include="include\World\Levels\TerrainMap.h" />
     <ClInclude Include="include\World\World.h" />
   </ItemGroup>
   <ItemGroup>
@@ -137,6 +141,11 @@
     <ClCompile Include="src\Timer.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\SystemEvents.cpp" />
+    <ClCompile Include="src\World\Levels\AIMap.cpp" />
+    <ClCompile Include="src\World\Levels\CollisionMap.cpp" />
+    <ClCompile Include="src\World\Levels\Map.cpp" />
+    <ClCompile Include="src\World\Levels\TerrainMap.cpp" />
+    <ClCompile Include="src\World\World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

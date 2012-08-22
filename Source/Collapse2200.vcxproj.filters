@@ -46,6 +46,15 @@
     <Filter Include="Source Files\Menus">
       <UniqueIdentifier>{a639fb8b-c96f-4287-8d5a-c84d78640316}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\World\Levels">
+      <UniqueIdentifier>{2bfb8dcd-26ea-4c13-8a03-5e6bf40cf856}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World">
+      <UniqueIdentifier>{cefceb1a-d243-44b7-809f-cf78fe966e70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World\Levels">
+      <UniqueIdentifier>{6c6316a9-5347-488b-94b2-8eb5ed5fd8da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Errors.h">
@@ -138,6 +147,18 @@
     <ClInclude Include="include\Assets\FontAssetManager.h">
       <Filter>Header Files\Assets</Filter>
     </ClInclude>
+    <ClInclude Include="include\World\Levels\AIMap.h">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\CollisionMap.h">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\Map.h">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\TerrainMap.h">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Errors.cpp">
@@ -214,6 +235,21 @@
     </ClCompile>
     <ClCompile Include="src\Assets\FontAssetManager.cpp">
       <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\AIMap.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\CollisionMap.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\Map.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\TerrainMap.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\World.cpp">
+      <Filter>Source Files\World</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

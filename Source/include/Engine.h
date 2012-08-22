@@ -28,7 +28,7 @@
 #include "Assets/MusicPlayer.h"
 #include "Menus/MenuManager.h"
 
-//#include "Game/World/World.h"
+#include "World/World.h"
 
 namespace game
 {
@@ -57,7 +57,7 @@ namespace game
     {
     public:
         CL_Engine() : m_Window(800, 600, "Collapse", "Data/Images/tank.ico"),
-            m_Menus(m_Window, m_state) {}//, m_World(m_state) {}
+            m_Menus(m_Window, m_state), m_World(m_state) {}
 
         void Init();
         void GameLoop();
@@ -67,13 +67,14 @@ namespace game
         void HandleSystemEvents();
 
         gfx::GL_Window          m_Window;
-        asset::GL_Entity*       mp_Cursor;
         
+        asset::GL_Entity*       mp_Cursor;
         asset::AL_MusicPlayer   m_MusicPlayer;
+        asset::asset_id         m_introfont_id;
 
         game::CL_Timer          m_Timer;
         game::CL_MenuManager    m_Menus;
-        //game::CL_World          m_World;
+        game::CL_World          m_World;
 
         CL_GameState            m_state;
     };

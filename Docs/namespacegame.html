@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 3580 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 4579 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -110,6 +110,16 @@ Data Structures</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes care of any menu functions such as switching between them, registering events, or toggling settings.  <a href="classgame_1_1_c_l___menu_manager.html#details">More...</a><br/></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_l___timer.html">CL_Timer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A timer for controlling frame rates.  <a href="classgame_1_1_c_l___timer.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_l___objective_map.html">CL_ObjectiveMap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains path information for AI movement and navigation.  <a href="classgame_1_1_c_l___objective_map.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_l___collision_map.html">CL_CollisionMap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The collision tile map.  <a href="classgame_1_1_c_l___collision_map.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_l___map.html">CL_Map</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Throughout <em>Collapse</em>, there are three layers to every map.  <a href="classgame_1_1_c_l___map.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_l___terrain_map.html">CL_TerrainMap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The terrain tile map.  <a href="classgame_1_1_c_l___terrain_map.html#details">More...</a><br/></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_l___world.html">CL_World</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles a majority of the game logic and mechanics.  <a href="classgame_1_1_c_l___world.html#details">More...</a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -158,6 +168,15 @@ static <a class="el" href="classgk_1_1_logging.html">gk::Logging</a> &amp;&#160;
 static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a309f0aba016858a13937c587d3fe1512">INTRO_STR_SIZE</a> = 11</td></tr>
 <tr class="memdesc:a309f0aba016858a13937c587d3fe1512"><td class="mdescLeft">&#160;</td><td class="mdescRight">All of the lines in the intro sequence. <br/></td></tr>
 <tr class="memitem:a69ff3c35896b0fc9eaf3e09d09d9b91a"><td class="memItemLeft" align="right" valign="top">static const char *const&#160;</td><td class="memItemRight" valign="bottom"><b>INTRO_STR</b> [<a class="el" href="namespacegame.html#a309f0aba016858a13937c587d3fe1512">INTRO_STR_SIZE</a>]</td></tr>
+<tr class="memitem:a3235ce946bac3d282ef98b031b8a298a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3235ce946bac3d282ef98b031b8a298a"></a>
+static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a3235ce946bac3d282ef98b031b8a298a">OBJ_MAP_EXT</a> [] = {&quot;.cjm&quot;}</td></tr>
+<tr class="memdesc:a3235ce946bac3d282ef98b031b8a298a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extension for objective maps. <br/></td></tr>
+<tr class="memitem:a3d1ba94e654c67e86c44362142823d4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d1ba94e654c67e86c44362142823d4b"></a>
+static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a3d1ba94e654c67e86c44362142823d4b">COLLISION_MAP_EXT</a> [] = {&quot;.ccm&quot;}</td></tr>
+<tr class="memdesc:a3d1ba94e654c67e86c44362142823d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension for terrain maps (<em>Collapse</em> Collision Map) <br/></td></tr>
+<tr class="memitem:a6223ec28d66815533880004820833ebb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6223ec28d66815533880004820833ebb"></a>
+static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a6223ec28d66815533880004820833ebb">TERRAIN_MAP_EXT</a> [] = {&quot;.ctm&quot;}</td></tr>
+<tr class="memdesc:a6223ec28d66815533880004820833ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension for terrain maps (<em>Collapse</em> Terrain Map) <br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a655a947c9a4e56455cb45f06939b1a26"></a>
@@ -390,7 +409,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 15:14:10 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 21 2012 18:27:57 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

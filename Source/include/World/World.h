@@ -8,19 +8,21 @@
  * @addtogroup Game
  */
 /// @{
-/*
-#include "Math/MathHelper.h"
+
+#include "Math/Math.h"
 
 #include "CollapseDef.h"
 #include "SystemEvents.h"
 
-#include "World/CollisionMap.h"
-#include "World/TerrainMap.h"
-#include "World/AIMap.h"
+#include "Assets/AssetManagers.h"
 
-#include "Game/World/Objects/Bullet.h"
-#include "Game/World/Objects/Player.h"
-#include "Game/World/Objects/AI/Tank.h"
+#include "World/Levels/CollisionMap.h"
+#include "World/Levels/TerrainMap.h"
+#include "World/Levels/AIMap.h"
+
+//#include "World/Objects/Bullet.h"
+//#include "Game/World/Objects/Player.h"
+//#include "Game/World/Objects/AI/Tank.h"
 
 namespace game
 {
@@ -31,7 +33,7 @@ namespace game
      * rendered, and updated; AI logic is performed; events are
      * analyzed and acted upon. The primary engine state can be
      * changed from this subsystem.
-     *
+     */
     class CL_World
     {
     public:
@@ -46,20 +48,20 @@ namespace game
         void HandleEvents();
         bool SpawnEnemy();
 
-        math::Vector2           m_PlayerRate;
+        math::ML_Vector2        m_PlayerRate;
 
-        gfx::GL_Entity          m_Background;
+        asset::GL_Entity*       mp_Background;
         
-        game::Game_TerrainMap   m_TerrainMap;
-        game::Game_CollisionMap m_CollisionMap;
-        game::Game_AIMap        m_AIMap;
+        game::CL_TerrainMap     m_TerrainMap;
+        game::CL_CollisionMap   m_CollisionMap;
+        game::CL_ObjectiveMap   m_AIMap;
 
-        std::vector<obj::Obj_pBullets> mp_enemyBullets;
-        obj::Obj_pBullets       mp_playerBullets;
-        obj::Obj_Player         m_Player;
+        //std::vector<obj::Obj_pBullets> mp_enemyBullets;
+        //obj::Obj_pBullets       mp_playerBullets;
+        //obj::Obj_Player         m_Player;
 
-        game::Game_State&       m_engine_state;
+        game::CL_GameState&     m_engine_state;
     };
-}*/
+}
 
 /// @}

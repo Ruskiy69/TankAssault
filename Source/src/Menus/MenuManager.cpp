@@ -135,7 +135,7 @@ void CL_MenuManager::MainMenu()
  *
  * @see media::MusicPlayer
  */
-void CL_MenuManager::OptionsMenu()//media::MusicPlayer& Music)
+void CL_MenuManager::OptionsMenu(asset::AL_MusicPlayer& Music)
 {
     mp_ActiveMenu = &m_OptionsMenu;
 
@@ -146,7 +146,7 @@ void CL_MenuManager::OptionsMenu()//media::MusicPlayer& Music)
     else if(status == 0)
     {
         /// @todo Actually show ON/OFF on menu item
-        //Music.Pause();
+        Music.Pause();
     }
     else if(status == 1)
         m_state = game::e_MAINMENU;
