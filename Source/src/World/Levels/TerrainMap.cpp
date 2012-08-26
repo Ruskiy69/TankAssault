@@ -40,7 +40,7 @@ CL_TerrainMap::CL_TerrainMap(bool edit) : CL_Map(edit)
         m_textureNames.push_back(line);
 
         asset::GL_Entity* p_Tmp = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromFile(line.c_str()));
+            g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(line.c_str()));
         m_textures.push_back(p_Tmp);
     }
 
@@ -50,7 +50,7 @@ CL_TerrainMap::CL_TerrainMap(bool edit) : CL_Map(edit)
 
     if(edit)
         mp_CurrentTile = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromFile(m_textureNames[0].c_str()));
+            g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(m_textureNames[0].c_str()));
 
     g_Log.Flush();
     g_Log << "[DEBUG] CL_TerrainMap::CL_TerrainMap() called.\n";
@@ -222,7 +222,7 @@ void CL_TerrainMap::NextTile()
     g_Log << m_textureNames[index] << ".\n";
 
     mp_CurrentTile = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile(m_textureNames[index].c_str()));
+        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(m_textureNames[index].c_str()));
 }
 
 /**
@@ -246,7 +246,7 @@ void CL_TerrainMap::PlaceTile(int x, int y)
         if(p_Tile == NULL)
         {
             p_Tile = g_TextureAssets.GetEntityByID(
-                g_TextureAssets.LoadEntityFromFile(
+                g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
                 mp_CurrentTile->GetFilename().c_str()));
             p_Tile->Move(x, y);
             mp_allTiles.push_back(p_Tile);
@@ -257,7 +257,7 @@ void CL_TerrainMap::PlaceTile(int x, int y)
                 return;
 
             p_Tile = g_TextureAssets.GetEntityByID(
-                g_TextureAssets.LoadEntityFromFile(
+                g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
                 mp_CurrentTile->GetFilename().c_str()));
         }
     }
@@ -267,7 +267,7 @@ void CL_TerrainMap::PlaceTile(int x, int y)
                 return;
 
         p_Tile = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromFile(
+            g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
             mp_CurrentTile->GetFilename().c_str()));
     }
 }

@@ -17,11 +17,14 @@ using asset::g_FontAssets;
 
 /**
  * Initialize all of the internal components.
- *
- * @param Game_State& The current engine state
+ * @param CL_State& The current engine state
  */
 CL_World::CL_World(game::CL_GameState& Engine_State) : 
     m_engine_state(Engine_State)
+#ifdef _DEBUG
+        , m_CollisionMap(true), m_TerrainMap(true),
+        m_ObjectiveMap(true)
+#endif // _DEBUG
 {
     g_Log.Flush();
     g_Log << "[INFO] Loading first level.\n";
@@ -29,7 +32,7 @@ CL_World::CL_World(game::CL_GameState& Engine_State) :
     // Load first level
     if(!m_TerrainMap.Load("Data/Levels/Level1.ctm") ||
         !m_CollisionMap.Load("Data/Levels/Level1.ccm") ||
-        !m_AIMap.Load("Data/Levels/Level1.cam"))
+        !m_ObjectiveMap.Load("Data/Levels/Level1.cam"))
     {
         gk::handle_error("Failed to load level 1!");
     }
@@ -39,26 +42,26 @@ CL_World::CL_World(game::CL_GameState& Engine_State) :
 
     m_TerrainMap.SetPanRate(3);
     m_CollisionMap.SetPanRate(3);
-    m_AIMap.SetPanRate(3);
+    m_ObjectiveMap.SetPanRate(3);
 
     // Load game background
     mp_Background = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile("Data/Images/Background.png"));
+        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>("Data/Images/Background.png"));
 
     // Spawn enemies at all available spawns.
     while(this->SpawnEnemy());
 
     // Set player spawn location.
-    //m_Player.SetSpawn(m_AIMap.GetPlayerSpawn()->GetPosition());
+    m_Player.SetSpawn(m_ObjectiveMap.GetPlayerSpawn()->GetPosition());
 }
 
 CL_World::~CL_World()
 {
     g_Log.Flush();
     g_Log << "[DEBUG] Destroying CL_World instance.\n";
-    /*
+
     for(obj::Obj_pBullets::iterator i = mp_playerBullets.begin(); 
-        i != mp_playerBullets.end(); /* no third *)
+        i != mp_playerBullets.end(); /* no third */)
     {
         delete (*i);
         i = mp_playerBullets.erase(i);
@@ -69,7 +72,7 @@ CL_World::~CL_World()
     for(size_t i = 0; i < mp_enemyBullets.size(); i++)
     {
         for(obj::Obj_pBullets::iterator j = mp_enemyBullets[i].begin(); 
-            j != mp_enemyBullets[i].end(); /* no third *)
+            j != mp_enemyBullets[i].end(); /* no third */)
         {
             delete (*j);
             j = mp_enemyBullets[i].erase(j);
@@ -79,13 +82,13 @@ CL_World::~CL_World()
     }
 
     for(ai::AI_Enemies::iterator i = ai::AI_Enemy::p_allEnemies.begin(); 
-        i != ai::AI_Enemy::p_allEnemies.end(); /* no third *)
+        i != ai::AI_Enemy::p_allEnemies.end(); /* no third */)
     {
         i = ai::AI_Enemy::p_allEnemies.erase(i);
     }
 
     ai::AI_Enemy::p_allEnemies.clear();
-    mp_enemyBullets.clear();*/
+    mp_enemyBullets.clear();
     m_engine_state = game::e_QUIT;
 }
 
@@ -116,7 +119,7 @@ void CL_World::HandleEvent(SDL_Event& Evt)
         g_Log.Flush();
         g_Log << "[DEBUG] CL_World received a key-down event.\n";
         g_Log << "[DEBUG] Event ID: " << Evt.key.keysym.sym << ".\n";
-        /*
+
         switch(Evt.key.keysym.sym)
         {
         case SDLK_w:
@@ -164,7 +167,7 @@ void CL_World::HandleEvent(SDL_Event& Evt)
             angle = 0;
             break;
         }
-        break;*/
+        break;
     }
     m_PlayerRate.Move(speed, angle);
 }
@@ -175,14 +178,13 @@ void CL_World::HandleEvent(SDL_Event& Evt)
 void CL_World::Update()
 {
     // Player logic
-    /*
     m_Player.Drive(m_PlayerRate.x);
     m_Player.Turn(m_PlayerRate.y);
 
     // Pan maps based on player position
     m_TerrainMap.Pan(m_Player.GetTankPosition());
     m_CollisionMap.Pan(m_Player.GetTankPosition());
-    m_AIMap.Pan(m_Player.GetTankPosition());
+    m_ObjectiveMap.Pan(m_Player.GetTankPosition());
 
     // Listener is player position.
     alListener3f(AL_POSITION,
@@ -197,18 +199,17 @@ void CL_World::Update()
         i != ai::AI_Enemy::p_allEnemies.end(); ++i)
     {
         (*i)->Adjust(m_TerrainMap.GetPanRate());
-    }*/
+    }
 
     // Render everything
     mp_Background->Update();
     m_TerrainMap.Update(false);
     m_CollisionMap.Update(false);
-    m_AIMap.Update(false);
-    //m_Player.Update();
+    m_ObjectiveMap.Update(false);
+    m_Player.Update();
     
     // Update all of the enemies, rendering them and shooting if
     // the returned state specifies it.
-    /*
     for(ai::AI_Enemies::iterator i = ai::AI_Enemy::p_allEnemies.begin();
         i != ai::AI_Enemy::p_allEnemies.end(); ++i)
     {
@@ -217,12 +218,13 @@ void CL_World::Update()
         /// @todo Add a GetBarrelPosition() to the enemy base class.
         if(state & ai::e_FIRING_SECONDARY)
         {
-            math::Vector2 Aim_Vec = (*i)->GetPosition() - 
+            math::ML_Vector2 Aim_Vec = (*i)->GetPosition() - 
                 m_Player.GetTankPosition();
-            obj::Obj_Bullet* pBullet = new obj::Obj_Bullet(
-                (*i)->GetPosition());
-
-            pBullet->LoadFromFile("Data/Images/Player_Shot2.png");
+            obj::Obj_Bullet* pBullet = (obj::Obj_Bullet*)
+                g_TextureAssets.GetEntityByID(
+                g_TextureAssets.LoadEntityFromFile<obj::Obj_Bullet>(
+                "Data/Images/Player_Shot2.png"));
+            pBullet->SetStartPosition((*i)->GetPosition());
             pBullet->SetDamage(10);
             pBullet->Fire(m_Player.GetTankPosition());
             pBullet->Rotate(
@@ -231,19 +233,20 @@ void CL_World::Update()
         }
         else if(state & ai::e_FIRING_PRIMARY)
         {
-            math::Vector2 Aim_Vec = (*i)->GetPosition() - 
+            math::ML_Vector2 Aim_Vec = (*i)->GetPosition() - 
                 m_Player.GetTankPosition();
-            obj::Obj_Bullet* pBullet = new obj::Obj_Bullet(
-                (*i)->GetPosition());
-
-            pBullet->LoadFromFile("Data/Images/Player_Shot.png");
+            obj::Obj_Bullet* pBullet = (obj::Obj_Bullet*)
+                g_TextureAssets.GetEntityByID(
+                g_TextureAssets.LoadEntityFromFile<obj::Obj_Bullet>(
+                "Data/Images/Player_Shot.png"));
+            pBullet->SetStartPosition((*i)->GetPosition());
             pBullet->SetDamage(45);
             pBullet->Fire(m_Player.GetTankPosition());
             pBullet->Rotate(
                 math::deg(atan2(Aim_Vec.x, Aim_Vec.y)) + 90);
             mp_enemyBullets[(*i)->GetID()].push_back(pBullet);
         }
-    }*/
+    }
 
     // World logic
     this->HandleEvents();
@@ -255,7 +258,6 @@ void CL_World::Update()
  */
 void CL_World::HandleCollisions()
 {
-    /*
     // Check to see if the player can move to where they 
     // want to move to.
     if(m_CollisionMap.FindTile(m_Player.GetCollisionBox()) != NULL)
@@ -271,9 +273,9 @@ void CL_World::HandleCollisions()
     // colliding with something, change the entity to a spark for one
     // frame, and delete it.
     for(obj::Obj_pBullets::iterator i = mp_playerBullets.begin();
-        i != mp_playerBullets.end(); /* no third *)
+        i != mp_playerBullets.end(); /* no third */)
     {
-        gfx::GL_Entity* pCurrent_Tile = m_CollisionMap.FindTile(
+        asset::GL_Entity* pCurrent_Tile = m_CollisionMap.FindTile(
             (*i)->GetPosition());
 
         if((*i)->IsOffscreen(800, 600))
@@ -281,7 +283,11 @@ void CL_World::HandleCollisions()
 
         else if(pCurrent_Tile != NULL)
         {
-            (*i)->LoadFromFile("Data/Images/Spark.png");
+            math::ML_Vector2 Pos = (*i)->GetPosition();
+            (*i) = (obj::Obj_Bullet*)g_TextureAssets.GetEntityByID(
+                g_TextureAssets.LoadEntityFromFile<obj::Obj_Bullet>(
+                "Data/Images/Spark.png"));
+            (*i)->Move(Pos);
             (*i)->Update();
             m_CollisionMap.RemoveTile(pCurrent_Tile);
             i = mp_playerBullets.erase(i);
@@ -289,7 +295,7 @@ void CL_World::HandleCollisions()
         else
         {
             for(ai::AI_Enemies::iterator j = ai::AI_Enemy::p_allEnemies.begin();
-                j != ai::AI_Enemy::p_allEnemies.end(); /* no third *)
+                j != ai::AI_Enemy::p_allEnemies.end(); /* no third */)
             {
                 if((*i)->CheckCollision(*(*j)->GetMainEntity()))
                     j = ai::AI_Enemy::p_allEnemies.erase(j);
@@ -309,9 +315,9 @@ void CL_World::HandleCollisions()
     for(size_t i = 0; i < mp_enemyBullets.size(); i++)
     {
         for(obj::Obj_pBullets::iterator j = mp_enemyBullets[i].begin();
-            j != mp_enemyBullets[i].end(); /* no third *)
+            j != mp_enemyBullets[i].end(); /* no third */)
         {
-            gfx::GL_Entity* pCurrent_Tile = m_CollisionMap.FindTile(
+            asset::GL_Entity* pCurrent_Tile = m_CollisionMap.FindTile(
                 (*j)->GetPosition());
 
             if((*j)->IsOffscreen(800, 600))
@@ -319,7 +325,11 @@ void CL_World::HandleCollisions()
 
             else if(pCurrent_Tile != NULL)
             {
-                (*j)->LoadFromFile("Data/Images/Spark.png");
+                math::ML_Vector2 Pos = (*j)->GetPosition();
+                (*j) = (obj::Obj_Bullet*)g_TextureAssets.GetEntityByID(
+                    g_TextureAssets.LoadEntityFromFile<obj::Obj_Bullet>(
+                    "Data/Images/Spark.png"));
+                (*j)->Move(Pos);
                 (*j)->Update();
                 m_CollisionMap.RemoveTile(pCurrent_Tile);
                 j = mp_enemyBullets[i].erase(j);
@@ -330,7 +340,7 @@ void CL_World::HandleCollisions()
                 ++j;
             }
         }
-    }*/
+    }
 }
 
 /**
@@ -339,9 +349,8 @@ void CL_World::HandleCollisions()
  */
 void CL_World::HandleEvents()
 {
-    /*
-    const math::Vector2 Mouse = game::GetMousePosition();
-    const math::Vector2 Aim_Vec = m_Player.GetTankPosition() - Mouse;
+    const math::ML_Vector2 Mouse = game::GetMousePosition();
+    const math::ML_Vector2 Aim_Vec = m_Player.GetTankPosition() - Mouse;
 
     m_Player.Aim(Mouse);
 
@@ -349,9 +358,12 @@ void CL_World::HandleEvents()
     {
         if(m_Player.FirePrimary())
         {
-            obj::Obj_Bullet* pBullet = new obj::Obj_Bullet(
-                m_Player.GetBarrelPosition());
-            pBullet->LoadFromFile("Data/Images/Player_Shot.png");
+            obj::Obj_Bullet* pBullet = (obj::Obj_Bullet*)
+                g_TextureAssets.GetEntityByID(
+                g_TextureAssets.LoadEntityFromFile<obj::Obj_Bullet>(
+                "Data/Images/Player_Shot2.png"));
+            pBullet->SetStartPosition(m_Player.GetBarrelPosition());
+
             pBullet->SetDamage(75);
             pBullet->Fire(Mouse);
             pBullet->Rotate(math::deg(
@@ -363,16 +375,20 @@ void CL_World::HandleEvents()
     {
         if(m_Player.FireSecondary())
         {
-            obj::Obj_Bullet* pBullet = new obj::Obj_Bullet(
-                m_Player.GetBarrelPosition());
-            pBullet->LoadFromFile("Data/Images/Player_Shot2.png");
+            /// @bug Fat memory leak
+            obj::Obj_Bullet* pBullet = (obj::Obj_Bullet*)
+                g_TextureAssets.GetEntityByID(
+                g_TextureAssets.LoadEntityFromFile<obj::Obj_Bullet>(
+                "Data/Images/Player_Shot2.png"));
+            pBullet->SetStartPosition(m_Player.GetBarrelPosition());
+
             pBullet->SetDamage(10);
             pBullet->Fire(Mouse);
             pBullet->Rotate(math::deg(
                 atan2(Aim_Vec.x, Aim_Vec.y)) + 90);
             mp_playerBullets.push_back(pBullet);
         }
-    }*/
+    }
 }
 
 /**
@@ -382,34 +398,33 @@ void CL_World::HandleEvents()
  */
 bool CL_World::SpawnEnemy()
 {
-    /*
-    std::vector<gfx::GL_Entity*> p_allObjs;
+    std::vector<asset::GL_Entity*> p_allObjs;
 
     for(ai::AI_Enemies::iterator i = ai::AI_Enemy::p_allEnemies.begin();
         i != ai::AI_Enemy::p_allEnemies.end(); ++i)
     {
-        p_allObjs.push_back((gfx::GL_Entity*)(*i)->GetMainEntity());
+        p_allObjs.push_back((asset::GL_Entity*)(*i)->GetMainEntity());
     }
 
     ai::AI_Enemy* p_Enemy = new ai::AI_Tank(m_TerrainMap, 
-        m_CollisionMap, m_AIMap, m_Player);
+        m_CollisionMap, m_ObjectiveMap, m_Player);
 
-    gfx::GL_Entity* p_Spawn = m_AIMap.GetAvailableEnemySpawn(p_allObjs);
+    asset::GL_Entity* p_Spawn = m_ObjectiveMap.GetAvailableEnemySpawn(p_allObjs);
     if(p_Spawn == NULL)
         return false;
 
-    gfx::GL_Entity* p_Dest = m_AIMap.GetNearestPOI(p_Spawn->GetPosition());
+    asset::GL_Entity* p_Dest = m_ObjectiveMap.GetNearestPOI(p_Spawn->GetPosition());
     if(p_Dest == NULL)
         return false;
 
     p_Enemy->Spawn(p_Spawn->GetPosition());
     p_Enemy->SetDestination(p_Dest->GetPosition() + 
-        math::Vector2(1.0f, 1.0f));
+        math::ML_Vector2(1.0f, 1.0f));
 
     obj::Obj_pBullets p_enemyBullets;
     p_enemyBullets.clear();
     p_allObjs.clear();
     mp_enemyBullets.push_back(p_enemyBullets);
-    */
-    return false;//true;
+
+    return true;
 }

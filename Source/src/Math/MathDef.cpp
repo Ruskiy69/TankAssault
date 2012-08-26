@@ -10,9 +10,7 @@
 
 /**
  * Converts a number from degrees to radians.
- *
  * @param float The number in degrees.
- *
  * @return The number in radians.
  */
 float math::rad(const float x)
@@ -22,9 +20,7 @@ float math::rad(const float x)
 
 /**
  * Converts a number from radians to degrees.
- *
  * @param float The number in radians.
- *
  * @return The number in degrees.
  */
 float math::deg(const float x)

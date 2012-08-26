@@ -109,10 +109,16 @@
     <ClInclude Include="include\Window.h" />
     <ClInclude Include="include\SystemEvents.h" />
     <ClInclude Include="include\Timer.h" />
+    <ClInclude Include="include\World\AI\BaseEnemy.h" />
+    <ClInclude Include="include\World\AI\Pathfinder.h" />
+    <ClInclude Include="include\World\AI\Tank.h" />
     <ClInclude Include="include\World\Levels\AIMap.h" />
     <ClInclude Include="include\World\Levels\CollisionMap.h" />
     <ClInclude Include="include\World\Levels\Map.h" />
     <ClInclude Include="include\World\Levels\TerrainMap.h" />
+    <ClInclude Include="include\World\Objects\BaseTank.h" />
+    <ClInclude Include="include\World\Objects\Bullet.h" />
+    <ClInclude Include="include\World\Objects\Player.h" />
     <ClInclude Include="include\World\World.h" />
   </ItemGroup>
   <ItemGroup>
@@ -141,10 +147,16 @@
     <ClCompile Include="src\Timer.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\SystemEvents.cpp" />
+    <ClCompile Include="src\World\AI\BaseEnemy.cpp" />
+    <ClCompile Include="src\World\AI\Pathfinder.cpp" />
+    <ClCompile Include="src\World\AI\Tank.cpp" />
     <ClCompile Include="src\World\Levels\AIMap.cpp" />
     <ClCompile Include="src\World\Levels\CollisionMap.cpp" />
     <ClCompile Include="src\World\Levels\Map.cpp" />
     <ClCompile Include="src\World\Levels\TerrainMap.cpp" />
+    <ClCompile Include="src\World\Objects\BaseTank.cpp" />
+    <ClCompile Include="src\World\Objects\Bullet.cpp" />
+    <ClCompile Include="src\World\Objects\Player.cpp" />
     <ClCompile Include="src\World\World.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

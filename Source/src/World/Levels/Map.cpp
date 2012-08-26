@@ -34,7 +34,7 @@ CL_Map::~CL_Map()
 }
 
 /**
- * @overload CL_Map::FindTile(const math::Vector2& Pos)
+ * @overload CL_Map::FindTile(const math::ML_Vector2& Pos)
  *
  * @param int X-coordinate
  * @param int Y-coordinate
@@ -47,7 +47,7 @@ asset::GL_Entity* CL_Map::FindTile(const int x, const int y) const
 /**
  * Finds a tile in the list of tiles that's located in the given position.
  *
- * @param math::Vector2& Position to find tile in.
+ * @param math::ML_Vector2& Position to find tile in.
  *
  * @return Tile that collides with area given, NULL otherwise.
  */
@@ -61,7 +61,7 @@ asset::GL_Entity* CL_Map::FindTile(const math::ML_Vector2& Pos) const
 }
 
 /**
- * @overload CL_Map::FindTile(const math::Vector2& Pos)
+ * @overload CL_Map::FindTile(const math::ML_Vector2& Pos)
  *
  * @param math::Rect& Area to find tile in.
  */
@@ -98,7 +98,7 @@ void CL_Map::RemoveTile(int x, int y)
 /**
  * @overload CL_Map::RemoveTile(const int x, const int y);
  *
- * @param math::Vector2& Position to remove tile from, if it exists
+ * @param math::ML_Vector2& Position to remove tile from, if it exists
  */
 void CL_Map::RemoveTile(const math::ML_Vector2& Pos)
 {
@@ -135,7 +135,7 @@ void CL_Map::RemoveTile(const asset::GL_Entity* pTile)
  * Pans the map in the proper direction if the given position
  * is within 100 pixels of the screen boundaries.
  *
- * @param math::Vector2& Position
+ * @param math::ML_Vector2& Position
  *
  * @return TRUE if panning was done, FALSE otherwise.
  */

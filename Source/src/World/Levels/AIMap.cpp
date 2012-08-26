@@ -309,7 +309,7 @@ void CL_ObjectiveMap::Update(bool show_active)
  *  Given a location, finds the nearest point of interest that is at
  *  least 64px away from the position.
  *
- * @param math::Vector2& Position
+ * @param math::ML_Vector2& Position
  *
  * @return NULL if no position found, the point-of-interest tile otherwise.
  */

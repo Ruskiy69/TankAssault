@@ -55,6 +55,18 @@
     <Filter Include="Source Files\World\Levels">
       <UniqueIdentifier>{6c6316a9-5347-488b-94b2-8eb5ed5fd8da}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\World\Objects">
+      <UniqueIdentifier>{f1a197d6-1d5f-48fe-8638-0967104d65cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World\AI">
+      <UniqueIdentifier>{8292bace-f52f-4aac-b75a-f3b82fa5bcd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World\Objects">
+      <UniqueIdentifier>{3bad4cc1-35e7-4df9-9772-d29034afda90}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World\AI">
+      <UniqueIdentifier>{3ed60aea-6399-4f88-af5a-e25362f29911}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\Errors.h">
@@ -159,6 +171,24 @@
     <ClInclude Include="include\World\Levels\TerrainMap.h">
       <Filter>Header Files\World\Levels</Filter>
     </ClInclude>
+    <ClInclude Include="include\World\Objects\BaseTank.h">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Bullet.h">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Player.h">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\AI\BaseEnemy.h">
+      <Filter>Header Files\World\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\AI\Pathfinder.h">
+      <Filter>Header Files\World\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\AI\Tank.h">
+      <Filter>Header Files\World\AI</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Errors.cpp">
@@ -250,6 +280,24 @@
     </ClCompile>
     <ClCompile Include="src\World\World.cpp">
       <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\AI\BaseEnemy.cpp">
+      <Filter>Source Files\World\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\AI\Pathfinder.cpp">
+      <Filter>Source Files\World\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\AI\Tank.cpp">
+      <Filter>Source Files\World\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\BaseTank.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\Bullet.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\Player.cpp">
+      <Filter>Source Files\World\Objects</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

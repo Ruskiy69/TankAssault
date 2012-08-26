@@ -53,7 +53,7 @@ void CL_Engine::Init()
 
     // In-game 'aim' cursor.
     mp_Cursor = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile(
+        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
         "Data/Images/Crosshairs.png"));
 
     m_Menus.Init();
@@ -137,7 +137,7 @@ void CL_Engine::GameLoop()
                 // Show the splash logo but not in debug builds.
 #ifndef _DEBUG
                 asset::GL_Entity* p_Fader = g_TextureAssets.GetEntityByID(
-                    g_TextureAssets.LoadEntityFromFile(
+                    g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
                     "Data/Images/Splash.png"));
 
                 while(m_state == game::e_SPLASH)

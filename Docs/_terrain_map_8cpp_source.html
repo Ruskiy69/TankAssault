@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 4585 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 5868 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,7 +117,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        m_textureNames.push_back(line);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>* p_Tmp = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile(line.c_str()));</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(line.c_str()));</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        m_textures.push_back(p_Tmp);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
@@ -127,7 +127,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordflow">if</span>(edit)</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        mp_CurrentTile = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile(m_textureNames[0].c_str()));</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;            <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(m_textureNames[0].c_str()));</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a>.Flush();</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a> &lt;&lt; <span class="stringliteral">&quot;[DEBUG] CL_TerrainMap::CL_TerrainMap() called.\n&quot;</span>;</div>
@@ -277,7 +277,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;    <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a> &lt;&lt; m_textureNames[index] &lt;&lt; <span class="stringliteral">&quot;.\n&quot;</span>;</div>
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    mp_CurrentTile = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile(m_textureNames[index].c_str()));</div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;        <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(m_textureNames[index].c_str()));</div>
 <div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;}</div>
 <div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;</div>
 <div class="line"><a name="l00234"></a><span class="lineno"><a class="code" href="classgame_1_1_c_l___terrain_map.html#a2b687c6039e8c28b69c6a743372270f8">  234</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_l___terrain_map.html#a2b687c6039e8c28b69c6a743372270f8" title="Places a tile on the map.">CL_TerrainMap::PlaceTile</a>(<span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y)</div>
@@ -295,7 +295,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;        <span class="keywordflow">if</span>(p_Tile == NULL)</div>
 <div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;        {</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;            p_Tile = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile(</div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;                <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;                mp_CurrentTile-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#a0f3fa0d6e3618d4add7f8a2efe237c1a" title="Retrieves the filename, if the entity was loaded from a file.">GetFilename</a>().c_str()));</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;            p_Tile-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(x, y);</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;            mp_allTiles.push_back(p_Tile);</div>
@@ -306,7 +306,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;</div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;            p_Tile = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile(</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;                <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;                mp_CurrentTile-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#a0f3fa0d6e3618d4add7f8a2efe237c1a" title="Retrieves the filename, if the entity was loaded from a file.">GetFilename</a>().c_str()));</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;        }</div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    }</div>
@@ -316,7 +316,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;                <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;        p_Tile = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile(</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;            <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(</div>
 <div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;            mp_CurrentTile-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#a0f3fa0d6e3618d4add7f8a2efe237c1a" title="Retrieves the filename, if the entity was loaded from a file.">GetFilename</a>().c_str()));</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    }</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;}</div>
@@ -358,7 +358,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 21 2012 18:53:21 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sun Aug 26 2012 11:22:47 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

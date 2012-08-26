@@ -9,6 +9,9 @@
 #include "Menus/MenuManager.h"
 
 using game::CL_MenuManager;
+using asset::g_TextureAssets;
+using asset::g_FontAssets;
+using asset::g_AudioAssets;
 
 /**
  * Initializes all menus and loads their respective files. Also loads fonts,
@@ -24,12 +27,12 @@ void CL_MenuManager::Init()
     g_Log.Flush();
     g_Log << "[INFO] Loading menu images.\n";
 
-    mp_MainMenuBackground = asset::g_TextureAssets.GetEntityByID(
-        asset::g_TextureAssets.LoadEntityFromFile(
+    mp_MainMenuBackground = g_TextureAssets.GetEntityByID(
+        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
         "Data/Images/Menu/Menu_BG.png"));
 
-    mp_PauseMenuBackground = asset::g_TextureAssets.GetEntityByID(
-        asset::g_TextureAssets.LoadEntityFromFile(
+    mp_PauseMenuBackground = g_TextureAssets.GetEntityByID(
+        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
         "Data/Images/Background.png"));
 
     mp_MenuFont = asset::g_FontAssets.GetFontByID(

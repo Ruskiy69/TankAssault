@@ -20,9 +20,9 @@
 #include "World/Levels/TerrainMap.h"
 #include "World/Levels/AIMap.h"
 
-//#include "World/Objects/Bullet.h"
-//#include "Game/World/Objects/Player.h"
-//#include "Game/World/Objects/AI/Tank.h"
+#include "World/Objects/Bullet.h"
+#include "World/Objects/Player.h"
+#include "World/AI/Tank.h"
 
 namespace game
 {
@@ -54,11 +54,11 @@ namespace game
         
         game::CL_TerrainMap     m_TerrainMap;
         game::CL_CollisionMap   m_CollisionMap;
-        game::CL_ObjectiveMap   m_AIMap;
+        game::CL_ObjectiveMap   m_ObjectiveMap;
 
-        //std::vector<obj::Obj_pBullets> mp_enemyBullets;
-        //obj::Obj_pBullets       mp_playerBullets;
-        //obj::Obj_Player         m_Player;
+        std::vector<obj::Obj_pBullets> mp_enemyBullets;
+        obj::Obj_pBullets       mp_playerBullets;
+        obj::Obj_Player         m_Player;
 
         game::CL_GameState&     m_engine_state;
     };

@@ -2,7 +2,7 @@
 *                                                               *
 * Created By    : George Kudrayvtsev                            *
 * Platform      : Windows                                       *
-* Version       : 0.7.0 Alpha                                   *
+* Version       : 0.7.1 Alpha                                   *
 * Last Updated  : 08.21.2012                                    *
 *                                                               *
 * Dependencies:                                                 *

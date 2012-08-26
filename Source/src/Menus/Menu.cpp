@@ -73,9 +73,9 @@ int CL_Menu::AddMenuItem(const math::ML_Vector2& Position,
     MenuItem* pTmp = new MenuItem;
     
     pTmp->p_Normal  = asset::g_TextureAssets.GetEntityByID(
-        asset::g_TextureAssets.LoadEntityFromFile(pnormal));
+        asset::g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(pnormal));
     pTmp->p_High    = asset::g_TextureAssets.GetEntityByID(
-        asset::g_TextureAssets.LoadEntityFromFile(phighlighted));
+        asset::g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(phighlighted));
 
     pTmp->p_Normal->Move(Position);
     pTmp->p_High->Move(Position);
