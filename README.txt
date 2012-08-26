@@ -2,12 +2,12 @@
 *                                                               *
 * Created By    : George Kudrayvtsev                            *
 * Platform      : Windows                                       *
-* Version       : 0.7.2 Alpha                                   *
+* Version       : 0.7.3 Alpha                                   *
 * Last Updated  : 08.26.2012                                    *
 *                                                               *
 * Dependencies:                                                 *
 *   - SDL, SDL_image, SDL_ttf                                   *
-*   - OpenGL                                                    *
+*   - OpenGL, GLEW                                              *
 *   - OpenAL                                                    *
 *   - libvorbis                                                 *
 *   - libogg                                                    *

@@ -1,7 +1,7 @@
 ************************** COLLAPSE *****************************
 *                                                               *
-* Current Version: 0.1.0 Alpha                                  *
-* Last Updated   : 08.21.2012                                   *
+* Current Version: 0.7.3 Alpha                                  *
+* Last Updated   : 08.26.2012                                   *
 *                                                               *
 *   KNOWN BUGS:                                                 *
 *       - After quitting, the game seg-faults due to an unknown *
@@ -11,6 +11,10 @@
 *       - The main menu renders right after the splash screen   *
 *         a single time before actually fading in properly.     *
 *                                                               *
+*   Version 0.7.3 (08.26.2012):                                 *
+*       + Implemented shaders                                   *
+*       + GLEW initialized to use latest OpenGL functions       *
+*       
 *   Version 0.7.2 (08.26.2012):                                 *
 *       + Added maps                                            *
 *       + Added AI, enemies                                     *
