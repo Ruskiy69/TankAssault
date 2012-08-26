@@ -11,6 +11,13 @@
 *       - The main menu renders right after the splash screen   *
 *         a single time before actually fading in properly.     *
 *                                                               *
+*   Version 0.7.2 (08.26.2012):                                 *
+*       + Added maps                                            *
+*       + Added AI, enemies                                     *
+*       + Added player, firing                                  *
+*       + Essentially, the re-wrote v3 has reached pre-rewrite  *
+*         state.                                                *
+*                                                               *
 *   Version 0.7.1 (08.21.2012):                                 *
 *       + Added a loading screen                                *
 *       + OpenAL source-freeing bug fixed                       *

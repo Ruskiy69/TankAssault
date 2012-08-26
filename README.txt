@@ -2,8 +2,8 @@
 *                                                               *
 * Created By    : George Kudrayvtsev                            *
 * Platform      : Windows                                       *
-* Version       : 0.7.1 Alpha                                   *
-* Last Updated  : 08.21.2012                                    *
+* Version       : 0.7.2 Alpha                                   *
+* Last Updated  : 08.26.2012                                    *
 *                                                               *
 * Dependencies:                                                 *
 *   - SDL, SDL_image, SDL_ttf                                   *
@@ -21,6 +21,5 @@
 *   You play as Sgt. Maksimov, the last survivor of the         *
 *   Eurasian Guerilla Army. Take command of his tank and        *
 *   complete his final mission: free the Earth of the Mechs.    *
-*                                                               *
 *                                                               *
 *****************************************************************
