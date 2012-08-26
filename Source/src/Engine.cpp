@@ -25,6 +25,8 @@ using asset::g_TextureAssets;
  */
 void CL_Engine::Init()
 {
+    glewInit();
+
     m_Timer.SetFrameRate(60);
 
     // Menu font.
@@ -55,6 +57,16 @@ void CL_Engine::Init()
     mp_Cursor = g_TextureAssets.GetEntityByID(
         g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
         "Data/Images/Crosshairs.png"));
+
+    // Lighting shader.
+    if(!m_LightingShader.LoadFromFile("TestShader.fs", GL_FRAGMENT_SHADER))
+    {
+        g_Log.Flush();
+        g_Log << "[ERROR] Failed to load shader 'TestShader.fs'.\n";
+        g_Log << "[ERROR] Shader error: " << m_LightingShader.GetError() << ".\n";
+        g_Log.ShowLastLog();
+        gk::handle_error(g_Log.GetLastLog().c_str());
+    }
 
     m_Menus.Init();
     m_state = game::e_SPLASH;
@@ -192,15 +204,22 @@ void CL_Engine::GameLoop()
 #endif // _DEBUG
 
         case game::e_GAME:
-            glColor4f(1, 1, 1, alpha);
-            m_World.Update();
-            mp_Cursor->Move(game::GetMousePosition());
-            mp_Cursor->Move_Rate(-16, -16);
-            mp_Cursor->Update();
+            {
+                mp_Cursor->Move(game::GetMousePosition());
+                mp_Cursor->Move_Rate(-16, -16);
 
-            g_AudioAssets.Update();
-            alpha += 0.01f;
-            break;
+                glColor4f(1, 1, 1, alpha);
+                m_World.Update();
+                m_LightingShader.Link();
+                int loc = m_LightingShader.GetLocation("tex");
+                glUniform1i(loc, 0);
+                glActiveTexture(GL_TEXTURE0);
+                mp_Cursor->Update();
+                m_LightingShader.Unlink();
+
+                alpha += 0.01f;
+                break;
+            }
 
         default:
             g_Log.Flush();

@@ -189,6 +189,9 @@
     <ClInclude Include="include\World\AI\Tank.h">
       <Filter>Header Files\World\AI</Filter>
     </ClInclude>
+    <ClInclude Include="include\Shader.h">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Errors.cpp">
@@ -298,6 +301,9 @@
     </ClCompile>
     <ClCompile Include="src\World\Objects\Player.cpp">
       <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Shader.cpp">
+      <Filter>Source Files\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

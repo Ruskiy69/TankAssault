@@ -106,6 +106,7 @@
     <ClInclude Include="include\Math\Vector.h" />
     <ClInclude Include="include\Menus\Menu.h" />
     <ClInclude Include="include\Menus\MenuManager.h" />
+    <ClInclude Include="include\Shader.h" />
     <ClInclude Include="include\Window.h" />
     <ClInclude Include="include\SystemEvents.h" />
     <ClInclude Include="include\Timer.h" />
@@ -144,6 +145,7 @@
     <ClCompile Include="src\Math\Vector2.cpp" />
     <ClCompile Include="src\Menus\Menu.cpp" />
     <ClCompile Include="src\Menus\MenuManager.cpp" />
+    <ClCompile Include="src\Shader.cpp" />
     <ClCompile Include="src\Timer.cpp" />
     <ClCompile Include="src\Window.cpp" />
     <ClCompile Include="src\SystemEvents.cpp" />

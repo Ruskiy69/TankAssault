@@ -23,7 +23,7 @@
 #include <Windows.h>
 #include "GL/glew.h"
 #include "GL/GLU.h"
-#include <gl/GL.h>
+#include "GL/GL.h"
 
 // SDL stuff
 #include "SDL/SDL.h"
