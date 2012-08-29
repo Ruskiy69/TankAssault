@@ -32,6 +32,15 @@ GL_Window::GL_Window(const int w, const int h, const char* ptitle,
     this->ToggleFullscreen();
 #endif // _DEBUG
 
+    // Record OpenGL version.
+    const char* pstr = (char*)glGetString(GL_VERSION);
+    g_Log.Flush();
+    g_Log << "[INFO] OpenGL version: " << pstr << ".\n";
+    pstr = (char*)glGetString(GL_VENDOR);
+    g_Log << "[INFO] OpenGL vendor: " << pstr << ".\n";
+    pstr = (char*)glGetString(GL_RENDERER);
+    g_Log << "[INFO] OpenGL renderer: " << pstr << ".\n";
+
     SDL_WM_SetCaption(ptitle, NULL);
 
     if(picon)

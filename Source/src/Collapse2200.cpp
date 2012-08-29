@@ -6,10 +6,10 @@
  *  be initialized after an OpenGL context exists.
  *
  * @author George Kudrayvtsev
- * @version 0.1a
+ * @version 0.7.4
  *
  * @mainpage Collapse Documentation
- * Version 0.1a pre-release
+ * Version 0.7.4a pre-release
  *
  * @section collapse_install Installation
  *  @a Collapse is an easy install. Simply extract Collapse.zip and run
@@ -24,7 +24,7 @@
  *  me, George Kudrayvtsev, in my spare time during much of 2012. I wrote a
  *  2-D engine from scratch using OpenGL and SDL together. A portion of the
  *  artwork is mine and another is my friend's, who contributed to the
- *  project. All 3800 some-odd (as of 7.14.12, version 0.1a, WIP) lines of
+ *  project. All 6500 some-odd (as of 8.28.12, version 0.7.4a) lines of
  *  code are written completely by me, consulting outside sources for some
  *  aspects, of course, but absolutely no copy-paste, which I'm pretty
  *  proud of. \n
@@ -114,9 +114,6 @@ using game::g_Log;
 // Function headers
 bool init();
 void quit();
-
-static ALuint sources[5];
-static int avail = 0;
 
 /**
  * Executes the program.

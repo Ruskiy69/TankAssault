@@ -1,5 +1,5 @@
     Collapse 2200 -- Cruising, killing, exploding fun
-        version 0.7.4a, August 28st, 2012
+        version 0.7.5a, August 28st, 2012
 
     Copyright (C) 2012 George Kudrayvtsev
 

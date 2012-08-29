@@ -58,7 +58,9 @@ namespace game
     {
     public:
         CL_Engine() : m_Window(800, 600, "Collapse", "Data/Images/tank.ico"),
-            m_Menus(m_Window, m_state), m_World(m_state) {}
+            m_Menus(m_Window, m_state), m_World(m_state)
+        {
+        }
 
         void Init();
         void GameLoop();

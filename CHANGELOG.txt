@@ -1,6 +1,6 @@
 ************************** COLLAPSE *****************************
 *                                                               *
-* Current Version: 0.7.4 Alpha                                  *
+* Current Version: 0.7.5 Alpha                                  *
 * Last Updated   : 08.28.2012                                   *
 *                                                               *
 *   KNOWN BUGS:                                                 *
@@ -10,6 +10,9 @@
 *         progress.                                             *
 *       - The main menu renders right after the splash screen   *
 *         a single time before actually fading in properly.     *
+*                                                               *
+*   Version 0.7.5 (08.28.2012):                                 *
+*       + Graphics card information is logged on launch         *
 *                                                               *
 *   Version 0.7.4 (08.28.2012):                                 *
 *       + Lighting shader implemented, currently only           *
