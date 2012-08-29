@@ -39,6 +39,6 @@ var searchData=
   ['getwidth',['GetWidth',['../classgfx_1_1_g_l___window.html#a00bb4b7acc86fd4272c20a7797329230',1,'gfx::GL_Window']]],
   ['getx',['GetX',['../classasset_1_1_g_l___entity.html#a7dfb2c6b12b4989e08d2a70d0086353b',1,'asset::GL_Entity']]],
   ['gety',['GetY',['../classasset_1_1_g_l___entity.html#a2aab34cbed1ec1a2b696329030051ca0',1,'asset::GL_Entity']]],
-  ['gl_5fentity',['GL_Entity',['../classasset_1_1_g_l___entity.html#afbc30e71a3479bb519fc0f8da9bc8e99',1,'asset::GL_Entity::GL_Entity()'],['../classasset_1_1_g_l___entity.html#a64db8ef61a2e7769b867db9ca2b2fedc',1,'asset::GL_Entity::GL_Entity']]],
+  ['gl_5fentity',['GL_Entity',['../classasset_1_1_g_l___entity.html#a4db5b6a2d18830f5646910200a41c202',1,'asset::GL_Entity::GL_Entity(gfx::GL_Shader *p_VShader=NULL, gfx::GL_Shader *p_FShader=NULL)'],['../classasset_1_1_g_l___entity.html#a64db8ef61a2e7769b867db9ca2b2fedc',1,'asset::GL_Entity::GL_Entity']]],
   ['gl_5fwindow',['GL_Window',['../classgfx_1_1_g_l___window.html#ae860630d92a473556638478b546b8300',1,'gfx::GL_Window']]]
 ];

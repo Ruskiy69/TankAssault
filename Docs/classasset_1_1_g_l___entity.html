@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6038 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6171 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -181,6 +181,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="inherit_header pub_methods_classasset_1_1_i_asset"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classasset_1_1_i_asset')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classasset_1_1_i_asset.html">asset::IAsset</a></td></tr>
 <tr class="memitem:afb234f4c3b4be756f89b61596f33c627 inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb234f4c3b4be756f89b61596f33c627"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>IncrementReferenceCount</b> ()</td></tr>
+<tr class="memitem:add3ab1287362c781fdf6b8058b1e44b6 inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add3ab1287362c781fdf6b8058b1e44b6"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DecrementReferenceCount</b> ()</td></tr>
 <tr class="memitem:a15ad1d4966dec85e5fe29c2560581916 inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15ad1d4966dec85e5fe29c2560581916"></a>
 virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>GetReferenceCount</b> () const </td></tr>
 <tr class="memitem:ad7954fdf63e0c77e4a88ef1666f0e81d inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7954fdf63e0c77e4a88ef1666f0e81d"></a>
@@ -188,9 +190,9 @@ virtual asset_id&#160;</td><td class="memItemRight" valign="bottom"><b>GetID</b>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:afbc30e71a3479bb519fc0f8da9bc8e99"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbc30e71a3479bb519fc0f8da9bc8e99"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#afbc30e71a3479bb519fc0f8da9bc8e99">GL_Entity</a> ()</td></tr>
-<tr class="memdesc:afbc30e71a3479bb519fc0f8da9bc8e99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up everything. <br/></td></tr>
+<tr class="memitem:a4db5b6a2d18830f5646910200a41c202"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4db5b6a2d18830f5646910200a41c202"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#a4db5b6a2d18830f5646910200a41c202">GL_Entity</a> (<a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *p_VShader=NULL, <a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *p_FShader=NULL)</td></tr>
+<tr class="memdesc:a4db5b6a2d18830f5646910200a41c202"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up everything. <br/></td></tr>
 <tr class="memitem:ab7bd98c2dd86dd791c9ec892a4e4bf87"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#ab7bd98c2dd86dd791c9ec892a4e4bf87">LoadFromFile</a> (const char *p_filename)</td></tr>
 <tr class="memdesc:ab7bd98c2dd86dd791c9ec892a4e4bf87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from a filename.  <a href="#ab7bd98c2dd86dd791c9ec892a4e4bf87"></a><br/></td></tr>
 <tr class="memitem:a2ab5b3703ab66b88c56333b24bb794c6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#a2ab5b3703ab66b88c56333b24bb794c6">LoadFromEntity</a> (<a class="el" href="classasset_1_1_g_l___entity.html">GL_Entity</a> *const p_Other)</td></tr>
@@ -208,6 +210,10 @@ Protected Attributes</h2></td></tr>
 <a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_texture</b></td></tr>
 <tr class="memitem:a7cbbcac4600f12c8fefeab98c4baada4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cbbcac4600f12c8fefeab98c4baada4"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_rotation</b></td></tr>
+<tr class="memitem:a03265cbc00364764bfc053c83b37d924"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03265cbc00364764bfc053c83b37d924"></a>
+<a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_VShader</b></td></tr>
+<tr class="memitem:aaf9f4978324db95a2413a9fa45c55095"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf9f4978324db95a2413a9fa45c55095"></a>
+<a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_PShader</b></td></tr>
 <tr class="inherit_header pro_attribs_classasset_1_1_i_asset"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classasset_1_1_i_asset')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classasset_1_1_i_asset.html">asset::IAsset</a></td></tr>
 <tr class="memitem:a654afd272edd90ec1772f80bab02276e inherit pro_attribs_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a654afd272edd90ec1772f80bab02276e"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_filename</b></td></tr>
@@ -217,6 +223,8 @@ asset_id&#160;</td><td class="memItemRight" valign="bottom"><b>m_id</b></td></tr
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_refcount</b></td></tr>
 <tr class="memitem:abfe1b0d25d09ce805e9c7ee18381638c inherit pro_attribs_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfe1b0d25d09ce805e9c7ee18381638c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_loaded</b></td></tr>
+<tr class="memitem:aceadabb3ebc9b7d58440c9316b4befad inherit pro_attribs_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aceadabb3ebc9b7d58440c9316b4befad"></a>
+<a class="el" href="classasset_1_1_i_asset.html">IAsset</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Parent</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="friends"></a>
 Friends</h2></td></tr>
@@ -233,7 +241,7 @@ Related Functions</h2></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_entity_8h_source.html#l00028">28</a> of file <a class="el" href="_entity_8h_source.html">Entity.h</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8h_source.html#l00031">31</a> of file <a class="el" href="_entity_8h_source.html">Entity.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a2bd8052787ec6e94ef3e2f274b7b2251"></a>
 <div class="memitem">
@@ -256,7 +264,7 @@ Related Functions</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if they collide anywhere, FALSE otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00263">263</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00266">266</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -275,7 +283,7 @@ Related Functions</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd>ML_Rect collision box</dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="structmath_1_1_m_l___rect.html" title="A rectangle.">math::ML_Rect</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00422">422</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00425">425</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -303,7 +311,7 @@ Related Functions</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classasset_1_1_i_asset.html">asset::IAsset</a>.</p>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00398">398</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00401">401</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -321,7 +329,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Height </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00338">338</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00341">341</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -340,7 +348,7 @@ Related Functions</h2></td></tr>
 <dl class="section return"><dt>Returns:</dt><dd>ML_Vector2 position.</dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00410">410</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00413">413</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -358,7 +366,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Angle </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00378">378</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00381">381</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -376,7 +384,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>int The texture. </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00388">388</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00391">391</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -394,7 +402,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Width </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00348">348</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00351">351</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -412,7 +420,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>X-coordinate </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00358">358</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00361">361</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -430,7 +438,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Y-coordinate </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00368">368</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00371">371</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -449,7 +457,7 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if off-screen, FALSE otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00234">234</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00237">237</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -476,13 +484,13 @@ Related Functions</h2></td></tr>
 </div><div class="memdoc">
 <dl class="params"><dt>Parameters:</dt><dd>
   <table class="params">
-    <tr><td class="paramname">GL_Entity*</td><td>Entity to copy.</td></tr>
+    <tr><td class="paramname">GL_Entity*</td><td>Entity to copy. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if successful load, FALSE if not. </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00099">99</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00103">103</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -516,7 +524,7 @@ Related Functions</h2></td></tr>
 
 <p>Implements <a class="el" href="classasset_1_1_i_asset.html">asset::IAsset</a>.</p>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00034">34</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00040">40</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -551,7 +559,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00137">137</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00140">140</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -578,7 +586,7 @@ Related Functions</h2></td></tr>
 <dd>
 <a class="el" href="classasset_1_1_g_l___entity.html#a74d2e2930f8002020e8cf6d05af4c5d9" title="Move the entity at a certain rate.">GL_Entity::Move_Rate()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00151">151</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00154">154</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -613,7 +621,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00163">163</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00166">166</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -649,7 +657,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00192">192</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00195">195</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -674,7 +682,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00204">204</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00207">207</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -698,7 +706,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00214">214</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00217">217</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -722,7 +730,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00224">224</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00227">227</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -747,7 +755,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00317">317</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00320">320</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -772,7 +780,7 @@ Related Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00328">328</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_entity_8cpp_source.html#l00331">331</a> of file <a class="el" href="_entity_8cpp_source.html">Entity.cpp</a>.</p>
 
 </div>
 </div>
@@ -826,7 +834,7 @@ Related Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 26 2012 15:38:20 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 28 2012 20:59:18 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

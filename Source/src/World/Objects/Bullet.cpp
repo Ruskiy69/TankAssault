@@ -3,12 +3,16 @@
  *  Implementation of the Obj_Bullet base class.
  *
  * @author George Kudrayvtsev
- * @version 1.0
+ * @version 1.0.1
  */
 
 #include "World/Objects/Bullet.h"
 
 using obj::Obj_Bullet;
+
+Obj_Bullet::Obj_Bullet(gfx::GL_Shader* p_VShader,
+    gfx::GL_Shader* p_FShader) : GL_Entity(p_VShader, p_FShader),
+    m_damage(0) {}
 
 /**
  * Creates a bullet and moves it to a starting position.

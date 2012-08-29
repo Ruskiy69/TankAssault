@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6038 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6171 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -114,6 +114,8 @@ Inheritance diagram for obj::Obj_Bullet:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a6a0cc2a0edfc5a06ea0a948775c27cf7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6a0cc2a0edfc5a06ea0a948775c27cf7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Obj_Bullet</b> (<a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *p_VShader, <a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *p_FShader)</td></tr>
 <tr class="memitem:aacdbfbcf03d016e3c218d9efc444d926"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobj_1_1_obj___bullet.html#aacdbfbcf03d016e3c218d9efc444d926">Obj_Bullet</a> (const float x, const float y)</td></tr>
 <tr class="memdesc:aacdbfbcf03d016e3c218d9efc444d926"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a bullet and moves it to a starting position.  <a href="#aacdbfbcf03d016e3c218d9efc444d926"></a><br/></td></tr>
 <tr class="memitem:a02bc0a692e1c869e0ac5d88aba723096"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02bc0a692e1c869e0ac5d88aba723096"></a>
@@ -201,6 +203,8 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 <tr class="inherit_header pub_methods_classasset_1_1_i_asset"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classasset_1_1_i_asset')"><img src="closed.png" alt="-"/>&nbsp;Public Member Functions inherited from <a class="el" href="classasset_1_1_i_asset.html">asset::IAsset</a></td></tr>
 <tr class="memitem:afb234f4c3b4be756f89b61596f33c627 inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb234f4c3b4be756f89b61596f33c627"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>IncrementReferenceCount</b> ()</td></tr>
+<tr class="memitem:add3ab1287362c781fdf6b8058b1e44b6 inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="add3ab1287362c781fdf6b8058b1e44b6"></a>
+virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DecrementReferenceCount</b> ()</td></tr>
 <tr class="memitem:a15ad1d4966dec85e5fe29c2560581916 inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a15ad1d4966dec85e5fe29c2560581916"></a>
 virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>GetReferenceCount</b> () const </td></tr>
 <tr class="memitem:ad7954fdf63e0c77e4a88ef1666f0e81d inherit pub_methods_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad7954fdf63e0c77e4a88ef1666f0e81d"></a>
@@ -221,6 +225,10 @@ Protected Attributes</h2></td></tr>
 <a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_texture</b></td></tr>
 <tr class="memitem:a7cbbcac4600f12c8fefeab98c4baada4 inherit pro_attribs_classasset_1_1_g_l___entity"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7cbbcac4600f12c8fefeab98c4baada4"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_rotation</b></td></tr>
+<tr class="memitem:a03265cbc00364764bfc053c83b37d924 inherit pro_attribs_classasset_1_1_g_l___entity"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a03265cbc00364764bfc053c83b37d924"></a>
+<a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_VShader</b></td></tr>
+<tr class="memitem:aaf9f4978324db95a2413a9fa45c55095 inherit pro_attribs_classasset_1_1_g_l___entity"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaf9f4978324db95a2413a9fa45c55095"></a>
+<a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_PShader</b></td></tr>
 <tr class="inherit_header pro_attribs_classasset_1_1_i_asset"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classasset_1_1_i_asset')"><img src="closed.png" alt="-"/>&nbsp;Protected Attributes inherited from <a class="el" href="classasset_1_1_i_asset.html">asset::IAsset</a></td></tr>
 <tr class="memitem:a654afd272edd90ec1772f80bab02276e inherit pro_attribs_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a654afd272edd90ec1772f80bab02276e"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>m_filename</b></td></tr>
@@ -230,13 +238,15 @@ asset_id&#160;</td><td class="memItemRight" valign="bottom"><b>m_id</b></td></tr
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_refcount</b></td></tr>
 <tr class="memitem:abfe1b0d25d09ce805e9c7ee18381638c inherit pro_attribs_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abfe1b0d25d09ce805e9c7ee18381638c"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_loaded</b></td></tr>
+<tr class="memitem:aceadabb3ebc9b7d58440c9316b4befad inherit pro_attribs_classasset_1_1_i_asset"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aceadabb3ebc9b7d58440c9316b4befad"></a>
+<a class="el" href="classasset_1_1_i_asset.html">IAsset</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Parent</b></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classasset_1_1_g_l___entity"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classasset_1_1_g_l___entity')"><img src="closed.png" alt="-"/>&nbsp;Protected Member Functions inherited from <a class="el" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a></td></tr>
-<tr class="memitem:afbc30e71a3479bb519fc0f8da9bc8e99 inherit pro_methods_classasset_1_1_g_l___entity"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afbc30e71a3479bb519fc0f8da9bc8e99"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#afbc30e71a3479bb519fc0f8da9bc8e99">GL_Entity</a> ()</td></tr>
-<tr class="memdesc:afbc30e71a3479bb519fc0f8da9bc8e99 inherit pro_methods_classasset_1_1_g_l___entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up everything. <br/></td></tr>
+<tr class="memitem:a4db5b6a2d18830f5646910200a41c202 inherit pro_methods_classasset_1_1_g_l___entity"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4db5b6a2d18830f5646910200a41c202"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#a4db5b6a2d18830f5646910200a41c202">GL_Entity</a> (<a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *p_VShader=NULL, <a class="el" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a> *p_FShader=NULL)</td></tr>
+<tr class="memdesc:a4db5b6a2d18830f5646910200a41c202 inherit pro_methods_classasset_1_1_g_l___entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up everything. <br/></td></tr>
 <tr class="memitem:ab7bd98c2dd86dd791c9ec892a4e4bf87 inherit pro_methods_classasset_1_1_g_l___entity"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#ab7bd98c2dd86dd791c9ec892a4e4bf87">LoadFromFile</a> (const char *p_filename)</td></tr>
 <tr class="memdesc:ab7bd98c2dd86dd791c9ec892a4e4bf87 inherit pro_methods_classasset_1_1_g_l___entity"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a texture from a filename.  <a href="#ab7bd98c2dd86dd791c9ec892a4e4bf87"></a><br/></td></tr>
 <tr class="memitem:a2ab5b3703ab66b88c56333b24bb794c6 inherit pro_methods_classasset_1_1_g_l___entity"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classasset_1_1_g_l___entity.html#a2ab5b3703ab66b88c56333b24bb794c6">LoadFromEntity</a> (<a class="el" href="classasset_1_1_g_l___entity.html">GL_Entity</a> *const p_Other)</td></tr>
@@ -247,7 +257,7 @@ Additional Inherited Members</h2></td></tr>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Handles motion, target location, and updating. The only thing necessary for the inheriting classes is to load the bullet image and set the damage. </p>
 
-<p>Definition at line <a class="el" href="_bullet_8h_source.html#l00027">27</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
+<p>Definition at line <a class="el" href="_bullet_8h_source.html#l00028">28</a> of file <a class="el" href="_bullet_8h_source.html">Bullet.h</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="aacdbfbcf03d016e3c218d9efc444d926"></a>
 <div class="memitem">
@@ -288,7 +298,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_bullet_8cpp_source.html#l00021">21</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bullet_8cpp_source.html#l00025">25</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
 
 </div>
 </div>
@@ -325,7 +335,7 @@ Additional Inherited Members</h2></td></tr>
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_bullet_8cpp_source.html#l00043">43</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bullet_8cpp_source.html#l00047">47</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
 
 </div>
 </div>
@@ -353,7 +363,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>Reimplemented from <a class="el" href="classasset_1_1_g_l___entity.html#a25e4cd1f013144a86482c1b7c3dea34f">asset::GL_Entity</a>.</p>
 
-<p>Definition at line <a class="el" href="_bullet_8cpp_source.html#l00085">85</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_bullet_8cpp_source.html#l00089">89</a> of file <a class="el" href="_bullet_8cpp_source.html">Bullet.cpp</a>.</p>
 
 </div>
 </div>
@@ -364,7 +374,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 26 2012 15:38:21 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 28 2012 20:59:19 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

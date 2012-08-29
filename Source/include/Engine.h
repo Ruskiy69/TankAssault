@@ -21,7 +21,7 @@
 
 #include "Math/Math.h"
 
-#include "Shader.h"
+#include "Lighting.h"
 #include "Graphics.h"
 #include "Window.h"
 
@@ -68,7 +68,7 @@ namespace game
         void HandleSystemEvents();
 
         gfx::GL_Window          m_Window;
-        gfx::GL_Shader          m_LightingShader;
+        gfx::GL_Lighting        m_Lighting;
         
         asset::GL_Entity*       mp_Cursor;
         asset::AL_MusicPlayer   m_MusicPlayer;

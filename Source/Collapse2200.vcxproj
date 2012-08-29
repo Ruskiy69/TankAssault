@@ -60,6 +60,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <Profile>true</Profile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -77,6 +78,7 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <Profile>true</Profile>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -96,6 +98,7 @@
     <ClInclude Include="include\GameEventHandler.h" />
     <ClInclude Include="include\Graphics.h" />
     <ClInclude Include="include\Helpers.h" />
+    <ClInclude Include="include\Lighting.h" />
     <ClInclude Include="include\Logging.h" />
     <ClInclude Include="include\Math\Collider.h" />
     <ClInclude Include="include\Math\Math.h" />
@@ -136,6 +139,7 @@
     <ClCompile Include="src\Errors.cpp" />
     <ClCompile Include="src\Graphics.cpp" />
     <ClCompile Include="src\Helpers.cpp" />
+    <ClCompile Include="src\Lighting.cpp" />
     <ClCompile Include="src\Logging.cpp" />
     <ClCompile Include="src\Math\Collider.cpp" />
     <ClCompile Include="src\Math\MathDef.cpp" />

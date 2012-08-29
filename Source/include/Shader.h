@@ -33,14 +33,16 @@ namespace gfx
         bool LoadFromSource(const char* p_src, const int type);
         bool Link();
         bool Unlink();
-        int  GetLocation(const char* param);
+        bool IsLoaded() const;
 
+        int  GetLocation(const char* param);
         char* GetError() const;
 
     private:
         GLuint m_shader, m_program;
         GLint m_lasterror;
         GLchar* mp_lasterror;
+        bool m_loaded;
     };
 }
 

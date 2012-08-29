@@ -3,7 +3,7 @@
  *  Definitions for the Obj_Bullet class.
  *
  * @author George Kudrayvtsev
- * @version 1.1
+ * @version 1.2
  *
  * @addtogroup Objects
  */
@@ -14,6 +14,7 @@
 
 #include <list>
 
+#include "Shader.h"
 #include "Assets/TextureAssetManager.h"
 
 namespace obj
@@ -27,6 +28,7 @@ namespace obj
     class Obj_Bullet : public asset::GL_Entity
     {
     public:
+        Obj_Bullet(gfx::GL_Shader* p_VShader, gfx::GL_Shader* p_FShader);
         Obj_Bullet(const float x, const float y);
         Obj_Bullet(const math::ML_Vector2& Start_Position);
         Obj_Bullet();

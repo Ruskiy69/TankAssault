@@ -362,7 +362,7 @@ asset::GL_Entity* CL_ObjectiveMap::GetAvailableEnemySpawn(
     const std::vector<asset::GL_Entity*> p_allObjects) const
 {
     bool touches = false;
-    for(size_t i = 0; i < mp_allTiles.size(); ++i)
+    for(size_t i = 1; i < mp_allTiles.size(); ++i)
     {
         for(size_t j = 0; j < p_allObjects.size(); ++j)
         {

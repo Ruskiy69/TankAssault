@@ -44,6 +44,7 @@ namespace asset
         virtual bool LoadFromFile(const char* p_filename) = 0;
 
         virtual void IncrementReferenceCount();
+        virtual void DecrementReferenceCount();
         virtual const std::string& GetFilename() const;
         virtual unsigned int GetReferenceCount() const;
         virtual asset_id GetID() const;
@@ -53,6 +54,8 @@ namespace asset
         asset_id m_id;
         unsigned int m_refcount;
         bool m_loaded;
+
+        IAsset* mp_Parent;
     };
 }
 

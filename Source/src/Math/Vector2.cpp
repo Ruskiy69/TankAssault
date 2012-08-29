@@ -161,13 +161,12 @@ void ML_Vector2::Move(const ML_Vector2& Pos)
 
 /**
  * Rotate the vector by a certain angle (in radians).
- *
  * @param float Angle
  */
-void ML_Vector2::Rotate(const float angle)
+void ML_Vector2::Rotate(const float rad_angle)
 {
-    float final_x = (this->x * cos(angle)) - (this->y * sin(angle));
-    float final_y = (this->x * sin(angle)) + (this->y * cos(angle));
+    float final_x = (this->x * cos(rad_angle)) - (this->y * sin(rad_angle));
+    float final_y = (this->x * sin(rad_angle)) + (this->y * cos(rad_angle));
 
     // We negate the X value because the OpenGL coordinate system
     // makes the origin in the top left instead of the bottom left.

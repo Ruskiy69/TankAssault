@@ -27,6 +27,10 @@ void CL_Engine::Init()
 {
     glewInit();
 
+    g_Log.Flush();
+    g_Log << "[INFO] Loading in-game assets, shaders, etc.\n";
+
+    if(!m_Lighting.Init()) gk::handle_error(g_Log.GetLastLog().c_str());
     m_Timer.SetFrameRate(60);
 
     // Menu font.
@@ -58,17 +62,18 @@ void CL_Engine::Init()
         g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
         "Data/Images/Crosshairs.png"));
 
-    // Lighting shader.
-    if(!m_LightingShader.LoadFromFile("TestShader.fs", GL_FRAGMENT_SHADER))
-    {
-        g_Log.Flush();
-        g_Log << "[ERROR] Failed to load shader 'TestShader.fs'.\n";
-        g_Log << "[ERROR] Shader error: " << m_LightingShader.GetError() << ".\n";
-        g_Log.ShowLastLog();
-        gk::handle_error(g_Log.GetLastLog().c_str());
-    }
-
+    // Initialize the menus
     m_Menus.Init();
+
+    // Assign shaders to subsequent textures.
+    g_TextureAssets.SetDefaultShader(&m_Lighting.GetVShader(),
+        &m_Lighting.GetFShader());
+
+    m_World.Init();
+
+    g_TextureAssets.SetDefaultShader(NULL, NULL);
+
+    // Start from splash screen.
     m_state = game::e_SPLASH;
 }
 
@@ -100,6 +105,7 @@ void CL_Engine::GameLoop()
     g_Log << "\n[INFO] Textures: " << g_TextureAssets.GetEntityCount();
     g_Log << "\n[INFO] Audio   : " << g_AudioAssets.GetAudioCount();
     g_Log << "\n[INFO] Fonts   : " << g_FontAssets.GetFontCount();
+    g_Log << "\n";
     g_Log.ShowLastLog();
 
     while(m_state != game::e_QUIT)
@@ -121,7 +127,7 @@ void CL_Engine::GameLoop()
         this->HandleSystemEvents();
 
         m_Window.Clear();
-
+        
         switch(m_state)
         {
         case game::e_MAINMENU:
@@ -205,21 +211,20 @@ void CL_Engine::GameLoop()
 
         case game::e_GAME:
             {
+                // Logic
+                alpha += 0.01f;
                 mp_Cursor->Move(game::GetMousePosition());
                 mp_Cursor->Move_Rate(-16, -16);
 
+                // Rendering
                 glColor4f(1, 1, 1, alpha);
                 m_World.Update();
-                m_LightingShader.Link();
-                int loc = m_LightingShader.GetLocation("tex");
-                glUniform1i(loc, 0);
-                glActiveTexture(GL_TEXTURE0);
                 mp_Cursor->Update();
-                m_LightingShader.Unlink();
-
-                alpha += 0.01f;
                 break;
             }
+
+        case game::e_QUIT:
+            break;
 
         default:
             g_Log.Flush();
@@ -250,8 +255,8 @@ void CL_Engine::Intro()
     g_Log.Flush();
     g_Log << "[INFO] Playing intro sequence.\n";
 
-    m_MusicPlayer.PurgeQueue();
     m_MusicPlayer.Stop();
+    m_MusicPlayer.PurgeQueue();    
 
     // Current line, height
     u_int index = 0;
@@ -396,6 +401,12 @@ void CL_Engine::Intro()
         SDL_ShowCursor(0);
         m_state = game::e_GAME;
     }
+
+    p_IntroSong->Stop();
+
+    // Assign shaders to subsequent textures.
+    g_TextureAssets.SetDefaultShader(&m_Lighting.GetVShader(),
+        &m_Lighting.GetFShader());
 }
 
 /**

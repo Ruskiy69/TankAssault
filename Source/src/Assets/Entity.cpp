@@ -13,15 +13,21 @@ using asset::GL_Entity;
 /**
  * Sets up everything.
  */
-GL_Entity::GL_Entity() : m_texture(0),
+GL_Entity::GL_Entity(gfx::GL_Shader* p_VShader,
+    gfx::GL_Shader* p_FShader) : m_texture(0),
     m_rotation(0),
-    m_RenderDimensions(0, 0, 1, 1) {}
+    m_RenderDimensions(0, 0, 1, 1),
+    mp_PShader(p_FShader),
+    mp_VShader(p_VShader) {}
 
 /**
  * Cleans all loaded textures.
  */
 GL_Entity::~GL_Entity()
 {
+    if(mp_Parent != NULL)
+        mp_Parent->DecrementReferenceCount();
+
     if(m_texture > 0 && m_refcount <= 1)
         glDeleteTextures(1, &m_texture);
 }
@@ -91,9 +97,7 @@ bool GL_Entity::LoadFromSDLSurface(SDL_Surface* p_Surface)
 
 /**
  * Creates a copy of another entity.
- * 
  * @param GL_Entity* Entity to copy.
- *
  * @return TRUE if successful load, FALSE if not.
  */
 bool GL_Entity::LoadFromEntity(GL_Entity* const p_Other)
@@ -130,7 +134,6 @@ void GL_Entity::UnloadEntity()
 
 /**
  * Move the entity to a certain location.
- *
  * @param float X-coordinate to move to
  * @param float Y-coordinate to move to
  */
@@ -429,7 +432,7 @@ const math::ML_Rect& GL_Entity::GetCollisionBox() const
  */
 void GL_Entity::Render() const
 {
-    // Alpha channel is gucci
+    // Alpha channel is Gucci
     GLboolean blend = glIsEnabled(GL_BLEND);
 
     glEnable(GL_BLEND);
@@ -448,6 +451,7 @@ void GL_Entity::Render() const
     glTranslatef(-this->GetX() - this->GetW() / 2,
         -this->GetY() - this->GetH() / 2, 0.0f);
     
+    glActiveTexture(GL_TEXTURE0);
     glBindTexture(GL_TEXTURE_2D, m_texture);
 
     // Draw the primitive
@@ -487,7 +491,32 @@ void GL_Entity::Render() const
  */
 void GL_Entity::Update()
 {
+    int loc;
+
+    if(mp_VShader != NULL)
+    {
+        mp_VShader->Link();
+    }
+    if(mp_PShader != NULL)
+    {
+        math::ML_Vector2 Mouse = game::GetMousePosition();
+        mp_PShader->Link();
+        loc = mp_PShader->GetLocation("light_pos");
+        glUniform2f(loc, Mouse.x, Mouse.y);
+        loc = mp_PShader->GetLocation("light_col");
+        glUniform3f(loc, 1.0f, 1.0f, 1.0f);
+        loc = mp_PShader->GetLocation("light_att");
+        glUniform3f(loc, 0.0f, 0.05, 0.001);
+        loc = mp_PShader->GetLocation("scr_height");
+        glUniform1i(loc, 800);
+    }
+
     this->Render();
+
+    if(mp_VShader != NULL)
+        mp_VShader->Unlink();
+    if(mp_PShader != NULL)
+        mp_PShader->Unlink();
 }
 
 /**

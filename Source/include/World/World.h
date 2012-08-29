@@ -40,6 +40,7 @@ namespace game
         CL_World(CL_GameState& Engine_State);
         ~CL_World();
 
+        void Init();
         void HandleEvent(SDL_Event& Evt);
         void Update();
 

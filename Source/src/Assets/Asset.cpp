@@ -14,7 +14,8 @@ using asset::IAsset;
 
 IAsset::IAsset() : m_id(CURRENT_ASSET_ID),
     m_loaded(false),
-    m_refcount(1)
+    m_refcount(1),
+    mp_Parent(NULL)
 {
     // Increase asset id.
     // This number also represents the total amount of assets loaded.
@@ -44,5 +45,10 @@ asset::asset_id IAsset::GetID() const
 
 void asset::IAsset::IncrementReferenceCount()
 {
-    m_refcount++;
+    ++m_refcount;
+}
+
+void asset::IAsset::DecrementReferenceCount()
+{
+    --m_refcount;
 }

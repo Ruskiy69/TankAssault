@@ -37,14 +37,20 @@ namespace asset
             const math::ML_Rect& Dimensions);
         bool UnloadEntityByID(const asset_id id);
 
+        void        SetDefaultShader(gfx::GL_Shader* p_VShader, 
+            gfx::GL_Shader* p_FShader);
         GL_Entity*  GetEntityByID(const asset_id id);
         u_int       GetEntityCount() const;
 
         void Update();
 
     private:
-        GL_AssetManager() : m_assetcount(0) {}
+        GL_AssetManager() : mp_VShader(NULL), mp_FShader(NULL),
+            m_assetcount(0) {}
         GL_AssetManager(const GL_AssetManager&);
+
+        gfx::GL_Shader* mp_VShader;
+        gfx::GL_Shader* mp_FShader;
 
         std::map<asset_id, GL_Entity*> mp_assetPool;
         std::map<asset_id, GL_Entity*> mp_allAssets;
@@ -68,7 +74,7 @@ namespace asset
             {
                 // If it exists, make a copy, add to all assets,
                 // and return it.
-                T* p_Tmp = new T;
+                T* p_Tmp = new T(mp_VShader, mp_FShader);
                 p_Tmp->LoadFromEntity(finder->second);
                 mp_allAssets[p_Tmp->GetID()] = (GL_Entity*)p_Tmp;
                 m_assetcount++;
@@ -83,7 +89,7 @@ namespace asset
         g_Log.Flush();
         g_Log << "[INFO] Loading texture asset: " << p_filename << ".\n";
 
-        T* p_ToPool = new T;
+        T* p_ToPool = new T(mp_VShader, mp_FShader);
         if(!p_ToPool->LoadFromFile(p_filename))
         {
             g_Log.Flush();
@@ -96,7 +102,7 @@ namespace asset
 
         mp_assetPool[p_ToPool->GetID()] = (GL_Entity*)p_ToPool;
 
-        T* p_ToAll = new T;
+        T* p_ToAll = new T(mp_VShader, mp_FShader);
         if(!p_ToAll->LoadFromEntity(p_ToPool))
         {
             g_Log.Flush();

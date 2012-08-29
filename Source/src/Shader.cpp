@@ -4,7 +4,7 @@ using gfx::GL_Shader;
 using game::g_Log;
 
 GL_Shader::GL_Shader() : m_shader(0), m_lasterror(GL_NO_ERROR),
-    mp_lasterror(NULL) {}
+    mp_lasterror(NULL), m_loaded(false) {}
 
 GL_Shader::~GL_Shader()
 {
@@ -27,11 +27,15 @@ bool GL_Shader::LoadFromFile(const char* p_filename, const int type)
     file.open(p_filename);
 
     if(!file.is_open())
+    {
+        mp_lasterror = "File does not exist";
         return false;
+    }
 
     while(std::getline(file, line))
     {
         source += line;
+        source += '\n';
     }
     file.close();
 
@@ -92,6 +96,7 @@ bool GL_Shader::LoadFromFile(const char* p_filename, const int type)
         return false;
     }
 
+    m_loaded = true;
     return true;
 }
 
@@ -149,7 +154,7 @@ bool GL_Shader::LoadFromSource(const char* p_src, const int type)
     // Link program
     glLinkProgram(m_program);
     glGetProgramiv(m_program, GL_LINK_STATUS, &m_lasterror);
-    if(m_lasterror != GL_FALSE)
+    if(m_lasterror == GL_FALSE)
     {
         glDeleteProgram(m_program);
 
@@ -169,6 +174,7 @@ bool GL_Shader::LoadFromSource(const char* p_src, const int type)
         return false;
     }
 
+    m_loaded = true;
     return true;
 }
 
@@ -180,4 +186,9 @@ char* GL_Shader::GetError() const
 int GL_Shader::GetLocation(const char* param)
 {
     return glGetUniformLocation(m_program, param);
+}
+
+bool GL_Shader::IsLoaded() const
+{
+    return m_loaded;
 }

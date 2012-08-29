@@ -13,10 +13,13 @@
 #ifndef ENTITY_H
 #define ENTITY_H
 
+#include "SystemEvents.h"
+
 #include "Math/Math.h"
 
 #include "Assets/Asset.h"
 
+#include "Shader.h"
 #include "Graphics.h"
 #include "Window.h"
 
@@ -77,7 +80,8 @@ namespace asset
         friend class FL_Font;
 
     protected:
-        GL_Entity();
+        GL_Entity(gfx::GL_Shader* p_VShader = NULL,
+            gfx::GL_Shader* p_FShader = NULL);
 
         bool LoadFromFile(const char* p_filename);
         bool LoadFromEntity(GL_Entity* const p_Other);
@@ -88,6 +92,9 @@ namespace asset
 
         u_int m_texture;
         float m_rotation;
+
+        gfx::GL_Shader* mp_VShader;
+        gfx::GL_Shader* mp_PShader;
     };
 }
 

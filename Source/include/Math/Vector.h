@@ -107,7 +107,7 @@ namespace math
         void Move(const float x, const float y);        // These two are 
         void Move(const ML_Vector2& Position);             // fairly self-explanatory
 
-        void Rotate(const float angle);                 // Rotate vector by some amount
+        void Rotate(const float rad_angle);                 // Rotate vector by some amount
         
         ML_Vector2 Normal() const;                         // Get the normal vector
         void Normalize();                               // Actually change the current vector to its normal

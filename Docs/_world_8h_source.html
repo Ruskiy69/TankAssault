@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6038 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6171 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -117,34 +117,35 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="classgame_1_1_c_l___world.html#ae13d5ab237ca9ff101a5bb0ec1afc66d" title="Initialize all of the internal components.">CL_World</a>(<a class="code" href="namespacegame.html#ae8fb4619fa220e8f71df095a3346ad19" title="Various game states.">CL_GameState</a>&amp; Engine_State);</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        ~<a class="code" href="classgame_1_1_c_l___world.html" title="Handles a majority of the game logic and mechanics.">CL_World</a>();</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_l___world.html#ac751b349b16601a44225b2377d9bf39d" title="Handles a specific event given by game::Game_Engine.">HandleEvent</a>(SDL_Event&amp; Evt);</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_l___world.html#a26852de355d72dd7dc4e48c9b498a906" title="Updates all World elements.">Update</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">void</span> HandleCollisions();</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> HandleEvents();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">bool</span> SpawnEnemy();</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>        m_PlayerRate;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>*       mp_Background;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <a class="code" href="classgame_1_1_c_l___terrain_map.html" title="The terrain tile map.">game::CL_TerrainMap</a>     m_TerrainMap;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classgame_1_1_c_l___collision_map.html" title="The collision tile map.">game::CL_CollisionMap</a>   m_CollisionMap;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classgame_1_1_c_l___objective_map.html" title="Contains path information for AI movement and navigation.">game::CL_ObjectiveMap</a>   m_ObjectiveMap;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::vector&lt;obj::Obj_pBullets&gt; mp_enemyBullets;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <a class="code" href="namespaceobj.html#aa2d792f74937f70a1dbe41176a339de9" title="Easily create a container of bullets.">obj::Obj_pBullets</a>       mp_playerBullets;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="classobj_1_1_obj___player.html" title="The user-controlled entity.">obj::Obj_Player</a>         m_Player;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="namespacegame.html#ae8fb4619fa220e8f71df095a3346ad19" title="Various game states.">game::CL_GameState</a>&amp;     m_engine_state;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    };</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;}</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> Init();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_l___world.html#ac751b349b16601a44225b2377d9bf39d" title="Handles a specific event given by game::Game_Engine.">HandleEvent</a>(SDL_Event&amp; Evt);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_l___world.html#a26852de355d72dd7dc4e48c9b498a906" title="Updates all World elements.">Update</a>();</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> HandleCollisions();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordtype">void</span> HandleEvents();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">bool</span> SpawnEnemy();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>        m_PlayerRate;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>*       mp_Background;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        </div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <a class="code" href="classgame_1_1_c_l___terrain_map.html" title="The terrain tile map.">game::CL_TerrainMap</a>     m_TerrainMap;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <a class="code" href="classgame_1_1_c_l___collision_map.html" title="The collision tile map.">game::CL_CollisionMap</a>   m_CollisionMap;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <a class="code" href="classgame_1_1_c_l___objective_map.html" title="Contains path information for AI movement and navigation.">game::CL_ObjectiveMap</a>   m_ObjectiveMap;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        std::vector&lt;obj::Obj_pBullets&gt; mp_enemyBullets;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <a class="code" href="namespaceobj.html#aa2d792f74937f70a1dbe41176a339de9" title="Easily create a container of bullets.">obj::Obj_pBullets</a>       mp_playerBullets;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classobj_1_1_obj___player.html" title="The user-controlled entity.">obj::Obj_Player</a>         m_Player;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <a class="code" href="namespacegame.html#ae8fb4619fa220e8f71df095a3346ad19" title="Various game states.">game::CL_GameState</a>&amp;     m_engine_state;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    };</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;}</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 26 2012 15:38:18 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 28 2012 20:59:17 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

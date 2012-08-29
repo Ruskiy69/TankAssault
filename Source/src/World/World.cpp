@@ -25,6 +25,10 @@ CL_World::CL_World(game::CL_GameState& Engine_State) :
         , m_CollisionMap(true), m_TerrainMap(true),
         m_ObjectiveMap(true)
 #endif // _DEBUG
+    {
+    }
+
+void CL_World::Init()
 {
     g_Log.Flush();
     g_Log << "[INFO] Loading first level.\n";
@@ -46,7 +50,8 @@ CL_World::CL_World(game::CL_GameState& Engine_State) :
 
     // Load game background
     mp_Background = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>("Data/Images/Background.png"));
+        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
+        "Data/Images/Background.png"));
 
     // Spawn enemies at all available spawns.
     while(this->SpawnEnemy());
@@ -406,9 +411,6 @@ bool CL_World::SpawnEnemy()
         p_allObjs.push_back((asset::GL_Entity*)(*i)->GetMainEntity());
     }
 
-    ai::AI_Enemy* p_Enemy = new ai::AI_Tank(m_TerrainMap, 
-        m_CollisionMap, m_ObjectiveMap, m_Player);
-
     asset::GL_Entity* p_Spawn = m_ObjectiveMap.GetAvailableEnemySpawn(p_allObjs);
     if(p_Spawn == NULL)
         return false;
@@ -416,6 +418,9 @@ bool CL_World::SpawnEnemy()
     asset::GL_Entity* p_Dest = m_ObjectiveMap.GetNearestPOI(p_Spawn->GetPosition());
     if(p_Dest == NULL)
         return false;
+
+    ai::AI_Enemy* p_Enemy = new ai::AI_Tank(m_TerrainMap, 
+        m_CollisionMap, m_ObjectiveMap, m_Player);
 
     p_Enemy->Spawn(p_Spawn->GetPosition());
     p_Enemy->SetDestination(p_Dest->GetPosition() + 

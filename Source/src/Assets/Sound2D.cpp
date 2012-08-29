@@ -196,7 +196,14 @@ bool AL_Sound2D::UnloadSource()
 bool AL_Sound2D::Play()
 {
     if(this->GetAudioState() == AL_PLAYING)
+    {
+        alSourcePlay(m_source);
+
+        g_Log.Flush();
+        g_Log << "[DEBUG] Forcing playing of " << m_filename << ".\n";
+        g_Log.ShowLastLog();
         return true;
+    }
 
     AL_Sound2D::GetAvailableSource();
     if(s_available == -1)

@@ -28,7 +28,7 @@ asset::asset_id GL_AssetManager::LoadEntityFromSurface(SDL_Surface* const p_Surf
     g_Log.Flush();
     g_Log << "[INFO] Creating texture asset from pixel data.\n";
 
-    GL_Entity* p_ToAll = new GL_Entity;
+    GL_Entity* p_ToAll = new GL_Entity(mp_VShader, mp_FShader);
     if(!p_ToAll->LoadFromSDLSurface(p_Surface))
     {
         g_Log.Flush();
@@ -83,7 +83,7 @@ asset::asset_id GL_AssetManager::LoadEntityFromTexture(
         {
             // If it exists, make a copy, add to all assets,
             // and return it.
-            GL_Entity* p_Tmp = new GL_Entity;
+            GL_Entity* p_Tmp = new GL_Entity(mp_VShader, mp_FShader);
             p_Tmp->LoadFromEntity(finder->second);
             mp_allAssets[p_Tmp->GetID()] = p_Tmp;
             m_assetcount++;
@@ -91,7 +91,7 @@ asset::asset_id GL_AssetManager::LoadEntityFromTexture(
         }
     }
     
-    GL_Entity* p_ToPool = new GL_Entity;
+    GL_Entity* p_ToPool = new GL_Entity(mp_VShader, mp_FShader);
     if(!p_ToPool->LoadFromExistingTexture(texture, Dimensions))
     {
         g_Log.Flush();
@@ -104,7 +104,7 @@ asset::asset_id GL_AssetManager::LoadEntityFromTexture(
 
     mp_assetPool[p_ToPool->GetID()] = p_ToPool;
 
-    GL_Entity* p_ToAll = new GL_Entity;
+    GL_Entity* p_ToAll = new GL_Entity(mp_VShader, mp_FShader);
     if(!p_ToAll->LoadFromEntity(p_ToPool))
     {
         g_Log.Flush();
@@ -115,4 +115,11 @@ asset::asset_id GL_AssetManager::LoadEntityFromTexture(
     mp_allAssets[p_ToAll->GetID()] = p_ToAll;
     m_assetcount++;
     return p_ToAll->GetID();
+}
+
+void GL_AssetManager::SetDefaultShader(gfx::GL_Shader* p_VShader,
+    gfx::GL_Shader* p_FShader)
+{
+    mp_FShader = p_FShader;
+    mp_VShader = p_VShader;
 }

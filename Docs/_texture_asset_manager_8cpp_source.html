@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6038 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6171 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -121,7 +121,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a>.Flush();</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a> &lt;&lt; <span class="stringliteral">&quot;[INFO] Creating texture asset from pixel data.\n&quot;</span>;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    GL_Entity* p_ToAll = <span class="keyword">new</span> GL_Entity;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    GL_Entity* p_ToAll = <span class="keyword">new</span> GL_Entity(mp_VShader, mp_FShader);</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="keywordflow">if</span>(!p_ToAll-&gt;LoadFromSDLSurface(p_Surface))</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    {</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a>.Flush();</div>
@@ -176,7 +176,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        {</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;            <span class="comment">// If it exists, make a copy, add to all assets,</span></div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;            <span class="comment">// and return it.</span></div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            GL_Entity* p_Tmp = <span class="keyword">new</span> GL_Entity;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            GL_Entity* p_Tmp = <span class="keyword">new</span> GL_Entity(mp_VShader, mp_FShader);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            p_Tmp-&gt;LoadFromEntity(finder-&gt;second);</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            mp_allAssets[p_Tmp-&gt;GetID()] = p_Tmp;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            m_assetcount++;</div>
@@ -184,7 +184,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        }</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    }</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    GL_Entity* p_ToPool = <span class="keyword">new</span> GL_Entity;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    GL_Entity* p_ToPool = <span class="keyword">new</span> GL_Entity(mp_VShader, mp_FShader);</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">if</span>(!p_ToPool-&gt;LoadFromExistingTexture(texture, Dimensions))</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    {</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a>.Flush();</div>
@@ -197,7 +197,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    mp_assetPool[p_ToPool-&gt;GetID()] = p_ToPool;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    GL_Entity* p_ToAll = <span class="keyword">new</span> GL_Entity;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    GL_Entity* p_ToAll = <span class="keyword">new</span> GL_Entity(mp_VShader, mp_FShader);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordflow">if</span>(!p_ToAll-&gt;LoadFromEntity(p_ToPool))</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    {</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        <a class="code" href="namespacegame.html#ac0195cc7ad12019faff71af62380b3f5" title="Globally accessible logging class singleton.">g_Log</a>.Flush();</div>
@@ -209,10 +209,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    m_assetcount++;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">return</span> p_ToAll-&gt;GetID();</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;}</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="keywordtype">void</span> GL_AssetManager::SetDefaultShader(<a class="code" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a>* p_VShader,</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <a class="code" href="classgfx_1_1_g_l___shader.html">gfx::GL_Shader</a>* p_FShader)</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;{</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    mp_FShader = p_FShader;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    mp_VShader = p_VShader;</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Aug 26 2012 15:38:18 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Aug 28 2012 20:59:17 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>
