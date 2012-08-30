@@ -46,12 +46,13 @@ GL_Window::GL_Window(const int w, const int h, const char* ptitle,
     glGetIntegerv(GL_MAJOR_VERSION, &maj_v);
     glGetIntegerv(GL_MINOR_VERSION, &min_v);
 
-    if(maj_v < 20)
+    if(maj_v < 2)
     {
         g_Log.Flush();
         g_Log << "[ERROR] Unsupported OpenGL version.\n";
         g_Log << "[ERROR] Your version: " << maj_v << "." << min_v;
         g_Log << "\n[ERROR] Required version: 2.1\n";
+        g_Log << "[ERROR] Please update your video drivers.\n";
         gk::handle_error(g_Log.GetLastLog().c_str());
     }
 

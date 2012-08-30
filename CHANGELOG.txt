@@ -11,7 +11,7 @@
 *       - The main menu renders right after the splash screen   *
 *         a single time before actually fading in properly.     *
 *                                                               *
-*   Version 0.7.5 (08.29.2012):                                 *
+*   Version 0.7.6 (08.29.2012):                                 *
 *       + Graphics version is actually checked for a minimum    *
 *                                                               *
 *   Version 0.7.5 (08.28.2012):                                 *
