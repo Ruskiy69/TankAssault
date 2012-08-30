@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6178 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6198 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -119,6 +119,8 @@ Inheritance diagram for obj::Obj_Tank:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c9f8f96d4399e3e1f1b8333c269d0db"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobj_1_1_obj___tank.html#a1c9f8f96d4399e3e1f1b8333c269d0db">Obj_Tank</a> ()</td></tr>
 <tr class="memdesc:a1c9f8f96d4399e3e1f1b8333c269d0db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize all values and load sound effects.  <a href="#a1c9f8f96d4399e3e1f1b8333c269d0db"></a><br/></td></tr>
+<tr class="memitem:ae2b064c44c4fb08e0684a96121e78895"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2b064c44c4fb08e0684a96121e78895"></a>
+virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
 <tr class="memitem:a21e361101566d85974c84aa1dbbcdc7f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobj_1_1_obj___tank.html#a21e361101566d85974c84aa1dbbcdc7f">Turn</a> (const float degree)</td></tr>
 <tr class="memdesc:a21e361101566d85974c84aa1dbbcdc7f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate the tank body.  <a href="#a21e361101566d85974c84aa1dbbcdc7f"></a><br/></td></tr>
 <tr class="memitem:a967b1307ad29497cb1e73c5ee2d464a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobj_1_1_obj___tank.html#a967b1307ad29497cb1e73c5ee2d464a5">Drive</a> (const float speed)</td></tr>
@@ -247,7 +249,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 
 <p>Reimplemented in <a class="el" href="classai_1_1_a_i___tank.html#a90a58f261ade4335d8466e1704b34a38">ai::AI_Tank</a>.</p>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00079">79</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00083">83</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -292,7 +294,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 <p>This is an overloaded member function, provided for convenience. It differs from the above function only in what argument(s) it accepts. </p>
 <p>Rotating the barrel: Adjust the barrel location by rotating it around the center of the tank body. The steps are as follows: Subtract the origin from the rotating point. Rotate around (0, 0) Add the original origin.</p>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00102">102</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00106">106</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -317,7 +319,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00061">61</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00065">65</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -337,7 +339,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if the tank can fire its primary weapon, FALSE if it cannot.</dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>Check for ammo type </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00209">209</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00213">213</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -356,7 +358,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 <p>The ability to fire is determined via the Obj_Tank::MG_DELAY variable. This also sets the internal Obj_Tank::shooting_secondary variable to the return value. So, this assumes the caller will actually shoot if the tank is able to. Also, play the firing sound of the laser.</p>
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if the tank can fire its machine gun, FALSE if it cannot. </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00244">244</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00248">248</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -374,7 +376,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Barrel position. </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00310">310</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00314">314</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -392,7 +394,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Collision box. </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00330">330</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00334">334</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -411,7 +413,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 <p>There is no Obj_Tank::GetSecondaryAmmoCount() because the player has an infinite amount of laser machine gun battery power.</p>
 <dl class="section return"><dt>Returns:</dt><dd>Primary ammo count. </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00343">343</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00347">347</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -429,7 +431,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Location. </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00320">320</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00324">324</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -447,7 +449,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if health is greater than 0, FALSE otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00288">288</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00292">292</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -466,7 +468,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if in motion, FALSE otherwise.</dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classobj_1_1_obj___tank.html#a967b1307ad29497cb1e73c5ee2d464a5" title="Drive the tank.">Obj_Tank::Drive()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00300">300</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00304">304</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -490,7 +492,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00169">169</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00173">173</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -515,7 +517,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 </dl>
 <dl class="section see"><dt>See also:</dt><dd>Obj_Tank::Aim() </dd></dl>
 
-<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00043">43</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_base_tank_8cpp_source.html#l00047">47</a> of file <a class="el" href="_base_tank_8cpp_source.html">BaseTank.cpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +528,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 28 2012 21:45:10 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 29 2012 18:34:03 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

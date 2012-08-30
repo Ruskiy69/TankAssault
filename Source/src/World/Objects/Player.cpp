@@ -19,8 +19,12 @@ using asset::g_TextureAssets;
  *  only half of the whole texture is rendered, properly displaying the
  *  sprite in use.
  */
-Obj_Player::Obj_Player()
+Obj_Player::Obj_Player(){}
+
+bool Obj_Player::Init()
 {
+    Obj_Tank::Init();
+
     // Load tank base images
     SDL_Surface* pSprite_Sheet = gfx::load_image("Data/Images/Player.png");
     mp_Tank = g_TextureAssets.GetEntityByID(
@@ -36,6 +40,8 @@ Obj_Player::Obj_Player()
         g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
         "Data/Images/Player_Barrel1.png"));
     mp_Tower->Move(0, 0);
+
+    return true;
 }
 
 /**

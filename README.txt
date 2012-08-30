@@ -2,8 +2,8 @@
 *                                                               *
 * Created By    : George Kudrayvtsev, Nick Anysenko             *
 * Platform      : Windows                                       *
-* Version       : 0.7.5 Alpha                                   *
-* Last Updated  : 08.28.2012                                    *
+* Version       : 0.7.6 Alpha                                   *
+* Last Updated  : 08.29.2012                                    *
 *                                                               *
 * Dependencies:                                                 *
 *   - SDL, SDL_image, SDL_ttf                                   *

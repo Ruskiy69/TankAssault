@@ -1,7 +1,7 @@
 ************************** COLLAPSE *****************************
 *                                                               *
-* Current Version: 0.7.5 Alpha                                  *
-* Last Updated   : 08.28.2012                                   *
+* Current Version: 0.7.6 Alpha                                  *
+* Last Updated   : 08.29.2012                                   *
 *                                                               *
 *   KNOWN BUGS:                                                 *
 *       - After quitting, the game seg-faults due to an unknown *
@@ -10,6 +10,9 @@
 *         progress.                                             *
 *       - The main menu renders right after the splash screen   *
 *         a single time before actually fading in properly.     *
+*                                                               *
+*   Version 0.7.5 (08.29.2012):                                 *
+*       + Graphics version is actually checked for a minimum    *
 *                                                               *
 *   Version 0.7.5 (08.28.2012):                                 *
 *       + Graphics card information is logged on launch         *

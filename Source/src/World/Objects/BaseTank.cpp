@@ -22,7 +22,9 @@ using asset::g_TextureAssets;
  */
 Obj_Tank::Obj_Tank() : m_MovementRate(0, 1), m_BarrelPosition(300.0f + 32.0f, 300.0f),
     m_primary_shot_delay(0), m_secondary_shot_delay(0),
-    m_health(100), m_primary_ammo(100), m_moving(false)
+    m_health(100), m_primary_ammo(100), m_moving(false) {}
+
+bool Obj_Tank::Init()
 {
     asset::asset_id laser_id = g_AudioAssets.LoadAudioFromFile("Data/Sounds/LaserFire.wav");
     asset::asset_id rocket_id = g_AudioAssets.LoadAudioFromFile("Data/Sounds/RocketFire.wav");
@@ -32,6 +34,8 @@ Obj_Tank::Obj_Tank() : m_MovementRate(0, 1), m_BarrelPosition(300.0f + 32.0f, 30
 
     m_shotSounds.push_back(laser_id);
     m_shotSounds.push_back(rocket_id);
+
+    return true;
 }
 
 /**

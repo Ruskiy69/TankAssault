@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6178 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6198 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -108,69 +108,71 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="classobj_1_1_obj___tank.html#a1c9f8f96d4399e3e1f1b8333c269d0db" title="Initialize all values and load sound effects.">Obj_Tank</a>();</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;        <span class="keyword">virtual</span> ~<a class="code" href="classobj_1_1_obj___tank.html" title="An base class for all in-game tanks.">Obj_Tank</a>(){}</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#a21e361101566d85974c84aa1dbbcdc7f" title="Rotate the tank body.">Turn</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> degree);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">bool</span> Init();</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#a967b1307ad29497cb1e73c5ee2d464a5" title="Drive the tank.">Drive</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> speed);</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#a9355fa3f04d43ea36857f0101f4e7511" title="Adjust the tank position.">Adjust</a>(<span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; Rate);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> Aim(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y);</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keywordtype">void</span> Aim(<span class="keyword">const</span> <span class="keywordtype">float</span> x, <span class="keyword">const</span> <span class="keywordtype">float</span> y);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> Aim(<span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; Target);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#ad3ec3c46ff5e388832d64fafc21e0722" title="Rotates the tank tower.">RotateTower</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> degrees);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#a21e361101566d85974c84aa1dbbcdc7f" title="Rotate the tank body.">Turn</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> degree);</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#a967b1307ad29497cb1e73c5ee2d464a5" title="Drive the tank.">Drive</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> speed);</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#a9355fa3f04d43ea36857f0101f4e7511" title="Adjust the tank position.">Adjust</a>(<span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; Rate);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordtype">void</span> Aim(<span class="keyword">const</span> <span class="keywordtype">int</span> x, <span class="keyword">const</span> <span class="keywordtype">int</span> y);</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordtype">void</span> Aim(<span class="keyword">const</span> <span class="keywordtype">float</span> x, <span class="keyword">const</span> <span class="keywordtype">float</span> y);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <span class="keywordtype">void</span> Aim(<span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; Target);</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#adc05be7bbb153d762fddb31ee28da88b" title="Check primary weapon firing ability.">FirePrimary</a>();</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#afd7776ea08c109d3113c492afa3eb82b" title="Checks the secondary weapon, a laser machine gun, firing ability.">FireSecondary</a>();</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#abd50df54bea4cfdb1d72f95749885a9c" title="Do damage to the tank, reducing health.">Damage</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> damage_points);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#ad3ec3c46ff5e388832d64fafc21e0722" title="Rotates the tank tower.">RotateTower</a>(<span class="keyword">const</span> <span class="keywordtype">float</span> degrees);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#adc05be7bbb153d762fddb31ee28da88b" title="Check primary weapon firing ability.">FirePrimary</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#afd7776ea08c109d3113c492afa3eb82b" title="Checks the secondary weapon, a laser machine gun, firing ability.">FireSecondary</a>();</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classobj_1_1_obj___tank.html#acdd9e32ce12a8526c2aacbf37b43d941" title="Updates tower and tank on-screen, recommended to be over-written.">Update</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classobj_1_1_obj___tank.html#abd50df54bea4cfdb1d72f95749885a9c" title="Do damage to the tank, reducing health.">Damage</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> damage_points);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#aa5be34a2cbf816ca2032bddbd13cef6b" title="Checks if the tank is alive, based on Obj_Tank::health.">IsAlive</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#a222bdad640c8663740b2d337f70821d6" title="Checks if the tank is in motion, based on the Obj_Tank::moving variable.">IsMoving</a>();</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; <a class="code" href="classobj_1_1_obj___tank.html#a16b834414d91f8bd0297f237e9c8cedb" title="Retrieves barrel position.">GetBarrelPosition</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; <a class="code" href="classobj_1_1_obj___tank.html#a7e003991e6c82472cc0dccc95dbc6814" title="Retrieves tank location.">GetTankPosition</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___rect.html" title="A rectangle.">math::ML_Rect</a>&amp; <a class="code" href="classobj_1_1_obj___tank.html#a340d6efa601510781eb78031fd067645" title="Retrieves the tank collision box.">GetCollisionBox</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classobj_1_1_obj___tank.html#aa4553881bf2f8e5c62d4e533ab681a7c" title="Returns the primary ammo count.">GetPrimaryAmmoCount</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_TANK_SPEED = 3;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keyword">virtual</span> <span class="keywordtype">int</span> <a class="code" href="classobj_1_1_obj___tank.html#acdd9e32ce12a8526c2aacbf37b43d941" title="Updates tower and tank on-screen, recommended to be over-written.">Update</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#aa5be34a2cbf816ca2032bddbd13cef6b" title="Checks if the tank is alive, based on Obj_Tank::health.">IsAlive</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___tank.html#a222bdad640c8663740b2d337f70821d6" title="Checks if the tank is in motion, based on the Obj_Tank::moving variable.">IsMoving</a>();</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; <a class="code" href="classobj_1_1_obj___tank.html#a16b834414d91f8bd0297f237e9c8cedb" title="Retrieves barrel position.">GetBarrelPosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; <a class="code" href="classobj_1_1_obj___tank.html#a7e003991e6c82472cc0dccc95dbc6814" title="Retrieves tank location.">GetTankPosition</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___rect.html" title="A rectangle.">math::ML_Rect</a>&amp; <a class="code" href="classobj_1_1_obj___tank.html#a340d6efa601510781eb78031fd067645" title="Retrieves the tank collision box.">GetCollisionBox</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">int</span> <a class="code" href="classobj_1_1_obj___tank.html#aa4553881bf2f8e5c62d4e533ab681a7c" title="Returns the primary ammo count.">GetPrimaryAmmoCount</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> ROCKET_DELAY = 60; <span class="comment">// Delay for rocket shots</span></div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> MG_DELAY = 5;      <span class="comment">// Delay for default weapon, laser machine gun</span></div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keyword">enum</span> { e_LASERSOUND = 0, e_ROCKETSOUND };</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="comment">// Sound effects for various weapon launches</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        std::vector&lt;asset::asset_id&gt; m_shotSounds;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        <a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>* mp_Tank;    <span class="comment">// Two separate entities so that</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        <a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>* mp_Tower;   <span class="comment">// They can rotate independently</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a> m_MovementRate;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> DEFAULT_TANK_SPEED = 3;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> ROCKET_DELAY = 60; <span class="comment">// Delay for rocket shots</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">static</span> <span class="keyword">const</span> <span class="keywordtype">int</span> MG_DELAY = 5;      <span class="comment">// Delay for default weapon, laser machine gun</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <span class="keyword">enum</span> { e_LASERSOUND = 0, e_ROCKETSOUND };</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// Sound effects for various weapon launches</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        std::vector&lt;asset::asset_id&gt; m_shotSounds;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;        <a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>* mp_Tank;    <span class="comment">// Two separate entities so that</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>* mp_Tower;   <span class="comment">// They can rotate independently</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="comment">// The shots have to always come from the barrel, </span></div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// so I have to dedicate a way to keep track of it</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a> m_BarrelPosition;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="comment">// Delays for weapon firing</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">int</span> m_primary_shot_delay, m_secondary_shot_delay;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="comment">// Health and ammo count</span></div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">int</span> m_health, m_primary_ammo;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="comment">// Action tracking</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        <span class="keywordtype">bool</span> m_moving, m_shooting_primary, m_shooting_secondary;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    };</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#endif // TANK_H</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a> m_MovementRate;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// The shots have to always come from the barrel, </span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="comment">// so I have to dedicate a way to keep track of it</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a> m_BarrelPosition;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="comment">// Delays for weapon firing</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordtype">int</span> m_primary_shot_delay, m_secondary_shot_delay;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <span class="comment">// Health and ammo count</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        <span class="keywordtype">int</span> m_health, m_primary_ammo;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="comment">// Action tracking</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordtype">bool</span> m_moving, m_shooting_primary, m_shooting_secondary;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    };</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif // TANK_H</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 28 2012 21:45:08 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 29 2012 18:34:00 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

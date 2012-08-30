@@ -1,7 +1,7 @@
 var searchData=
 [
   ['iasset',['IAsset',['../classasset_1_1_i_asset.html',1,'asset']]],
-  ['init',['Init',['../classgame_1_1_c_l___engine.html#a62a77da287cfce6616b0f8eb850615e9',1,'game::CL_Engine::Init()'],['../classgame_1_1_c_l___menu_manager.html#a49be9fdcf130a9582516a15a7380dc4e',1,'game::CL_MenuManager::Init()'],['../_collapse2200_8cpp.html#aee8048628ff2b5c026c9e15acdcaacb8',1,'init():&#160;Collapse2200.cpp']]],
+  ['init',['Init',['../classgame_1_1_c_l___engine.html#a62a77da287cfce6616b0f8eb850615e9',1,'game::CL_Engine::Init()'],['../classgame_1_1_c_l___menu_manager.html#a49be9fdcf130a9582516a15a7380dc4e',1,'game::CL_MenuManager::Init()'],['../classobj_1_1_obj___player.html#a393763ba5c7e26381b8c9edb31775bb4',1,'obj::Obj_Player::Init()'],['../_collapse2200_8cpp.html#aee8048628ff2b5c026c9e15acdcaacb8',1,'init():&#160;Collapse2200.cpp']]],
   ['initializeopenal',['InitializeOpenAL',['../classasset_1_1_a_l___sound2_d.html#a2c6b1fbf83f0b78646c4b60800973434',1,'asset::AL_Sound2D']]],
   ['intro_5fstr_5fsize',['INTRO_STR_SIZE',['../namespacegame.html#a309f0aba016858a13937c587d3fe1512',1,'game']]],
   ['isalive',['IsAlive',['../classobj_1_1_obj___tank.html#aa5be34a2cbf816ca2032bddbd13cef6b',1,'obj::Obj_Tank']]],

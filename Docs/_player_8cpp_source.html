@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6178 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6198 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -97,38 +97,44 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">using</span> <a class="code" href="classobj_1_1_obj___player.html" title="The user-controlled entity.">obj::Obj_Player</a>;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">using</span> <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">asset::g_TextureAssets</a>;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classobj_1_1_obj___player.html#a62b4d555a23e9297e4fe1662c4ee92b8">   22</a></span>&#160;Obj_Player::Obj_Player()</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="comment">// Load tank base images</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    SDL_Surface* pSprite_Sheet = gfx::load_image(<span class="stringliteral">&quot;Data/Images/Player.png&quot;</span>);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    mp_Tank = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromSurface(pSprite_Sheet));</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#a5acdce8942d0f5b5e3e1b49e5c983681" title="Resize the texture.">Resize</a>(64, 64);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#afb69d572f0786d8c4595217e5fb4874e" title="Changes the dimensions to render the current texture at.">SetRenderDimensions</a>(<a class="code" href="structmath_1_1_m_l___rectf.html" title="A rectangle, supporting floating point numbers.">math::ML_Rectf</a>(0, 0, 0.5f, 1.0f));</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(0, 0);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    SDL_FreeSurface(pSprite_Sheet);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// Load tank tower image</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="comment"></span>    mp_Tower = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="stringliteral">&quot;Data/Images/Player_Barrel1.png&quot;</span>));</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    mp_Tower-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(0, 0);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;}</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="code" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255">   46</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255" title="Render the tank and the tower on-screen.">Obj_Player::Update</a>()</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255" title="Render the tank and the tower on-screen.">Obj_Tank::Update</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keywordtype">void</span> Obj_Player::SetSpawn(<span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; Pos)</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;{</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(Pos);</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    mp_Tower-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(Pos);</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="code" href="classobj_1_1_obj___player.html#a62b4d555a23e9297e4fe1662c4ee92b8">   22</a></span>&#160;Obj_Player::Obj_Player(){}</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="code" href="classobj_1_1_obj___player.html#a393763ba5c7e26381b8c9edb31775bb4">   24</a></span>&#160;<span class="keywordtype">bool</span> <a class="code" href="classobj_1_1_obj___player.html#a393763ba5c7e26381b8c9edb31775bb4">Obj_Player::Init</a>()</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="classobj_1_1_obj___player.html#a393763ba5c7e26381b8c9edb31775bb4">Obj_Tank::Init</a>();</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="comment">// Load tank base images</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    SDL_Surface* pSprite_Sheet = gfx::load_image(<span class="stringliteral">&quot;Data/Images/Player.png&quot;</span>);</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    mp_Tank = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;        <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromSurface(pSprite_Sheet));</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#a5acdce8942d0f5b5e3e1b49e5c983681" title="Resize the texture.">Resize</a>(64, 64);</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#afb69d572f0786d8c4595217e5fb4874e" title="Changes the dimensions to render the current texture at.">SetRenderDimensions</a>(<a class="code" href="structmath_1_1_m_l___rectf.html" title="A rectangle, supporting floating point numbers.">math::ML_Rectf</a>(0, 0, 0.5f, 1.0f));</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(0, 0);</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    SDL_FreeSurface(pSprite_Sheet);</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="comment">// Load tank tower image</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment"></span>    mp_Tower = <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.GetEntityByID(</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <a class="code" href="namespaceasset.html#ae66df12cf0a47de72dc0da41327b8e7e" title="Globally accessible TextureAssetManager.">g_TextureAssets</a>.LoadEntityFromFile&lt;<a class="code" href="classasset_1_1_g_l___entity.html">asset::GL_Entity</a>&gt;(</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="stringliteral">&quot;Data/Images/Player_Barrel1.png&quot;</span>));</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    mp_Tower-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(0, 0);</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;}</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="code" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255">   52</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255" title="Render the tank and the tower on-screen.">Obj_Player::Update</a>()</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255" title="Render the tank and the tower on-screen.">Obj_Tank::Update</a>();</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;<span class="keywordtype">void</span> Obj_Player::SetSpawn(<span class="keyword">const</span> <a class="code" href="structmath_1_1_m_l___vector2.html" title="Two dimensional vector.">math::ML_Vector2</a>&amp; Pos)</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;{</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    mp_Tank-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(Pos);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    mp_Tower-&gt;<a class="code" href="classasset_1_1_g_l___entity.html#aa4ccd2e57a3f27f6f8dd9c0bb0901232" title="Move the entity to a certain location.">Move</a>(Pos);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 28 2012 21:45:08 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 29 2012 18:34:01 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

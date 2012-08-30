@@ -16,6 +16,8 @@ AI_Tank::AI_Tank(const game::CL_TerrainMap& Terrain_Map,
     const obj::Obj_Player& Player) : 
     AI_Enemy(Terrain_Map, Collision_Map, AI_Map, Player)
 {
+    Obj_Tank::Init();
+
     mp_Tank = g_TextureAssets.GetEntityByID(
         g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
         "Data/Images/Enemy_Tank.png"));

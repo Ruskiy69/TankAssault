@@ -24,7 +24,7 @@
    <div id="projectname">Collapse 2200
    &#160;<span id="projectnumber">0.1a</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6178 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6198 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -114,6 +114,7 @@ Inheritance diagram for obj::Obj_Player:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a62b4d555a23e9297e4fe1662c4ee92b8"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobj_1_1_obj___player.html#a62b4d555a23e9297e4fe1662c4ee92b8">Obj_Player</a> ()</td></tr>
 <tr class="memdesc:a62b4d555a23e9297e4fe1662c4ee92b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor for the class.  <a href="#a62b4d555a23e9297e4fe1662c4ee92b8"></a><br/></td></tr>
+<tr class="memitem:a393763ba5c7e26381b8c9edb31775bb4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobj_1_1_obj___player.html#a393763ba5c7e26381b8c9edb31775bb4">Init</a> ()</td></tr>
 <tr class="memitem:af0fd0cd9a18bfbc0b284011a2a3cd803"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af0fd0cd9a18bfbc0b284011a2a3cd803"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetSpawn</b> (const <a class="el" href="structmath_1_1_m_l___vector2.html">math::ML_Vector2</a> &amp;Pos)</td></tr>
 <tr class="memitem:a3d0d5355271140d10bb3caf04b4c5255"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255">Update</a> ()</td></tr>
@@ -213,13 +214,40 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
       </table>
 </div><div class="memdoc">
 <p>The main sprite image is loaded here, which resides in "Data/Images" for the time being. Since there are multiple sprites in the sheet, they are each cut out, and the GL_Entity is resized to 64x64 to exclusively accompany the first sprite. Then, in the <a class="el" href="classobj_1_1_obj___player.html#a3d0d5355271140d10bb3caf04b4c5255" title="Render the tank and the tower on-screen.">Update()</a> method, only half of the whole texture is rendered, properly displaying the sprite in use. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo:</a></b></dt><dd>Fix animations. </dd></dl>
 
 <p>Definition at line <a class="el" href="_player_8cpp_source.html#l00022">22</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
 <hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a393763ba5c7e26381b8c9edb31775bb4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Obj_Player::Init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo:</a></b></dt><dd>Fix animations. </dd></dl>
+
+<p>Reimplemented from <a class="el" href="classobj_1_1_obj___tank.html">obj::Obj_Tank</a>.</p>
+
+<p>Definition at line <a class="el" href="_player_8cpp_source.html#l00024">24</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a3d0d5355271140d10bb3caf04b4c5255"></a>
 <div class="memitem">
 <div class="memproto">
@@ -244,7 +272,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 
 <p>Reimplemented from <a class="el" href="classobj_1_1_obj___tank.html#acdd9e32ce12a8526c2aacbf37b43d941">obj::Obj_Tank</a>.</p>
 
-<p>Definition at line <a class="el" href="_player_8cpp_source.html#l00046">46</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_player_8cpp_source.html#l00052">52</a> of file <a class="el" href="_player_8cpp_source.html">Player.cpp</a>.</p>
 
 </div>
 </div>
@@ -255,7 +283,7 @@ static const int&#160;</td><td class="memItemRight" valign="bottom"><b>MG_DELAY<
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Aug 28 2012 21:45:10 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Wed Aug 29 2012 18:34:03 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

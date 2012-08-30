@@ -32,7 +32,7 @@ GL_Window::GL_Window(const int w, const int h, const char* ptitle,
     this->ToggleFullscreen();
 #endif // _DEBUG
 
-    // Record OpenGL version.
+    // Record OpenGL data.
     const char* pstr = (char*)glGetString(GL_VERSION);
     g_Log.Flush();
     g_Log << "[INFO] OpenGL version: " << pstr << ".\n";
@@ -40,6 +40,20 @@ GL_Window::GL_Window(const int w, const int h, const char* ptitle,
     g_Log << "[INFO] OpenGL vendor: " << pstr << ".\n";
     pstr = (char*)glGetString(GL_RENDERER);
     g_Log << "[INFO] OpenGL renderer: " << pstr << ".\n";
+
+    // Check for supported OpenGL version (minimum 2.1)
+    GLint maj_v, min_v;
+    glGetIntegerv(GL_MAJOR_VERSION, &maj_v);
+    glGetIntegerv(GL_MINOR_VERSION, &min_v);
+
+    if(maj_v < 20)
+    {
+        g_Log.Flush();
+        g_Log << "[ERROR] Unsupported OpenGL version.\n";
+        g_Log << "[ERROR] Your version: " << maj_v << "." << min_v;
+        g_Log << "\n[ERROR] Required version: 2.1\n";
+        gk::handle_error(g_Log.GetLastLog().c_str());
+    }
 
     SDL_WM_SetCaption(ptitle, NULL);
 

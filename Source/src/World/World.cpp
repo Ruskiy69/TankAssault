@@ -57,6 +57,7 @@ void CL_World::Init()
     while(this->SpawnEnemy());
 
     // Set player spawn location.
+    m_Player.Init();
     m_Player.SetSpawn(m_ObjectiveMap.GetPlayerSpawn()->GetPosition());
 }
 

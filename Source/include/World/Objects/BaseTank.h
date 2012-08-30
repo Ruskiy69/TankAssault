@@ -31,6 +31,8 @@ namespace obj
         Obj_Tank();
         virtual ~Obj_Tank(){}
 
+        virtual bool Init();
+
         void Turn(const float degree);
 
         void Drive(const float speed);

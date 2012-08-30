@@ -23,6 +23,7 @@ namespace obj
     public:
         Obj_Player();
 
+        bool Init();
         void SetSpawn(const math::ML_Vector2& Pos);
         int Update();
     };
