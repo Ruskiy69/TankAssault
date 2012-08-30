@@ -1,6 +1,6 @@
 ************************** COLLAPSE *****************************
 *                                                               *
-* Created By    : George Kudrayvtsev                            *
+* Created By    : George Kudrayvtsev, Nick Anysenko             *
 * Platform      : Windows                                       *
 * Version       : 0.7.5 Alpha                                   *
 * Last Updated  : 08.28.2012                                    *
