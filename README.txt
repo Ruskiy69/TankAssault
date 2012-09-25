@@ -2,7 +2,7 @@
 
 Created By    : George Kudrayvtsev, Nick Anysenko
 Platform      : Windows
-Version       : 0.8.0
+Version       : 0.8.1
 Last Updated  : 09.24.2012
 License       : Apache 2.0
 

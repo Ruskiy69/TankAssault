@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -132,64 +132,11 @@ Enumerations</h2></td></tr>
 &#160;&#160;<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8">e_FIRING_SECONDARY</a> =  (1 &lt;&lt; 4), 
 <b>e_RELOADING_PRIMARY</b> =  (1 &lt;&lt; 5), 
 <b>e_RELOADING_SECONDARY</b> =  (1 &lt;&lt; 6), 
-<b>e_NO_PATH</b> =  (1 &lt;&lt; 7), 
-<br/>
-&#160;&#160;<b>e_NONE</b> =  (1 &lt;&lt; 0), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455">e_PATHFINDING</a> =  (1 &lt;&lt; 1), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166">e_DONE</a> =  (1 &lt;&lt; 2), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4">e_FIRING_PRIMARY</a> =  (1 &lt;&lt; 3), 
-<br/>
-&#160;&#160;<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8">e_FIRING_SECONDARY</a> =  (1 &lt;&lt; 4), 
-<b>e_RELOADING_PRIMARY</b> =  (1 &lt;&lt; 5), 
-<b>e_RELOADING_SECONDARY</b> =  (1 &lt;&lt; 6), 
 <b>e_NO_PATH</b> =  (1 &lt;&lt; 7)
 <br/>
  }</td></tr>
 <tr class="memdesc:ae534934082f4c0cf5711383a8e97bf49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various phases of AI action which can be combined together as flags.  <a href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">More...</a><br/></td></tr>
 <tr class="memitem:ae534934082f4c0cf5711383a8e97bf49"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">AIState</a> { <br/>
-&#160;&#160;<b>e_NONE</b> =  (1 &lt;&lt; 0), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455">e_PATHFINDING</a> =  (1 &lt;&lt; 1), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166">e_DONE</a> =  (1 &lt;&lt; 2), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4">e_FIRING_PRIMARY</a> =  (1 &lt;&lt; 3), 
-<br/>
-&#160;&#160;<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8">e_FIRING_SECONDARY</a> =  (1 &lt;&lt; 4), 
-<b>e_RELOADING_PRIMARY</b> =  (1 &lt;&lt; 5), 
-<b>e_RELOADING_SECONDARY</b> =  (1 &lt;&lt; 6), 
-<b>e_NO_PATH</b> =  (1 &lt;&lt; 7), 
-<br/>
-&#160;&#160;<b>e_NONE</b> =  (1 &lt;&lt; 0), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455">e_PATHFINDING</a> =  (1 &lt;&lt; 1), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166">e_DONE</a> =  (1 &lt;&lt; 2), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4">e_FIRING_PRIMARY</a> =  (1 &lt;&lt; 3), 
-<br/>
-&#160;&#160;<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8">e_FIRING_SECONDARY</a> =  (1 &lt;&lt; 4), 
-<b>e_RELOADING_PRIMARY</b> =  (1 &lt;&lt; 5), 
-<b>e_RELOADING_SECONDARY</b> =  (1 &lt;&lt; 6), 
-<b>e_NO_PATH</b> =  (1 &lt;&lt; 7), 
-<br/>
-&#160;&#160;<b>e_NONE</b> =  (1 &lt;&lt; 0), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455">e_PATHFINDING</a> =  (1 &lt;&lt; 1), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166">e_DONE</a> =  (1 &lt;&lt; 2), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4">e_FIRING_PRIMARY</a> =  (1 &lt;&lt; 3), 
-<br/>
-&#160;&#160;<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8">e_FIRING_SECONDARY</a> =  (1 &lt;&lt; 4), 
-<b>e_RELOADING_PRIMARY</b> =  (1 &lt;&lt; 5), 
-<b>e_RELOADING_SECONDARY</b> =  (1 &lt;&lt; 6), 
-<b>e_NO_PATH</b> =  (1 &lt;&lt; 7)
-<br/>
- }</td></tr>
-<tr class="memdesc:ae534934082f4c0cf5711383a8e97bf49"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various phases of AI action which can be combined together as flags.  <a href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">More...</a><br/></td></tr>
-<tr class="memitem:ae534934082f4c0cf5711383a8e97bf49"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">AIState</a> { <br/>
-&#160;&#160;<b>e_NONE</b> =  (1 &lt;&lt; 0), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455">e_PATHFINDING</a> =  (1 &lt;&lt; 1), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166">e_DONE</a> =  (1 &lt;&lt; 2), 
-<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4">e_FIRING_PRIMARY</a> =  (1 &lt;&lt; 3), 
-<br/>
-&#160;&#160;<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8">e_FIRING_SECONDARY</a> =  (1 &lt;&lt; 4), 
-<b>e_RELOADING_PRIMARY</b> =  (1 &lt;&lt; 5), 
-<b>e_RELOADING_SECONDARY</b> =  (1 &lt;&lt; 6), 
-<b>e_NO_PATH</b> =  (1 &lt;&lt; 7), 
-<br/>
 &#160;&#160;<b>e_NONE</b> =  (1 &lt;&lt; 0), 
 <a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455">e_PATHFINDING</a> =  (1 &lt;&lt; 1), 
 <a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166">e_DONE</a> =  (1 &lt;&lt; 2), 
@@ -269,18 +216,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintState</b> (int s
 <tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8"></a>e_FIRING_SECONDARY</em>&nbsp;</td><td>
 <p>These next four are self-explanatory. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455"></a>e_PATHFINDING</em>&nbsp;</td><td>
-<p>Doing nothing. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166"></a>e_DONE</em>&nbsp;</td><td>
-<p>Following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4"></a>e_FIRING_PRIMARY</em>&nbsp;</td><td>
-<p>Finished following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8"></a>e_FIRING_SECONDARY</em>&nbsp;</td><td>
-<p>These next four are self-explanatory. </p>
-</td></tr>
 </table>
 </dd>
 </dl>
@@ -323,18 +258,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintState</b> (int s
 <tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8"></a>e_FIRING_SECONDARY</em>&nbsp;</td><td>
 <p>These next four are self-explanatory. </p>
 </td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455"></a>e_PATHFINDING</em>&nbsp;</td><td>
-<p>Doing nothing. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166"></a>e_DONE</em>&nbsp;</td><td>
-<p>Following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4"></a>e_FIRING_PRIMARY</em>&nbsp;</td><td>
-<p>Finished following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8"></a>e_FIRING_SECONDARY</em>&nbsp;</td><td>
-<p>These next four are self-explanatory. </p>
-</td></tr>
 </table>
 </dd>
 </dl>
@@ -343,64 +266,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>PrintState</b> (int s
 
 </div>
 </div>
-<a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">enum <a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">ai::AIState</a></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl><dt><b>Enumerator: </b></dt><dd><table border="0" cellspacing="2" cellpadding="0">
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455"></a>e_PATHFINDING</em>&nbsp;</td><td>
-<p>Doing nothing. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166"></a>e_DONE</em>&nbsp;</td><td>
-<p>Following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4"></a>e_FIRING_PRIMARY</em>&nbsp;</td><td>
-<p>Finished following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8"></a>e_FIRING_SECONDARY</em>&nbsp;</td><td>
-<p>These next four are self-explanatory. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455"></a>e_PATHFINDING</em>&nbsp;</td><td>
-<p>Doing nothing. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166"></a>e_DONE</em>&nbsp;</td><td>
-<p>Following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4"></a>e_FIRING_PRIMARY</em>&nbsp;</td><td>
-<p>Finished following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8"></a>e_FIRING_SECONDARY</em>&nbsp;</td><td>
-<p>These next four are self-explanatory. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49aa9f22f28006764599dff03c2133dd455"></a>e_PATHFINDING</em>&nbsp;</td><td>
-<p>Doing nothing. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5bd904ad38d44fc2d90cbd36d5c82166"></a>e_DONE</em>&nbsp;</td><td>
-<p>Following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49ad38064a95d6cb13bbf4a096a41beded4"></a>e_FIRING_PRIMARY</em>&nbsp;</td><td>
-<p>Finished following the current path. </p>
-</td></tr>
-<tr><td valign="top"><em><a class="anchor" id="ae534934082f4c0cf5711383a8e97bf49a5b75917134329f61bcee9d519a1a49e8"></a>e_FIRING_SECONDARY</em>&nbsp;</td><td>
-<p>These next four are self-explanatory. </p>
-</td></tr>
-</table>
-</dd>
-</dl>
-
-<p>Definition at line <a class="el" href="_inventory_2include_2_world_2_a_i_2_enemy_8hpp_source.html#l00041">41</a> of file <a class="el" href="_inventory_2include_2_world_2_a_i_2_enemy_8hpp_source.html">Enemy.hpp</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:55 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

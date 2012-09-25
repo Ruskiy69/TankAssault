@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;CAsset::CAsset() : m_id(<a class="code" href="namespaceasset.html#afaaee3295d6fc9bce4caa64548b38dcf" title="Asset id tracker.">CURRENT_ASSET_ID</a>),</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    m_loaded(false),</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    m_refcount(1),</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mp_Parent(NULL)</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    mp_Parent(<a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;{</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="comment">// Increase asset id.</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="comment">// This number also represents the total amount of assets loaded.</span></div>
@@ -131,20 +131,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> asset::CAsset::IncrementReferenceCount()</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;{</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    ++m_refcount;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span>(mp_Parent != NULL)</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordflow">if</span>(mp_Parent != <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        mp_Parent-&gt;IncrementReferenceCount();</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keywordtype">void</span> asset::CAsset::DecrementReferenceCount()</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;{</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    --m_refcount;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(mp_Parent != NULL)</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordflow">if</span>(mp_Parent != <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        mp_Parent-&gt;DecrementReferenceCount();</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:39 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:01:52 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

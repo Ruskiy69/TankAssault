@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -108,15 +108,12 @@ Inheritance diagram for game::CMap:</div>
  <div class="center">
   <img src="classgame_1_1_c_map.png" usemap="#game::CMap_map" alt=""/>
   <map id="game::CMap_map" name="game::CMap_map">
+<area href="classgame_1_1_c_collision_map.html" title="The collision tile map." alt="game::CCollisionMap" shape="rect" coords="0,56,136,80"/>
 <area href="classgame_1_1_c_collision_map.html" title="The collision tile map." alt="game::CCollisionMap" shape="rect" coords="146,56,282,80"/>
-<area href="classgame_1_1_c_collision_map.html" title="The collision tile map." alt="game::CCollisionMap" shape="rect" coords="146,112,282,136"/>
-<area href="classgame_1_1_c_collision_map.html" title="The collision tile map." alt="game::CCollisionMap" shape="rect" coords="146,168,282,192"/>
-<area href="classgame_1_1_c_objective_map.html" title="Contains path information for AI movement and navigation." alt="game::CObjectiveMap" shape="rect" coords="146,224,282,248"/>
-<area href="classgame_1_1_c_objective_map.html" title="Contains path information for AI movement and navigation." alt="game::CObjectiveMap" shape="rect" coords="146,280,282,304"/>
-<area href="classgame_1_1_c_objective_map.html" title="Contains path information for AI movement and navigation." alt="game::CObjectiveMap" shape="rect" coords="146,336,282,360"/>
-<area href="classgame_1_1_c_terrain_map.html" title="The terrain tile map." alt="game::CTerrainMap" shape="rect" coords="146,392,282,416"/>
-<area href="classgame_1_1_c_terrain_map.html" title="The terrain tile map." alt="game::CTerrainMap" shape="rect" coords="146,448,282,472"/>
-<area href="classgame_1_1_c_terrain_map.html" title="The terrain tile map." alt="game::CTerrainMap" shape="rect" coords="146,504,282,528"/>
+<area href="classgame_1_1_c_objective_map.html" title="Contains path information for AI movement and navigation." alt="game::CObjectiveMap" shape="rect" coords="292,56,428,80"/>
+<area href="classgame_1_1_c_objective_map.html" title="Contains path information for AI movement and navigation." alt="game::CObjectiveMap" shape="rect" coords="438,56,574,80"/>
+<area href="classgame_1_1_c_terrain_map.html" title="The terrain tile map." alt="game::CTerrainMap" shape="rect" coords="584,56,720,80"/>
+<area href="classgame_1_1_c_terrain_map.html" title="The terrain tile map." alt="game::CTerrainMap" shape="rect" coords="730,56,866,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -187,45 +184,14 @@ const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp
 <tr class="memitem:a0ab395b11763ccb99a68b67bc8785990"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ab395b11763ccb99a68b67bc8785990"></a>
 const std::vector<br class="typebreak"/>
 &lt; obj::CCollidable * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetTiles</b> () const </td></tr>
-<tr class="memitem:a4e393954e475e73ec099bf8a339403f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e393954e475e73ec099bf8a339403f2"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CMap</b> (bool edit_mode=false)</td></tr>
-<tr class="memitem:a75491b9b2360e3118a129250ac937a7a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75491b9b2360e3118a129250ac937a7a"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const char *pfilename)=0</td></tr>
-<tr class="memitem:a3f7e3ad3d4343f2803b45c0e066199c1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f7e3ad3d4343f2803b45c0e066199c1"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Save</b> (const char *pfilename)=0</td></tr>
-<tr class="memitem:aef96121dc62245fc5b4ceeadb940eced"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aef96121dc62245fc5b4ceeadb940eced"></a>
-obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>FindTile</b> (const int x, const int y) const </td></tr>
-<tr class="memitem:a081c8b300792158aef9bc621637782ef"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a081c8b300792158aef9bc621637782ef"></a>
-obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>FindTile</b> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Position) const </td></tr>
-<tr class="memitem:a0fcedad86fbf585192290632dad4470b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0fcedad86fbf585192290632dad4470b"></a>
-obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>FindTile</b> (const <a class="el" href="structmath_1_1_c_rect.html">math::CRect</a> &amp;Area) const </td></tr>
-<tr class="memitem:ad65d8445f90f5c9d83a342d97793b74d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad65d8445f90f5c9d83a342d97793b74d"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>PlaceTile</b> (int x, int y)=0</td></tr>
-<tr class="memitem:a1db14437a7c60af50e2121cf267e3344"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1db14437a7c60af50e2121cf267e3344"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveTile</b> (int x, int y)</td></tr>
-<tr class="memitem:a5edc15221464a96d5079fcb61cd2b102"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5edc15221464a96d5079fcb61cd2b102"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveTile</b> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Position)</td></tr>
-<tr class="memitem:af618417e853ce9c965e80c9dce52547c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af618417e853ce9c965e80c9dce52547c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveTile</b> (const obj::CCollidable *p_Tile)</td></tr>
-<tr class="memitem:ac9ce1bf2aa0b5ab255cc7dc1cc910de5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9ce1bf2aa0b5ab255cc7dc1cc910de5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Pan</b> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Position)</td></tr>
-<tr class="memitem:a96c92ea9ed8ad06d76f935e8681cffbe"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96c92ea9ed8ad06d76f935e8681cffbe"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> (bool show_active)=0</td></tr>
-<tr class="memitem:a6e104a392b71ef1c344c6b31f8e89b4c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6e104a392b71ef1c344c6b31f8e89b4c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetPanRate</b> (const int rate)</td></tr>
-<tr class="memitem:a7aee48e4b12e3c8ec82e3507afab81bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7aee48e4b12e3c8ec82e3507afab81bd"></a>
-const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetPanRate</b> () const </td></tr>
-<tr class="memitem:a0ab395b11763ccb99a68b67bc8785990"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ab395b11763ccb99a68b67bc8785990"></a>
-const std::vector<br class="typebreak"/>
-&lt; obj::CCollidable * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetTiles</b> () const </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a06d8833f0208409550790d29aefe6b2b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06d8833f0208409550790d29aefe6b2b"></a>
+<tr class="memitem:a8ac466700c4cd2ed9db1c659ca743d87"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8ac466700c4cd2ed9db1c659ca743d87"></a>
 obj::CGameObject *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_CurrentTile</b></td></tr>
 <tr class="memitem:af18bdea8dd441841e22c5b4076d6041b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af18bdea8dd441841e22c5b4076d6041b"></a>
 <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_PanRate</b></td></tr>
-<tr class="memitem:a3f923430dccf6dcbf451f6231f7bb7d1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3f923430dccf6dcbf451f6231f7bb7d1"></a>
+<tr class="memitem:a39d1d8a88bf173b7062290e9dd2dc13f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a39d1d8a88bf173b7062290e9dd2dc13f"></a>
 std::vector&lt; obj::CGameObject * &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>mp_allTiles</b></td></tr>
 <tr class="memitem:a07e6d967107a1839738669ba2f3e31fb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a07e6d967107a1839738669ba2f3e31fb"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_can_edit</b></td></tr>
@@ -411,16 +377,14 @@ std::vector&lt; obj::CCollidable * &gt;&#160;</td><td class="memItemRight" valig
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Collapse/include/World/Levels/<a class="el" href="_collapse_2include_2_world_2_levels_2_map_8hpp_source.html">Map.hpp</a></li>
-<li>Inventory/include/World/Levels/<a class="el" href="_inventory_2include_2_world_2_levels_2_map_8hpp_source.html">Map.hpp</a></li>
 <li>ShaderTest/include/World/Levels/<a class="el" href="_shader_test_2include_2_world_2_levels_2_map_8hpp_source.html">Map.hpp</a></li>
 <li>Collapse/src/World/Levels/<a class="el" href="_collapse_2src_2_world_2_levels_2_map_8cpp_source.html">Map.cpp</a></li>
-<li>Inventory/src/World/Levels/<a class="el" href="_inventory_2src_2_world_2_levels_2_map_8cpp_source.html">Map.cpp</a></li>
 <li>ShaderTest/src/World/Levels/<a class="el" href="_shader_test_2src_2_world_2_levels_2_map_8cpp_source.html">Map.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:56 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

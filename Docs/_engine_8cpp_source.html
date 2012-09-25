@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -200,7 +200,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    wglSwapIntervalEXT(0);</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">long</span> frame = 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    Uint32 start_time = SDL_GetTicks();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    Uint32 start_time = <a class="code" href="_s_d_l__timer_8h.html#a0b9bc71d6287e0ffafdc3419760fe2b3" title="Get the number of milliseconds since the SDL library initialization.">SDL_GetTicks</a>();</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif // _WIN32</span></div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#endif // REGULATE_FPS</span></div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="preprocessor"></span></div>
@@ -350,7 +350,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        m_Timer.<a class="code" href="classgame_1_1_c_timer.html#a43913d2aca7bb68e4f7920f1e15986a8" title="Delays the current frame to be in accordance with the frame rate.">DelayFPS</a>();</div>
 <div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;<span class="preprocessor"></span>        <span class="comment">// Show frame-rate in debug builds</span></div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        Uint32 elapsed = SDL_GetTicks() - start_time;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;        Uint32 elapsed = <a class="code" href="_s_d_l__timer_8h.html#a0b9bc71d6287e0ffafdc3419760fe2b3" title="Get the number of milliseconds since the SDL library initialization.">SDL_GetTicks</a>() - start_time;</div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;        <span class="keywordtype">double</span> fps = frame / (elapsed / 1000.0);</div>
 <div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;        printf(<span class="stringliteral">&quot;Frame Rate: %0.2f\r&quot;</span>, fps);</div>
 <div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;<span class="preprocessor">#endif // REGULATE_FPS</span></div>
@@ -362,15 +362,15 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;<span class="keywordtype">void</span> CEngine::HandleSystemEvents()</div>
 <div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;{</div>
 <div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;    <a class="code" href="union_s_d_l___event.html" title="General event structure.">SDL_Event</a> Evt;</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">while</span>(SDL_PollEvent(&amp;Evt))</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="keywordflow">while</span>(<a class="code" href="_s_d_l__events_8h.html#acfa517963c25f8b71acc6b56721c5d9b" title="Polls for currently pending events, and returns 1 if there are any pending events, or 0 if there are none available.">SDL_PollEvent</a>(&amp;Evt))</div>
 <div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    {</div>
 <div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;        <span class="keywordflow">switch</span>(Evt.type)</div>
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;        {</div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">case</span> SDL_QUIT:</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="_s_d_l__events_8h.html#a3b589e89be6b35c02e0dd34a55f3fccaa31acc5fdafc86ebe2c1f5c3cae48d603" title="User-requested quit.">SDL_QUIT</a>:</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;            m_state = game::e_QUIT;</div>
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;            <span class="keywordflow">break</span>;</div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">case</span> SDL_KEYDOWN:</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;        <span class="keywordflow">case</span> <a class="code" href="_s_d_l__events_8h.html#a3b589e89be6b35c02e0dd34a55f3fccaacaf8cfd53c985cdbf6a90c811d51a1fc" title="Keys pressed.">SDL_KEYDOWN</a>:</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;            <span class="keywordflow">if</span>(m_state == game::e_GAME &amp;&amp; Evt.key.keysym.<a class="code" href="struct_s_d_l__keysym.html#a2a22c7afc8239b19cd18dda3aa26b70c" title="SDL virtual keysym.">sym</a> == SDLK_i)</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                m_state = game::e_INVENTORY;</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;            <span class="keywordflow">else</span> <span class="keywordflow">if</span>(m_state == game::e_INVENTORY)</div>
@@ -385,8 +385,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00291"></a><span class="lineno">  291</span>&#160;</div>
 <div class="line"><a name="l00292"></a><span class="lineno">  292</span>&#160;<span class="keywordtype">void</span> CEngine::HandleGameEvents()</div>
 <div class="line"><a name="l00293"></a><span class="lineno">  293</span>&#160;{</div>
-<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <a class="code" href="structgame_1_1_game_event.html" title="A game event.">game::GameEvent</a>* pLatest = NULL;</div>
-<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">while</span>((pLatest = <a class="code" href="namespacegame.html#afb74b6e53afa2a3ce86c122814e2bf72" title="Globally accessible event queue.">g_GameEventQueue</a>.PopEvent()) != NULL)</div>
+<div class="line"><a name="l00294"></a><span class="lineno">  294</span>&#160;    <a class="code" href="structgame_1_1_game_event.html" title="A game event.">game::GameEvent</a>* pLatest = <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>;</div>
+<div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;    <span class="keywordflow">while</span>((pLatest = <a class="code" href="namespacegame.html#afb74b6e53afa2a3ce86c122814e2bf72" title="Globally accessible event queue.">g_GameEventQueue</a>.PopEvent()) != <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>)</div>
 <div class="line"><a name="l00296"></a><span class="lineno">  296</span>&#160;    {</div>
 <div class="line"><a name="l00297"></a><span class="lineno">  297</span>&#160;        <span class="keywordflow">switch</span>(pLatest-&gt;evt_type)</div>
 <div class="line"><a name="l00298"></a><span class="lineno">  298</span>&#160;        {</div>
@@ -398,7 +398,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00304"></a><span class="lineno">  304</span>&#160;</div>
 <div class="line"><a name="l00305"></a><span class="lineno">  305</span>&#160;            <span class="keywordflow">if</span>(m_state == game::e_GAME)</div>
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;            {</div>
-<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                SDL_ShowCursor(0);</div>
+<div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;                <a class="code" href="_s_d_l__mouse_8h.html#a00286ec15cd56dee1fd71ed4e6e7a585" title="Toggle whether or not the cursor is shown on the screen.">SDL_ShowCursor</a>(0);</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;                m_MusicPlayer.<a class="code" href="classasset_1_1_c_music_player.html#a19c14f095fce8c431cbd8b06b389256e" title="Stops music.">Stop</a>();</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;                <span class="comment">//m_Renderer.SetAlphaMask(1.0f);</span></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;                <span class="comment">//m_Renderer.PurgeObjects();</span></div>
@@ -428,7 +428,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;    <span class="comment">// The actual object representing each line</span></div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;    std::vector&lt;obj::CEntity*&gt; p_lineEntities;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    obj::CEntity* pFadingLine = NULL;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;    obj::CEntity* pFadingLine = <a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;    <span class="comment">// The current line</span></div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;    <span class="keywordtype">char</span>* current_line = (<span class="keywordtype">char</span>*)INTRO_STR[index];</div>
@@ -562,7 +562,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:40 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:01:52 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['ball',['ball',['../struct_s_d_l___joy_ball_event.html#add4eb0daeaf95ae56e8c7cfcec560242',1,'SDL_JoyBallEvent']]],
+  ['begin_5fcode_2eh',['begin_code.h',['../begin__code_8h.html',1,'']]],
   ['bitrate_5fav_5fhi',['bitrate_av_hi',['../structovectl__ratemanage__arg.html#ac1e81b5a2e705022ca895f494718ded7',1,'ovectl_ratemanage_arg']]],
   ['bitrate_5fav_5flo',['bitrate_av_lo',['../structovectl__ratemanage__arg.html#ac241670a3a608f114acaf8f26fe4e913',1,'ovectl_ratemanage_arg']]],
   ['bitrate_5fav_5fwindow',['bitrate_av_window',['../structovectl__ratemanage__arg.html#a1232e7296ae5e52f52039bed2560c505',1,'ovectl_ratemanage_arg']]],
@@ -21,13 +22,11 @@ var searchData=
   ['blit_5fsw',['blit_sw',['../struct_s_d_l___video_info.html#aa7dc499b5b1bea4bdb4de04bd58fc796',1,'SDL_VideoInfo']]],
   ['blit_5fsw_5fa',['blit_sw_A',['../struct_s_d_l___video_info.html#ad8319697999a5d00f551e2b7547f17aa',1,'SDL_VideoInfo']]],
   ['blit_5fsw_5fcc',['blit_sw_CC',['../struct_s_d_l___video_info.html#aafaf9067d0b70d78ec9d58c32895b62e',1,'SDL_VideoInfo']]],
-  ['buf',['buf',['../struct_s_d_l___audio_c_v_t.html#af42eb88b79cf9180670a5122c2c82671',1,'SDL_AudioCVT']]],
+  ['buf',['buf',['../struct_s_d_l___audio_c_v_t.html#a080db27b929efa983c5161360ffce310',1,'SDL_AudioCVT']]],
   ['bug_20list',['Bug List',['../bug.html',1,'']]],
-  ['bullet_2ecpp',['Bullet.cpp',['../_shader_test_2src_2_world_2_objects_2_bullet_8cpp.html',1,'']]],
-  ['bullet_2ecpp',['Bullet.cpp',['../_inventory_2src_2_world_2_objects_2_bullet_8cpp.html',1,'']]],
   ['bullet_2ecpp',['Bullet.cpp',['../_collapse_2src_2_world_2_objects_2_bullet_8cpp.html',1,'']]],
-  ['bullet_2ehpp',['Bullet.hpp',['../_inventory_2include_2_world_2_objects_2_bullet_8hpp.html',1,'']]],
-  ['bullet_2ehpp',['Bullet.hpp',['../_collapse_2include_2_world_2_objects_2_bullet_8hpp.html',1,'']]],
+  ['bullet_2ecpp',['Bullet.cpp',['../_shader_test_2src_2_world_2_objects_2_bullet_8cpp.html',1,'']]],
   ['bullet_2ehpp',['Bullet.hpp',['../_shader_test_2include_2_world_2_objects_2_bullet_8hpp.html',1,'']]],
+  ['bullet_2ehpp',['Bullet.hpp',['../_collapse_2include_2_world_2_objects_2_bullet_8hpp.html',1,'']]],
   ['button',['button',['../struct_s_d_l___mouse_button_event.html#a1a4680e19ae06d02d2093f0bcba1b24c',1,'SDL_MouseButtonEvent::button()'],['../struct_s_d_l___joy_button_event.html#a73ebe4261cf80564052af9c1af737a4d',1,'SDL_JoyButtonEvent::button()']]]
 ];

@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -114,16 +114,16 @@ Data Structures</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:abda59a47e68638299d4bdc5cc84ca5f4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abda59a47e68638299d4bdc5cc84ca5f4"></a>
 typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>asset_id</b></td></tr>
-<tr class="memitem:a370bb8c76d48561e994b9db0f9460d7f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a370bb8c76d48561e994b9db0f9460d7f"></a>
+<tr class="memitem:a356ff5452b66e215e2b8bf4928b1ae77"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a356ff5452b66e215e2b8bf4928b1ae77"></a>
 typedef std::map&lt; asset_id, <br class="typebreak"/>
 <a class="el" href="classasset_1_1_c_sound2_d.html">CSound2D</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>AudioMgr_It</b></td></tr>
-<tr class="memitem:a85b4c7186dc826a67c7ecb3eb073162e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a85b4c7186dc826a67c7ecb3eb073162e"></a>
+<tr class="memitem:a300a33ce6a4653379688612d0fb0935c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a300a33ce6a4653379688612d0fb0935c"></a>
 typedef std::map&lt; asset_id, <br class="typebreak"/>
 <a class="el" href="classasset_1_1_c_font.html">CFont</a> * &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><b>FontMgr_It</b></td></tr>
-<tr class="memitem:aeb9fb579056156b41984a495d4ed473c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeb9fb579056156b41984a495d4ed473c"></a>
+<tr class="memitem:ad1025ea463d551343e977e5c976f3ac4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad1025ea463d551343e977e5c976f3ac4"></a>
 typedef std::map&lt; std::string, <br class="typebreak"/>
-<a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#aeb9fb579056156b41984a495d4ed473c">TextureMgr_It</a></td></tr>
-<tr class="memdesc:aeb9fb579056156b41984a495d4ed473c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator for the texture manager. <br/></td></tr>
+<a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a> &gt;::iterator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#ad1025ea463d551343e977e5c976f3ac4">TextureMgr_It</a></td></tr>
+<tr class="memdesc:ad1025ea463d551343e977e5c976f3ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterator for the texture manager. <br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -158,33 +158,13 @@ static asset_id&#160;</td><td class="memItemRight" valign="bottom"><a class="el"
 <tr class="memitem:aaecbe9c8c4d5096caca6435854576faa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaecbe9c8c4d5096caca6435854576faa"></a>
 static <a class="el" href="classasset_1_1_c_texture_manager.html">CTextureManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#aaecbe9c8c4d5096caca6435854576faa">g_TextureAssets</a> = CTextureManager::GetInstance()</td></tr>
 <tr class="memdesc:aaecbe9c8c4d5096caca6435854576faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally accessible TextureAssetManager. <br/></td></tr>
-<tr class="memitem:afaaee3295d6fc9bce4caa64548b38dcf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afaaee3295d6fc9bce4caa64548b38dcf"></a>
-static asset_id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#afaaee3295d6fc9bce4caa64548b38dcf">CURRENT_ASSET_ID</a> = 1</td></tr>
-<tr class="memdesc:afaaee3295d6fc9bce4caa64548b38dcf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Asset id tracker. <br/></td></tr>
-<tr class="memitem:abe5d92a8315a9fad7ca0d225497b2eec"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abe5d92a8315a9fad7ca0d225497b2eec"></a>
-static <a class="el" href="classasset_1_1_c_audio_manager.html">CAudioManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#abe5d92a8315a9fad7ca0d225497b2eec">g_AudioAssets</a> = CAudioManager::GetInstance()</td></tr>
-<tr class="memdesc:abe5d92a8315a9fad7ca0d225497b2eec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally accessible AudioAssetManager. <br/></td></tr>
-<tr class="memitem:a67ca22eae3d68d07b380daf1b9b22bde"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a67ca22eae3d68d07b380daf1b9b22bde"></a>
-static <a class="el" href="classasset_1_1_c_font_manager.html">CFontManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>g_FontAssets</b> = CFontManager::GetInstance()</td></tr>
-<tr class="memitem:a0d69a26fb88ae7d511f1b98a245f4289"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d69a26fb88ae7d511f1b98a245f4289"></a>
-static ALuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#a0d69a26fb88ae7d511f1b98a245f4289">s_sources</a> [256]</td></tr>
-<tr class="memdesc:a0d69a26fb88ae7d511f1b98a245f4289"><td class="mdescLeft">&#160;</td><td class="mdescRight">All of the sources. <br/></td></tr>
-<tr class="memitem:abc4665bc82ca486c5bef5d3948156c39"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abc4665bc82ca486c5bef5d3948156c39"></a>
-static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#abc4665bc82ca486c5bef5d3948156c39">s_available</a> = 0</td></tr>
-<tr class="memdesc:abc4665bc82ca486c5bef5d3948156c39"><td class="mdescLeft">&#160;</td><td class="mdescRight">The index of the currently available source. <br/></td></tr>
-<tr class="memitem:ac842fd1a87ceb68b1d7604a5887cf3dc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac842fd1a87ceb68b1d7604a5887cf3dc"></a>
-static asset_id&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#ac842fd1a87ceb68b1d7604a5887cf3dc">s_assetcount</a> = 0</td></tr>
-<tr class="memdesc:ac842fd1a87ceb68b1d7604a5887cf3dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Total amount of AL assets loaded. <br/></td></tr>
-<tr class="memitem:aaecbe9c8c4d5096caca6435854576faa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaecbe9c8c4d5096caca6435854576faa"></a>
-static <a class="el" href="classasset_1_1_c_texture_manager.html">CTextureManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceasset.html#aaecbe9c8c4d5096caca6435854576faa">g_TextureAssets</a> = CTextureManager::GetInstance()</td></tr>
-<tr class="memdesc:aaecbe9c8c4d5096caca6435854576faa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally accessible TextureAssetManager. <br/></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>Assets include fonts, textures, sound effects, etc. Asset managers are created to maintain and track these assets. </p>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:56 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

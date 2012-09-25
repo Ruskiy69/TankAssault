@@ -5,5 +5,5 @@ var searchData=
   ['hot_5fy',['hot_y',['../struct_s_d_l___cursor.html#a154ec5999705b912aa09b1f1bacb3275',1,'SDL_Cursor']]],
   ['hw_5favailable',['hw_available',['../struct_s_d_l___video_info.html#a515e38f0a122a45fe67230e3929670f5',1,'SDL_VideoInfo']]],
   ['hw_5foverlay',['hw_overlay',['../struct_s_d_l___overlay.html#a3c24f3b1805074deb9ce6ef5b14f70dc',1,'SDL_Overlay']]],
-  ['hwdata',['hwdata',['../struct_s_d_l___surface.html#a0bcd62e0de8db541355785a0c53e511a',1,'SDL_Surface']]]
+  ['hwdata',['hwdata',['../struct_s_d_l___surface.html#a2d3ce688b6cfb72875f2411ea0560f18',1,'SDL_Surface']]]
 ];

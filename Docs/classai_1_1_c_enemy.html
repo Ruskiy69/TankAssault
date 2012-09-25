@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -113,7 +113,6 @@ Inheritance diagram for ai::CEnemy:</div>
   <map id="ai::CEnemy_map" name="ai::CEnemy_map">
 <area href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master." alt="ai::CEnemyTank" shape="rect" coords="0,56,102,80"/>
 <area href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master." alt="ai::CEnemyTank" shape="rect" coords="112,56,214,80"/>
-<area href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master." alt="ai::CEnemyTank" shape="rect" coords="224,56,326,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -161,26 +160,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDestination</b> (c
 AITactic&#160;</td><td class="memItemRight" valign="bottom"><b>GetTactic</b> ()</td></tr>
 <tr class="memitem:a10e72d6c8e4c11c11b930a9c5c74fa1c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10e72d6c8e4c11c11b930a9c5c74fa1c"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>GetID</b> ()</td></tr>
-<tr class="memitem:abf034bc7f461cfae14f73e0e18dd5c5c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abf034bc7f461cfae14f73e0e18dd5c5c"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CEnemy</b> (<a class="el" href="classgame_1_1_c_level.html">game::CLevel</a> *pCurrentLevel, const obj::CPlayer &amp;Player)</td></tr>
-<tr class="memitem:a654c993acc8e4082b66752044e6142f0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a654c993acc8e4082b66752044e6142f0"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (<a class="el" href="classgame_1_1_c_settings.html">game::CSettings</a> &amp;Settings)=0</td></tr>
-<tr class="memitem:a1ce3bb1d8b3704478eff24c82e204a05"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_c_enemy.html#a1ce3bb1d8b3704478eff24c82e204a05">Spawn</a> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Position)=0</td></tr>
-<tr class="memdesc:a1ce3bb1d8b3704478eff24c82e204a05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Spawns an enemy.  <a href="#a1ce3bb1d8b3704478eff24c82e204a05"></a><br/></td></tr>
-<tr class="memitem:a1d285944227c13d0f53115761678d902"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_c_enemy.html#a1d285944227c13d0f53115761678d902">Adjust</a> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Rate)=0</td></tr>
-<tr class="memdesc:a1d285944227c13d0f53115761678d902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adjusts the entity by a certain rate.  <a href="#a1d285944227c13d0f53115761678d902"></a><br/></td></tr>
-<tr class="memitem:abb28673c8ea1b660e96e4838e5bf27a1"><td class="memItemLeft" align="right" valign="top">virtual int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_c_enemy.html#abb28673c8ea1b660e96e4838e5bf27a1">Update</a> ()=0</td></tr>
-<tr class="memdesc:abb28673c8ea1b660e96e4838e5bf27a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the enemy.  <a href="#abb28673c8ea1b660e96e4838e5bf27a1"></a><br/></td></tr>
-<tr class="memitem:a0937d3596067a719fb69b30a0a32e8f6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0937d3596067a719fb69b30a0a32e8f6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetDestination</b> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Position)</td></tr>
-<tr class="memitem:a5845b2324087dd111f79df3b687b666e"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_c_enemy.html#a5845b2324087dd111f79df3b687b666e">GetPosition</a> () const =0</td></tr>
-<tr class="memdesc:a5845b2324087dd111f79df3b687b666e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current enemy position.  <a href="#a5845b2324087dd111f79df3b687b666e"></a><br/></td></tr>
-<tr class="memitem:ae3534e24be58bd9acfaa2d5eb875f48f"><td class="memItemLeft" align="right" valign="top">virtual const obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classai_1_1_c_enemy.html#ae3534e24be58bd9acfaa2d5eb875f48f">GetMainEntity</a> () const =0</td></tr>
-<tr class="memdesc:ae3534e24be58bd9acfaa2d5eb875f48f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the main (usually largest) entity of the enemy.  <a href="#ae3534e24be58bd9acfaa2d5eb875f48f"></a><br/></td></tr>
-<tr class="memitem:ab34dd163d1e04c46c02af986e1e0bfd0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab34dd163d1e04c46c02af986e1e0bfd0"></a>
-AITactic&#160;</td><td class="memItemRight" valign="bottom"><b>GetTactic</b> ()</td></tr>
-<tr class="memitem:a10e72d6c8e4c11c11b930a9c5c74fa1c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10e72d6c8e4c11c11b930a9c5c74fa1c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetID</b> ()</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -197,11 +176,7 @@ Protected Types</h2></td></tr>
 <b>e_PATROLLING</b>, 
 <br/>
 &#160;&#160;<b>e_SEARCHING</b>, 
-<b>e_ATTACKING</b>, 
-<b>e_PATROLLING</b>, 
-<b>e_SEARCHING</b>, 
-<br/>
-&#160;&#160;<b>e_ATTACKING</b>
+<b>e_ATTACKING</b>
 <br/>
  }</td></tr>
 <tr class="memitem:abcd6596eaedfd5a7bdb0b93ec48fb6a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>AITactic</b> { <br/>
@@ -211,25 +186,7 @@ Protected Types</h2></td></tr>
 <b>e_PATROLLING</b>, 
 <br/>
 &#160;&#160;<b>e_SEARCHING</b>, 
-<b>e_ATTACKING</b>, 
-<b>e_PATROLLING</b>, 
-<b>e_SEARCHING</b>, 
-<br/>
-&#160;&#160;<b>e_ATTACKING</b>
-<br/>
- }</td></tr>
-<tr class="memitem:abcd6596eaedfd5a7bdb0b93ec48fb6a0"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><b>AITactic</b> { <br/>
-&#160;&#160;<b>e_PATROLLING</b>, 
-<b>e_SEARCHING</b>, 
-<b>e_ATTACKING</b>, 
-<b>e_PATROLLING</b>, 
-<br/>
-&#160;&#160;<b>e_SEARCHING</b>, 
-<b>e_ATTACKING</b>, 
-<b>e_PATROLLING</b>, 
-<b>e_SEARCHING</b>, 
-<br/>
-&#160;&#160;<b>e_ATTACKING</b>
+<b>e_ATTACKING</b>
 <br/>
  }</td></tr>
 </table><table class="memberdecls">
@@ -244,24 +201,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>AddState</b> (<a clas
 <tr class="memitem:aa60b9bb28b831d111244a95f50d1300c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa60b9bb28b831d111244a95f50d1300c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetState</b> (<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">AIState</a> state)</td></tr>
 <tr class="memitem:a607e6800b685007eec8d7717f151b6c2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a607e6800b685007eec8d7717f151b6c2"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetState</b> ()</td></tr>
-<tr class="memitem:a9722f10165ac382369825eebe7a56fae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9722f10165ac382369825eebe7a56fae"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessAI</b> ()=0</td></tr>
-<tr class="memitem:ad3295d23f72bf3f269097e37024113ac"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ad3295d23f72bf3f269097e37024113ac"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnPatrolling</b> ()=0</td></tr>
-<tr class="memitem:a61ac24648e59b318af33f8fa0d9ebc69"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61ac24648e59b318af33f8fa0d9ebc69"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnSearching</b> ()=0</td></tr>
-<tr class="memitem:a4d710df31895a714fe732f814f1edd08"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4d710df31895a714fe732f814f1edd08"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>OnAttacking</b> ()=0</td></tr>
-<tr class="memitem:a9ee3a6a482281e3a4e0b77df9cc2bc1c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9ee3a6a482281e3a4e0b77df9cc2bc1c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetTactic</b> (AITactic tactic)</td></tr>
-<tr class="memitem:ac38d2452cbc25288dc46f2c56c31860e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac38d2452cbc25288dc46f2c56c31860e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveState</b> (<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">AIState</a> state)</td></tr>
-<tr class="memitem:a2c9e95e19dd8797f9a5a4568defc25cc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2c9e95e19dd8797f9a5a4568defc25cc"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddState</b> (<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">AIState</a> state)</td></tr>
-<tr class="memitem:a0d5ba6f732851d3e780f939ada10831a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0d5ba6f732851d3e780f939ada10831a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetState</b> (<a class="el" href="namespaceai.html#ae534934082f4c0cf5711383a8e97bf49">AIState</a> state)</td></tr>
-<tr class="memitem:ae7519d8cbf21e6ef26321e326a89c867"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7519d8cbf21e6ef26321e326a89c867"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>ResetState</b> ()</td></tr>
 <tr class="memitem:a9722f10165ac382369825eebe7a56fae"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9722f10165ac382369825eebe7a56fae"></a>
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>ProcessAI</b> ()=0</td></tr>
@@ -308,7 +247,7 @@ const obj::CPlayer &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>m
 <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_Position</b></td></tr>
 <tr class="memitem:a1c81271e9214d754a82d7a32a01a04f9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c81271e9214d754a82d7a32a01a04f9"></a>
 <a class="el" href="classmath_1_1_c_ray2.html">math::CRay2</a>&#160;</td><td class="memItemRight" valign="bottom"><b>m_LineOfSight</b></td></tr>
-<tr class="memitem:a63f2dd56a1894e56254627ea1addb100"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a63f2dd56a1894e56254627ea1addb100"></a>
+<tr class="memitem:a5ea2678354c0278580c4901fdd8056a6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ea2678354c0278580c4901fdd8056a6"></a>
 obj::CGameObject *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_DestinationTile</b></td></tr>
 <tr class="memitem:a8703b244ef97ff2497ec9ced26622679"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8703b244ef97ff2497ec9ced26622679"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>m_axis_to_path</b></td></tr>
@@ -356,7 +295,7 @@ obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Dest
 </dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classai_1_1_c_enemy.html#a472ce1701ace75b3cf20fb17cf706825" title="Contains all of the currently created enemies.">ai::CEnemy::p_allEnemies</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html#l00028">28</a> of file <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_enemy_8cpp_source.html#l00028">28</a> of file <a class="el" href="_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
 
 </div>
 </div>
@@ -382,7 +321,7 @@ obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Dest
 </div><div class="memdoc">
 <p>Here, the destructor iterates through the list of all existing enemies and finds itself. Upon finding itself, it will erase itself from the list. </p>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html#l00049">49</a> of file <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_enemy_8cpp_source.html#l00049">49</a> of file <a class="el" href="_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
 
 </div>
 </div>
@@ -417,7 +356,7 @@ obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Dest
 </dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classgame_1_1_c_map.html#a5612d00cd71389505b3763a40c434e11" title="Retrieves the latest panning rate.">game::CMap::GetPanRate()</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a7f8457eeb24091254bef395c0ee7f258">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a7f8457eeb24091254bef395c0ee7f258">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -451,41 +390,7 @@ obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Dest
 </dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classgame_1_1_c_map.html#a5612d00cd71389505b3763a40c434e11" title="Retrieves the latest panning rate.">game::CMap::GetPanRate()</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a7f8457eeb24091254bef395c0ee7f258">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1d285944227c13d0f53115761678d902"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ai::CEnemy::Adjust </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td>
-          <td class="paramname"><em>Rate</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Since there is no default entity for the enemy, it should be over-written by the inheriting class.</p>
-<dl class="params"><dt>Parameters:</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">math::CVector2&amp;</td><td>The rate to adjust at </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also:</dt><dd><a class="el" href="classgame_1_1_c_map.html#a5612d00cd71389505b3763a40c434e11" title="Retrieves the latest panning rate.">game::CMap::GetPanRate()</a> </dd></dl>
-
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a7f8457eeb24091254bef395c0ee7f258">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a7f8457eeb24091254bef395c0ee7f258">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -507,7 +412,7 @@ obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Dest
 game::CWorld::SpawnEnemy() </dd></dl>
 <dl class="section return"><dt>Returns:</dt><dd>Unique ID. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html#l00162">162</a> of file <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_enemy_8cpp_source.html#l00162">162</a> of file <a class="el" href="_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
 
 </div>
 </div>
@@ -535,7 +440,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
 <dl class="section return"><dt>Returns:</dt><dd>A pointer to the main entity. </dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classai_1_1_c_enemy.html#a5845b2324087dd111f79df3b687b666e" title="Retrieves the current enemy position.">ai::CEnemy::GetPosition()</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a49e14ce3c3cb40fd6bb710ac00c33972">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5ee9dc6b93be01f7d8afea8ab237fe73">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -563,35 +468,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
 <dl class="section return"><dt>Returns:</dt><dd>A pointer to the main entity. </dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classai_1_1_c_enemy.html#a5845b2324087dd111f79df3b687b666e" title="Retrieves the current enemy position.">ai::CEnemy::GetPosition()</a> </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a49e14ce3c3cb40fd6bb710ac00c33972">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="ae3534e24be58bd9acfaa2d5eb875f48f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const obj::CCollidable* ai::CEnemy::GetMainEntity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Similarly to <a class="el" href="classai_1_1_c_enemy.html#a5845b2324087dd111f79df3b687b666e" title="Retrieves the current enemy position.">GetPosition()</a>, this is virtual due to the large variation in primary entities from enemy to enemy.</p>
-<dl class="section return"><dt>Returns:</dt><dd>A pointer to the main entity. </dd></dl>
-<dl class="section see"><dt>See also:</dt><dd><a class="el" href="classai_1_1_c_enemy.html#a5845b2324087dd111f79df3b687b666e" title="Retrieves the current enemy position.">ai::CEnemy::GetPosition()</a> </dd></dl>
-
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a49e14ce3c3cb40fd6bb710ac00c33972">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5ee9dc6b93be01f7d8afea8ab237fe73">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -618,7 +495,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
 <p>It may seem strange that this be left purely virtual, but for inheriting classes such as <a class="el" href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master.">ai::CEnemyTank</a>, there is more than one entity being handled (the tower and the tank base), so it is impossible to determine from the base class which entity's position should be returned.</p>
 <dl class="section return"><dt>Returns:</dt><dd>The current position. </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -645,34 +522,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
 <p>It may seem strange that this be left purely virtual, but for inheriting classes such as <a class="el" href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master.">ai::CEnemyTank</a>, there is more than one entity being handled (the tower and the tank base), so it is impossible to determine from the base class which entity's position should be returned.</p>
 <dl class="section return"><dt>Returns:</dt><dd>The current position. </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a5845b2324087dd111f79df3b687b666e"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a>&amp; ai::CEnemy::GetPosition </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>It may seem strange that this be left purely virtual, but for inheriting classes such as <a class="el" href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master.">ai::CEnemyTank</a>, there is more than one entity being handled (the tower and the tank base), so it is impossible to determine from the base class which entity's position should be returned.</p>
-<dl class="section return"><dt>Returns:</dt><dd>The current position. </dd></dl>
-
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -698,7 +548,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
 </dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000013">Todo:</a></b></dt><dd>If there's no available path, find another point of interest. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html#l00067">67</a> of file <a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_enemy_8cpp_source.html#l00067">67</a> of file <a class="el" href="_enemy_8cpp_source.html">Enemy.cpp</a>.</p>
 
 </div>
 </div>
@@ -730,7 +580,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -762,39 +612,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a1ce3bb1d8b3704478eff24c82e204a05"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void ai::CEnemy::Spawn </td>
-          <td>(</td>
-          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td>
-          <td class="paramname"><em>Position</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters:</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">math::CVector2&amp;</td><td>Position to spawn at </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -821,7 +639,7 @@ game::CWorld::SpawnEnemy() </dd></dl>
 <p>This method is left purely virtual because there are many different types of enemies in <em>Collapse</em>, and each one will have a personal <a class="el" href="classai_1_1_c_enemy.html#abb28673c8ea1b660e96e4838e5bf27a1" title="Updates the enemy.">Update()</a> method. Most of the time, rendering of the entity and AI processing are done here.</p>
 <dl class="section return"><dt>Returns:</dt><dd>The current state of the enemy. </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a00e0e15b0c72a15bb4453ed185f807db">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a00e0e15b0c72a15bb4453ed185f807db">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
@@ -848,48 +666,19 @@ game::CWorld::SpawnEnemy() </dd></dl>
 <p>This method is left purely virtual because there are many different types of enemies in <em>Collapse</em>, and each one will have a personal <a class="el" href="classai_1_1_c_enemy.html#abb28673c8ea1b660e96e4838e5bf27a1" title="Updates the enemy.">Update()</a> method. Most of the time, rendering of the entity and AI processing are done here.</p>
 <dl class="section return"><dt>Returns:</dt><dd>The current state of the enemy. </dd></dl>
 
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a00e0e15b0c72a15bb4453ed185f807db">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="abb28673c8ea1b660e96e4838e5bf27a1"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual int ai::CEnemy::Update </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>This method is left purely virtual because there are many different types of enemies in <em>Collapse</em>, and each one will have a personal <a class="el" href="classai_1_1_c_enemy.html#abb28673c8ea1b660e96e4838e5bf27a1" title="Updates the enemy.">Update()</a> method. Most of the time, rendering of the entity and AI processing are done here.</p>
-<dl class="section return"><dt>Returns:</dt><dd>The current state of the enemy. </dd></dl>
-
-<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a00e0e15b0c72a15bb4453ed185f807db">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>.</p>
+<p>Implemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a00e0e15b0c72a15bb4453ed185f807db">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a624fb9b368c72d6bf18213bb15b7e2c5">ai::CEnemyTank</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Collapse/include/World/AI/<a class="el" href="_collapse_2include_2_world_2_a_i_2_enemy_8hpp_source.html">Enemy.hpp</a></li>
-<li>Inventory/include/World/AI/<a class="el" href="_inventory_2include_2_world_2_a_i_2_enemy_8hpp_source.html">Enemy.hpp</a></li>
 <li>ShaderTest/include/World/AI/<a class="el" href="_shader_test_2include_2_world_2_a_i_2_enemy_8hpp_source.html">Enemy.hpp</a></li>
-<li>Collapse/src/World/AI/<a class="el" href="_collapse_2src_2_world_2_a_i_2_enemy_8cpp_source.html">Enemy.cpp</a></li>
-<li>Inventory/src/World/AI/<a class="el" href="_inventory_2src_2_world_2_a_i_2_enemy_8cpp_source.html">Enemy.cpp</a></li>
+<li>Collapse/src/World/AI/<a class="el" href="_enemy_8cpp_source.html">Enemy.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:56 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

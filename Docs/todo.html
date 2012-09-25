@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -84,108 +84,82 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt><a class="anchor" id="_todo000013"></a>Global <a class="el" href="classai_1_1_c_enemy.html#a8eab29349b1e4ba7e4ba7484893a749c">ai::CEnemy::SetDestination</a>  (const <a class="el" href="structmath_1_1_c_vector2.html" title="Two dimensional vector.">math::CVector2</a> &amp;Position)</dt>
-<dd><p class="startdd">If there's no available path, find another point of interest. </p>
-<p class="enddd">If there's no available path, find another point of interest.  </p>
-</dd>
+<dd>If there's no available path, find another point of interest.  </dd>
 <dt><a class="anchor" id="_todo000014"></a>Global <a class="el" href="classai_1_1_c_enemy_tank.html#a00e0e15b0c72a15bb4453ed185f807db">ai::CEnemyTank::Update</a>  ()</dt>
-<dd><p class="startdd">Do something like ResetState() to make it look nicer. </p>
-<p class="enddd">Do something like ResetState() to make it look nicer.  </p>
-</dd>
+<dd>Do something like ResetState() to make it look nicer.  </dd>
 <dt><a class="anchor" id="_todo000019"></a>Global <a class="el" href="classai_1_1_c_pathfinder.html#a2d89160e9bdbfd897ed180594909b2b8">ai::CPathfinder::FindPath</a>  (<a class="el" href="classobj_1_1_c_game_object.html" title="The basic game object.">obj::CGameObject</a> *pStart_Tile, <a class="el" href="classobj_1_1_c_game_object.html" title="The basic game object.">obj::CGameObject</a> *pEnd_Tile)</dt>
 <dd><p class="startdd">Remove corner-cutting when path-finding </p>
 <p>Make sure the tank can actually fit in the path </p>
 <p>Fix slight issues with not finding the shortest path </p>
 <p class="enddd">Make cutting corners illegal.  </p>
 </dd>
-<dt><a class="anchor" id="_todo000046"></a>Global <a class="el" href="classai_1_1_c_pathfinder.html#a2204dee0b53a516d388d479c969bb15a">ai::CPathfinder::FindPath</a>  (obj::CCollidable *pStart_Tile, obj::CCollidable *pEnd_Tile)</dt>
+<dt><a class="anchor" id="_todo000040"></a>Global <a class="el" href="classai_1_1_c_pathfinder.html#a2204dee0b53a516d388d479c969bb15a">ai::CPathfinder::FindPath</a>  (obj::CCollidable *pStart_Tile, obj::CCollidable *pEnd_Tile)</dt>
 <dd><p class="startdd">Remove corner-cutting when path-finding </p>
-<p>Make sure the tank can actually fit in the path </p>
-<p>Fix slight issues with not finding the shortest path </p>
-<p>Make cutting corners illegal. </p>
-<p>Remove corner-cutting when path-finding </p>
 <p>Make sure the tank can actually fit in the path </p>
 <p>Fix slight issues with not finding the shortest path </p>
 <p class="enddd">Make cutting corners illegal.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000021"></a>Global <a class="el" href="classai_1_1_c_pathfinder.html#a1cabcdb3e620adb2ebd2368db700f891">ai::CPathfinder::ShowPath</a>  ()</dt>
 <dd><p class="startdd">Remove tile </p>
-<p>Remove tile </p>
 <p class="enddd">Remove tile  </p>
 </dd>
-<dt><a class="anchor" id="_todo000034"></a>Global <a class="el" href="classasset_1_1_c_music_player.html#a6158e0137c8d5996abf0763e3e74072c">asset::CMusicPlayer::PurgeQueue</a>  ()</dt>
-<dd><p class="startdd">Purge from asset pool. </p>
-<p class="enddd">Purge from asset pool.  </p>
-</dd>
+<dt><a class="anchor" id="_todo000035"></a>Global <a class="el" href="classasset_1_1_c_music_player.html#a6158e0137c8d5996abf0763e3e74072c">asset::CMusicPlayer::PurgeQueue</a>  ()</dt>
+<dd>Purge from asset pool.  </dd>
 <dt><a class="anchor" id="_todo000004"></a>Global <a class="el" href="classasset_1_1_c_music_player.html#aa6b5bea6151bccbc8fc26cafcce94f27">asset::CMusicPlayer::~CMusicPlayer</a>  ()</dt>
 <dd><p class="startdd">Clean up assets from manager; </p>
-<p>Clean up assets from manager; </p>
 <p class="enddd">Clean up assets from manager;  </p>
 </dd>
 <dt><a class="anchor" id="_todo000006"></a>Global <a class="el" href="classasset_1_1_c_sound2_d.html#a6615a0df1d3bf893067be83c7c8e0fae">asset::CSound2D::Stop</a>  ()</dt>
 <dd><p class="startdd">Add looping capabilities (or lack there-of). </p>
-<p>Add looping capabilities (or lack there-of). </p>
 <p class="enddd">Add looping capabilities (or lack there-of).  </p>
 </dd>
 <dt><a class="anchor" id="_todo000022"></a>Global <a class="el" href="classgame_1_1_c_map.html#acffa2a00715083bc3cd43c2accfc9bf8">game::CMap::RemoveTile</a>  (int x, int y)</dt>
 <dd><p class="startdd">This shouldn't even work. </p>
-<p>This shouldn't even work. </p>
 <p class="enddd">This shouldn't even work.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000011"></a>Global <a class="el" href="classgame_1_1_c_menu_manager.html#a474159f576238031334265ec22875cc2">game::CMenuManager::Init</a>  ()</dt>
 <dd>Add a credits menu item  </dd>
 <dt><a class="anchor" id="_todo000027"></a>Global <a class="el" href="classgame_1_1_c_world.html#a281a57602555258ea67eb25a3e1047c5">game::CWorld::Update</a>  ()</dt>
-<dd><p class="startdd">Add a GetBarrelPosition() to the enemy base class. </p>
-<p class="enddd">Add a GetBarrelPosition() to the enemy base class.  </p>
-</dd>
-<dt><a class="anchor" id="_todo000035"></a>Global <a class="el" href="classgfx_1_1_c_shader.html#adba09b444f0677ba9cfc6d9256f423ee">gfx::CShader::Link</a>  ()</dt>
-<dd><p class="startdd">Add an error or something </p>
-<p class="enddd">Add an error or something  </p>
-</dd>
+<dd>Add a GetBarrelPosition() to the enemy base class.  </dd>
+<dt><a class="anchor" id="_todo000036"></a>Global <a class="el" href="classgfx_1_1_c_shader.html#adba09b444f0677ba9cfc6d9256f423ee">gfx::CShader::Link</a>  ()</dt>
+<dd>Add an error or something  </dd>
 <dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="classmath_1_1_c_collider.html">math::CCollider</a>  </dt>
 <dd><p class="startdd">Implement these functions. </p>
-<p>Implement these functions. </p>
 <p class="enddd">Implement these functions.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000002"></a>Class <a class="el" href="classmath_1_1_c_matrix.html">math::CMatrix</a>  </dt>
 <dd><p class="startdd">Implement determinants for matrices greater than 3x3. </p>
-<p>Implement determinants for matrices greater than 3x3. </p>
 <p class="enddd">Implement determinants for matrices greater than 3x3.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000010"></a>Global <a class="el" href="structmath_1_1_c_rect.html#a0ad190442a94c5eee03da1ac779e1ca6">math::CRect::IsCovering</a>  (const CRect &amp;Other) const </dt>
 <dd><p class="startdd">Clean this up, instead of just using a 0-w/h rect for each point. </p>
-<p>Clean this up, instead of just using a 0-w/h rect for each point. </p>
 <p class="enddd">Clean this up, instead of just using a 0-w/h rect for each point.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000003"></a>Class <a class="el" href="classmath_1_1_c_vector3.html">math::CVector3</a>  </dt>
 <dd><p class="startdd">Implement this. </p>
-<p>Implement this. </p>
 <p class="enddd">Implement this.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000023"></a>Global <a class="el" href="classobj_1_1_c_player.html#a2823e41083206d05b8d631ce6966984b">obj::CPlayer::Init</a>  (<a class="el" href="classgame_1_1_c_settings.html" title="Handles a settings file (typically Settings.ini), which is supposed to contain critical game values s...">game::CSettings</a> &amp;)</dt>
 <dd><p class="startdd">Fix animations. </p>
-<p>Fix animations. </p>
 <p class="enddd">Fix animations.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000024"></a>Global <a class="el" href="classobj_1_1_c_player.html#a39b1e8099d4d5dcb5a047cc4cb298851">obj::CPlayer::Update</a>  ()</dt>
 <dd><p class="startdd">Animate tank tower on firing. </p>
-<p>Animate tank tower on firing. </p>
 <p class="enddd">Animate tank tower on firing.  </p>
 </dd>
 <dt><a class="anchor" id="_todo000025"></a>Global <a class="el" href="classobj_1_1_c_tank.html#a7d28821703644416b451796fa3711e83">obj::CTank::Aim</a>  (const float x, const float y)</dt>
 <dd><p class="startdd">Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a> </p>
-<p>Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a> </p>
 <p class="enddd">Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a>  </p>
 </dd>
 <dt><a class="anchor" id="_todo000026"></a>Global <a class="el" href="classobj_1_1_c_tank.html#a3d7f34cf033800343877e73bc0949c80">obj::CTank::Damage</a>  (const u_int dmg)</dt>
 <dd><p class="startdd">Find where the damage should go </p>
-<p>Find where the damage should go </p>
 <p class="enddd">Find where the damage should go </p>
 </dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:55 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

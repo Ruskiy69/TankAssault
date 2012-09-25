@@ -23,6 +23,8 @@ void CInventory::Update()
 {
     static std::stringstream ss;
 
+    mp_Font->Resize(16);
+
     ss.str(std::string());
     ss << m_Player.GetPrimary().GetName() << "  (";
     ss << m_Player.GetPrimary().GetClipCount() << ", ";

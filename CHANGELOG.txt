@@ -1,9 +1,12 @@
-Current Version: 0.8.0 pre-release
-Last Updated   : 08.29.2012
+Current Version: 0.8.1 pre-release
+Last Updated   : 09.24.2012
 
 KNOWN BUGS:
    - After quitting, the game seg-faults due to an unknown
      memory leak.
+     
+Version 0.8.1 (09.24.2012):
+    + Inventory re-sizing bug fixed
 
 Version 0.8.0 (09.24.2012):
    - Removed rasterizer system

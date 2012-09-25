@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -126,15 +126,13 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>samples
 : <a class="el" href="struct_s_d_l___audio_spec.html#a2cdf5e885808c10bfa2810b706e69f95">SDL_AudioSpec</a>
 </li>
-<li>Save()
-: <a class="el" href="classgame_1_1_c_collision_map.html#af87774712c8811e6d2e58b38fad0d82e">game::CCollisionMap</a>
-, <a class="el" href="classgame_1_1_c_terrain_map.html#a246ff992cc87ccefdceb6fd2a7043108">game::CTerrainMap</a>
-</li>
 <li>save
-: <a class="el" href="struct_s_d_l___cursor.html#ac0c68a5eda7d47da92c991701d14b8b9">SDL_Cursor</a>
+: <a class="el" href="struct_s_d_l___cursor.html#a44a8edebf057e76e048512a57c5630e0">SDL_Cursor</a>
 </li>
 <li>Save()
 : <a class="el" href="classgame_1_1_c_objective_map.html#ab7a9be576cbf12078eda683b134aa685">game::CObjectiveMap</a>
+, <a class="el" href="classgame_1_1_c_terrain_map.html#a246ff992cc87ccefdceb6fd2a7043108">game::CTerrainMap</a>
+, <a class="el" href="classgame_1_1_c_collision_map.html#af87774712c8811e6d2e58b38fad0d82e">game::CCollisionMap</a>
 </li>
 <li>scancode
 : <a class="el" href="struct_s_d_l__keysym.html#a1ea71b1de132939909302dc14e5f468c">SDL_keysym</a>
@@ -158,7 +156,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classgame_1_1_c_map.html#a3e971cde2bdd13c330bd35b07a401d4f">game::CMap</a>
 </li>
 <li>SetPosition()
-: <a class="el" href="classasset_1_1_c_sound2_d.html#aaf29e8d47cc94ed430128e26e3f3720e">asset::CSound2D</a>
+: <a class="el" href="classasset_1_1_c_sound2_d.html#afd1ae9ff74b40692dfe7c0ebe47904a4">asset::CSound2D</a>
 </li>
 <li>SetTitle()
 : <a class="el" href="classgame_1_1_c_menu.html#aa0f1a63e18da2b9d25da6dd211ee833c">game::CMenu</a>
@@ -176,8 +174,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="struct_s_d_l___audio_spec.html#a154cf44743ecec78c36dc6c827dd2fdb">SDL_AudioSpec</a>
 </li>
 <li>Spawn()
-: <a class="el" href="classai_1_1_c_enemy.html#a1ce3bb1d8b3704478eff24c82e204a05">ai::CEnemy</a>
-, <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>
+: <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>
 , <a class="el" href="classai_1_1_c_enemy.html#a1ce3bb1d8b3704478eff24c82e204a05">ai::CEnemy</a>
 , <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>
 </li>
@@ -188,10 +185,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 : <a class="el" href="classgame_1_1_c_timer.html#a4c95a1f25b3ef73436d4876260a2e013">game::CTimer</a>
 </li>
 <li>state
-: <a class="el" href="struct_s_d_l___mouse_button_event.html#a8809cef85cfffad4f2059f2ba4fc6a3d">SDL_MouseButtonEvent</a>
-, <a class="el" href="struct_s_d_l___active_event.html#af8f060502a9c906b25a4aa9c61f745f9">SDL_ActiveEvent</a>
-, <a class="el" href="struct_s_d_l___keyboard_event.html#a110558eb96c113c86cfa31a7018c2346">SDL_KeyboardEvent</a>
+: <a class="el" href="struct_s_d_l___active_event.html#af8f060502a9c906b25a4aa9c61f745f9">SDL_ActiveEvent</a>
+, <a class="el" href="struct_s_d_l___mouse_button_event.html#a8809cef85cfffad4f2059f2ba4fc6a3d">SDL_MouseButtonEvent</a>
 , <a class="el" href="struct_s_d_l___mouse_motion_event.html#a10434904d352c7165b9de5685d10dda6">SDL_MouseMotionEvent</a>
+, <a class="el" href="struct_s_d_l___keyboard_event.html#a110558eb96c113c86cfa31a7018c2346">SDL_KeyboardEvent</a>
 , <a class="el" href="struct_s_d_l___joy_button_event.html#ad3b6f8d9aa2c5e694f664b97d12bcd2b">SDL_JoyButtonEvent</a>
 </li>
 <li>status
@@ -200,7 +197,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <li>Stop()
 : <a class="el" href="classasset_1_1_c_sound2_d.html#aeabc086fe6b672845ea3926bb9abb303">asset::CSound2D</a>
 , <a class="el" href="classasset_1_1_c_music_player.html#a19c14f095fce8c431cbd8b06b389256e">asset::CMusicPlayer</a>
-, <a class="el" href="classasset_1_1_c_sound2_d.html#aeabc086fe6b672845ea3926bb9abb303">asset::CSound2D</a>
 </li>
 <li>sym
 : <a class="el" href="struct_s_d_l__keysym.html#a2a22c7afc8239b19cd18dda3aa26b70c">SDL_keysym</a>
@@ -209,7 +205,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:57 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:01 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

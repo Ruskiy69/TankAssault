@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['s_5fassetcount',['s_assetcount',['../namespaceasset.html#ac842fd1a87ceb68b1d7604a5887cf3dc',1,'asset::s_assetcount()'],['../namespaceasset.html#ac842fd1a87ceb68b1d7604a5887cf3dc',1,'asset::s_assetcount()'],['../namespaceasset.html#ac842fd1a87ceb68b1d7604a5887cf3dc',1,'asset::s_assetcount()']]],
-  ['s_5favailable',['s_available',['../namespaceasset.html#abc4665bc82ca486c5bef5d3948156c39',1,'asset::s_available()'],['../namespaceasset.html#abc4665bc82ca486c5bef5d3948156c39',1,'asset::s_available()'],['../namespaceasset.html#abc4665bc82ca486c5bef5d3948156c39',1,'asset::s_available()']]],
-  ['s_5fsources',['s_sources',['../namespaceasset.html#a0d69a26fb88ae7d511f1b98a245f4289',1,'asset::s_sources()'],['../namespaceasset.html#a0d69a26fb88ae7d511f1b98a245f4289',1,'asset::s_sources()'],['../namespaceasset.html#a0d69a26fb88ae7d511f1b98a245f4289',1,'asset::s_sources()']]],
+  ['s_5fassetcount',['s_assetcount',['../namespaceasset.html#ac842fd1a87ceb68b1d7604a5887cf3dc',1,'asset::s_assetcount()'],['../namespaceasset.html#ac842fd1a87ceb68b1d7604a5887cf3dc',1,'asset::s_assetcount()']]],
+  ['s_5favailable',['s_available',['../namespaceasset.html#abc4665bc82ca486c5bef5d3948156c39',1,'asset::s_available()'],['../namespaceasset.html#abc4665bc82ca486c5bef5d3948156c39',1,'asset::s_available()']]],
+  ['s_5fsources',['s_sources',['../namespaceasset.html#a0d69a26fb88ae7d511f1b98a245f4289',1,'asset::s_sources()'],['../namespaceasset.html#a0d69a26fb88ae7d511f1b98a245f4289',1,'asset::s_sources()']]],
   ['samples',['samples',['../struct_s_d_l___audio_spec.html#a2cdf5e885808c10bfa2810b706e69f95',1,'SDL_AudioSpec']]],
-  ['save',['save',['../struct_s_d_l___cursor.html#ac0c68a5eda7d47da92c991701d14b8b9',1,'SDL_Cursor']]],
+  ['save',['save',['../struct_s_d_l___cursor.html#a44a8edebf057e76e048512a57c5630e0',1,'SDL_Cursor']]],
   ['scancode',['scancode',['../struct_s_d_l__keysym.html#a1ea71b1de132939909302dc14e5f468c',1,'SDL_keysym']]],
   ['silence',['silence',['../struct_s_d_l___audio_spec.html#addc462c8a806e6c122eccf63482048f6',1,'SDL_AudioSpec']]],
   ['size',['size',['../struct_s_d_l___audio_spec.html#a154cf44743ecec78c36dc6c827dd2fdb',1,'SDL_AudioSpec']]],

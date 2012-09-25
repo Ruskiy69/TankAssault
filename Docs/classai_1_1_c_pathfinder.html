@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -140,22 +140,6 @@ const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp
 const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetPrevDestination</b> () const </td></tr>
 <tr class="memitem:a1e347313853157da7e8e7728811f4930"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e347313853157da7e8e7728811f4930"></a>
 const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentDestination</b> () const </td></tr>
-<tr class="memitem:a5502e1149397e5ca09f940b32f22c94d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5502e1149397e5ca09f940b32f22c94d"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CPathfinder</b> (<a class="el" href="classgame_1_1_c_level.html">game::CLevel</a> *pCurrentLevel)</td></tr>
-<tr class="memitem:a3003f396117781b17454b61e55a6ca91"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3003f396117781b17454b61e55a6ca91"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>FindPath</b> (obj::CCollidable *pStart_Tile, obj::CCollidable *pEnd_Tile)</td></tr>
-<tr class="memitem:aa397ba0717d9dc7bfb803e8060681cd1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa397ba0717d9dc7bfb803e8060681cd1"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ShowPath</b> ()</td></tr>
-<tr class="memitem:a0ebcb0798371012491aecd1f4dac3873"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0ebcb0798371012491aecd1f4dac3873"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>ReversePath</b> ()</td></tr>
-<tr class="memitem:abbcaedf3fa5a15dec460433d34b95fb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abbcaedf3fa5a15dec460433d34b95fb4"></a>
-obj::CCollidable *&#160;</td><td class="memItemRight" valign="bottom"><b>NextTile</b> ()</td></tr>
-<tr class="memitem:affbe7c9267cb0549c3e41ddab05486a4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="affbe7c9267cb0549c3e41ddab05486a4"></a>
-const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetNextDestination</b> () const </td></tr>
-<tr class="memitem:a272c8a9f7e7791c0f1bafdeceaadafb4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a272c8a9f7e7791c0f1bafdeceaadafb4"></a>
-const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetPrevDestination</b> () const </td></tr>
-<tr class="memitem:a1e347313853157da7e8e7728811f4930"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1e347313853157da7e8e7728811f4930"></a>
-const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetCurrentDestination</b> () const </td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
@@ -197,30 +181,13 @@ const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp
 <a class="el" href="classgame_1_1_c_terrain_map.html" title="The terrain tile map.">game::CTerrainMap</a> </dd>
 <dd>
 game::CTerrainMap::FindTile(const math::CVector2&amp;)</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000046">Todo:</a></b></dt><dd><p class="startdd">Remove corner-cutting when path-finding </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000040">Todo:</a></b></dt><dd><p class="startdd">Remove corner-cutting when path-finding </p>
 <p>Make sure the tank can actually fit in the path </p>
 <p class="enddd">Fix slight issues with not finding the shortest path </p>
 </dd></dl>
-<dl class="params"><dt>Parameters:</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">obj::CEntity*</td><td>The tile to start from </td></tr>
-    <tr><td class="paramname">obj::CEntity*</td><td>The tile to end at</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns:</dt><dd>TRUE if a path was found, FALSE if not. If a complete path is not found, what's done is still stored.</dd></dl>
-<dl class="section see"><dt>See also:</dt><dd><a href="http://www.policyalmanac.org/games/aStarTutorial.htm">http://www.policyalmanac.org/games/aStarTutorial.htm</a> </dd>
-<dd>
-<a class="el" href="classgame_1_1_c_terrain_map.html" title="The terrain tile map.">game::CTerrainMap</a> </dd>
-<dd>
-game::CTerrainMap::FindTile(const math::CVector2&amp;)</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000067">Todo:</a></b></dt><dd><p class="startdd">Remove corner-cutting when path-finding </p>
-<p>Make sure the tank can actually fit in the path </p>
-<p class="enddd">Fix slight issues with not finding the shortest path </p>
-</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000047">Todo:</a></b></dt><dd>Make cutting corners illegal. </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000041">Todo:</a></b></dt><dd>Make cutting corners illegal. </dd></dl>
 
-<p>Definition at line <a class="el" href="_inventory_2src_2_world_2_a_i_2_pathfinder_8cpp_source.html#l00031">31</a> of file <a class="el" href="_inventory_2src_2_world_2_a_i_2_pathfinder_8cpp_source.html">Pathfinder.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_shader_test_2src_2_world_2_a_i_2_pathfinder_8cpp_source.html#l00031">31</a> of file <a class="el" href="_shader_test_2src_2_world_2_a_i_2_pathfinder_8cpp_source.html">Pathfinder.cpp</a>.</p>
 
 </div>
 </div>
@@ -290,16 +257,14 @@ game::CTerrainMap::FindTile(const math::CVector2&amp;)</dd></dl>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Collapse/include/World/AI/<a class="el" href="_collapse_2include_2_world_2_a_i_2_pathfinder_8hpp_source.html">Pathfinder.hpp</a></li>
-<li>Inventory/include/World/AI/<a class="el" href="_inventory_2include_2_world_2_a_i_2_pathfinder_8hpp_source.html">Pathfinder.hpp</a></li>
 <li>ShaderTest/include/World/AI/<a class="el" href="_shader_test_2include_2_world_2_a_i_2_pathfinder_8hpp_source.html">Pathfinder.hpp</a></li>
 <li>Collapse/src/World/AI/<a class="el" href="_collapse_2src_2_world_2_a_i_2_pathfinder_8cpp_source.html">Pathfinder.cpp</a></li>
-<li>Inventory/src/World/AI/<a class="el" href="_inventory_2src_2_world_2_a_i_2_pathfinder_8cpp_source.html">Pathfinder.cpp</a></li>
 <li>ShaderTest/src/World/AI/<a class="el" href="_shader_test_2src_2_world_2_a_i_2_pathfinder_8cpp_source.html">Pathfinder.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:56 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

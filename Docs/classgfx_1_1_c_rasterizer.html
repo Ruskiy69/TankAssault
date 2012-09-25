@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -105,7 +105,7 @@ Data Structures</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:acedd3e3d1d98a19af0c53977bd1a8d78"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acedd3e3d1d98a19af0c53977bd1a8d78"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddRenderableObject</b> (obj::CEntity *pObj, <a class="el" href="classgfx_1_1_c_shader.html">gfx::CShader</a> *pShader=NULL)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>AddRenderableObject</b> (obj::CEntity *pObj, <a class="el" href="classgfx_1_1_c_shader.html">gfx::CShader</a> *pShader=<a class="el" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>)</td></tr>
 <tr class="memitem:a19e84b6c69d473e6f4bcb1ad87b6caca"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a19e84b6c69d473e6f4bcb1ad87b6caca"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveRenderableObject</b> (const obj::CEntity *pObj)</td></tr>
 <tr class="memitem:a2ca280238a7048cf88e1a9d2d97749ee"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2ca280238a7048cf88e1a9d2d97749ee"></a>
@@ -118,34 +118,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAlphaMask</b> (con
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAlphaMask</b> (obj::CEntity *pObj, const float alpha, const float rate)</td></tr>
 <tr class="memitem:abd7bf0dc2287b2aeb2176727ea67d040"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abd7bf0dc2287b2aeb2176727ea67d040"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><b>GetAlphaMask</b> (obj::CEntity *pObj)</td></tr>
-<tr class="memitem:aec0b30288eca8c02af46bded8315cb1c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aec0b30288eca8c02af46bded8315cb1c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>AddRenderableObject</b> (obj::CEntity *pObj, <a class="el" href="classgfx_1_1_c_shader.html">gfx::CShader</a> *pShader=NULL)</td></tr>
-<tr class="memitem:a3e4f63add43188ca90e75fe1a73b8e12"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3e4f63add43188ca90e75fe1a73b8e12"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RemoveRenderableObject</b> (const obj::CEntity *pObj)</td></tr>
-<tr class="memitem:aed5d2d52e7031351085d6b632a74cd79"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aed5d2d52e7031351085d6b632a74cd79"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>PurgeObjects</b> ()</td></tr>
-<tr class="memitem:a0531db721d338dc4f1d1269dea8664ab"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0531db721d338dc4f1d1269dea8664ab"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RenderAll</b> ()</td></tr>
-<tr class="memitem:ae2b444ae07a60406ae140f0291a0d7a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2b444ae07a60406ae140f0291a0d7a0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAlphaMask</b> (const float value)</td></tr>
-<tr class="memitem:a46a741bb0ad7b1c0b8e8499b99b2d7c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a46a741bb0ad7b1c0b8e8499b99b2d7c5"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetAlphaMask</b> (obj::CEntity *pObj, const float alpha, const float rate)</td></tr>
-<tr class="memitem:acf088da3263c2f06cf544c82ebc3eb70"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="acf088da3263c2f06cf544c82ebc3eb70"></a>
-float&#160;</td><td class="memItemRight" valign="bottom"><b>GetAlphaMask</b> (obj::CEntity *pObj)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_inventory_2include_2_graphics_2_rasterizer_8hpp_source.html#l00031">31</a> of file <a class="el" href="_inventory_2include_2_graphics_2_rasterizer_8hpp_source.html">Rasterizer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_rasterizer_8hpp_source.html#l00031">31</a> of file <a class="el" href="_rasterizer_8hpp_source.html">Rasterizer.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
-<li>Inventory/include/Graphics/<a class="el" href="_inventory_2include_2_graphics_2_rasterizer_8hpp_source.html">Rasterizer.hpp</a></li>
-<li>ShaderTest/include/Graphics/<a class="el" href="_shader_test_2include_2_graphics_2_rasterizer_8hpp_source.html">Rasterizer.hpp</a></li>
-<li>Inventory/src/Graphics/<a class="el" href="_inventory_2src_2_graphics_2_rasterizer_8cpp_source.html">Rasterizer.cpp</a></li>
-<li>ShaderTest/src/Graphics/<a class="el" href="_shader_test_2src_2_graphics_2_rasterizer_8cpp_source.html">Rasterizer.cpp</a></li>
+<li>ShaderTest/include/Graphics/<a class="el" href="_rasterizer_8hpp_source.html">Rasterizer.hpp</a></li>
+<li>ShaderTest/src/Graphics/<a class="el" href="_rasterizer_8cpp_source.html">Rasterizer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:56 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

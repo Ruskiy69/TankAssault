@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -97,13 +97,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>When filling in the desired audio spec structure,.  
  <a href="struct_s_d_l___audio_spec.html#details">More...</a></p>
 
-<p><code>#include &quot;<a class="el" href="_inventory_2include_2_s_d_l_2_s_d_l__audio_8h_source.html">SDL_audio.h</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="_s_d_l__audio_8h_source.html">SDL_audio.h</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab8a359069a60f225ab6e35a55dfb3d92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_d_l___audio_spec.html#ab8a359069a60f225ab6e35a55dfb3d92">void</a> (SDLCALL *callback)(void *userdata</td></tr>
-<tr class="memdesc:ab8a359069a60f225ab6e35a55dfb3d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when the audio device needs more data.  <a href="#ab8a359069a60f225ab6e35a55dfb3d92"></a><br/></td></tr>
-<tr class="memitem:ab8a359069a60f225ab6e35a55dfb3d92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_d_l___audio_spec.html#ab8a359069a60f225ab6e35a55dfb3d92">void</a> (SDLCALL *callback)(void *userdata</td></tr>
+<tr class="memitem:ab8a359069a60f225ab6e35a55dfb3d92"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_d_l___audio_spec.html#ab8a359069a60f225ab6e35a55dfb3d92">void</a> (<a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> *callback)(void *userdata</td></tr>
 <tr class="memdesc:ab8a359069a60f225ab6e35a55dfb3d92"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is called when the audio device needs more data.  <a href="#ab8a359069a60f225ab6e35a55dfb3d92"></a><br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-attribs"></a>
@@ -129,11 +127,11 @@ Uint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="st
 <tr class="memitem:a154cf44743ecec78c36dc6c827dd2fdb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a154cf44743ecec78c36dc6c827dd2fdb"></a>
 Uint32&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_s_d_l___audio_spec.html#a154cf44743ecec78c36dc6c827dd2fdb">size</a></td></tr>
 <tr class="memdesc:a154cf44743ecec78c36dc6c827dd2fdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Audio buffer size in bytes (calculated) <br/></td></tr>
-<tr class="memitem:a7d9b679fcd31e4300f030a33e163c597"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d9b679fcd31e4300f030a33e163c597"></a>
+<tr class="memitem:aacbebdd2696a8abec7ac5bed473eb5c5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aacbebdd2696a8abec7ac5bed473eb5c5"></a>
 Uint8 *&#160;</td><td class="memItemRight" valign="bottom"><b>stream</b></td></tr>
 <tr class="memitem:ab6f999b1bf0ee080b42f4f6a5f59ee47"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab6f999b1bf0ee080b42f4f6a5f59ee47"></a>
 Uint8 int&#160;</td><td class="memItemRight" valign="bottom"><b>len</b></td></tr>
-<tr class="memitem:ae3fdaf1ab3c3eb6878979d670dbcc774"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae3fdaf1ab3c3eb6878979d670dbcc774"></a>
+<tr class="memitem:aeec9481666f5f0982c98d3878f175d9b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aeec9481666f5f0982c98d3878f175d9b"></a>
 <a class="el" href="struct_s_d_l___audio_spec.html#ab8a359069a60f225ab6e35a55dfb3d92">void</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>userdata</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -141,14 +139,14 @@ Uint8 int&#160;</td><td class="memItemRight" valign="bottom"><b>len</b></td></tr
 <li>'desired-&gt;freq' should be the desired audio frequency in samples-per-second.</li>
 <li>'desired-&gt;format' should be the desired audio format.</li>
 <li>'desired-&gt;samples' is the desired size of the audio buffer, in samples. This number should be a power of two, and may be adjusted by the audio driver to a value more suitable for the hardware. Good values seem to range between 512 and 8096 inclusive, depending on the application and CPU speed. Smaller values yield faster response time, but can lead to underflow if the application is doing heavy processing and cannot fill the audio buffer in time. A stereo sample consists of both right and left channels in LR ordering. Note that the number of samples is directly related to time by the following formula: ms = (samples*1000)/freq</li>
-<li>'desired-&gt;size' is the size in bytes of the audio buffer, and is calculated by SDL_OpenAudio().</li>
-<li>'desired-&gt;silence' is the value used to set the buffer to silence, and is calculated by SDL_OpenAudio().</li>
+<li>'desired-&gt;size' is the size in bytes of the audio buffer, and is calculated by <a class="el" href="_s_d_l__audio_8h.html#a2edf30e7747584e28041b4986f89f440" title="This function opens the audio device with the desired parameters, and returns 0 if successful...">SDL_OpenAudio()</a>.</li>
+<li>'desired-&gt;silence' is the value used to set the buffer to silence, and is calculated by <a class="el" href="_s_d_l__audio_8h.html#a2edf30e7747584e28041b4986f89f440" title="This function opens the audio device with the desired parameters, and returns 0 if successful...">SDL_OpenAudio()</a>.</li>
 <li>'desired-&gt;callback' should be set to a function that will be called when the audio device is ready for more data. It is passed a pointer to the audio buffer, and the length in bytes of the audio buffer. This function usually runs in a separate thread, and so you should protect data structures that it accesses by calling SDL_LockAudio() and SDL_UnlockAudio() in your code.</li>
 <li>'desired-&gt;userdata' is passed as the first parameter to your callback function.</li>
 </ul>
-<dl class="section note"><dt>Note:</dt><dd>The calculated values in this structure are calculated by SDL_OpenAudio() </dd></dl>
+<dl class="section note"><dt>Note:</dt><dd>The calculated values in this structure are calculated by <a class="el" href="_s_d_l__audio_8h.html#a2edf30e7747584e28041b4986f89f440" title="This function opens the audio device with the desired parameters, and returns 0 if successful...">SDL_OpenAudio()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_inventory_2include_2_s_d_l_2_s_d_l__audio_8h_source.html#l00074">74</a> of file <a class="el" href="_inventory_2include_2_s_d_l_2_s_d_l__audio_8h_source.html">SDL_audio.h</a>.</p>
+<p>Definition at line <a class="el" href="_s_d_l__audio_8h_source.html#l00074">74</a> of file <a class="el" href="_s_d_l__audio_8h_source.html">SDL_audio.h</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="ab8a359069a60f225ab6e35a55dfb3d92"></a>
 <div class="memitem">
@@ -157,7 +155,7 @@ Uint8 int&#160;</td><td class="memItemRight" valign="bottom"><b>len</b></td></tr
         <tr>
           <td class="memname">SDL_AudioSpec::void </td>
           <td>(</td>
-          <td class="paramtype">SDLCALL *&#160;</td>
+          <td class="paramtype"><a class="el" href="begin__code_8h.html#a81faf4ba0455dc75f2e0507eddb79401">SDLCALL</a> *&#160;</td>
           <td class="paramname"><em>callback</em></td><td>)</td>
           <td></td>
         </tr>
@@ -174,38 +172,13 @@ Uint8 int&#160;</td><td class="memItemRight" valign="bottom"><b>len</b></td></tr
 
 </div>
 </div>
-<a class="anchor" id="ab8a359069a60f225ab6e35a55dfb3d92"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">SDL_AudioSpec::void </td>
-          <td>(</td>
-          <td class="paramtype">SDLCALL *&#160;</td>
-          <td class="paramname"><em>callback</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="params"><dt>Parameters:</dt><dd>
-  <table class="params">
-    <tr><td class="paramdir">[out]</td><td class="paramname">stream</td><td>A pointer to the audio data buffer </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">len</td><td>The length of the audio buffer in bytes.</td></tr>
-  </table>
-  </dd>
-</dl>
-<p>Once the callback returns, the buffer will no longer be valid. Stereo samples are stored in a LRLRLR ordering. </p>
-
-</div>
-</div>
-<hr/>The documentation for this struct was generated from the following files:<ul>
-<li>Inventory/include/SDL/<a class="el" href="_inventory_2include_2_s_d_l_2_s_d_l__audio_8h_source.html">SDL_audio.h</a></li>
-<li>ShaderTest/include/SDL/<a class="el" href="_shader_test_2include_2_s_d_l_2_s_d_l__audio_8h_source.html">SDL_audio.h</a></li>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>ShaderTest/include/SDL/<a class="el" href="_s_d_l__audio_8h_source.html">SDL_audio.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:55 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -105,10 +105,8 @@ Inheritance diagram for obj::CTank:</div>
   <map id="obj::CTank_map" name="obj::CTank_map">
 <area href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master." alt="ai::CEnemyTank" shape="rect" coords="0,56,102,80"/>
 <area href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master." alt="ai::CEnemyTank" shape="rect" coords="112,56,214,80"/>
-<area href="classai_1_1_c_enemy_tank.html" title="An enemy tank object, to be controlled by a global AI master." alt="ai::CEnemyTank" shape="rect" coords="224,56,326,80"/>
+<area href="classobj_1_1_c_player.html" title="The user-controlled entity." alt="obj::CPlayer" shape="rect" coords="224,56,326,80"/>
 <area href="classobj_1_1_c_player.html" title="The user-controlled entity." alt="obj::CPlayer" shape="rect" coords="336,56,438,80"/>
-<area href="classobj_1_1_c_player.html" title="The user-controlled entity." alt="obj::CPlayer" shape="rect" coords="448,56,550,80"/>
-<area href="classobj_1_1_c_player.html" title="The user-controlled entity." alt="obj::CPlayer" shape="rect" coords="560,56,662,80"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -155,48 +153,6 @@ obj::CWeapon &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetSeco
 <tr class="memitem:a929f9cf0c2979ed9dfdfb048144ab2a0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a929f9cf0c2979ed9dfdfb048144ab2a0"></a>
 obj::CGameObject *&#160;</td><td class="memItemRight" valign="bottom"><b>GetTankEntity</b> ()</td></tr>
 <tr class="memitem:aa8802818370b8e4db944a29db752d850"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aa8802818370b8e4db944a29db752d850"></a>
-obj::CGameObject *&#160;</td><td class="memItemRight" valign="bottom"><b>GetTowerEntity</b> ()</td></tr>
-<tr class="memitem:a4e06c2646c793ad4129725a38a24750b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e06c2646c793ad4129725a38a24750b"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (<a class="el" href="classgame_1_1_c_settings.html">game::CSettings</a> &amp;)=0</td></tr>
-<tr class="memitem:a814233ccf9aeecd17da7aa64063ada0a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a814233ccf9aeecd17da7aa64063ada0a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Turn</b> (const float deg)</td></tr>
-<tr class="memitem:afcbb4596d744d48d68ec57d7292e15d4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afcbb4596d744d48d68ec57d7292e15d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Drive</b> (const float speed)</td></tr>
-<tr class="memitem:ac50f2f6db340dadff819c0d5cb79fd40"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac50f2f6db340dadff819c0d5cb79fd40"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Adjust</b> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Rate)</td></tr>
-<tr class="memitem:a2a26707f3bc4624278f90882e7117d9d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2a26707f3bc4624278f90882e7117d9d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Aim</b> (const float x, const float y)</td></tr>
-<tr class="memitem:a5ee1eba8de6ae38a543f1437e40b5f92"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5ee1eba8de6ae38a543f1437e40b5f92"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Aim</b> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Target)</td></tr>
-<tr class="memitem:aaa3a1e7b9e12552b55fda78a378a6946"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aaa3a1e7b9e12552b55fda78a378a6946"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>RotateTower</b> (const float degrees)</td></tr>
-<tr class="memitem:a5a922396960625f40b5dccfbfe3f4deb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5a922396960625f40b5dccfbfe3f4deb"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Damage</b> (const <a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a> dmg)</td></tr>
-<tr class="memitem:a57ea5331cbe42ac905146105d3d899f7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a57ea5331cbe42ac905146105d3d899f7"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>AddWeapon</b> (const std::string &amp;data_file)</td></tr>
-<tr class="memitem:afc214cd68db515d88d183dd3f15c1ea0"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afc214cd68db515d88d183dd3f15c1ea0"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>FirePrimary</b> ()</td></tr>
-<tr class="memitem:a6aacae2ba460b8dbacf26c1eda81a213"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6aacae2ba460b8dbacf26c1eda81a213"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>FireSecondary</b> ()</td></tr>
-<tr class="memitem:a3fdcba7980613a919c13613fbbad9ae2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fdcba7980613a919c13613fbbad9ae2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsAlive</b> () const </td></tr>
-<tr class="memitem:ae606e27c09686bb13adb5ceee99865f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae606e27c09686bb13adb5ceee99865f2"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>IsMoving</b> () const </td></tr>
-<tr class="memitem:ab44924f3068c891075bd0b948ce4c2b6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab44924f3068c891075bd0b948ce4c2b6"></a>
-virtual int&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
-<tr class="memitem:aea96fa62c8ec4936963742751454c954"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea96fa62c8ec4936963742751454c954"></a>
-const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetBarrelPosition</b> () const </td></tr>
-<tr class="memitem:af21bae02065bc7fedea7a020f9ab8f75"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af21bae02065bc7fedea7a020f9ab8f75"></a>
-const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetPosition</b> () const </td></tr>
-<tr class="memitem:a693d32a37db86228d331f936d7c8776c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a693d32a37db86228d331f936d7c8776c"></a>
-const <a class="el" href="structmath_1_1_c_rect.html">math::CRect</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetCollisionBox</b> () const </td></tr>
-<tr class="memitem:a8e953ea6cc9fdd4455de85cfab273665"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8e953ea6cc9fdd4455de85cfab273665"></a>
-obj::CWeapon &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetPrimary</b> ()</td></tr>
-<tr class="memitem:a4e99473dcae2f655d454851f8721f276"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e99473dcae2f655d454851f8721f276"></a>
-obj::CWeapon &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetSecondary</b> ()</td></tr>
-<tr class="memitem:af910c93d3f53a161a27acfb77e0b9bc5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af910c93d3f53a161a27acfb77e0b9bc5"></a>
-obj::CGameObject *&#160;</td><td class="memItemRight" valign="bottom"><b>GetTankEntity</b> ()</td></tr>
-<tr class="memitem:a3d93c1ebc0b6f49cfd29e5f5954a79b1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d93c1ebc0b6f49cfd29e5f5954a79b1"></a>
 obj::CGameObject *&#160;</td><td class="memItemRight" valign="bottom"><b>GetTowerEntity</b> ()</td></tr>
 <tr class="memitem:a4e06c2646c793ad4129725a38a24750b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4e06c2646c793ad4129725a38a24750b"></a>
 virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> (<a class="el" href="classgame_1_1_c_settings.html">game::CSettings</a> &amp;)=0</td></tr>
@@ -307,7 +263,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_moving</b></td></tr
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a7f8457eeb24091254bef395c0ee7f258">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>.</p>
+<p>Reimplemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a7f8457eeb24091254bef395c0ee7f258">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#acde0fdd7a015c0eed259d4e428c65799">ai::CEnemyTank</a>.</p>
 
 <p>Definition at line <a class="el" href="_collapse_2src_2_world_2_objects_2_tank_8cpp_source.html#l00052">52</a> of file <a class="el" href="_collapse_2src_2_world_2_objects_2_tank_8cpp_source.html">Tank.cpp</a>.</p>
 
@@ -366,25 +322,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_moving</b></td></tr
 <a href="http://www.gamedev.net/topic/460026-rotate-point-around-origin-by-angle/">http://www.gamedev.net/topic/460026-rotate-point-around-origin-by-angle/</a> </dd>
 <dd>
 <a class="el" href="group___math.html#gaa174c23a0e3447bfaa56f56b0ddebfd3" title="Rotate the vector by a certain angle (in radians).">math::CVector2::Rotate(float)</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000052">Todo:</a></b></dt><dd>Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a> </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000046">Todo:</a></b></dt><dd>Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a> </dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000010">Bug:</a></b></dt><dd><p class="startdd">When the point to aim at is extremely close to the tank body, the angles aren't calculated properly. </p>
-<p class="enddd">In the atan2() sequence, the + 90.0f is there for an unknown reason. </p>
-</dd></dl>
-<p>in accordance with this one. Angle toward target is determined, followed by multiplication by a rotation matrix (ish) to track barrel location.</p>
-<dl class="params"><dt>Parameters:</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">float</td><td>X-coordinate to aim at </td></tr>
-    <tr><td class="paramname">float</td><td>Y-coordinate to aim at</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also:</dt><dd><a href="http://www.euclideanspace.com/maths/geometry/affine/aroundPoint/matrix2d/index.htm">http://www.euclideanspace.com/maths/geometry/affine/aroundPoint/matrix2d/index.htm</a> </dd>
-<dd>
-<a href="http://www.gamedev.net/topic/460026-rotate-point-around-origin-by-angle/">http://www.gamedev.net/topic/460026-rotate-point-around-origin-by-angle/</a> </dd>
-<dd>
-<a class="el" href="group___math.html#gaa174c23a0e3447bfaa56f56b0ddebfd3" title="Rotate the vector by a certain angle (in radians).">math::CVector2::Rotate(float)</a></dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000073">Todo:</a></b></dt><dd>Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a> </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000016">Bug:</a></b></dt><dd><p class="startdd">When the point to aim at is extremely close to the tank body, the angles aren't calculated properly. </p>
 <p class="enddd">In the atan2() sequence, the + 90.0f is there for an unknown reason. </p>
 </dd></dl>
 
@@ -511,7 +450,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_moving</b></td></tr
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>Location. </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>, <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>.</p>
+<p>Reimplemented in <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>, and <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>.</p>
 
 <p>Definition at line <a class="el" href="_collapse_2src_2_world_2_objects_2_tank_8cpp_source.html#l00207">207</a> of file <a class="el" href="_collapse_2src_2_world_2_objects_2_tank_8cpp_source.html">Tank.cpp</a>.</p>
 
@@ -589,14 +528,6 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_moving</b></td></tr
 </dl>
 <dl class="section see"><dt>See also:</dt><dd>CTank::Aim() </dd></dl>
 <dl class="bug"><dt><b><a class="el" href="bug.html#_bug000009">Bug:</a></b></dt><dd>The cos() having - <a class="el" href="namespacemath.html#a6bc2e46a09ced59adc7ca762c21672e9" title="Well-known constant. Special thanks to Windows calculator.">math::PI</a> normally shouldn't be there. </dd></dl>
-<dl class="params"><dt>Parameters:</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">float</td><td>The amount of degrees to rotate the body</td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section see"><dt>See also:</dt><dd>CTank::Aim() </dd></dl>
-<dl class="bug"><dt><b><a class="el" href="bug.html#_bug000015">Bug:</a></b></dt><dd>The cos() having - <a class="el" href="namespacemath.html#a6bc2e46a09ced59adc7ca762c21672e9" title="Well-known constant. Special thanks to Windows calculator.">math::PI</a> normally shouldn't be there. </dd></dl>
 
 <p>Definition at line <a class="el" href="_collapse_2src_2_world_2_objects_2_tank_8cpp_source.html#l00019">19</a> of file <a class="el" href="_collapse_2src_2_world_2_objects_2_tank_8cpp_source.html">Tank.cpp</a>.</p>
 
@@ -604,16 +535,14 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_moving</b></td></tr
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>Collapse/include/World/Objects/<a class="el" href="_collapse_2include_2_world_2_objects_2_tank_8hpp_source.html">Tank.hpp</a></li>
-<li>Inventory/include/World/Objects/<a class="el" href="_inventory_2include_2_world_2_objects_2_tank_8hpp_source.html">Tank.hpp</a></li>
 <li>ShaderTest/include/World/Objects/<a class="el" href="_shader_test_2include_2_world_2_objects_2_tank_8hpp_source.html">Tank.hpp</a></li>
 <li>Collapse/src/World/Objects/<a class="el" href="_collapse_2src_2_world_2_objects_2_tank_8cpp_source.html">Tank.cpp</a></li>
-<li>Inventory/src/World/Objects/<a class="el" href="_inventory_2src_2_world_2_objects_2_tank_8cpp_source.html">Tank.cpp</a></li>
 <li>ShaderTest/src/World/Objects/<a class="el" href="_shader_test_2src_2_world_2_objects_2_tank_8cpp_source.html">Tank.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:56 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:01 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

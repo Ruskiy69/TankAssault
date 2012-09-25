@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.7.7 pre-release</span>
+   &#160;<span id="projectnumber">0.8.1 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -109,15 +109,20 @@ Inheritance diagram for asset::CAsset:</div>
  <div class="center">
   <img src="classasset_1_1_c_asset.png" usemap="#asset::CAsset_map" alt=""/>
   <map id="asset::CAsset_map" name="asset::CAsset_map">
-<area href="classasset_1_1_c_font.html" title="Wrapper around TTF_Font." alt="asset::CFont" shape="rect" coords="118,56,226,80"/>
-<area href="classasset_1_1_c_font.html" title="Wrapper around TTF_Font." alt="asset::CFont" shape="rect" coords="118,112,226,136"/>
-<area href="classasset_1_1_c_font.html" title="Wrapper around TTF_Font." alt="asset::CFont" shape="rect" coords="118,168,226,192"/>
-<area href="classasset_1_1_c_sound2_d.html" alt="asset::CSound2D" shape="rect" coords="118,224,226,248"/>
-<area href="classasset_1_1_c_sound2_d.html" alt="asset::CSound2D" shape="rect" coords="118,280,226,304"/>
-<area href="classasset_1_1_c_sound2_d.html" alt="asset::CSound2D" shape="rect" coords="118,336,226,360"/>
-<area href="classasset_1_1_c_texture.html" alt="asset::CTexture" shape="rect" coords="118,392,226,416"/>
-<area href="classobj_1_1_c_entity.html" alt="obj::CEntity" shape="rect" coords="118,448,226,472"/>
-<area href="classobj_1_1_c_entity.html" alt="obj::CEntity" shape="rect" coords="118,504,226,528"/>
+<area href="classasset_1_1_c_font.html" title="Wrapper around TTF_Font." alt="asset::CFont" shape="rect" coords="0,56,113,80"/>
+<area href="classasset_1_1_c_font.html" title="Wrapper around TTF_Font." alt="asset::CFont" shape="rect" coords="123,56,236,80"/>
+<area href="classasset_1_1_c_sound2_d.html" alt="asset::CSound2D" shape="rect" coords="246,56,359,80"/>
+<area href="classasset_1_1_c_sound2_d.html" alt="asset::CSound2D" shape="rect" coords="369,56,482,80"/>
+<area href="classasset_1_1_c_texture.html" alt="asset::CTexture" shape="rect" coords="492,56,605,80"/>
+<area href="classobj_1_1_c_entity.html" alt="obj::CEntity" shape="rect" coords="676,56,789,80"/>
+<area href="classobj_1_1_c_game_object.html" title="The basic game object." alt="obj::CGameObject" shape="rect" coords="553,112,666,136"/>
+<area href="classobj_1_1_c_game_object.html" title="The basic game object." alt="obj::CGameObject" shape="rect" coords="799,112,912,136"/>
+<area href="classobj_1_1_c_bullet.html" title="A base class for any type of bullet." alt="obj::CBullet" shape="rect" coords="492,168,605,192"/>
+<area href="classobj_1_1_c_projectile.html" alt="obj::CProjectile" shape="rect" coords="615,168,728,192"/>
+<area href="classobj_1_1_c_bullet.html" title="A base class for any type of bullet." alt="obj::CBullet" shape="rect" coords="738,168,851,192"/>
+<area href="classobj_1_1_c_projectile.html" alt="obj::CProjectile" shape="rect" coords="861,168,974,192"/>
+<area href="classobj_1_1_c_bullet.html" title="A base class for any type of bullet." alt="obj::CBullet" shape="rect" coords="615,224,728,248"/>
+<area href="classobj_1_1_c_bullet.html" title="A base class for any type of bullet." alt="obj::CBullet" shape="rect" coords="861,224,974,248"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -143,18 +148,6 @@ virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="botto
 virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>GetReferenceCount</b> () const </td></tr>
 <tr class="memitem:a8df9519e014581f396072e91973e8036"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8df9519e014581f396072e91973e8036"></a>
 virtual asset_id&#160;</td><td class="memItemRight" valign="bottom"><b>GetID</b> () const </td></tr>
-<tr class="memitem:abda9c603f237072751cacde0eca0f85e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="abda9c603f237072751cacde0eca0f85e"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>LoadFromFile</b> (const char *p_filename)=0</td></tr>
-<tr class="memitem:ae2f1329d1b55402389f2fd5dc5506d59"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae2f1329d1b55402389f2fd5dc5506d59"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>IncrementReferenceCount</b> ()</td></tr>
-<tr class="memitem:a3030bb16f267722980f8899675bef070"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3030bb16f267722980f8899675bef070"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>DecrementReferenceCount</b> ()</td></tr>
-<tr class="memitem:a24670028a1fd8b878e060dcbbdf8172a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a24670028a1fd8b878e060dcbbdf8172a"></a>
-virtual const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetFilename</b> () const </td></tr>
-<tr class="memitem:a96560e01f1ab81f581bc5a6fb120c4f3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a96560e01f1ab81f581bc5a6fb120c4f3"></a>
-virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>GetReferenceCount</b> () const </td></tr>
-<tr class="memitem:a8df9519e014581f396072e91973e8036"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8df9519e014581f396072e91973e8036"></a>
-virtual asset_id&#160;</td><td class="memItemRight" valign="bottom"><b>GetID</b> () const </td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -171,7 +164,7 @@ asset_id&#160;</td><td class="memItemRight" valign="bottom"><b>m_id</b></td></tr
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>m_loaded</b></td></tr>
 <tr class="memitem:a216a17ad567c5c781bce04b4221abb64"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a216a17ad567c5c781bce04b4221abb64"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_refcount</b></td></tr>
-<tr class="memitem:a124c15361841c7c639b4f654f0723e86"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a124c15361841c7c639b4f654f0723e86"></a>
+<tr class="memitem:af67b4c86ca25e6ee98b87259b6f172f2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af67b4c86ca25e6ee98b87259b6f172f2"></a>
 <a class="el" href="classasset_1_1_c_asset.html">CAsset</a> *&#160;</td><td class="memItemRight" valign="bottom"><b>mp_Parent</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
@@ -179,16 +172,14 @@ unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>m_refcount</b
 <p>Definition at line <a class="el" href="_collapse_2include_2_assets_2_asset_8hpp_source.html#l00041">41</a> of file <a class="el" href="_collapse_2include_2_assets_2_asset_8hpp_source.html">Asset.hpp</a>.</p>
 </div><hr/>The documentation for this class was generated from the following files:<ul>
 <li>Collapse/include/Assets/<a class="el" href="_collapse_2include_2_assets_2_asset_8hpp_source.html">Asset.hpp</a></li>
-<li>Inventory/include/Assets/<a class="el" href="_inventory_2include_2_assets_2_asset_8hpp_source.html">Asset.hpp</a></li>
 <li>ShaderTest/include/Assets/<a class="el" href="_shader_test_2include_2_assets_2_asset_8hpp_source.html">Asset.hpp</a></li>
 <li>Collapse/src/Assets/<a class="el" href="_collapse_2src_2_assets_2_asset_8cpp_source.html">Asset.cpp</a></li>
-<li>Inventory/src/Assets/<a class="el" href="_inventory_2src_2_assets_2_asset_8cpp_source.html">Asset.cpp</a></li>
 <li>ShaderTest/src/Assets/<a class="el" href="_shader_test_2src_2_assets_2_asset_8cpp_source.html">Asset.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 18:51:56 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 19:02:00 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>
