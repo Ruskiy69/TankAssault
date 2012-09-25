@@ -1,29 +1,27 @@
 /**
  * @file
- *  Definitions for the CL_TerrainMap class
+ *  Definitions for the CTerrainMap class
  *
  * @author George Kudrayvtsev
  * @version 1.1.2
- */
+ **/
 
 #include <sstream>
 #include <fstream>
 
-#include "World/Levels/TerrainMap.h"
+#include "World/Levels/TerrainMap.hpp"
 
-using game::CL_TerrainMap;
-using asset::g_TextureAssets;
+using game::CTerrainMap;
+using asset::CAssetManager;
 
 /**
  * Figures out available tiles.
  *
  * @param bool Is it okay to edit the map?
- *
  * @pre Data/Levels/ValidNames.dat must exist.
- *
- * @see game::CL_Map::CL_Map()
- */
-CL_TerrainMap::CL_TerrainMap(bool edit) : CL_Map(edit)
+ * @see game::CMap::CMap()
+ **/
+CTerrainMap::CTerrainMap(bool edit) : CMap(edit)
 {
     std::ifstream tile_file("Data/Levels/ValidNames.dat");
     std::string line;
@@ -38,10 +36,7 @@ CL_TerrainMap::CL_TerrainMap(bool edit) : CL_Map(edit)
             continue;
 
         m_textureNames.push_back(line);
-
-        asset::GL_Entity* p_Tmp = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(line.c_str()));
-        m_textures.push_back(p_Tmp);
+        CAssetManager::Create<asset::CTexture>(line.c_str());
     }
 
     if(m_textureNames.size() == 0)
@@ -49,20 +44,23 @@ CL_TerrainMap::CL_TerrainMap(bool edit) : CL_Map(edit)
                          "Check Data/Map folder and try again.");
 
     if(edit)
-        mp_CurrentTile = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(m_textureNames[0].c_str()));
+    {
+        mp_CurrentTile = new obj::CGameObject;
+        mp_CurrentTile->LoadFromTexture((asset::CTexture*)
+            CAssetManager::Find(m_textureNames[0].c_str()));
+    }
 
     g_Log.Flush();
-    g_Log << "[DEBUG] CL_TerrainMap::CL_TerrainMap() called.\n";
+    g_Log << "[DEBUG] CTerrainMap::CTerrainMap() called.\n";
 }
 
 /**
  * Clears all texture names.
- */
-CL_TerrainMap::~CL_TerrainMap()
+ **/
+CTerrainMap::~CTerrainMap()
 {
     g_Log.Flush();
-    g_Log << "[DEBUG] CL_TerrainMap::~CL_TerrainMap() called.\n";
+    g_Log << "[DEBUG] CTerrainMap::~CTerrainMap() called.\n";
     m_textureNames.clear();
 }
 
@@ -70,10 +68,9 @@ CL_TerrainMap::~CL_TerrainMap()
  * Loads a .ctm map file. 
  *
  * @param char* Filename
- *
  * @return TRUE if loaded successfully, FALSE if not or no filename.
- */
-bool CL_TerrainMap::Load(const char* pfilename)
+ **/
+bool CTerrainMap::Load(const char* pfilename)
 {
     if(pfilename == NULL)
         return false;
@@ -119,10 +116,9 @@ bool CL_TerrainMap::Load(const char* pfilename)
             continue;
 
         // Set the texture id to a new tile.
-        asset::GL_Entity* p_Tmp  = this->GetEntityFromFilename(tileData[0].c_str());
-        asset::GL_Entity* p_Tile = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromTexture(
-            p_Tmp->GetTexture(), p_Tmp->GetCollisionBox()));
+        obj::CGameObject* p_Tile = new obj::CGameObject;
+        p_Tile->LoadFromTexture((asset::CTexture*)CAssetManager::Find(
+            tileData[0].c_str()));
 
         // tileData becomes just x,y
         tileData = gk::split(tileData[1], ',');
@@ -144,6 +140,7 @@ bool CL_TerrainMap::Load(const char* pfilename)
 
     tileData.clear();
     map.close();
+    
     return true;
 }
 
@@ -151,12 +148,10 @@ bool CL_TerrainMap::Load(const char* pfilename)
  * Saves a map file.
  *
  * @param char* Filename
- *
  * @pre Edit-mode must be enabled.
- *
  * @return TRUE if saved, FALSE if failure, no filename, no tiles, or cannot edit.
- */
-bool CL_TerrainMap::Save(const char* p_filename)
+ **/
+bool CTerrainMap::Save(const char* p_filename)
 {
     if(p_filename == NULL || !m_can_edit || mp_allTiles.size() == 0)
     {
@@ -206,8 +201,8 @@ bool CL_TerrainMap::Save(const char* p_filename)
 
 /**
  * Sets the next tile in the available tile list as the active tile.
- */
-void CL_TerrainMap::NextTile()
+ **/
+void CTerrainMap::NextTile()
 {
     if(!m_can_edit)
         return;
@@ -221,8 +216,8 @@ void CL_TerrainMap::NextTile()
     g_Log << "[DEBUG] Switching terrain map to new tile: ";
     g_Log << m_textureNames[index] << ".\n";
 
-    mp_CurrentTile = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(m_textureNames[index].c_str()));
+    mp_CurrentTile->LoadFromTexture((asset::CTexture*)CAssetManager::Find(
+        m_textureNames[index].c_str()));
 }
 
 /**
@@ -230,13 +225,13 @@ void CL_TerrainMap::NextTile()
  *
  * @param int X-coordinate
  * @param int Y-coordinate
- */
-void CL_TerrainMap::PlaceTile(int x, int y)
+ **/
+void CTerrainMap::PlaceTile(int x, int y)
 {
     if(!m_can_edit)
         return;
 
-    asset::GL_Entity* p_Tile = this->FindTile(x, y);
+    obj::CGameObject* p_Tile = this->FindTile(x, y);
     if(p_Tile == NULL)
     {
         while(x % 32 != 0) x--;
@@ -245,8 +240,8 @@ void CL_TerrainMap::PlaceTile(int x, int y)
         p_Tile = this->FindTile(x, y);
         if(p_Tile == NULL)
         {
-            p_Tile = g_TextureAssets.GetEntityByID(
-                g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
+            p_Tile = new obj::CGameObject;
+            p_Tile->LoadFromTexture((asset::CTexture*)CAssetManager::Find(
                 mp_CurrentTile->GetFilename().c_str()));
             p_Tile->Move(x, y);
             mp_allTiles.push_back(p_Tile);
@@ -256,8 +251,8 @@ void CL_TerrainMap::PlaceTile(int x, int y)
             if(mp_CurrentTile->GetFilename() == p_Tile->GetFilename())
                 return;
 
-            p_Tile = g_TextureAssets.GetEntityByID(
-                g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
+            p_Tile = new obj::CGameObject;
+            p_Tile->LoadFromTexture((asset::CTexture*)CAssetManager::Find(
                 mp_CurrentTile->GetFilename().c_str()));
         }
     }
@@ -266,18 +261,17 @@ void CL_TerrainMap::PlaceTile(int x, int y)
         if(mp_CurrentTile->GetFilename() == p_Tile->GetFilename())
                 return;
 
-        p_Tile = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
+        p_Tile = new obj::CGameObject;
+        p_Tile->LoadFromTexture((asset::CTexture*)CAssetManager::Find(
             mp_CurrentTile->GetFilename().c_str()));
     }
 }
 
 /**
  * Updates all the tiles on-screen.
- *
  * @param bool Should we show the main placeable tile?
- */
-void CL_TerrainMap::Update(bool show_active)
+ **/
+void CTerrainMap::Update(bool show_active)
 {
     for(size_t i = 0; i < mp_allTiles.size(); ++i)
     {
@@ -298,30 +292,13 @@ void CL_TerrainMap::Update(bool show_active)
  * Tests for a valid, available texture name.
  *
  * @param char* Texture name to check
- *
  * @return TRUE if valid, FALSE if not.
- */
-bool CL_TerrainMap::IsValidTextureName(const char* ptexture_name)
+ **/
+bool CTerrainMap::IsValidTextureName(const char* ptexture_name)
 {
     for(size_t i = 0; i < m_textureNames.size(); ++i)
         if(m_textureNames[i] == ptexture_name)
             return true;
 
     return false;
-}
-
-/**
- * Retrieves the texture associated with a filename.
- *
- * @param char* Filename
- *
- * @return Texture name if it exists, -1 if not.
- */
-asset::GL_Entity* CL_TerrainMap::GetEntityFromFilename(const char* p_filename)
-{
-    for(size_t i = 0; i < m_textureNames.size(); ++i)
-        if(m_textureNames[i] == p_filename)
-            return m_textures[i];
-
-    return NULL;
 }

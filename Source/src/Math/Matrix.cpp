@@ -1,22 +1,22 @@
 /**
  * @file
- *  ML_Matrix class implementations.
+ *  CMatrix class implementations.
  *
- * @author George Kudrayvtsev
+ * @author  George Kudrayvtsev
  * @version 1.0
- */
+ **/
 
-#include "Math/Matrix.h"
+#include "Math/Matrix.hpp"
 
-using math::ML_Matrix;
+using math::CMatrix;
 
 /**
  * Create a matrix with the specified dimensions.
  *
  * @param int The amount of rows in the matrix
  * @param int The amount of columns in the matrix
- */
-ML_Matrix::ML_Matrix(u_int rows, u_int columns) : m_rows(rows), m_columns(columns)
+ **/
+CMatrix::CMatrix(u_int rows, u_int columns) : m_rows(rows), m_columns(columns)
 {
     m_elements.resize(rows);
 
@@ -37,8 +37,8 @@ ML_Matrix::ML_Matrix(u_int rows, u_int columns) : m_rows(rows), m_columns(column
  *   If it's too small, there is no bounds checking. So it's the callers
  *   responsibility to ensure that the array is large enough to accommodate
  *   the matrix.
- */
-ML_Matrix::ML_Matrix(u_int rows, u_int columns, const float** pdata) : m_rows(rows),
+ **/
+CMatrix::CMatrix(u_int rows, u_int columns, const float** pdata) : m_rows(rows),
     m_columns(columns)
 {
     m_elements.resize(rows);
@@ -54,9 +54,9 @@ ML_Matrix::ML_Matrix(u_int rows, u_int columns, const float** pdata) : m_rows(ro
 /**
  * Create a matrix copied from another specified matrix.
  *
- * @param ML_Matrix The matrix to copy.
- */
-ML_Matrix::ML_Matrix(const ML_Matrix& Copy) : m_rows(Copy.GetRowCount()),
+ * @param CMatrix The matrix to copy.
+ **/
+CMatrix::CMatrix(const CMatrix& Copy) : m_rows(Copy.GetRowCount()),
     m_columns(Copy.GetColumnCount())
 {
     m_elements.resize(m_rows);
@@ -72,11 +72,11 @@ ML_Matrix::ML_Matrix(const ML_Matrix& Copy) : m_rows(Copy.GetRowCount()),
 /**
  * Assign all values of a new matrix to the current one.
  *
- * @param ML_Matrix The matrix to get values from
+ * @param CMatrix The matrix to get values from
  * 
  * @return The current matrix, modified.
- */
-ML_Matrix& ML_Matrix::operator= (const ML_Matrix& Copy)
+ **/
+CMatrix& CMatrix::operator= (const CMatrix& Copy)
 {
     m_rows = Copy.GetRowCount();
     m_columns = Copy.GetColumnCount();
@@ -98,11 +98,11 @@ ML_Matrix& ML_Matrix::operator= (const ML_Matrix& Copy)
  *
  * The matrices MUST be the same dimensions.
  *
- * @param ML_Matrix The matrix to add to the current one
+ * @param CMatrix The matrix to add to the current one
  *
  * @return A new matrix consisting of the added elements.
- */
-ML_Matrix ML_Matrix::operator+ (const ML_Matrix& Other) const
+ **/
+CMatrix CMatrix::operator+ (const CMatrix& Other) const
 {
     if(m_rows != Other.GetRowCount() || 
         m_columns != Other.GetColumnCount())
@@ -110,7 +110,7 @@ ML_Matrix ML_Matrix::operator+ (const ML_Matrix& Other) const
         gk::handle_error("Matrices must be the same size!");
     }
 
-    ML_Matrix Answer(m_rows, m_columns);
+    CMatrix Answer(m_rows, m_columns);
 
     for(u_int i = 0; i < m_rows; ++i)
     {
@@ -129,11 +129,11 @@ ML_Matrix ML_Matrix::operator+ (const ML_Matrix& Other) const
  *
  * The matrices MUST be the same dimensions.
  *
- * @param ML_Matrix The matrix to add to the current one
+ * @param CMatrix The matrix to add to the current one
  *
  * @return A new matrix consisting of the subtracted elements.
- */
- ML_Matrix ML_Matrix::operator- (const ML_Matrix& Other) const
+ **/
+ CMatrix CMatrix::operator- (const CMatrix& Other) const
 {
     if(m_rows != Other.GetRowCount() || 
         m_columns != Other.GetColumnCount())
@@ -141,7 +141,7 @@ ML_Matrix ML_Matrix::operator+ (const ML_Matrix& Other) const
         gk::handle_error("Matrices must be the same size!");
     }
 
-    ML_Matrix Answer(m_rows, m_columns);
+    CMatrix Answer(m_rows, m_columns);
 
     for(u_int i = 0; i < m_rows; ++i)
     {
@@ -158,13 +158,13 @@ ML_Matrix ML_Matrix::operator+ (const ML_Matrix& Other) const
 /** 
  * Creates a matrix with each element multiplied by a scalar variable.
  *
- * @param ML_Matrix the matrix to add to the current one
+ * @param CMatrix the matrix to add to the current one
  *
  * @return A new matrix scalar'ed.
- */
-ML_Matrix ML_Matrix::operator* (const float scalar) const
+ **/
+CMatrix CMatrix::operator* (const float scalar) const
 {
-    ML_Matrix Answer(m_rows, m_columns);
+    CMatrix Answer(m_rows, m_columns);
 
     for(u_int i = 0; i < m_rows; ++i)
     {
@@ -181,13 +181,13 @@ ML_Matrix ML_Matrix::operator* (const float scalar) const
 /** 
  * Multiply two matrices together. 
  *
- * @param ML_Matrix the matrix to add to the current one
+ * @param CMatrix the matrix to add to the current one
  *
  * @return A new matrix representing the multiplied matrices
- */
-ML_Matrix ML_Matrix::operator* (const ML_Matrix& Other) const
+ **/
+CMatrix CMatrix::operator* (const CMatrix& Other) const
 {
-    ML_Matrix Answer(m_rows, Other.GetColumnCount());
+    CMatrix Answer(m_rows, Other.GetColumnCount());
 
     for(u_int i = 0; i < m_rows; ++i)
     {
@@ -213,11 +213,11 @@ ML_Matrix ML_Matrix::operator* (const ML_Matrix& Other) const
  * differ, or any of the elements are not the same, the matrices are not
  * equal.
  *
- * @param ML_Matrix the matrix to compare to
+ * @param CMatrix the matrix to compare to
  *
  * @return TRUE if matrices are equal, FALSE otherwise.
- */
-bool ML_Matrix::operator== (const ML_Matrix& Other) const
+ **/
+bool CMatrix::operator== (const CMatrix& Other) const
 {
     if(m_columns != Other.GetColumnCount() ||
         m_rows != Other.GetRowCount())
@@ -241,8 +241,8 @@ bool ML_Matrix::operator== (const ML_Matrix& Other) const
  * @param float New value
  *
  * @return TRUE if element was changed, FALSE if it doesn't exist.
- */
-bool ML_Matrix::ChangeElement(const u_int r, const u_int c, const float value)
+ **/
+bool CMatrix::ChangeElement(const u_int r, const u_int c, const float value)
 {
     if(r > m_rows || c > m_columns)
         return false;
@@ -255,8 +255,8 @@ bool ML_Matrix::ChangeElement(const u_int r, const u_int c, const float value)
  * Retreives the row count.
  *
  * @return Row count
- */
-int ML_Matrix::GetRowCount() const
+ **/
+int CMatrix::GetRowCount() const
 {
     return m_rows;
 }
@@ -265,8 +265,8 @@ int ML_Matrix::GetRowCount() const
  * Retreives the column count.
  *
  * @return Column count
- */
-int ML_Matrix::GetColumnCount() const
+ **/
+int CMatrix::GetColumnCount() const
 {
     return m_columns;
 }
@@ -274,9 +274,9 @@ int ML_Matrix::GetColumnCount() const
 /**
  * Retreive matrix size.
  *
- * @return ML_Matrix size
- */
-int ML_Matrix::GetSize() const
+ * @return CMatrix size
+ **/
+int CMatrix::GetSize() const
 {
     return m_rows * m_columns;
 }
@@ -285,10 +285,10 @@ int ML_Matrix::GetSize() const
  * Calculates the determinant of the matrix.
  *
  * @return The determinant.
- */
-float ML_Matrix::Determinant() const
+ **/
+float CMatrix::Determinant() const
 {
-    /* Can't do determinant on un-square matrices! */
+    /* Can't do determinant on un-square matrices! **/
     if(m_rows != m_columns)
         gk::handle_error("Uneven matrix!");
 
@@ -329,19 +329,19 @@ float ML_Matrix::Determinant() const
  * @param int Column
  *
  * @return Value at [row][column].
- */
-float ML_Matrix::GetElement(const u_int r, const u_int c) const
+ **/
+float CMatrix::GetElement(const u_int r, const u_int c) const
 {
     if(r > m_rows || c > m_columns)
-        gk::handle_error("ML_Matrix out-of-bounds!");
+        gk::handle_error("CMatrix out-of-bounds!");
 
     return m_elements[r][c];
 }
 
 /**
  * Prints the values of the matrix in an organized format.
- */
-void ML_Matrix::Print() const
+ **/
+void CMatrix::Print() const
 {
     std::cout.precision(2);
 

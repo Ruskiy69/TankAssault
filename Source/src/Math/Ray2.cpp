@@ -2,27 +2,27 @@
  * @file
  *  Implementation of the Ray classes.
  *
- * @author George Kudrayvtsev
+ * @author  George Kudrayvtsev
  * @version 1.3.1
- */
+ **/
 
-#include "Math/Ray.h"
+#include "Math/Ray.hpp"
 
-using math::ML_Ray2;
+using math::CRay2;
 
-ML_Ray2::ML_Ray2(const float start_x, const float start_y, const float end_x, const float end_y)
+CRay2::CRay2(const float start_x, const float start_y, const float end_x, const float end_y)
 {
     this->Start.Move(start_x, start_y);
     this->End.Move(end_x, end_y);
 }
 
-ML_Ray2::ML_Ray2(const ML_Ray2& Copy)
+CRay2::CRay2(const CRay2& Copy)
 {
     this->Start = Copy.Start;
     this->End   = Copy.End;
 }
 
-ML_Ray2& ML_Ray2::operator= (const ML_Ray2& Copy)
+CRay2& CRay2::operator= (const CRay2& Copy)
 {
     this->Start = Copy.Start;
     this->End   = Copy.End;
@@ -30,31 +30,31 @@ ML_Ray2& ML_Ray2::operator= (const ML_Ray2& Copy)
     return *this;
 }
 
-bool ML_Ray2::operator== (const ML_Ray2& Other) const
+bool CRay2::operator== (const CRay2& Other) const
 {
     return (this->Start == Other.Start && this->End == Other.End);
 }
 
-ML_Ray2 ML_Ray2::operator- (const math::ML_Vector2& Other) const
+CRay2 CRay2::operator- (const math::CVector2& Other) const
 {
-    return ML_Ray2(this->Start - Other, this->End - Other);
+    return CRay2(this->Start - Other, this->End - Other);
 }
 
-ML_Ray2 ML_Ray2::operator+ (const math::ML_Vector2& Other) const
+CRay2 CRay2::operator+ (const math::CVector2& Other) const
 {
-    return ML_Ray2(this->Start + Other, this->End + Other);
+    return CRay2(this->Start + Other, this->End + Other);
 }
 
 /**
  * Checks for intersection with another line segment. Touching at
  * endpoints qualifies as intersections.
  *
- * @param math::ML_Ray2 The other line
+ * @param math::CRay2 The other line
  *
  * @return TRUE if they intersect, FALSE otherwise.
  * @see http://gamedev.stackexchange.com/questions/26004/how-to-detect-2d-line-on-line-collision
- */
-bool ML_Ray2::CheckCollision(const ML_Ray2& Other, math::ML_Vector2* p_Intersection) const
+ **/
+bool CRay2::CheckCollision(const CRay2& Other, math::CVector2* p_Intersection) const
 {
     /**
      * Solve for the intersection point.
@@ -70,9 +70,9 @@ bool ML_Ray2::CheckCollision(const ML_Ray2& Other, math::ML_Vector2* p_Intersect
      *  Thus (x, y) becomes the intersection point.
      *
      *  Then we must see if (x, y) is in the range of line segments given.
-     */
+     **/
 
-    math::ML_Vector2 Intersect;
+    math::CVector2 Intersect;
     float m1, m2;
 
     m1 = this->GetSlope();
@@ -101,20 +101,20 @@ bool ML_Ray2::CheckCollision(const ML_Ray2& Other, math::ML_Vector2* p_Intersect
 }
 
 /**
- * @overload math::ML_Ray2::CheckCollision(const ML_Ray2&)
+ * @overload math::CRay2::CheckCollision(const CRay2&)
  *
- * @param math::ML_Rect Rectangle
+ * @param math::CRect Rectangle
  *
  * @todo Check for collision inside of rect, not just edges.
- */
-bool ML_Ray2::CheckCollision(const math::ML_Rect& Other,
-    math::ML_Vector2* p_Intersection) const
+ **/
+bool CRay2::CheckCollision(const math::CRect& Other,
+    math::CVector2* p_Intersection) const
 {
     // Find all edges of the rectangle.
-    ML_Ray2 Top(Other.x, Other.y, Other.x + Other.w, Other.y);
-    ML_Ray2 Bottom(Other.x, Other.y + Other.h, Other.x + Other.w, Other.y + Other.h);
-    ML_Ray2 Left(Other.x, Other.y, Other.x, Other.y + Other.h);
-    ML_Ray2 Right(Other.x + Other.w, Other.y, Other.x + Other.w, Other.y + Other.h);
+    CRay2 Top(Other.x, Other.y, Other.x + Other.w, Other.y);
+    CRay2 Bottom(Other.x, Other.y + Other.h, Other.x + Other.w, Other.y + Other.h);
+    CRay2 Left(Other.x, Other.y, Other.x, Other.y + Other.h);
+    CRay2 Right(Other.x + Other.w, Other.y, Other.x + Other.w, Other.y + Other.h);
 
     // If any edges intersect, we intersect.
     if(this->CheckCollision(Top, p_Intersection))
@@ -131,7 +131,7 @@ bool ML_Ray2::CheckCollision(const math::ML_Rect& Other,
         this->End.x >= Right.Start.GetX() &&
         this->End.x <= Left.Start.GetX())
         return true;
-     */
+     **/
     else
         return false;
 }
@@ -140,8 +140,8 @@ bool ML_Ray2::CheckCollision(const math::ML_Rect& Other,
  * Rotates the line segment by a certain amount of radians.
  *
  * @param float Angle in radians.
- */
-void ML_Ray2::Rotate(const float angle)
+ **/
+void CRay2::Rotate(const float angle)
 {
     this->Start.Rotate(angle);
     this->End.Rotate(angle);
@@ -149,8 +149,8 @@ void ML_Ray2::Rotate(const float angle)
 
 /**
  * Neatly print to stdout the ray start and end cooordinates.
- */
-void ML_Ray2::Print() const
+ **/
+void CRay2::Print() const
 {
     std::cout << "From (" << this->Start.x << ", ";
     std::cout << this->Start.y << ") to (";
@@ -161,11 +161,11 @@ void ML_Ray2::Print() const
 /**
  * Determines if the given point is on the ray.
  *
- * @param math::ML_Vector2& Point to check.
+ * @param math::CVector2& Point to check.
  *
  * @return TRUE if on ray, FALSE if not.
- */
-bool ML_Ray2::OnRay(const math::ML_Vector2& Point) const
+ **/
+bool CRay2::OnRay(const math::CVector2& Point) const
 {
     // Final return var
     bool on_line = false;
@@ -201,8 +201,8 @@ bool ML_Ray2::OnRay(const math::ML_Vector2& Point) const
  *
  * @pre Non-infinite slope.
  * @return Slope.
- */
-float ML_Ray2::GetSlope() const
+ **/
+float CRay2::GetSlope() const
 {
     if(this->End.x - this->Start.x == 0)
         return 0;
@@ -214,8 +214,8 @@ float ML_Ray2::GetSlope() const
  * Calculates the length of the ray using the Pythagorean theorum.
  *
  * @return Length.
- */
-float ML_Ray2::GetLength() const
+ **/
+float CRay2::GetLength() const
 {
     float x = this->Start.x - this->End.x;
     float y = this->Start.y - this->End.y;
@@ -227,14 +227,14 @@ float ML_Ray2::GetLength() const
  * Calculate every single point on the line segment.
  *
  * @return A vector of the points.
- */
-std::vector<math::ML_Vector2*> ML_Ray2::GetPoints() const
+ **/
+std::vector<math::CVector2*> CRay2::GetPoints() const
 {
-    std::vector<math::ML_Vector2*> ppoints;
+    std::vector<math::CVector2*> ppoints;
     
     int dx, dy, inx, iny, e;
 
-    math::ML_Vector2 TmpStart(this->Start);
+    math::CVector2 TmpStart(this->Start);
 
     dx = this->End.y - this->Start.x;
     dy = this->End.y - this->Start.x;
@@ -251,7 +251,7 @@ std::vector<math::ML_Vector2*> ML_Ray2::GetPoints() const
         dx <<= 1;
         while((int)TmpStart.x != (int)this->End.x)
         {
-            ppoints.push_back(new math::ML_Vector2(TmpStart));
+            ppoints.push_back(new math::CVector2(TmpStart));
             if(e >= 0)
             {
                 TmpStart.y = TmpStart.y + iny;
@@ -268,7 +268,7 @@ std::vector<math::ML_Vector2*> ML_Ray2::GetPoints() const
         dy <<= 1;
         while ((int)TmpStart.y != (int)End.y)
         {
-            ppoints.push_back(new math::ML_Vector2(TmpStart));
+            ppoints.push_back(new math::CVector2(TmpStart));
             if(e >= 0)
             {
                 TmpStart.x = TmpStart.x + inx;

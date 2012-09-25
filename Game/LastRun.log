@@ -1,0 +1,144 @@
+[INFO] Log initialized on Mon Sep 24 18:54:57 2012
+[INFO] Debug build: false.
+[INFO] Initializing game engine.
+[INFO] Creating OpenGL window 800x600.
+[INFO] OpenGL version: 4.2.0.
+[INFO] OpenGL vendor: NVIDIA Corporation.
+[INFO] OpenGL renderer: GeForce GTS 450/PCIe/SSE2.
+[INFO] Loading primary assets.
+[INFO] Creating asset: Data/Fonts/IntroFont.ttf.
+[INFO] Creating asset: Data/Audio/Music/Intro.ogg.
+[INFO] Creating asset: Data/Audio/Music/MenuMusic1.ogg.
+[INFO] Creating asset: Data/Textures/Crosshairs.png.
+[INFO] Creating asset: Data/Textures/Splash.png.
+[INFO] Loading menu images.
+[INFO] Creating asset: Data/Textures/Menus/Menu_BG.png.
+[INFO] Creating asset: Data/Textures/Background.png.
+[INFO] Creating asset: Data/Fonts/MenuFont.ttf.
+[INFO] Creating asset: Data/Audio/Sounds/MenuHover.wav.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Play.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Play_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Options.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Options_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Exit.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Exit_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Options_Music.png.
+[INFO] Creating asset: Data/Textures/Menus/Options_Music_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Return.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Return_High.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Return.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Return_High.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Exit.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Exit_High.png.
+[INFO] Initializing world.
+[INFO] Creating asset: Data/Textures/Levels/BlueWall.png.
+[INFO] Creating asset: Data/Textures/Levels/BlueWall_Broken.png.
+[INFO] Creating asset: Data/Textures/Levels/Floor.png.
+[INFO] Loading level Data/Levels/Level1*
+[INFO] Loading terrain level: Data/Levels/Level1.ctm.
+[INFO] Loading collision level: Data/Levels/Level1.ccm.
+[INFO] Loading objective level: Data/Levels/Level1.cjm.
+[INFO] Retrieving asset: Data/Textures/Background.png.
+[INFO] Loading shader: Data/Shaders/Lighting.vs.
+[INFO] Loading shader: Data/Shaders/Lighting.fs.
+[INFO] Creating asset: Data/Textures/Sprites/PlayerTower1.png.
+[INFO] Creating asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Creating asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Creating asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Creating asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Creating asset: Data/Textures/Sprites/Bullet1.png.
+[INFO] Creating asset: Data/Textures/Sprites/Enemy1.png.
+[INFO] Creating asset: Data/Textures/Sprites/Enemy1_1.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1_1.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1_1.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet1.png.
+[INFO] Creating asset: Data/Fonts/GUIFont.ttf.
+[INFO] Initialization complete.
+[INFO] Asset count: 35
+[INFO] Unloading audio file: Data/Audio/Sounds/MenuHover.wav.
+[INFO] Unloading audio file: Data/Audio/Sounds/MenuHover.wav.
+[INFO] Playing intro sequence.
+[INFO] Unloading audio file: Data/Audio/Music/Intro.ogg.
+[INFO] Unloading audio file: Data/Audio/Sounds/MenuHover.wav.
+[INFO] Creating asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Unloading audio file: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Unloading audio file: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Unloading audio file: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Quitting library sub-systems.
+[INFO] Log closed on Mon Sep 24 18:55:44 2012

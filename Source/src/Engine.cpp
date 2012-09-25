@@ -1,93 +1,105 @@
-/**
- * @file
- *  Engine class definitions.
- *
- * @author George Kudrayvtsev
- * @version 0.1
- * 
- * @todo Fix menu glitch in Release build (after splash screen)
- * @todo Add fadeout from loading screen.
- * @todo [MAYBE] Create a separate thread for loading while
- *       the screen fades in/out.
- */
+#include "Engine.hpp"
 
-#include "Engine.h"
+using game::CEngine;
+using asset::CAssetManager;
 
-using game::CL_Engine;
+CEngine::CEngine() : m_GameWindow(800, 600, "Collapse", 
+    "Data/Textures/tank.ico"),
+    m_Menus(m_GameWindow, m_state),
+    m_state(game::e_SPLASH), m_World(m_state),
+    m_Inventory(m_World.GetPlayer()) {}
 
-using game::g_Log;
-using asset::g_AudioAssets;
-using asset::g_FontAssets;
-using asset::g_TextureAssets;
-
-/**
- * Initializes everything for the game.
- */
-void CL_Engine::Init()
+bool CEngine::Init()
 {
-    glewInit();
+    // Initialize GLEW after the OpenGL context has been created.
+    if(glewInit() != GLEW_OK) return false;
 
-    g_Log.Flush();
-    g_Log << "[INFO] Loading in-game assets, shaders, etc.\n";
-
-    if(!m_Lighting.Init()) gk::handle_error(g_Log.GetLastLog().c_str());
+    // Set the frame rate.
     m_Timer.SetFrameRate(60);
 
-    // Menu font.
-    m_introfont_id = g_FontAssets.LoadFontFromFile(
-        "Data/Fonts/GameFont.ttf", 72);
+    // Start loading intro, splash, and menu assets.
+    g_Log.Flush();
+    g_Log << "[INFO] Loading primary assets.\n";
 
-    // Text color, blue-ish.
+    mp_IntroFont = CAssetManager::Create<asset::CFont>(
+        "Data/Fonts/IntroFont.ttf");
+    mp_IntroFont->Resize(72);
+
+    // Create the off-blue color used for text in the intro and
+    // many other places.
     m_OffBlue = gfx::create_color(55, 170, 250);
 
-    // Loading screen.
-    asset::GL_Entity* pLoad = g_FontAssets.GetFontByID(
-        m_introfont_id)->RenderText("Loading...", m_OffBlue);
-    pLoad->Move(m_Window.GetWidth() / 2 - pLoad->GetW() / 2, 
-        m_Window.GetHeight() / 2);
-    g_FontAssets.GetFontByID(m_introfont_id)->Resize(32);
+    // Loading screen so the user knows what's going on.
+    obj::CEntity* pLoading = mp_IntroFont->RenderText(
+        "Loading...", m_OffBlue);
+    pLoading->Move(m_GameWindow.GetWidth() / 2 - pLoading->GetW() / 2,
+        m_GameWindow.GetHeight() / 2 - pLoading->GetH() / 2);
+    mp_IntroFont->Resize(32);
+
+    mp_Version = mp_IntroFont->RenderText(GAME_VERSION, m_OffBlue);
+    mp_Version->Move(m_GameWindow.GetWidth() - mp_Version->GetW(),
+        m_GameWindow.GetHeight() - mp_Version->GetH());
+
+    glEnable(GL_BLEND);
+    glDisable(GL_DEPTH_TEST);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+    m_GameWindow.Clear();
+    pLoading->Update();
+    m_GameWindow.Update();
+
+    delete pLoading;
+
+    // Load settings file
+    if(!g_Settings.Load("Data/Settings.ini"))
+    {
+        g_Log.Flush();
+        g_Log << "[ERROR] Failed to load Data/Settings.ini.\n";
+        gk::handle_error(g_Log.GetLastLog().c_str());
+    }
+
+    // Load the intro song.
+    mp_IntroSong = CAssetManager::Create<asset::CSound2D>(
+        "Data/Audio/Music/Intro.ogg");
+
+    // Add a song to the main menu.
+    m_MusicPlayer.AddSongToQueue("Data/Audio/Music/MenuMusic1.ogg");
     
-    m_Window.Clear();
-    pLoad->Update();
-    m_Window.Update();
+    // In-game cross hairs
+    m_IngameCursor.LoadFromTexture(CAssetManager::Create<asset::CTexture>(
+        "Data/Textures/Crosshairs.png"));
 
-    // Intro song.
-    m_introsong_id = g_AudioAssets.LoadAudioFromFile("Data/Sounds/Intro.ogg");
+    m_Splash.LoadFromTexture(CAssetManager::Create<asset::CTexture>(
+        "Data/Textures/Splash.png"));
 
-    // Menu song #1.
-    m_MusicPlayer.AddSongToQueue("Data/Sounds/Menu_Music1.ogg");
-
-    // In-game 'aim' cursor.
-    mp_Cursor = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
-        "Data/Images/Crosshairs.png"));
-
-    // Initialize the menus
+    // Initialize menu assets
     m_Menus.Init();
 
-    // Assign shaders to subsequent textures.
-    g_TextureAssets.SetDefaultShader(&m_Lighting.GetVShader(),
-        &m_Lighting.GetFShader());
-
+    // Initialize the world assets.
     m_World.Init();
 
-    g_TextureAssets.SetDefaultShader(NULL, NULL);
+    // Initialize inventory assets.
+    m_Inventory.Init();
 
-    // Start from splash screen.
-    m_state = game::e_SPLASH;
+    g_Log.Flush();
+    g_Log << "[INFO] Initialization complete.\n";
+    g_Log.ShowLastLog();
+
+    return true;
 }
 
-/**
- * The main game loop that processes all logic.
- */
-void CL_Engine::GameLoop()
+bool CEngine::GameLoop()
 {
-    bool first = true;
+    // Alpha fading for various sequences.
+    float alpha = 0.0f;
 
+    // First time loop entering tracking
+    bool first  = true;
+
+    // Disable vsync if specified, for checking real frame rates.
 #if !REGULATE_FPS
 #ifdef _WIN32
-    // Disable VSYNC
-    typedef BOOL (APIENTRY *PFNWGLSWAPINTERVALFARPROC)(int);
+    typedef bool (APIENTRY *PFNWGLSWAPINTERVALFARPROC)(int);
     PFNWGLSWAPINTERVALFARPROC wglSwapIntervalEXT = 0;
     wglSwapIntervalEXT = (PFNWGLSWAPINTERVALFARPROC)
         wglGetProcAddress("wglSwapIntervalEXT");
@@ -98,98 +110,82 @@ void CL_Engine::GameLoop()
 #endif // _WIN32
 #endif // REGULATE_FPS
 
-    float alpha = 0.0f;
-
+    // Some logging before the loop starts, showing assets.
     g_Log.Flush();
-    g_Log << "[INFO] Asset count breakdown:";
-    g_Log << "\n[INFO] Textures: " << g_TextureAssets.GetEntityCount();
-    g_Log << "\n[INFO] Audio   : " << g_AudioAssets.GetAudioCount();
-    g_Log << "\n[INFO] Fonts   : " << g_FontAssets.GetFontCount();
-    g_Log << "\n";
+    g_Log << "[INFO] Asset count: " << CAssetManager::GetAssetCount() << "\n";
     g_Log.ShowLastLog();
 
     while(m_state != game::e_QUIT)
     {
-#if REGULATE_FPS
-        // No timer
-        m_Timer.Start();
-        int frame = m_Timer.GetFrame();
-#else
-        frame++;
-#endif // REGULATE_FPS
-        if(frame % 120 == 0)
-        {
-            g_Log.Flush();
-            g_Log << "[DEBUG] Frame #" << frame;
-            g_Log << " engine state: " << m_state << ".\n";
-        }
-
+        // Events
+        this->HandleGameEvents();
         this->HandleSystemEvents();
 
-        m_Window.Clear();
-        
+        // Rendering
+        m_GameWindow.Clear();
         switch(m_state)
         {
         case game::e_MAINMENU:
 #ifndef _DEBUG
             if(first)
             {
-                if(m_Menus.FadeIn(0.005f))
-                    first = false;
+                first = !(m_Menus.FadeIn(0.005f));
             }
-            else
 #endif // _DEBUG
-                m_Menus.MainMenu();
-            break;
-
         case game::e_OPTIONSMENU:
-            m_Menus.OptionsMenu(m_MusicPlayer);
-            break;
-
         case game::e_PAUSEMENU:
-            m_Menus.PauseMenu();
+            m_Menus.Update(m_MusicPlayer);
+            mp_Version->Update();
             break;
 
         case game::e_SPLASH:
             {
                 // Show the splash logo but not in debug builds.
 #ifndef _DEBUG
-                asset::GL_Entity* p_Fader = g_TextureAssets.GetEntityByID(
-                    g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
-                    "Data/Images/Splash.png"));
+                float alpha = 0.0f;
 
-                while(m_state == game::e_SPLASH)
+                while(m_state == game::e_SPLASH && alpha <= 1.0f)
                 {
                     m_Timer.Start();
-                    m_Window.Clear();
                     this->HandleSystemEvents();
-
-                    if(gfx::FadeIn(p_Fader, 0.008f))
-                        break;
-
-                    m_Window.Update();
+                    alpha += 0.01f;
+                    m_GameWindow.Clear();
+                    glColor4f(1, 1, 1, alpha);
+                    m_Splash.Update();
+                    m_GameWindow.Update();
                     m_Timer.DelayFPS();
                 }
+
+                alpha = 1.0f;
+
                 while(m_state == game::e_SPLASH)
                 {
                     m_Timer.Start();
-                    m_Window.Clear();
+                    this->HandleGameEvents();
                     this->HandleSystemEvents();
-
-                    if(gfx::FadeOut(p_Fader, 0.006f))
+                    alpha -= 0.008f;
+                    if(alpha <= 0.0f)
                     {
-                        m_state = game::e_MAINMENU;
+                        game::GameEvent* pLatest = new game::GameEvent;
+                        pLatest->evt_type = game::e_STATE_CHANGE;
+                        pLatest->new_state= game::e_MAINMENU;
+                        g_GameEventQueue.PushEvent(pLatest);
                         m_MusicPlayer.Play();
                     }
 
-                    m_Window.Update();
+                    m_GameWindow.Clear();
+                    glColor4f(1, 1, 1, alpha);
+                    m_Splash.Update();
+                    m_GameWindow.Update();
                     m_Timer.DelayFPS();
                 }
 
-                m_Window.Clear();
                 continue;
 #else
-                m_state = game::e_MAINMENU;
+                game::GameEvent* pMenu = new game::GameEvent;
+                pMenu->evt_type = game::e_STATE_CHANGE;
+                pMenu->new_state= game::e_MAINMENU;
+                g_GameEventQueue.PushEvent(pMenu);
                 m_MusicPlayer.Play();
 #endif // _DEBUG
             }
@@ -197,31 +193,37 @@ void CL_Engine::GameLoop()
             break;
 
         case game::e_INTRO:
+            {
 #ifndef _DEBUG
-            // I don't want to watch the intro every single time I compile
-            this->Intro();
-            continue;   // We've been inside the loop this whole time,
-                        // so I don't want to call CL_Timer::DelayFPS()
-                        // because it'd be extremely off.
+                // I don't want to watch the intro every single time I compile
+                this->Intro();
+                continue;   // We've been inside the loop this whole time,
+                // so I don't want to call CTimer::DelayFPS()
+                // because it'd be extremely off.
 #else
-            SDL_ShowCursor(0);
-            m_state = game::e_GAME;
-            break;
+                game::GameEvent* pGame = new game::GameEvent;
+                pGame->evt_type = game::e_STATE_CHANGE;
+                pGame->new_state= game::e_GAME;
+                g_GameEventQueue.PushEvent(pGame);
+                break;
 #endif // _DEBUG
+            }
 
         case game::e_GAME:
             {
                 // Logic
-                alpha += 0.01f;
-                mp_Cursor->Move(game::GetMousePosition());
-                mp_Cursor->Move_Rate(-16, -16);
+                m_IngameCursor.Move(game::GetMousePosition());
+                m_IngameCursor.Move_Rate(-16, -16);
 
                 // Rendering
-                glColor4f(1, 1, 1, alpha);
                 m_World.Update();
-                mp_Cursor->Update();
+                m_IngameCursor.Update();
                 break;
             }
+
+        case game::e_INVENTORY:
+            m_Inventory.Update();
+            break;
 
         case game::e_QUIT:
             break;
@@ -229,11 +231,25 @@ void CL_Engine::GameLoop()
         default:
             g_Log.Flush();
             g_Log << "[ERROR] Invalid game state: " << m_state << ".\n";
-            break;
+            break;            
         }
 
-        g_AudioAssets.Update();
-        m_Window.Update();
+        std::vector<asset::CSound2D*>::iterator i;
+        for(i = asset::CSound2D::mp_allSounds.begin();
+            i != asset::CSound2D::mp_allSounds.end();
+            ++i)
+        {
+            if((*i)->GetAudioState() == AL_STOPPED)
+            {
+                g_Log.Flush();
+                g_Log << "[INFO] Unloading audio file: ";
+                g_Log << (*i)->GetFilename() << ".\n";
+                g_Log.ShowLastLog();
+                (*i)->UnloadSource();
+            }
+        }
+        
+        m_GameWindow.Update();
 
 #if REGULATE_FPS
         // No timer in debug builds
@@ -245,43 +261,92 @@ void CL_Engine::GameLoop()
         printf("Frame Rate: %0.2f\r", fps);
 #endif // REGULATE_FPS
     }
+
+    return (m_state == game::e_QUIT);
+}
+
+void CEngine::HandleSystemEvents()
+{
+    SDL_Event Evt;
+    while(SDL_PollEvent(&Evt))
+    {
+        switch(Evt.type)
+        {
+        case SDL_QUIT:
+            m_state = game::e_QUIT;
+            break;
+
+        case SDL_KEYDOWN:
+            if(m_state == game::e_GAME && Evt.key.keysym.sym == SDLK_i)
+                m_state = game::e_INVENTORY;
+            else if(m_state == game::e_INVENTORY)
+                m_state = game::e_GAME;
+            break;
+        }
+
+        if(m_state == game::e_GAME)
+            m_World.HandleSystemEvent(Evt);
+    }
+}
+
+void CEngine::HandleGameEvents()
+{
+    game::GameEvent* pLatest = NULL;
+    while((pLatest = g_GameEventQueue.PopEvent()) != NULL)
+    {
+        switch(pLatest->evt_type)
+        {
+        case game::e_STATE_CHANGE:
+            m_state = pLatest->new_state;
+            
+            glEnable(GL_BLEND);
+            glDisable(GL_DEPTH_TEST);
+
+            if(m_state == game::e_GAME)
+            {
+                SDL_ShowCursor(0);
+                m_MusicPlayer.Stop();
+                //m_Renderer.SetAlphaMask(1.0f);
+                //m_Renderer.PurgeObjects();
+                m_World.HandleGameEvent(pLatest);
+            }
+            break;
+        }
+
+        delete pLatest;
+    }
 }
 
 /**
  * Shows an intro screen that sets the theme and provides a storyline.
  */
-void CL_Engine::Intro()
+void CEngine::Intro()
 {
     g_Log.Flush();
     g_Log << "[INFO] Playing intro sequence.\n";
 
     m_MusicPlayer.Stop();
-    m_MusicPlayer.PurgeQueue();    
+    m_MusicPlayer.PurgeQueue();
 
     // Current line, height
     u_int index = 0;
-    float h = 78;
+    float h     = 78;
 
     // Rate to fade at
-    float rate = 0.0028f;
+    float rate  = 0.0028f;
 
-    // Font
-    asset::FL_Font* p_IntroFont = g_FontAssets.GetFontByID(m_introfont_id);
-
-    // Song
-    asset::AL_Sound2D* p_IntroSong = 
-        g_AudioAssets.GetAudioByID(m_introsong_id);
-    
     // The actual object representing each line
-    std::vector<asset::GL_Entity*> linepEntities, faderpLine;
+    std::vector<obj::CEntity*> p_lineEntities;
+    obj::CEntity* pFadingLine = NULL;
 
     // The current line
     char* current_line = (char*)INTRO_STR[index];
 
     // Add the first line to fade
-    faderpLine.push_back(p_IntroFont->RenderText(current_line, m_OffBlue));
-    faderpLine[0]->Move(100.0f, h);
-    
+    pFadingLine = mp_IntroFont->RenderText(current_line, m_OffBlue);
+    pFadingLine->Move(100.0f, h);
+    pFadingLine->Update();
+
     // Fade out the main menu
     while(m_state == game::e_INTRO)
     {
@@ -289,11 +354,11 @@ void CL_Engine::Intro()
         this->HandleSystemEvents();
         if(m_Menus.FadeOut(0.02f))
             break;
-        m_Window.Update();
+        m_GameWindow.Update();
         m_Timer.DelayFPS();
     }
 
-    p_IntroSong->Play();
+    mp_IntroSong->Play();
 
     // Fade in one line at a time
     while(m_state == game::e_INTRO)
@@ -306,12 +371,12 @@ void CL_Engine::Intro()
             break;
 
         // Rendering
-        m_Window.Clear();
+        m_GameWindow.Clear();
 
-        for(size_t i = 0; i < linepEntities.size(); ++i)
-            linepEntities[i]->Update();
+        for(size_t i = 0; i < p_lineEntities.size(); ++i)
+            p_lineEntities[i]->Update();
 
-        if(gfx::FadeIn(faderpLine, rate))
+        if(gfx::FadeIn(pFadingLine, rate))
         {
             index++;
             if(index >= INTRO_STR_SIZE)
@@ -322,14 +387,14 @@ void CL_Engine::Intro()
 
             // Casting away const-ness is pretty bad...
             current_line = (char*)INTRO_STR[index];
-            
-            linepEntities.push_back(faderpLine[0]);
-            h += p_IntroFont->GetTextHeight(current_line);
-            faderpLine[0] = p_IntroFont->RenderText(current_line, m_OffBlue);
-            faderpLine[0]->Move(100.0f, h);
+
+            p_lineEntities.push_back(pFadingLine);
+            h += mp_IntroFont->GetTextHeight(current_line);
+            pFadingLine = mp_IntroFont->RenderText(current_line, m_OffBlue);
+            pFadingLine->Move(100.0f, h);
         }
-        
-        m_Window.Update();
+
+        m_GameWindow.Update();
         m_Timer.DelayFPS();
     }
 
@@ -342,18 +407,18 @@ void CL_Engine::Intro()
         this->HandleSystemEvents();
 
         // Rendering
-        m_Window.Clear();
-        if(gfx::FadeOut(linepEntities, 0.01f))
-            break;
-        m_Window.Update();
+        m_GameWindow.Clear();
+        if(gfx::FadeOut(p_lineEntities, 0.01f)) break;
+        m_GameWindow.Update();
         m_Timer.DelayFPS();
     }
 
-    p_IntroFont->Resize(64);
-    faderpLine[0] = p_IntroFont->RenderText(
+    mp_IntroFont->Resize(64);
+    delete pFadingLine;
+    pFadingLine = mp_IntroFont->RenderText(
         "Year 2200 - 6 Days Post-Collapse", m_OffBlue);
-    faderpLine[0]->Move(
-        m_Window.GetWidth() / 2.0f - faderpLine[0]->GetW() / 2.0f,
+    pFadingLine->Move(
+        m_GameWindow.GetWidth() / 2.0f - pFadingLine->GetW() / 2.0f,
         200.0f);
 
     // Fade in newest line
@@ -365,10 +430,9 @@ void CL_Engine::Intro()
         this->HandleSystemEvents();
 
         // Rendering
-        m_Window.Clear();
-        if(gfx::FadeIn(faderpLine, 0.01f))
-            break;
-        m_Window.Update();
+        m_GameWindow.Clear();
+        if(gfx::FadeIn(pFadingLine, 0.01f)) break;
+        m_GameWindow.Update();
         m_Timer.DelayFPS();
     }
 
@@ -381,65 +445,26 @@ void CL_Engine::Intro()
         this->HandleSystemEvents();
 
         // Rendering
-        m_Window.Clear();
-        if(gfx::FadeOut(faderpLine, 0.008f))
-            break;
-        m_Window.Update();
+        m_GameWindow.Clear();
+        if(gfx::FadeOut(pFadingLine, 0.008f)) break;
+        m_GameWindow.Update();
         m_Timer.DelayFPS();
     }
 
     // Memory clean up
-    for(size_t i = 0; i < linepEntities.size(); ++i)
-        delete linepEntities[i];
-    delete faderpLine[0];
-    linepEntities.clear();
-    faderpLine.clear();
-    
+    for(size_t i = 0; i < p_lineEntities.size(); ++i)
+        delete p_lineEntities[i];
+    delete pFadingLine;
+    p_lineEntities.clear();
+
     // Only change state if we are exiting loops properly
     if(m_state == game::e_INTRO)
     {
-        SDL_ShowCursor(0);
-        m_state = game::e_GAME;
+        game::GameEvent* pChange = new game::GameEvent;
+        pChange->evt_type = game::e_STATE_CHANGE;
+        pChange->new_state= game::e_GAME;
+        g_GameEventQueue.PushEvent(pChange);
     }
 
-    p_IntroSong->Stop();
-
-    // Assign shaders to subsequent textures.
-    g_TextureAssets.SetDefaultShader(&m_Lighting.GetVShader(),
-        &m_Lighting.GetFShader());
-}
-
-/**
- * Handles all keyboard, mouse, and window events.
- */
-void CL_Engine::HandleSystemEvents()
-{
-    SDL_Event Evt;
-
-    if(game::IsDown(SDLK_ESCAPE) && m_state != e_INTRO)
-    {
-        g_Log.Flush();
-        g_Log << "[INFO] Quitting.\n";
-        m_state = game::e_QUIT;
-    }
-
-    while(SDL_PollEvent(&Evt))
-    {
-        switch(Evt.type)
-        {
-        case SDL_QUIT:
-            g_Log.Flush();
-            g_Log << "[INFO] Quitting.\n";
-
-            m_state = game::e_QUIT;
-            break;
-
-        default:
-            if(m_state == game::e_GAME)
-                m_World.HandleEvent(Evt);
-            break;
-        }
-    }
-
-    m_World.HandleEvent(Evt);
+    mp_IntroSong->Stop();
 }

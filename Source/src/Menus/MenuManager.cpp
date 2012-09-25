@@ -1,47 +1,49 @@
 /**
  * @file
- *  Implementation of the MenuManager class.
+ *  Implementation of the CMenuManager class.
  *
  * @author George Kudrayvtsev
  * @version 1.1.1
- */
+ **/
 
-#include "Menus/MenuManager.h"
+#include "Menus/MenuManager.hpp"
 
-using game::CL_MenuManager;
-using asset::g_TextureAssets;
-using asset::g_FontAssets;
-using asset::g_AudioAssets;
+using game::CMenuManager;
+using game::g_Settings;
+using asset::CAssetManager;
 
 /**
  * Initializes all menus and loads their respective files. Also loads fonts,
  * background images, and adds all menu items.
  *
  * @todo Add a credits menu item
- */
-void CL_MenuManager::Init()
+ **/
+void CMenuManager::Init()
 {
-    math::ML_Vector2 Position(150, 70);
+    math::CVector2 Position(150, 70);
     gfx::Color Main_Color = gfx::create_color(55, 170, 250);
 
     g_Log.Flush();
     g_Log << "[INFO] Loading menu images.\n";
 
-    mp_MainMenuBackground = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
-        "Data/Images/Menu/Menu_BG.png"));
+    std::string texture_root = g_Settings.GetValueAt("TextureRoot");
+    std::string font_root    = g_Settings.GetValueAt("FontRoot");
+    std::string audio_root   = g_Settings.GetValueAt("AudioRoot");
 
-    mp_PauseMenuBackground = g_TextureAssets.GetEntityByID(
-        g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(
-        "Data/Images/Background.png"));
+    m_MainMenuBackground.LoadFromTexture(
+        CAssetManager::Create<asset::CTexture>(
+        gk::combine(texture_root, "Menus/Menu_BG.png").c_str()));
 
-    mp_MenuFont = asset::g_FontAssets.GetFontByID(
-        asset::g_FontAssets.LoadFontFromFile(
-        "Data/Fonts/MenuFont.ttf", 60));        
+    m_PauseMenuBackground.LoadFromTexture(
+        CAssetManager::Create<asset::CTexture>(
+        gk::combine(texture_root, "Background.png").c_str()));
 
-    mp_OnHover = asset::g_AudioAssets.GetAudioByID(
-        asset::g_AudioAssets.LoadAudioFromFile(
-        "Data/Sounds/Menu_Hover.wav"));
+    mp_MenuFont = (asset::CFont*)CAssetManager::Create<asset::CFont>(
+        gk::combine(font_root, "MenuFont.ttf").c_str());
+    mp_MenuFont->Resize(60);
+
+    mp_OnHover = (asset::CSound2D*)CAssetManager::Create<asset::CSound2D>(
+        gk::combine(audio_root, "Sounds/MenuHover.wav").c_str());
 
     mp_MenuTitle    = mp_MenuFont->RenderText("Collapse", Main_Color);
     mp_PauseTitle   = mp_MenuFont->RenderText("Paused", Main_Color);
@@ -53,75 +55,77 @@ void CL_MenuManager::Init()
     Position.Move(40, 160);
 
     m_MainMenu.SetTitle(mp_MenuTitle);
-    m_MainMenu.SetBackground(mp_MainMenuBackground);
+    m_MainMenu.SetBackground(&m_MainMenuBackground);
     m_MainMenu.SetHoverSound(mp_OnHover);
 
     m_MainMenu.AddMenuItem(Position,
-        "Data/Images/Menu/Menu_Play.png",
-        "Data/Images/Menu/Menu_Play_High.png");
+        "Data/Textures/Menus/Menu_Play.png",
+        "Data/Textures/Menus/Menu_Play_High.png");
     Position.y += 100;
 
     m_MainMenu.AddMenuItem(Position,
-        "Data/Images/Menu/Menu_Options.png",
-        "Data/Images/Menu/Menu_Options_High.png");
+        "Data/Textures/Menus/Menu_Options.png",
+        "Data/Textures/Menus/Menu_Options_High.png");
     Position.y += 100;
 
     m_MainMenu.AddMenuItem(Position,
-        "Data/Images/Menu/Menu_Exit.png",
-        "Data/Images/Menu/Menu_Exit_High.png");
+        "Data/Textures/Menus/Menu_Exit.png",
+        "Data/Textures/Menus/Menu_Exit_High.png");
 
     // Add all options menu items
     Position.Move(40, 160);
     
     m_OptionsMenu.SetTitle(mp_MenuTitle);
-    m_OptionsMenu.SetBackground(mp_MainMenuBackground);
+    m_OptionsMenu.SetBackground(&m_MainMenuBackground);
     m_OptionsMenu.SetHoverSound(mp_OnHover);
 
     m_OptionsMenu.AddMenuItem(Position,
-        "Data/Images/Menu/Options_Music.png",
-        "Data/Images/Menu/Options_Music_High.png");
+        "Data/Textures/Menus/Options_Music.png",
+        "Data/Textures/Menus/Options_Music_High.png");
     Position.y += 100;
 
     m_OptionsMenu.AddMenuItem(Position,
-        "Data/Images/Menu/Menu_Return.png",
-        "Data/Images/Menu/Menu_Return_High.png");
+        "Data/Textures/Menus/Menu_Return.png",
+        "Data/Textures/Menus/Menu_Return_High.png");
 
     // Add all pause menu items
     Position.Move(40, 160);
 
     m_PauseMenu.SetTitle(mp_PauseTitle);
-    m_PauseMenu.SetBackground(mp_PauseMenuBackground);
+    m_PauseMenu.SetBackground(&m_PauseMenuBackground);
     m_PauseMenu.SetHoverSound(mp_OnHover);
 
     m_PauseMenu.AddMenuItem(Position,
-        "Data/Images/Menu/Menu_Return.png",
-        "Data/Images/Menu/Menu_Return_High.png");
+        "Data/Textures/Menus/Menu_Return.png",
+        "Data/Textures/Menus/Menu_Return_High.png");
     Position.y += 100;
 
     m_PauseMenu.AddMenuItem(Position,
-        "Data/Images/Menu/Menu_Exit.png",
-        "Data/Images/Menu/Menu_Exit_High.png");
+        "Data/Textures/Menus/Menu_Exit.png",
+        "Data/Textures/Menus/Menu_Exit_High.png");
 
     mp_ActiveMenu = &m_MainMenu;
 }
 
-/**
- * Runs the main menu, taking action accordingly with button presses.
- */
-void CL_MenuManager::MainMenu()
+/// Runs the main menu, taking action accordingly with button presses.
+void CMenuManager::MainMenu()
 {
-    mp_ActiveMenu = &m_MainMenu;
-
     int status = m_MainMenu.Update();
 
     if(status == -1)
         return;
-    else if(status == 0)
-        m_state = game::e_INTRO;
+
+    game::GameEvent* pLatest= new game::GameEvent;
+    pLatest->evt_type       = game::e_STATE_CHANGE;
+
+    if(status == 0)
+        pLatest->new_state  = game::e_INTRO;
     else if(status == 1)
-        m_state = game::e_OPTIONSMENU;
+        pLatest->new_state  = game::e_OPTIONSMENU;
     else if(status == 2)
-        m_state = game::e_QUIT;
+        pLatest->new_state  = game::e_QUIT;
+
+    game::g_GameEventQueue.PushEvent(pLatest);
 
     // I pulled a tiny trick here. Technically, if the game state changes,
     // there should be a delay of 200ms so that the mouse click isn't
@@ -135,59 +139,54 @@ void CL_MenuManager::MainMenu()
  * Runs the options menu, taking action accordingly with button presses.
  *
  * @param MusicPlayer The music player currently in use, to toggle music.
- *
  * @see media::MusicPlayer
- */
-void CL_MenuManager::OptionsMenu(asset::AL_MusicPlayer& Music)
+ **/
+void CMenuManager::OptionsMenu(asset::CMusicPlayer& Music)
 {
-    mp_ActiveMenu = &m_OptionsMenu;
-
     int status = m_OptionsMenu.Update();
 
     if(status == -1)
         return;
     else if(status == 0)
-    {
-        /// @todo Actually show ON/OFF on menu item
-        Music.Pause();
-    }
+        Music.Pause();  /// @todo Actually show ON/OFF on menu item
     else if(status == 1)
-        m_state = game::e_MAINMENU;
-    else
-        return;
+    {
+        game::GameEvent* pLatest= new game::GameEvent;
+        pLatest->evt_type   = game::e_STATE_CHANGE;
+        pLatest->new_state  = game::e_MAINMENU;
+        game::g_GameEventQueue.PushEvent(pLatest);
+    }
 
     SDL_Delay(200);
 }
 
-/**
- * Runs the pause menu, taking action accordingly with button presses.
- */
-void CL_MenuManager::PauseMenu()
+/// Runs the pause menu, taking action accordingly with button presses.
+void CMenuManager::PauseMenu()
 {
-    mp_ActiveMenu = &m_PauseMenu;
-
     int status = m_PauseMenu.Update();
 
     if(status == -1)
         return;
-    else if(status == 0)
-        m_state = game::e_GAME;
+    
+    game::GameEvent* pLatest= new game::GameEvent;
+    pLatest->evt_type       = game::e_STATE_CHANGE;
+
+    if(status == 0)
+        pLatest->new_state  = game::e_GAME;
     else if(status == 1)
-        m_state = game::e_QUIT;
-    else
-        return;
+        pLatest->new_state  = game::e_QUIT;
 
     SDL_Delay(200);
 }
 
 /**
- * Fades in the currently active menu. This should be called once per frame in a game loop.
+ * Fades in the currently active menu.
+ *  This should be called once per frame in a game loop.
  *
  * @param float Rate to fade in at (optional)
- * 
  * @return TRUE once done fading, FALSE otherwise.
- */
-bool CL_MenuManager::FadeIn(float rate)
+ **/
+bool CMenuManager::FadeIn(float rate)
 {
     static float alpha = 0.0f;
 
@@ -208,13 +207,13 @@ bool CL_MenuManager::FadeIn(float rate)
 }
 
 /**
- * Fades out the currently active menu. This should be called once per frame in a game loop.
+ * Fades out the currently active menu.
+ *  This should be called once per frame in a game loop.
  *
  * @param float Rate to fade out at (optional)
- * 
  * @return TRUE once done fading, FALSE otherwise.
- */
-bool CL_MenuManager::FadeOut(float rate)
+ **/
+bool CMenuManager::FadeOut(float rate)
 {
     static float alpha = 1.0f;
 
@@ -232,4 +231,11 @@ bool CL_MenuManager::FadeOut(float rate)
     }
     else
         return false;
+}
+
+void CMenuManager::Update(asset::CMusicPlayer& Player)
+{
+    if(m_state == game::e_MAINMENU) this->MainMenu();
+    else if(m_state == game::e_OPTIONSMENU) this->OptionsMenu(Player);
+    else if(m_state == game::e_PAUSEMENU) this->PauseMenu();
 }

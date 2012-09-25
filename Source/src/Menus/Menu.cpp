@@ -1,21 +1,22 @@
 /**
  * @file
- *  Implementation of the Menu class.
+ *  Implementation of the CMenu class.
  *
  * @author George Kudrayvtsev
- * @version 1.0
- */
+ * @version 1.0.1
+ **/
 
-#include "Menus/Menu.h"
+#include "Menus/Menu.hpp"
 
-using game::CL_Menu;
+using game::CMenu;
 using game::g_Log;
+using asset::CAssetManager;
 
 /// Cleans up memory allocated for buttons.
-CL_Menu::~CL_Menu()
+CMenu::~CMenu()
 {
     g_Log.Flush();
-    g_Log << "[DEBUG] CL_Menu::~CL_Menu called.\n";
+    g_Log << "[DEBUG] CMenu::~CMenu called.\n";
 
     for(size_t i = 0; i < mp_allButtons.size(); ++i)
     {
@@ -27,30 +28,27 @@ CL_Menu::~CL_Menu()
 
 /**
  * Sets an entity as the menu background.
- *
- * @param asset::GL_Entity The background
- */
-void CL_Menu::SetBackground(asset::GL_Entity* p_Background)
+ * @param obj::CEntity The background
+ **/
+void CMenu::SetBackground(obj::CEntity* p_Background)
 {
     mp_Background = p_Background;
 }
 
 /**
  * Sets a sound to be played when buttons are hovered over.
- *
  * @param asset::AL_Sound2D Hover sound
- */
-void CL_Menu::SetHoverSound(asset::AL_Sound2D* p_OnHover)
+ **/
+void CMenu::SetHoverSound(asset::CSound2D* p_OnHover)
 {
     mp_OnHover = p_OnHover;
 }
 
 /**
  * Sets a title to be displayed for the menu
- *
- * @param asset::GL_Entity Menu title
- */
-void CL_Menu::SetTitle(asset::GL_Entity* p_Title)
+ * @param obj::CEntity Menu title
+ **/
+void CMenu::SetTitle(obj::CEntity* p_Title)
 {
     mp_Title = p_Title;
 }
@@ -58,24 +56,23 @@ void CL_Menu::SetTitle(asset::GL_Entity* p_Title)
 /**
  * Adds a menu item to the list of buttons.
  *
- * @param math::ML_Vector2 Button position
+ * @param math::CVector2 Button position
  * @param char* Filename of normal button image
  * @param char* Filename of the highlighted (on hover) button image.
  *
  * @return Unique ID for the button.
- */
-int CL_Menu::AddMenuItem(const math::ML_Vector2& Position,
+ **/
+int CMenu::AddMenuItem(const math::CVector2& Position,
     const char* pnormal, const char* phighlighted)
 {
-    g_Log.Flush();
-    g_Log << "[DEBUG] Creating menu item.\n";
-
-    MenuItem* pTmp = new MenuItem;
+    MenuItem* pTmp  = new MenuItem;
     
-    pTmp->p_Normal  = asset::g_TextureAssets.GetEntityByID(
-        asset::g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(pnormal));
-    pTmp->p_High    = asset::g_TextureAssets.GetEntityByID(
-        asset::g_TextureAssets.LoadEntityFromFile<asset::GL_Entity>(phighlighted));
+    pTmp->p_Normal  = new obj::CGameObject;
+    pTmp->p_High    = new obj::CGameObject;
+    pTmp->p_Normal->LoadFromTexture(
+        CAssetManager::Create<asset::CTexture>(pnormal));
+    pTmp->p_High->LoadFromTexture(
+        CAssetManager::Create<asset::CTexture>(phighlighted));
 
     pTmp->p_Normal->Move(Position);
     pTmp->p_High->Move(Position);
@@ -90,36 +87,10 @@ int CL_Menu::AddMenuItem(const math::ML_Vector2& Position,
 }
 
 /**
- * Adds a menu item to a list of buttons.
- *
- * @overload CL_Menu::AddMenuItem(math::ML_Vector2&,
- *      const char* normal, const char* highlighted)
- *
- * @param asset::GL_Entity Normal button entity
- * @param asset::GL_Entity High button entity
- *
- * @return Unique ID of the button.
- */
-int CL_Menu::AddMenuItem(asset::asset_id normal, asset::asset_id high)
-{
-    MenuItem* pTmp = new MenuItem;
-
-    pTmp->p_Normal = asset::g_TextureAssets.GetEntityByID(normal);
-    pTmp->p_High = asset::g_TextureAssets.GetEntityByID(high);
-    pTmp->p_Active = pTmp->p_Normal;
-    pTmp->touch = false;
-    pTmp->id = mp_allButtons.size() + 1;
-
-    mp_allButtons.push_back(pTmp);
-    return mp_allButtons.back()->id;
-}
-
-/**
  * Updates the menu; should be called every frame.
- *
  * @return ID of button if clicked, -1 otherwise.
- */
-int CL_Menu::Update()
+ **/
+int CMenu::Update()
 {
     if(mp_Background != NULL)
         mp_Background->Update();
@@ -134,10 +105,9 @@ int CL_Menu::Update()
 
 /**
  * Checks if the mouse is hovering over any of the buttons.
- *
  * @return ID of button if there's a mouse-click on it.
- */
-int CL_Menu::CheckMouseClick()
+ **/
+int CMenu::CheckMouseClick()
 {
     static int mouse_x, mouse_y;
     game::GetMousePosition(mouse_x, mouse_y);
@@ -159,11 +129,25 @@ int CL_Menu::CheckMouseClick()
         }
         else
         {
-            mp_allButtons[i]->touch = false;
-            mp_allButtons[i]->p_Active = mp_allButtons[i]->p_Normal;
+            mp_allButtons[i]->touch     = false;
+            mp_allButtons[i]->p_Active  = mp_allButtons[i]->p_Normal;
         }
     }
 
     return -1;
 }
 
+const std::vector<CMenu::MenuItem*>& CMenu::GetButtons() const
+{
+    return mp_allButtons;
+}
+
+obj::CEntity* const CMenu::GetTitle() const
+{
+    return mp_Title;
+}
+
+obj::CEntity* const CMenu::GetBackground() const
+{
+    return mp_Background;
+}

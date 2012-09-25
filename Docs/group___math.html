@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Collapse 2200: Math</title>
+<title>Collapse: Math</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,11 +20,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Collapse 2200
-   &#160;<span id="projectnumber">0.1a</span>
+   <div id="projectname">Collapse
+   &#160;<span id="projectnumber">0.7.7 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6200 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -67,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -79,7 +80,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">Math</div>  </div>
 </div><!--header-->
@@ -93,18 +97,520 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespacemath"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacemath.html">math</a></td></tr>
 <tr class="memdesc:namespacemath"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contains all math-related data. <br/></td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Two dimensional vector.  <a href="structmath_1_1_c_vector2.html#details">More...</a><br/></td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:gac319c165d52643e43249fe003e18bdf3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac319c165d52643e43249fe003e18bdf3"></a>
 typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gac319c165d52643e43249fe003e18bdf3">u_int</a></td></tr>
 <tr class="memdesc:gac319c165d52643e43249fe003e18bdf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couldn't find it in any default headers. <br/></td></tr>
+<tr class="memitem:gac319c165d52643e43249fe003e18bdf3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac319c165d52643e43249fe003e18bdf3"></a>
+typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gac319c165d52643e43249fe003e18bdf3">u_int</a></td></tr>
+<tr class="memdesc:gac319c165d52643e43249fe003e18bdf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couldn't find it in any default headers. <br/></td></tr>
+<tr class="memitem:gac319c165d52643e43249fe003e18bdf3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gac319c165d52643e43249fe003e18bdf3"></a>
+typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gac319c165d52643e43249fe003e18bdf3">u_int</a></td></tr>
+<tr class="memdesc:gac319c165d52643e43249fe003e18bdf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Couldn't find it in any default headers. <br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ga539a587a4f5ed349a97f5dab7267673c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga539a587a4f5ed349a97f5dab7267673c"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>math::CVector2::CVector2</b> (float x, float y)</td></tr>
+<tr class="memitem:ga91ac80e9714244a771cf162fc2038cc2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga91ac80e9714244a771cf162fc2038cc2"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>math::CVector2::CVector2</b> (int x, int y)</td></tr>
+<tr class="memitem:ga6cffb856000353d3f912b18cfed00899"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga6cffb856000353d3f912b18cfed00899">math::CVector2::operator==</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga6cffb856000353d3f912b18cfed00899"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks a given vector for equality with this one.  <a href="#ga6cffb856000353d3f912b18cfed00899"></a><br/></td></tr>
+<tr class="memitem:ga0d0a73b2db60ba1e716c461a5375dab8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga0d0a73b2db60ba1e716c461a5375dab8">math::CVector2::operator!=</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga0d0a73b2db60ba1e716c461a5375dab8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks a given vector for inequality with this one.  <a href="#ga0d0a73b2db60ba1e716c461a5375dab8"></a><br/></td></tr>
+<tr class="memitem:ga653b09aed6649f6c1f36dfb3983d6b52"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga653b09aed6649f6c1f36dfb3983d6b52">math::CVector2::operator&lt;</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga653b09aed6649f6c1f36dfb3983d6b52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the current vector's (x, y) coordinates are less a given vector's (x, y).  <a href="#ga653b09aed6649f6c1f36dfb3983d6b52"></a><br/></td></tr>
+<tr class="memitem:ga77eb8af8e50ef10901631e292f18209a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga77eb8af8e50ef10901631e292f18209a">math::CVector2::operator&gt;</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga77eb8af8e50ef10901631e292f18209a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the current vector's (x, y) coordinates are greater a given vector's (x, y).  <a href="#ga77eb8af8e50ef10901631e292f18209a"></a><br/></td></tr>
+<tr class="memitem:gac9907ce594451d34e656faa018c5d52a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gac9907ce594451d34e656faa018c5d52a">math::CVector2::operator=</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other)</td></tr>
+<tr class="memdesc:gac9907ce594451d34e656faa018c5d52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns a given vector as the current one.  <a href="#gac9907ce594451d34e656faa018c5d52a"></a><br/></td></tr>
+<tr class="memitem:ga5720f4ee8ba7e809f738ab342001f325"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga5720f4ee8ba7e809f738ab342001f325">math::CVector2::operator+</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga5720f4ee8ba7e809f738ab342001f325"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a given vector with the current one.  <a href="#ga5720f4ee8ba7e809f738ab342001f325"></a><br/></td></tr>
+<tr class="memitem:gacb4bccbe8bcdcb086af72d5d4ff29138"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gacb4bccbe8bcdcb086af72d5d4ff29138">math::CVector2::operator-</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:gacb4bccbe8bcdcb086af72d5d4ff29138"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subtracts a given vector from the current one.  <a href="#gacb4bccbe8bcdcb086af72d5d4ff29138"></a><br/></td></tr>
+<tr class="memitem:ga675065b149e248d4399b95c2e1f3d6c9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga675065b149e248d4399b95c2e1f3d6c9">math::CVector2::operator/</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga675065b149e248d4399b95c2e1f3d6c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides a given vector from the current one.  <a href="#ga675065b149e248d4399b95c2e1f3d6c9"></a><br/></td></tr>
+<tr class="memitem:ga226d7ff4055bfb68a4838cf9781a8c8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga226d7ff4055bfb68a4838cf9781a8c8e">math::CVector2::operator/</a> (const float scalar) const </td></tr>
+<tr class="memdesc:ga226d7ff4055bfb68a4838cf9781a8c8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Divides the current vector with a scalar.  <a href="#ga226d7ff4055bfb68a4838cf9781a8c8e"></a><br/></td></tr>
+<tr class="memitem:ga00968f076da96465c69c7eadbfd5cf09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga00968f076da96465c69c7eadbfd5cf09">math::CVector2::operator*</a> (const float scalar) const </td></tr>
+<tr class="memdesc:ga00968f076da96465c69c7eadbfd5cf09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Multiplies the given vector by a scalar.  <a href="#ga00968f076da96465c69c7eadbfd5cf09"></a><br/></td></tr>
+<tr class="memitem:ga73d491d4f82718c912e6336f2b6a02f9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga73d491d4f82718c912e6336f2b6a02f9">math::CVector2::operator*</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga73d491d4f82718c912e6336f2b6a02f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the dot product of the current vector and a given one.  <a href="#ga73d491d4f82718c912e6336f2b6a02f9"></a><br/></td></tr>
+<tr class="memitem:ga6b72c155aa5e777185bd6f8e011339bc"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga6b72c155aa5e777185bd6f8e011339bc"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga6b72c155aa5e777185bd6f8e011339bc">math::CVector2::Print</a> () const </td></tr>
+<tr class="memdesc:ga6b72c155aa5e777185bd6f8e011339bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prints the vector values in a neat format. <br/></td></tr>
+<tr class="memitem:gabd5a979dca0ea24624c6eedbca81621c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gabd5a979dca0ea24624c6eedbca81621c">math::CVector2::Move</a> (const float x, const float y)</td></tr>
+<tr class="memdesc:gabd5a979dca0ea24624c6eedbca81621c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the vector to a specified position.  <a href="#gabd5a979dca0ea24624c6eedbca81621c"></a><br/></td></tr>
+<tr class="memitem:gaf1913dbc2df2c2d0a9c27548e55fc76e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gaf1913dbc2df2c2d0a9c27548e55fc76e">math::CVector2::Move</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Position)</td></tr>
+<tr class="memdesc:gaf1913dbc2df2c2d0a9c27548e55fc76e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Moves the vector to a specified position.  <a href="#gaf1913dbc2df2c2d0a9c27548e55fc76e"></a><br/></td></tr>
+<tr class="memitem:gaa174c23a0e3447bfaa56f56b0ddebfd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gaa174c23a0e3447bfaa56f56b0ddebfd3">math::CVector2::Rotate</a> (const float rad_angle)</td></tr>
+<tr class="memdesc:gaa174c23a0e3447bfaa56f56b0ddebfd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rotate the vector by a certain angle (in radians).  <a href="#gaa174c23a0e3447bfaa56f56b0ddebfd3"></a><br/></td></tr>
+<tr class="memitem:ga3a5814ab0ef0d5e11945a5b6ff981505"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ga3a5814ab0ef0d5e11945a5b6ff981505"></a>
+CVector3&#160;</td><td class="memItemRight" valign="bottom"><b>math::CVector2::Cross</b> (const CVector2 &amp;Other) const </td></tr>
+<tr class="memitem:gacca42d415d43e46a5ca4c2065572cda6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#gacca42d415d43e46a5ca4c2065572cda6">math::CVector2::Normal</a> () const </td></tr>
+<tr class="memdesc:gacca42d415d43e46a5ca4c2065572cda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the unit vector.  <a href="#gacca42d415d43e46a5ca4c2065572cda6"></a><br/></td></tr>
+<tr class="memitem:ga308df8b115f35b4e5a8c106fba10d00f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga308df8b115f35b4e5a8c106fba10d00f">math::CVector2::Normalize</a> ()</td></tr>
+<tr class="memdesc:ga308df8b115f35b4e5a8c106fba10d00f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the unit vector and sets it to the current one.  <a href="#ga308df8b115f35b4e5a8c106fba10d00f"></a><br/></td></tr>
+<tr class="memitem:ga36623d0b2cba92f2513bcb01d967f669"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga36623d0b2cba92f2513bcb01d967f669">math::CVector2::Dot</a> (const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;Other) const </td></tr>
+<tr class="memdesc:ga36623d0b2cba92f2513bcb01d967f669"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the 2D cross product with another vector.  <a href="#ga36623d0b2cba92f2513bcb01d967f669"></a><br/></td></tr>
+<tr class="memitem:ga8543caa0ae0c7643811329207398bd48"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga8543caa0ae0c7643811329207398bd48">math::CVector2::Magnitude</a> () const </td></tr>
+<tr class="memdesc:ga8543caa0ae0c7643811329207398bd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the magnitude.  <a href="#ga8543caa0ae0c7643811329207398bd48"></a><br/></td></tr>
+<tr class="memitem:ga50c8deb5d41eba85c586f0c54237cf30"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___math.html#ga50c8deb5d41eba85c586f0c54237cf30">math::distance</a> (const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;One, const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;Two, bool do_sqrt=true)</td></tr>
+<tr class="memdesc:ga50c8deb5d41eba85c586f0c54237cf30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the distances between two points.  <a href="#ga50c8deb5d41eba85c586f0c54237cf30"></a><br/></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:gaaf2d6436cc0d10fee9034fde1f6bb51b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gaaf2d6436cc0d10fee9034fde1f6bb51b"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>math::CVector2::x</b></td></tr>
+<tr class="memitem:gab4054e28e7ebc714890903b830d353bd"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="gab4054e28e7ebc714890903b830d353bd"></a>
+float&#160;</td><td class="memItemRight" valign="bottom"><b>math::CVector2::y</b></td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <p>Easily create shapes, do physics, and solve linear algebra problems. </p>
+<hr/><h2>Function Documentation</h2>
+<a class="anchor" id="ga50c8deb5d41eba85c586f0c54237cf30"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float math::distance </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>One</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">math::CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Two</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>do_sqrt</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the distance formula.</p>
+<p>This is a re-implementation of the <a class="el" href="namespacemath.html#a62b3289c802f85e2721b9edfb2e28054" title="Calculates the distance formula.">distance()</a> function using vectors.</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">math::CVector2&amp;</td><td>First point </td></tr>
+    <tr><td class="paramname">math::CVector2&amp;</td><td>Second point </td></tr>
+    <tr><td class="paramname">bool</td><td>Do the square-root calculation (optional) (default=true)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>The distance.</dd></dl>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">math::CVector2&amp;</td><td>First point </td></tr>
+    <tr><td class="paramname">math::CVector2&amp;</td><td>Second point </td></tr>
+    <tr><td class="paramname">bool</td><td>Whether or not to do the square root (optional)</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>Distance. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00240">240</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga36623d0b2cba92f2513bcb01d967f669"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CVector2::Dot </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>This is equivalent to the magnitude of the 3D cross product. The formula is such: U x V = Ux * Vy - Uy * Vx</p>
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">math::CVector2&amp;</td><td>Vector to do cross product with</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns:</dt><dd>Float representing the solution. </dd></dl>
+<dl class="section see"><dt>See also:</dt><dd><a href="http://www.gamedev.net/topic/289972-cross-product-of-2d-vectors/">http://www.gamedev.net/topic/289972-cross-product-of-2d-vectors/</a> Calculates the dot product between a given vector and the current one.</dd></dl>
+<dl class="section return"><dt>Returns:</dt><dd>Dot product. </dd></dl>
+<dl class="section see"><dt>See also:</dt><dd><a class="el" href="group___math.html#ga00968f076da96465c69c7eadbfd5cf09" title="Multiplies the given vector by a scalar.">CVector2::operator*()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00215">215</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga8543caa0ae0c7643811329207398bd48"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CVector2::Magnitude </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Magnitude is sqrt(x^2 + y^2)</p>
+<dl class="section return"><dt>Returns:</dt><dd>The magnitude. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00226">226</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gabd5a979dca0ea24624c6eedbca81621c"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CVector2::Move </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">float</td><td>X-coordinate </td></tr>
+    <tr><td class="paramname">float</td><td>Y-coordinate </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00138">138</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaf1913dbc2df2c2d0a9c27548e55fc76e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CVector2::Move </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Pos</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname"><a class="el" href="structmath_1_1_c_vector2.html" title="Two dimensional vector.">CVector2</a></td><td>Position </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00148">148</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacca42d415d43e46a5ca4c2065572cda6"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> CVector2::Normal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The unit vector. </dd></dl>
+<dl class="section see"><dt>See also:</dt><dd><a class="el" href="group___math.html#ga308df8b115f35b4e5a8c106fba10d00f" title="Calculates the unit vector and sets it to the current one.">CVector2::Normalize()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00173">173</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga308df8b115f35b4e5a8c106fba10d00f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CVector2::Normalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section see"><dt>See also:</dt><dd><a class="el" href="group___math.html#gacca42d415d43e46a5ca4c2065572cda6" title="Calculates the unit vector.">CVector2::Normal()</a> </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00186">186</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga0d0a73b2db60ba1e716c461a5375dab8"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CVector2::operator!= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Floating point comparisons tend to be fairly inaccurate, so be wary when using this.</p>
+<dl class="section return"><dt>Returns:</dt><dd>TRUE if position isn't the same, FALSE otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00032">32</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga00968f076da96465c69c7eadbfd5cf09"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> CVector2::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The newly created vector with the scalar-multiplied parts. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00109">109</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga73d491d4f82718c912e6336f2b6a02f9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float CVector2::operator* </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The dot product. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00118">118</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga5720f4ee8ba7e809f738ab342001f325"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> CVector2::operator+ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The newly created vector with added parts. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00073">73</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gacb4bccbe8bcdcb086af72d5d4ff29138"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> CVector2::operator- </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The newly created vector with subtracted parts. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00082">82</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga675065b149e248d4399b95c2e1f3d6c9"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> CVector2::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The newly created vector with divided parts. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00091">91</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga226d7ff4055bfb68a4838cf9781a8c8e"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> CVector2::operator/ </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>scalar</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The newly created vector with scalar divided parts. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00100">100</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga653b09aed6649f6c1f36dfb3983d6b52"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CVector2::operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>TRUE if so, FALSE if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00054">54</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gac9907ce594451d34e656faa018c5d52a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp; CVector2::operator= </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>The current vector with new values. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00063">63</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga6cffb856000353d3f912b18cfed00899"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CVector2::operator== </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Floating point comparisons tend to be fairly inaccurate, so be wary when using this.</p>
+<dl class="section return"><dt>Returns:</dt><dd>TRUE if position is the same, FALSE otherwise. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00020">20</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ga77eb8af8e50ef10901631e292f18209a"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CVector2::operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structmath_1_1_c_vector2.html">CVector2</a> &amp;&#160;</td>
+          <td class="paramname"><em>Other</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns:</dt><dd>TRUE if so, FALSE if not. </dd></dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00043">43</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="gaa174c23a0e3447bfaa56f56b0ddebfd3"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CVector2::Rotate </td>
+          <td>(</td>
+          <td class="paramtype">const float&#160;</td>
+          <td class="paramname"><em>rad_angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parameters:</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">float</td><td>Angle </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html#l00158">158</a> of file <a class="el" href="_collapse_2src_2_math_2_vector2_8cpp_source.html">Vector2.cpp</a>.</p>
+
+</div>
+</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 29 2012 19:47:07 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 18:51:55 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

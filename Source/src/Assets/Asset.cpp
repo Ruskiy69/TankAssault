@@ -1,54 +1,35 @@
 /**
  * @file
- *	Implementation of the IAsset interface.
- *	Though it's referred to as an "interface," it's more of just a base
- *	class because some things are defined by default.
+ *  Implementation of the CAsset interface.
+ *  Though it's referred to as an "interface," it's more of just a base
+ *  class because some things are defined by default.
  *
  * @author  George Kudrayvtsev
  * @version 1.0
- */
+ **/
 
-#include "Assets/Asset.h"
+#include "Assets/Asset.hpp"
 
-using asset::IAsset;
+using asset::CAsset;
 
-IAsset::IAsset() : m_id(CURRENT_ASSET_ID),
-    m_loaded(false),
-    m_refcount(1),
-    mp_Parent(NULL)
+CAsset::CAsset() : m_id(CAsset::Hash((char*)this, sizeof(CAsset))),
+    m_loaded(false)
 {
-    // Increase asset id.
-    // This number also represents the total amount of assets loaded.
-    asset::CURRENT_ASSET_ID++;
+    // Increase the total amount of assets loaded.
+    ++asset::ASSET_COUNT;
 }
 
-IAsset::~IAsset()
+CAsset::~CAsset()
 {
-    m_refcount--;
     m_loaded = false;
 }
 
-const std::string& IAsset::GetFilename() const
+const char* CAsset::GetFilename() const
 {
-    return m_filename;
+    return m_filename.c_str();
 }
 
-unsigned int IAsset::GetReferenceCount() const
-{
-    return m_refcount;
-}
-
-asset::asset_id IAsset::GetID() const
+asset::asset_id CAsset::GetID() const
 {
     return m_id;
-}
-
-void asset::IAsset::IncrementReferenceCount()
-{
-    ++m_refcount;
-}
-
-void asset::IAsset::DecrementReferenceCount()
-{
-    --m_refcount;
 }

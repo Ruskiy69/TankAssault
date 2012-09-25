@@ -1,35 +1,34 @@
 /**
  * @file
- *  Implementation of the AI_Pathfinder class.
+ *  Implementation of the CPathfinder class.
  *
  * @author George Kudrayvtsev
- * @version 1.1.0
- */
+ * @version 1.1.2
+ **/
 
-#include "World/AI/Pathfinder.h"
+#include "World/AI/Pathfinder.hpp"
 
-using ai::AI_Pathfinder;
-using asset::g_TextureAssets;
+using ai::CPathfinder;
 
 /**
  * Finds the shortest path to a destination using A*.
  *
- * @param asset::GL_Entity* The tile to start from
- * @param asset::GL_Entity* The tile to end at
+ * @param obj::CEntity* The tile to start from
+ * @param obj::CEntity* The tile to end at
  *
  * @return TRUE if a path was found, FALSE if not.
  *  If a complete path is not found, what's done is still stored.
  *
  * @see http://www.policyalmanac.org/games/aStarTutorial.htm
- * @see game::CL_TerrainMap
- * @see game::CL_TerrainMap::FindTile(const math::ML_Vector2&)
+ * @see game::CTerrainMap
+ * @see game::CTerrainMap::FindTile(const math::CVector2&)
  *
  * @todo Remove corner-cutting when path-finding
  * @todo Make sure the tank can actually fit in the path
  * @todo Fix slight issues with not finding the shortest path
- */
-bool AI_Pathfinder::FindPath(asset::GL_Entity* pStart_Tile,
-    asset::GL_Entity* pEnd_Tile)
+ **/
+bool CPathfinder::FindPath(obj::CGameObject* pStart_Tile,
+    obj::CGameObject* pEnd_Tile)
 {
     // Clear previous path
     mp_Path.clear();
@@ -61,7 +60,7 @@ bool AI_Pathfinder::FindPath(asset::GL_Entity* pStart_Tile,
 
         // Remove node from open list and add to closed list.
         for(std::vector<Node*>::iterator i = openList.begin();
-            i != openList.end(); /* no third */)
+            i != openList.end(); /* no third **/)
         {
             if(pCurrent_Node == (*i))
             {
@@ -83,8 +82,9 @@ bool AI_Pathfinder::FindPath(asset::GL_Entity* pStart_Tile,
             for(int y = -1; y <= 1; y++)
             {
                 // Find tile in current (x, y) position
-                asset::GL_Entity* pTile = NULL;
-                pTile = m_Terrain.FindTile(pCurrent_Node->pTile->GetX() + 1 + (32 * x),
+                obj::CGameObject* pTile = NULL;
+                pTile = mp_Level->GetTerrainMap().FindTile(
+                    pCurrent_Node->pTile->GetX() + 1 + (32 * x),
                     pCurrent_Node->pTile->GetY() + 1 + (32 * y));
 
                 // No tile?
@@ -94,11 +94,12 @@ bool AI_Pathfinder::FindPath(asset::GL_Entity* pStart_Tile,
                 }
 
                 // Is it impassable?
-                math::ML_Rect Checker(pCurrent_Node->pTile->GetCollisionBox());
+                math::CRect Checker(pCurrent_Node->pTile->GetCollisionBox());
                 Checker.Resize(34, 34);
                 Checker.Move(Checker.x - 1, Checker.y - 1);
-                if(m_Collision.FindTile(Checker)/*pCurrent_Node->pTile->GetX() + (64 * x),
-                    pCurrent_Node->pTile->GetY() + (64 * y))*/ != NULL)
+                if(mp_Level->GetCollisionMap().FindTile(Checker)
+                    /*pCurrent_Node->pTile->GetX() + (64 * x),
+                    pCurrent_Node->pTile->GetY() + (64 * y))**/ != NULL)
                 {
                     continue;
                 }
@@ -112,9 +113,9 @@ bool AI_Pathfinder::FindPath(asset::GL_Entity* pStart_Tile,
                 Midpt.x = (pCurrent_Node->pTile->GetX() + pTile->GetX()) / 2;
                 Midpt.y = (pCurrent_Node->pTile->GetY() + pTile->GetY()) / 2;
                 Midpt.Resize(31, 31);   // Edge case, rect collision problem
-                if(m_Collision.FindTile(Midpt) != NULL)
+                if(mp_Level->GetCollisionMap().FindTile(Midpt) != NULL)
                     continue;
-                    */
+                    **/
 
                 // Is it in the closed list?
                 bool is_closed = false;
@@ -198,7 +199,7 @@ bool AI_Pathfinder::FindPath(asset::GL_Entity* pStart_Tile,
     return true;
 }
 
-void AI_Pathfinder::ShowPath()
+void CPathfinder::ShowPath()
 {
     SDL_Surface* pRender = gfx::create_surface_alpha(32, 32, gfx::RED);
     
@@ -211,8 +212,8 @@ void AI_Pathfinder::ShowPath()
         else
             gfx::fill_rect(pRender, NULL, gfx::RED);
 
-        asset::GL_Entity* pNew = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromSurface(pRender));
+        obj::CEntity* pNew = new obj::CEntity;
+        pNew->LoadFromSurface(pRender);
         pNew->Move(mp_Path[i]->GetPosition());
         pNew->Update();
         /// @todo Remove tile
@@ -223,8 +224,8 @@ void AI_Pathfinder::ShowPath()
 
     if(m_current_node < mp_Path.size())
     {
-        asset::GL_Entity* pNew = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromSurface(pRender));
+        obj::CEntity* pNew = new obj::CEntity;
+        pNew->LoadFromSurface(pRender);
         pNew->Move(mp_Path[m_current_node]->GetPosition());
         pNew->Update();
         delete pNew;
@@ -233,19 +234,19 @@ void AI_Pathfinder::ShowPath()
     SDL_FreeSurface(pRender);
 }
 
-asset::GL_Entity* AI_Pathfinder::NextTile()
+obj::CGameObject* CPathfinder::NextTile()
 {
     if(m_current_node >= mp_Path.size())
         return NULL;
     else
     {
-        asset::GL_Entity* pFinal = mp_Path[m_current_node];
+        obj::CGameObject* pFinal = mp_Path[m_current_node];
         ++m_current_node;
         return pFinal;
     }
 }
 
-const math::ML_Vector2& AI_Pathfinder::GetNextDestination() const
+const math::CVector2& CPathfinder::GetNextDestination() const
 {
     if(m_current_node + 1 >= mp_Path.size())
         return this->GetCurrentDestination();
@@ -253,7 +254,7 @@ const math::ML_Vector2& AI_Pathfinder::GetNextDestination() const
         return mp_Path[m_current_node + 1]->GetPosition();
 }
 
-const math::ML_Vector2& AI_Pathfinder::GetPrevDestination() const
+const math::CVector2& CPathfinder::GetPrevDestination() const
 {
     if(m_current_node - 1 < 0)
         return this->GetCurrentDestination();
@@ -261,14 +262,14 @@ const math::ML_Vector2& AI_Pathfinder::GetPrevDestination() const
         return mp_Path[m_current_node - 1]->GetPosition();
 }
 
-const math::ML_Vector2& AI_Pathfinder::GetCurrentDestination() const
+const math::CVector2& CPathfinder::GetCurrentDestination() const
 {
     return mp_Path[m_current_node]->GetPosition();
 }
 
-void AI_Pathfinder::ReversePath()
+void CPathfinder::ReversePath()
 {
-    std::vector<asset::GL_Entity*> p_reversedPath;
+    std::vector<obj::CGameObject*> p_reversedPath;
 
     for(size_t i = mp_Path.size() - 1; i > 0; --i)
     {

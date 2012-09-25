@@ -4,28 +4,28 @@
  *
  * @author  George Kudrayvtsev
  * @version 1.3.1
- */
+ **/
 
-#include "Math/Shapes.h"
+#include "Math/Shapes.hpp"
 
-using math::ML_Rect;
-using math::ML_Rectf;
-using math::ML_Circle;
+using math::CRect;
+using math::CRectf;
+using math::CCircle;
 
 /*************************************
- * math::ML_Rect method definitions. *
- ************************************/
+ * math::CRect method definitions. *
+ *************************************/
 
 /**
  * Compares the current rectangle with a given one.
  *
  * Two rectangles are equal if their dimensions and locations are the same.
  *
- * @param ML_Rect& The rectangle to compare.
+ * @param CRect& The rectangle to compare.
  *
  * @return TRUE if equal, FALSE otherwise.
- */
-bool ML_Rect::operator== (const ML_Rect& Other)
+ **/
+bool CRect::operator== (const CRect& Other)
 {
     return (Other.x == this->x && Other.y == this->y &&
         Other.w == this->w && Other.h == this->h);
@@ -36,8 +36,8 @@ bool ML_Rect::operator== (const ML_Rect& Other)
  *
  * @param int x-coordinate
  * @param int y-coordinate
- */
-void ML_Rect::Move(int x, int y)
+ **/
+void CRect::Move(int x, int y)
 {
     this->x = x;
     this->y = y;
@@ -46,11 +46,11 @@ void ML_Rect::Move(int x, int y)
 /**
  * Moves the rectangle.
  *
- * @overload ML_Rect::Move(int, int)
+ * @overload CRect::Move(int, int)
  *
- * @param math::ML_Vector2 Position
- */
-void ML_Rect::Move(const math::ML_Vector2& Pos)
+ * @param math::CVector2 Position
+ **/
+void CRect::Move(const math::CVector2& Pos)
 {
     this->x = (int)Pos.x;
     this->y = (int)Pos.y;
@@ -61,21 +61,21 @@ void ML_Rect::Move(const math::ML_Vector2& Pos)
  *
  * @param int Width
  * @param int Height
- */
-void ML_Rect::Resize(u_int w, u_int h)
+ **/
+void CRect::Resize(u_int w, u_int h)
 {
     this->w = w;
     this->h = h;
 }
 
 /**
- * Checks for collision or overlap with another math::ML_Rect.
+ * Checks for collision or overlap with another math::CRect.
  *
- * @param ML_Rect Other rectangle
+ * @param CRect Other rectangle
  *
  * @return TRUE if overlap, FALSE otherwise.
- */
-bool ML_Rect::CheckCollision(const ML_Rect& Other) const
+ **/
+bool CRect::CheckCollision(const CRect& Other) const
 {
     int top2, bottom2, right2, left2;
     
@@ -99,17 +99,17 @@ bool ML_Rect::CheckCollision(const ML_Rect& Other) const
 /**
  * Checks if the current rect is completely covering another one.
  *
- * @param math::ML_Rect Check if this rect is inside the current one
+ * @param math::CRect Check if this rect is inside the current one
  *
  * @return TRUE if given rect is covered, FALSE otherwise.
  * @todo Clean this up, instead of just using a 0-w/h rect for each point.
- */
-bool ML_Rect::IsCovering(const ML_Rect& Other) const
+ **/
+bool CRect::IsCovering(const CRect& Other) const
 {
-    ML_Rect Top_Left(Other.x, Other.y);
-    ML_Rect Bottom_Left(Other.x, Other.y + Other.h);
-    ML_Rect Top_Right(Other.x + Other.w, Other.y);
-    ML_Rect Bottom_Right(Other.x + Other.w, Other.y + Other.h);
+    CRect Top_Left(Other.x, Other.y);
+    CRect Bottom_Left(Other.x, Other.y + Other.h);
+    CRect Top_Right(Other.x + Other.w, Other.y);
+    CRect Bottom_Right(Other.x + Other.w, Other.y + Other.h);
 
     return (
         this->CheckCollision(Top_Left)      &&
@@ -120,19 +120,19 @@ bool ML_Rect::IsCovering(const ML_Rect& Other) const
 }
 
 /***********************************
- * math::ML_Rectf method definitions. *
- **********************************/
+ * math::CRectf method definitions. *
+ ***********************************/
 
 /**
  * Compares the current rectangle with a given one.
  *
  * Two rectangles are equal if their dimensions and locations are the same.
  *
- * @param ML_Rectf& The rectangle to compare.
+ * @param CRectf& The rectangle to compare.
  *
  * @return TRUE if equal, FALSE otherwise.
- */
-bool ML_Rectf::operator== (const ML_Rectf& Other)
+ **/
+bool CRectf::operator== (const CRectf& Other)
 {
     return (Other.x == this->x && Other.y == this->y &&
         Other.w == this->w && Other.h == this->h);
@@ -143,8 +143,8 @@ bool ML_Rectf::operator== (const ML_Rectf& Other)
  *
  * @param float x-coordinate
  * @param float y-coordinate
- */
-void ML_Rectf::Move(float x, float y)
+ **/
+void CRectf::Move(float x, float y)
 {
     this->x = x;
     this->y = y;
@@ -153,11 +153,11 @@ void ML_Rectf::Move(float x, float y)
 /**
  * Moves the rectangle.
  *
- * @overload ML_Rectf::Move(int, int)
+ * @overload CRectf::Move(int, int)
  *
- * @param math::ML_Vector2 Position
- */
-void ML_Rectf::Move(const math::ML_Vector2& Pos)
+ * @param math::CVector2 Position
+ **/
+void CRectf::Move(const math::CVector2& Pos)
 {
     this->x = Pos.x;
     this->y = Pos.y;
@@ -168,21 +168,21 @@ void ML_Rectf::Move(const math::ML_Vector2& Pos)
  *
  * @param float Width
  * @param float Height
- */
-void ML_Rectf::Resize(float w, float h)
+ **/
+void CRectf::Resize(float w, float h)
 {
     this->w = w;
     this->h = h;
 }
 
 /**
- * Checks for collision or overlap with another math::ML_Rect.
+ * Checks for collision or overlap with another math::CRect.
  *
- * @param ML_Rectf Other rectangle
+ * @param CRectf Other rectangle
  *
  * @return TRUE if overlap, FALSE otherwise.
- */
-bool ML_Rectf::CheckCollision(const ML_Rectf& Other) const
+ **/
+bool CRectf::CheckCollision(const CRectf& Other) const
 {
     float top2, bottom2, right2, left2;
     
@@ -204,16 +204,16 @@ bool ML_Rectf::CheckCollision(const ML_Rectf& Other) const
 }
 
 /************************************
- * math::ML_Circle method definitions. *
- ***********************************/
+ * math::CCircle method definitions. *
+ ************************************/
 
 /**
  * Moves the circle.
  *
  * @param int x-coordinate
  * @param int y-coordinate
- */
-void ML_Circle::Move(int x, int y)
+ **/
+void CCircle::Move(int x, int y)
 {
     this->x = x;
     this->y = y;
@@ -222,11 +222,11 @@ void ML_Circle::Move(int x, int y)
 /**
  * Moves the circle.
  *
- * \overload ML_Circle::Move(int, int)
+ * \overload CCircle::Move(int, int)
  *
- * @param math::ML_Vector2 Position
- */
-void ML_Circle::Move(const math::ML_Vector2& Pos)
+ * @param math::CVector2 Position
+ **/
+void CCircle::Move(const math::CVector2& Pos)
 {
     this->x = (int)Pos.x;
     this->y = (int)Pos.y;
@@ -236,20 +236,20 @@ void ML_Circle::Move(const math::ML_Vector2& Pos)
  * Changes the radius of the circle.
  *
  * @param int Radius
- */
-void ML_Circle::Resize(u_int r)
+ **/
+void CCircle::Resize(u_int r)
 {
     this->r = r;
 }
 
 /**
- * Checks for collision or overlap with another math::ML_Circle.
+ * Checks for collision or overlap with another math::CCircle.
  *
- * @param ML_Circle Other circle
+ * @param CCircle Other circle
  *
  * @return TRUE if overlap, FALSE otherwise.
- */
-bool ML_Circle::CheckCollision(const ML_Circle& Other) const
+ **/
+bool CCircle::CheckCollision(const CCircle& Other) const
 {
     // Compare the distances between the radii
     int dx, dy, rs;

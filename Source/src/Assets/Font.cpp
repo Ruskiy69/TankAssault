@@ -1,40 +1,36 @@
 /**
  * @file
- *  FL_Font class definitions.
+ *  CFont class definitions.
  *
  * @author George Kudrayvtsev
- * @version 1.0.1
- */
+ * @version 1.0.3
+ **/
 
-#include "Assets/Font.h"
+#include "Assets/Font.hpp"
 
-using asset::FL_Font;
+using asset::CFont;
 
 /**
  * Cleans up memory.
- *
  * @bug TTF_CloseFont doesn't work right.
- */
-FL_Font::~FL_Font()
-{
-    if(mp_Data != NULL && m_refcount == 1)
-        TTF_CloseFont(mp_Data);
-    m_filename.clear();
+ **/
+CFont::~CFont()
+{    
+    TTF_CloseFont(mp_Data);
 }
 
 /**
  * Loads a font.
  *
  * @param char* Font filename
- *
  * @return TRUE if font loaded, FALSE otherwise.
- */
-bool FL_Font::LoadFromFile(const char* pfilename)
+ **/
+bool CFont::LoadFromFile(const char* pfilename)
 {
     if(pfilename == NULL)
         return false;
 
-    m_size = DEFAULT_FONT_SIZE;
+    m_size = 12;
     m_filename = pfilename;
 
     if(mp_Data != NULL)
@@ -50,10 +46,10 @@ bool FL_Font::LoadFromFile(const char* pfilename)
  *
  * @param char* Font filename
  * @param int Font size
- *
+ * 
  * @return TRUE if font loaded, FALSE otherwise.
- */
-bool FL_Font::LoadFromFile(const char* pfilename, const int size)
+ **/
+bool CFont::LoadFromFile(const char* pfilename, const int size)
 {
     if(pfilename == NULL)
         return false;
@@ -72,16 +68,13 @@ bool FL_Font::LoadFromFile(const char* pfilename, const int size)
 /**
  * Loads a font from an existing one.
  *
- * @param FL_Font* The font to copy attributes from.
- *
+ * @param CFont* The font to copy attributes from.
  * @return Always TRUE.
- */
-bool FL_Font::LoadFromFont(FL_Font* const p_Copy)
+ **/
+bool CFont::LoadFromFont(CFont* const p_Copy)
 {
-    p_Copy->IncrementReferenceCount();
     mp_Data     = p_Copy->GetRawFont();
     m_size      = p_Copy->GetSize();
-    m_refcount  = p_Copy->GetReferenceCount();
     m_filename  = p_Copy->GetFilename();
 
     return true;
@@ -91,10 +84,9 @@ bool FL_Font::LoadFromFont(FL_Font* const p_Copy)
  * Resizes the current font.
  *
  * @param int New font size
- *
  * @return TRUE if font resized properly, FALSE otherwise.
- */
-bool FL_Font::Resize(const u_int new_size)
+ **/
+bool CFont::Resize(const u_int new_size)
 {
     if(m_size == new_size)
         return true;
@@ -108,12 +100,12 @@ bool FL_Font::Resize(const u_int new_size)
  * @param char* text to render
  * @param gfx::Color color of text
  *
- * @return asset::GL_Entity* The entity w/ text on it.
+ * @return obj::CEntity* The entity w/ text on it.
  *
  * @see gfx::Color
- * @see asset::GL_Entity
- */
-asset::GL_Entity* FL_Font::RenderText(const char* ptext,
+ * @see obj::CEntity
+ **/
+obj::CEntity* CFont::RenderText(const char* ptext,
     const gfx::Color& Text_Color) const
 {
     if(mp_Data == NULL || ptext == NULL)
@@ -167,9 +159,10 @@ asset::GL_Entity* FL_Font::RenderText(const char* ptext,
         SDL_FreeSurface(pLine_Text);
     }
 
-    asset_id text_id = g_TextureAssets.LoadEntityFromSurface(pText_Surface);
+    obj::CEntity* pFinal = new obj::CEntity;
+    pFinal->LoadFromSurface(pText_Surface);
     SDL_FreeSurface(pText_Surface);
-    return g_TextureAssets.GetEntityByID(text_id);
+    return pFinal;
 }
 
 /**
@@ -181,8 +174,8 @@ asset::GL_Entity* FL_Font::RenderText(const char* ptext,
  * @return SDL_Surface* surface with text on it.
  *
  * @see gfx::Color
- */
-SDL_Surface* FL_Font::RenderText_SDL(const char* ptext) const
+ **/
+SDL_Surface* CFont::RenderText_SDL(const char* ptext) const
 {
     return this->RenderText_SDL(ptext, gfx::BLACK);
 }
@@ -196,8 +189,8 @@ SDL_Surface* FL_Font::RenderText_SDL(const char* ptext) const
  * @return SDL_Surface* surface with text on it.
  *
  * @see gfx::Color
- */
-SDL_Surface* FL_Font::RenderText_SDL(const char* ptext,
+ **/
+SDL_Surface* CFont::RenderText_SDL(const char* ptext,
     const gfx::Color& Text_Color) const
 {
     if(mp_Data == NULL || ptext == NULL)
@@ -258,8 +251,8 @@ SDL_Surface* FL_Font::RenderText_SDL(const char* ptext,
  * Retrieves font size.
  *
  * @return int font size
- */
-u_int FL_Font::GetSize() const
+ **/
+u_int CFont::GetSize() const
 {
     return m_size;
 }
@@ -271,8 +264,8 @@ u_int FL_Font::GetSize() const
  *
  * @return int height
  *    Text height usually, -1 if no font loaded.
- */
-int FL_Font::GetTextHeight(const char* ptext) const
+ **/
+int CFont::GetTextHeight(const char* ptext) const
 {
     if(mp_Data == NULL || ptext == NULL)
         return -1;
@@ -289,8 +282,8 @@ int FL_Font::GetTextHeight(const char* ptext) const
  *
  * @return int width
  *    Text width usually, -1 if no font loaded.
- */
-int FL_Font::GetTextWidth(const char* ptext) const
+ **/
+int CFont::GetTextWidth(const char* ptext) const
 {
 
     if(mp_Data == NULL || ptext == NULL)
@@ -301,7 +294,7 @@ int FL_Font::GetTextWidth(const char* ptext) const
     return w;
 }
 
-TTF_Font* FL_Font::GetRawFont() const
+TTF_Font* CFont::GetRawFont() const
 {
     return mp_Data;
 }

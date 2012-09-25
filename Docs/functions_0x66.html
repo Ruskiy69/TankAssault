@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Collapse 2200: Data Fields</title>
+<title>Collapse: Data Fields</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,11 +20,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Collapse 2200
-   &#160;<span id="projectnumber">0.1a</span>
+   <div id="projectname">Collapse
+   &#160;<span id="projectnumber">0.7.7 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6200 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -80,6 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="functions.html#index_a"><span>a</span></a></li>
+      <li><a href="functions_0x62.html#index_b"><span>b</span></a></li>
       <li><a href="functions_0x63.html#index_c"><span>c</span></a></li>
       <li><a href="functions_0x64.html#index_d"><span>d</span></a></li>
       <li class="current"><a href="functions_0x66.html#index_f"><span>f</span></a></li>
@@ -95,6 +97,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="functions_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_0x76.html#index_v"><span>v</span></a></li>
+      <li><a href="functions_0x77.html#index_w"><span>w</span></a></li>
+      <li><a href="functions_0x78.html#index_x"><span>x</span></a></li>
+      <li><a href="functions_0x79.html#index_y"><span>y</span></a></li>
       <li><a href="functions_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
@@ -104,7 +110,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,31 +124,45 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_f"></a>- f -</h3><ul>
 <li>FadeIn()
-: <a class="el" href="classgame_1_1_c_l___menu_manager.html#ad42dcc1ded742f0f22effe810884de63">game::CL_MenuManager</a>
+: <a class="el" href="classgame_1_1_c_menu_manager.html#ac0e3e80bd12a0d1f1f7ffb1095dd318a">game::CMenuManager</a>
 </li>
 <li>FadeOut()
-: <a class="el" href="classgame_1_1_c_l___menu_manager.html#aa76a9419eacff973b489a52152afa79e">game::CL_MenuManager</a>
+: <a class="el" href="classgame_1_1_c_menu_manager.html#a01046cb21f39d9717c76702a5e6061a3">game::CMenuManager</a>
+</li>
+<li>filter_index
+: <a class="el" href="struct_s_d_l___audio_c_v_t.html#a35093b3ad3331c17416c593a76012b63">SDL_AudioCVT</a>
 </li>
 <li>FindPath()
-: <a class="el" href="classai_1_1_a_i___pathfinder.html#abe497bce6b842b9d58ff1efe46d66360">ai::AI_Pathfinder</a>
+: <a class="el" href="classai_1_1_c_pathfinder.html#a2d89160e9bdbfd897ed180594909b2b8">ai::CPathfinder</a>
 </li>
 <li>FindTile()
-: <a class="el" href="classgame_1_1_c_l___map.html#acc4c6a2ae0317564716b8c4484ca8c4d">game::CL_Map</a>
+: <a class="el" href="classgame_1_1_c_map.html#a919207ecc20997b61b54e15b149b82d7">game::CMap</a>
 </li>
 <li>Fire()
-: <a class="el" href="classobj_1_1_obj___bullet.html#adcd530a0a0d064b06cc3f55cb45378cd">obj::Obj_Bullet</a>
+: <a class="el" href="classobj_1_1_c_bullet.html#a771a58464691190b9af86ee2aec765d8">obj::CBullet</a>
 </li>
-<li>FirePrimary()
-: <a class="el" href="classobj_1_1_obj___tank.html#adc05be7bbb153d762fddb31ee28da88b">obj::Obj_Tank</a>
+<li>flags
+: <a class="el" href="struct_s_d_l___surface.html#a86d78b665d5dfd7aa1dd9696b067641b">SDL_Surface</a>
 </li>
-<li>FireSecondary()
-: <a class="el" href="classobj_1_1_obj___tank.html#afd7776ea08c109d3113c492afa3eb82b">obj::Obj_Tank</a>
+<li>Flush()
+: <a class="el" href="classgk_1_1_c_logging.html#a0db30eeee76ea4de7515c333530d288a">gk::CLogging</a>
+</li>
+<li>format
+: <a class="el" href="struct_s_d_l___overlay.html#a421f873d1ffc5530c1f9d4b49be75d4e">SDL_Overlay</a>
+, <a class="el" href="struct_s_d_l___surface.html#a8558348b1d6ad1def317d8c75e0f0080">SDL_Surface</a>
+, <a class="el" href="struct_s_d_l___audio_spec.html#a6eda133f50c3be8d0ba91f8dee830be8">SDL_AudioSpec</a>
+</li>
+<li>format_version
+: <a class="el" href="struct_s_d_l___surface.html#a71e84e52b2faf69be9739f97b248342a">SDL_Surface</a>
+</li>
+<li>freq
+: <a class="el" href="struct_s_d_l___audio_spec.html#a8b823ce46fc2e448cf7e6fc141aff6b2">SDL_AudioSpec</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 29 2012 19:47:08 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 18:51:57 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

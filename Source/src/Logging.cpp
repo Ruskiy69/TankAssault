@@ -1,8 +1,8 @@
-#include "Logging.h"
+#include "Logging.hpp"
 
-using gk::Logging;
+using gk::CLogging;
 
-Logging::Logging(const char* p_filename)
+CLogging::CLogging(const char* p_filename)
 {
     time_t now;
     time(&now);
@@ -15,7 +15,7 @@ Logging::Logging(const char* p_filename)
     this->Flush();
 }
 
-Logging::~Logging()
+CLogging::~CLogging()
 {
     if(!m_file.is_open())
         return;
@@ -30,7 +30,7 @@ Logging::~Logging()
     m_file.close();
 }
 
-void Logging::Close()
+void CLogging::Close()
 {
     if(!m_file.is_open())
         return;
@@ -45,7 +45,7 @@ void Logging::Close()
     m_file.close();
 }
 
-void Logging::Flush()
+void CLogging::Flush()
 {
     // Don't write things with [DEBUG] tag in the release build.
 #ifdef _DEBUG
@@ -59,14 +59,14 @@ void Logging::Flush()
     m_log.str(std::string());
 }
 
-void Logging::ShowLastLog() const
+void CLogging::ShowLastLog() const
 {
     std::cout << m_log.str();
     if(m_log.str().back() != '\n')
         std::cout << std::endl;
 }
 
-std::string Logging::GetLastLog() const
+std::string CLogging::GetLastLog() const
 {
     return m_log.str();
 }

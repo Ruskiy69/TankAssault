@@ -1,0 +1,231 @@
+[INFO] Creating asset: Data/Fonts/IntroFont.ttf.
+[INFO] Creating asset: Data/Audio/Music/Intro.ogg.
+[INFO] Creating asset: Data/Audio/Music/MenuMusic1.ogg.
+[INFO] Creating asset: Data/Textures/Crosshairs.png.
+[INFO] Creating asset: Data/Textures/Splash.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_BG.png.
+[INFO] Creating asset: Data/Textures/Background.png.
+[INFO] Creating asset: Data/Fonts/MenuFont.ttf.
+[INFO] Creating asset: Data/Audio/Sounds/MenuHover.wav.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Play.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Play_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Options.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Options_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Exit.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Exit_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Options_Music.png.
+[INFO] Creating asset: Data/Textures/Menus/Options_Music_High.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Return.png.
+[INFO] Creating asset: Data/Textures/Menus/Menu_Return_High.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Return.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Return_High.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Exit.png.
+[INFO] Retrieving asset: Data/Textures/Menus/Menu_Exit_High.png.
+[INFO] Initializing world.
+[INFO] Creating asset: Data/Textures/Levels/BlueWall.png.
+[INFO] Creating asset: Data/Textures/Levels/BlueWall_Broken.png.
+[INFO] Creating asset: Data/Textures/Levels/Floor.png.
+[INFO] Loading level Data/Levels/Level1*
+[INFO] Retrieving asset: Data/Textures/Background.png.
+[INFO] Creating asset: Data/Textures/Sprites/PlayerTower1.png.
+[INFO] Creating asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Creating asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Creating asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Creating asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Creating asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Creating asset: Data/Textures/Sprites/Bullet1.png.
+[DEBUG] Spawning enemy.
+[INFO] Creating asset: Data/Textures/Sprites/Enemy1.png.
+[INFO] Creating asset: Data/Textures/Sprites/Enemy1_1.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet1.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Spawning enemy.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1_1.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet1.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Spawning enemy.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Enemy1_1.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon2L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet2.png.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Audio/Sounds/Weapon1R.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Weapon1L.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Bullet1.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Spawning enemy.
+[INFO] Creating asset: Data/Fonts/GUIFont.ttf.
+[INFO] Initialization complete.
+[INFO] Asset count: 35
+[DEBUG] Playing Data/Audio/Music/Intro.ogg.
+[DEBUG] Playing Data/Audio/Sounds/MenuHover.wav.
+[DEBUG] Playing Data/Audio/Sounds/MenuHover.wav.
+[INFO] Unloading audio file: Data/Audio/Sounds/MenuHover.wav.
+[DEBUG] Playing Data/Audio/Sounds/MenuHover.wav.
+[INFO] Unloading audio file: Data/Audio/Sounds/MenuHover.wav.
+[DEBUG] Playing Data/Audio/Sounds/MenuHover.wav.
+[DEBUG] Playing Data/Audio/Music/Intro.ogg.
+[INFO] Unloading audio file: Data/Audio/Music/Intro.ogg.
+[INFO] Unloading audio file: Data/Audio/Sounds/MenuHover.wav.
+[DEBUG] Playing Data/Audio/Sounds/Weapon2.wav.
+[DEBUG] Playing Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Creating asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon2.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] mp_DestinationTile is NULL!
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Unloading audio file: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Unloading audio file: Data/Audio/Sounds/Weapon2.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Playing Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[DEBUG] Forcing playing of Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Unloading audio file: Data/Audio/Sounds/Weapon1.wav.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.
+[INFO] Retrieving asset: Data/Textures/Sprites/Spark.png.

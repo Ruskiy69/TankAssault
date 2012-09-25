@@ -1,20 +1,22 @@
 /**
  * @file
- *  Declarations for the AL_Sound2D class.
+ *  Declarations for the CSound2D class.
  * 
  * @author George Kudrayvtsev
  * @version 1.1
- */
+ **/
 
-#include "Assets/Sound2D.h"
+#include "Assets/Sound2D.hpp"
 
-using asset::AL_Sound2D;
+using asset::CSound2D;
 using game::g_Log;
 
-AL_Sound2D::AL_Sound2D() : m_buffer(0), m_source(-1),
-    m_lasterror(AL_NO_ERROR) {}
+std::vector<CSound2D*> CSound2D::mp_allSounds;
 
-AL_Sound2D::~AL_Sound2D()
+CSound2D::CSound2D() : m_buffer(0), m_source(-1),
+    m_lasterror(AL_NO_ERROR) { CSound2D::mp_allSounds.push_back(this); }
+
+CSound2D::~CSound2D()
 {
     if(s_sources[m_source] != 0)
     {
@@ -25,7 +27,7 @@ AL_Sound2D::~AL_Sound2D()
     alDeleteBuffers(1, &m_buffer);
 }
 
-bool AL_Sound2D::InitializeOpenAL()
+bool CSound2D::InitializeOpenAL()
 {
     static bool once = false;
 
@@ -42,7 +44,7 @@ bool AL_Sound2D::InitializeOpenAL()
     return true;
 }
 
-void AL_Sound2D::GetAvailableSource()
+void CSound2D::GetAvailableSource()
 {
     // First, check if the current available source is
     // in range.
@@ -58,7 +60,7 @@ void AL_Sound2D::GetAvailableSource()
     // following the current one is okay.
     if(s_available < 255 && s_sources[s_available + 1])
     {
-        s_available++;
+        ++s_available;
         return;
     }
 
@@ -77,18 +79,39 @@ void AL_Sound2D::GetAvailableSource()
     s_available = -1;
 }
 
-bool AL_Sound2D::LoadFromAudio(AL_Sound2D* const p_Copy)
+/**
+ * Loads audio from an existing CSound2D class.
+ *  This method is pretty untested, I wouldn't really recommend
+ *  using it. It takes the buffer and source ID's from the
+ *  provided, existing CSound2D parameter.
+ *
+ * @param CSound2D* The audio to copy.
+ * @return Always TRUE.
+ **/
+bool CSound2D::LoadFromAudio(CSound2D* const p_Copy)
 {
-    p_Copy->IncrementReferenceCount();
     m_buffer    = p_Copy->GetBuffer();
     m_filename  = p_Copy->GetFilename();
-    m_refcount  = p_Copy->GetReferenceCount();
     m_source    = -1;
 
     return true;
 }
 
-bool AL_Sound2D::LoadFromFile(const char* p_filename)
+/**
+ * Loads an audio file into memory.
+ *  The lib-vorbis SDK is used to determine whether or not the
+ *  given filename refers to a valid .ogg file or not.
+ *  If it is determined NOT to be an .ogg file, it is assumed
+ *  to be a .wav file and loaded as such, returning errors on
+ *  any failures. 
+ *
+ * @param char* Filename to load
+ * @return TRUE if successfully loaded, FALSE otherwise.
+ *  The actual error code can be checked by calling GetLastError().
+ *
+ * @todo Add the ability to stream large .ogg files.
+ **/
+bool CSound2D::LoadFromFile(const char* p_filename)
 {
     /// Buffer size for .ogg decoding (32 bytes).
     static const int BUFFER_SIZE = 32768;
@@ -182,22 +205,22 @@ bool AL_Sound2D::LoadFromFile(const char* p_filename)
     return true;
 }
 
-bool AL_Sound2D::UnloadSource()
-{
-    if(m_source == -1)
-        return false;
-
-    alDeleteSources(1, &s_sources[m_source]);
-    s_sources[m_source] = 0;
-
-    return ((m_lasterror = alGetError()) == AL_NO_ERROR);
-}
-
-bool AL_Sound2D::Play()
+/**
+ * Plays a loaded audio buffer.
+ *  Due to the somewhat complicated source-management system in
+ *  place, buffers are bound to an OpenAL source on demand.
+ *  So whenever this method is called, an available source is
+ *  found, and then the buffer is bound to it, and the audio
+ *  is played. The CAssetManager is responsible for unloading the
+ *  source after playback has completed in full.
+ *  
+ * @return TRUE if the sound played, FALSE if not.
+ **/
+bool CSound2D::Play()
 {
     if(this->GetAudioState() == AL_PLAYING)
     {
-        alSourcePlay(m_source);
+        alSourcePlay(s_sources[m_source]);
 
         g_Log.Flush();
         g_Log << "[DEBUG] Forcing playing of " << m_filename << ".\n";
@@ -205,7 +228,7 @@ bool AL_Sound2D::Play()
         return true;
     }
 
-    AL_Sound2D::GetAvailableSource();
+    CSound2D::GetAvailableSource();
     if(s_available == -1)
     {
         m_lasterror = AL_OUT_OF_MEMORY;
@@ -231,7 +254,14 @@ bool AL_Sound2D::Play()
     return true;
 }
 
-bool AL_Sound2D::Pause()
+/**
+ * Pauses current audio buffer.
+ *  The buffer maintains linked to its source despite being paused,
+ *  and will only be deleted if the source status is CSTOPPED.
+ *  
+ * @return TRUE if paused, FALSE if nothing loaded.
+ **/
+bool CSound2D::Pause()
 {
     if(!m_loaded || m_source == -1)
         return false;
@@ -247,7 +277,18 @@ bool AL_Sound2D::Pause()
     return true;
 }
 
-bool AL_Sound2D::Stop()
+/**
+ * Stops the audio from playing.
+ *  Audio looping is always enabled, with no method (currently)
+ *  to disable it. This is due to the fact that I've never /not/
+ *  needed to disable looping.
+ *
+ * @return TRUE if stopped, FALSE if nothing is loaded.
+ * 
+ * @see asset::C2DSound::Play()
+ * @todo Add looping capabilities (or lack there-of).
+ **/
+bool CSound2D::Stop()
 {
     if(!m_loaded || m_source == -1)
         return false;
@@ -262,25 +303,66 @@ bool AL_Sound2D::Stop()
     return true;
 }
 
-void AL_Sound2D::SetPosition(const math::ML_Vector2& Pos)
+/**
+ * Unloads the source being used for playback.
+ *  Since OpenAL is limited to 256 audio sources, it is important
+ *  to be conservative with the available resources.
+ *  Though I doubt all 256 will ever be used simultaneously, a
+ *  system is in place to minimize source-hogging. This method
+ *  should only be called by an CAssetManager after checking
+ *  that playback has been completed. 
+ *
+ * @return TRUE if the source was unloaded successfully,
+ *  FALSE if not, or no source loaded.
+ **/
+bool CSound2D::UnloadSource()
+{
+    if(m_source == -1)
+        return false;
+
+    alDeleteSources(1, &s_sources[m_source]);
+    s_sources[m_source] = 0;
+    m_source = -1;
+
+    return ((m_lasterror = alGetError()) == AL_NO_ERROR);
+}
+
+/**
+ * Sets the starting position of the sound source,
+ * defaulting to <0, 0, 0>.
+ * @param math::CVector2& Position
+ **/        
+void CSound2D::SetPosition(const math::CVector2& Pos)
 {
     if(m_source != -1)
         alSource3f(s_sources[m_source], AL_POSITION, Pos.x, Pos.y, 0.0f);
 }
 
-void AL_Sound2D::SetVelocity(const math::ML_Vector2& Vel)
+/**
+ * Sets the velocity for the sound source, defaulting to <0, 0, 0>.
+ *  If velocity is set to something other than the default value,
+ *  a Doppler effect is produced as the sound source moves toward
+ *  or away from the listener.
+ *
+ * @param math::CVector2& Velocity
+ **/        
+void CSound2D::SetVelocity(const math::CVector2& Vel)
 {
     if(m_source != -1)
         alSource3f(s_sources[m_source], AL_VELOCITY, Vel.x, Vel.y, 0.0f);
 }
 
-void AL_Sound2D::SetDirection(const math::ML_Vector2& Dir)
+/**
+ * Sets the direction the sound source is facing.
+ * @param math::CVector2& Direction
+ **/        
+void CSound2D::SetDirection(const math::CVector2& Dir)
 {
     if(m_source != -1)
         alSource3f(s_sources[m_source], AL_DIRECTION, Dir.x, Dir.y, 0.0f);
 }
 
-int AL_Sound2D::GetAudioState() const
+int CSound2D::GetAudioState() const
 {
     if(m_source == -1)
         return AL_INVALID_OPERATION;
@@ -291,22 +373,22 @@ int AL_Sound2D::GetAudioState() const
     return state;
 }
 
-ALenum AL_Sound2D::GetLastError() const
+ALenum CSound2D::GetLastError() const
 {
     return m_lasterror;
 }
 
-ALuint AL_Sound2D::GetBuffer() const
+ALuint CSound2D::GetBuffer() const
 {
     return m_buffer;
 }
 
-ALuint AL_Sound2D::GetSourceIndex() const
+ALuint CSound2D::GetSourceIndex() const
 {
     return m_source;
 }
 
-ALuint AL_Sound2D::GetSource() const
+ALuint CSound2D::GetSource() const
 {
     if(m_source != -1)
         return s_sources[m_source];
@@ -314,14 +396,22 @@ ALuint AL_Sound2D::GetSource() const
         return -1;
 }
 
-bool AL_Sound2D::LoadFromFile_WAV(const char* p_filename)
+/**
+ * Loads a .wav file.
+ *  This is only called by LoadFromFile() after determining that
+ *  the given data is not a valid Ogg-Vorbis audio file.
+ *
+ * @param char* Filename
+ * @return TRUE on successful load, FALSE otherwise.
+ **/        
+bool CSound2D::LoadFromFile_WAV(const char* p_filename)
 {
     alGenBuffers(1, &m_buffer);
     if((m_lasterror = alGetError()) != AL_NO_ERROR)
         return false;
 
     m_buffer = alutCreateBufferFromFile(p_filename);
-    if(m_buffer == AL_NONE || ((m_lasterror = alutGetError()) != AL_NO_ERROR))   
+    if(m_buffer == AL_NONE || ((m_lasterror = alutGetError()) != AL_NO_ERROR))
     {
         alDeleteBuffers(1, &m_buffer);
         return false;

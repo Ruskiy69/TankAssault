@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Math">
+      <UniqueIdentifier>{ad8c444e-bbd8-456b-8353-488bfe539403}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Math">
+      <UniqueIdentifier>{77b6b3af-dafa-4494-8521-2cdf28adba3f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Assets">
+      <UniqueIdentifier>{463c99fa-f10e-4c7a-ae9f-cb92c18bdc2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World">
+      <UniqueIdentifier>{09af1c33-be91-4e5d-b92c-b3359a86703c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World\Objects">
+      <UniqueIdentifier>{fecfdc27-a0c1-45c1-b7cd-75d6a3b5fb5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World\Levels">
+      <UniqueIdentifier>{15d8344b-d3ad-4f0e-97c6-aa014788b210}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Graphics">
+      <UniqueIdentifier>{23a710a5-bcce-4384-94bf-af3a38e893e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Menus">
+      <UniqueIdentifier>{d20f4070-dfeb-4604-881b-721d6bb50e84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\World\AI">
+      <UniqueIdentifier>{ce60e6bb-2dfd-4bb6-b624-967911468486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Assets">
+      <UniqueIdentifier>{d9e6fcb1-3668-4a11-ac36-9686bbf03e67}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Graphics">
+      <UniqueIdentifier>{f47158a2-6ffd-4529-bac5-2faf0a6be9b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Menus">
+      <UniqueIdentifier>{acd15b0e-40fc-432d-b684-69f6d28e7620}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World">
+      <UniqueIdentifier>{414ea05c-aa0a-4e23-8487-61b2aa7e986c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World\Objects">
+      <UniqueIdentifier>{a8c0731f-c86c-4b6c-bf7f-254672f9ced8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World\AI">
+      <UniqueIdentifier>{cb2a74a0-28f2-4394-a0cc-98443d0987e0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\World\Levels">
+      <UniqueIdentifier>{9bc0a091-c3ec-4de0-8630-28fa00154cea}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\CollapseDef.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Errors.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GameEvents.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Helpers.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Logging.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Settings.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\SystemEvents.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Timer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\Collider.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\Math.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\MathDef.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\Matrix.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\Ray.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\Shapes.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\Vector2.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Math\Vector3.hpp">
+      <Filter>Header Files\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Assets\Asset.hpp">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Assets\Font.hpp">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Assets\MusicPlayer.hpp">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Assets\Sound2D.hpp">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Entity.hpp">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\GameObject.hpp">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Bullet.hpp">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Weapon.hpp">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Tank.hpp">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Player.hpp">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\World.hpp">
+      <Filter>Header Files\World</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\CollisionMap.hpp">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\Level.hpp">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\Map.hpp">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\ObjectiveMap.hpp">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Levels\TerrainMap.hpp">
+      <Filter>Header Files\World\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\Graphics.hpp">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\Shader.hpp">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Graphics\Window.hpp">
+      <Filter>Header Files\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Menus\Menu.hpp">
+      <Filter>Header Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Menus\MenuManager.hpp">
+      <Filter>Header Files\Menus</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\AI\Enemy.hpp">
+      <Filter>Header Files\World\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\AI\EnemyTank.hpp">
+      <Filter>Header Files\World\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\AI\Pathfinder.hpp">
+      <Filter>Header Files\World\AI</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Assets\Texture.hpp">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Assets\AssetManager.hpp">
+      <Filter>Header Files\Assets</Filter>
+    </ClInclude>
+    <ClInclude Include="include\World\Objects\Projectile.hpp">
+      <Filter>Header Files\World\Objects</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Engine.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Inventory.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Collapse.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Errors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GameEvents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Helpers.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Logging.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Settings.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SystemEvents.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\Collider.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\MathDef.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\Matrix.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\Ray2.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\Shapes.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\Vector2.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Math\Vector3.cpp">
+      <Filter>Source Files\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Assets\Asset.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Assets\Font.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Assets\Sound2D.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Assets\MusicPlayer.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Assets\Texture.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Graphics.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Window.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Shader.cpp">
+      <Filter>Source Files\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\Menu.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menus\MenuManager.cpp">
+      <Filter>Source Files\Menus</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\Player.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\Tank.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\Weapon.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\Projectile.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\CollisionMap.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\Level.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\Map.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\ObjectiveMap.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Levels\TerrainMap.cpp">
+      <Filter>Source Files\World\Levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\GameObject.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\AI\Enemy.cpp">
+      <Filter>Source Files\World\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\AI\EnemyTank.cpp">
+      <Filter>Source Files\World\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\AI\Pathfinder.cpp">
+      <Filter>Source Files\World\AI</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\World.cpp">
+      <Filter>Source Files\World</Filter>
+    </ClCompile>
+    <ClCompile Include="src\World\Objects\Entity.cpp">
+      <Filter>Source Files\World\Objects</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Engine.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Assets\AssetManager.cpp">
+      <Filter>Source Files\Assets</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Inventory.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Collapse.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tank.ico">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
+</Project>

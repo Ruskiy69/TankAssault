@@ -1,0 +1,185 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{317C796C-4328-4CF8-854C-F2A86785F166}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Collapse</RootNamespace>
+    <ProjectName>Collapse</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(MSBuildProjectDirectory)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(MSBuildProjectDirectory)\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(MSBuildProjectDirectory)\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(MSBuildProjectDirectory)\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(MSBuildProjectDirectory)\lib;$(LibraryPath)</LibraryPath>
+    <SourcePath>$(MSBuildProjectDirectory)\src;$(SourcePath)</SourcePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>false</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Assets\Asset.hpp" />
+    <ClInclude Include="include\Assets\AssetManager.hpp" />
+    <ClInclude Include="include\Assets\Font.hpp" />
+    <ClInclude Include="include\Assets\MusicPlayer.hpp" />
+    <ClInclude Include="include\Assets\Sound2D.hpp" />
+    <ClInclude Include="include\Assets\Texture.hpp" />
+    <ClInclude Include="include\CollapseDef.hpp" />
+    <ClInclude Include="include\Engine.hpp" />
+    <ClInclude Include="include\Errors.hpp" />
+    <ClInclude Include="include\GameEvents.hpp" />
+    <ClInclude Include="include\Graphics\Graphics.hpp" />
+    <ClInclude Include="include\Graphics\Shader.hpp" />
+    <ClInclude Include="include\Graphics\Window.hpp" />
+    <ClInclude Include="include\Helpers.hpp" />
+    <ClInclude Include="include\Inventory.hpp" />
+    <ClInclude Include="include\Logging.hpp" />
+    <ClInclude Include="include\Math\Collider.hpp" />
+    <ClInclude Include="include\Math\Math.hpp" />
+    <ClInclude Include="include\Math\MathDef.hpp" />
+    <ClInclude Include="include\Math\Matrix.hpp" />
+    <ClInclude Include="include\Math\Ray.hpp" />
+    <ClInclude Include="include\Math\Shapes.hpp" />
+    <ClInclude Include="include\Math\Vector2.hpp" />
+    <ClInclude Include="include\Math\Vector3.hpp" />
+    <ClInclude Include="include\Menus\Menu.hpp" />
+    <ClInclude Include="include\Menus\MenuManager.hpp" />
+    <ClInclude Include="include\Settings.hpp" />
+    <ClInclude Include="include\SystemEvents.hpp" />
+    <ClInclude Include="include\Timer.hpp" />
+    <ClInclude Include="include\World\AI\Enemy.hpp" />
+    <ClInclude Include="include\World\AI\EnemyTank.hpp" />
+    <ClInclude Include="include\World\AI\Pathfinder.hpp" />
+    <ClInclude Include="include\World\Levels\CollisionMap.hpp" />
+    <ClInclude Include="include\World\Levels\Level.hpp" />
+    <ClInclude Include="include\World\Levels\Map.hpp" />
+    <ClInclude Include="include\World\Levels\ObjectiveMap.hpp" />
+    <ClInclude Include="include\World\Levels\TerrainMap.hpp" />
+    <ClInclude Include="include\World\Objects\Bullet.hpp" />
+    <ClInclude Include="include\World\Objects\GameObject.hpp" />
+    <ClInclude Include="include\World\Objects\Entity.hpp" />
+    <ClInclude Include="include\World\Objects\Player.hpp" />
+    <ClInclude Include="include\World\Objects\Projectile.hpp" />
+    <ClInclude Include="include\World\Objects\Tank.hpp" />
+    <ClInclude Include="include\World\Objects\Weapon.hpp" />
+    <ClInclude Include="include\World\World.hpp" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Assets\Asset.cpp" />
+    <ClCompile Include="src\Assets\AssetManager.cpp" />
+    <ClCompile Include="src\Assets\Font.cpp" />
+    <ClCompile Include="src\Assets\MusicPlayer.cpp" />
+    <ClCompile Include="src\Assets\Sound2D.cpp" />
+    <ClCompile Include="src\Assets\Texture.cpp" />
+    <ClCompile Include="src\Collapse.cpp" />
+    <ClCompile Include="src\Engine.cpp" />
+    <ClCompile Include="src\Errors.cpp" />
+    <ClCompile Include="src\GameEvents.cpp" />
+    <ClCompile Include="src\Graphics\Graphics.cpp" />
+    <ClCompile Include="src\Graphics\Shader.cpp" />
+    <ClCompile Include="src\Graphics\Window.cpp" />
+    <ClCompile Include="src\Helpers.cpp" />
+    <ClCompile Include="src\Inventory.cpp" />
+    <ClCompile Include="src\Logging.cpp" />
+    <ClCompile Include="src\Math\Collider.cpp" />
+    <ClCompile Include="src\Math\MathDef.cpp" />
+    <ClCompile Include="src\Math\Matrix.cpp" />
+    <ClCompile Include="src\Math\Ray2.cpp" />
+    <ClCompile Include="src\Math\Shapes.cpp" />
+    <ClCompile Include="src\Math\Vector2.cpp" />
+    <ClCompile Include="src\Math\Vector3.cpp" />
+    <ClCompile Include="src\Menus\Menu.cpp" />
+    <ClCompile Include="src\Menus\MenuManager.cpp" />
+    <ClCompile Include="src\Settings.cpp" />
+    <ClCompile Include="src\SystemEvents.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
+    <ClCompile Include="src\World\AI\Enemy.cpp" />
+    <ClCompile Include="src\World\AI\EnemyTank.cpp" />
+    <ClCompile Include="src\World\AI\Pathfinder.cpp" />
+    <ClCompile Include="src\World\Levels\CollisionMap.cpp" />
+    <ClCompile Include="src\World\Levels\Level.cpp" />
+    <ClCompile Include="src\World\Levels\Map.cpp" />
+    <ClCompile Include="src\World\Levels\ObjectiveMap.cpp" />
+    <ClCompile Include="src\World\Levels\TerrainMap.cpp" />
+    <ClCompile Include="src\World\Objects\Entity.cpp" />
+    <ClCompile Include="src\World\Objects\GameObject.cpp" />
+    <ClCompile Include="src\World\Objects\Player.cpp" />
+    <ClCompile Include="src\World\Objects\Projectile.cpp" />
+    <ClCompile Include="src\World\Objects\Tank.cpp" />
+    <ClCompile Include="src\World\Objects\Weapon.cpp" />
+    <ClCompile Include="src\World\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Collapse.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="tank.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

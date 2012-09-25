@@ -1,109 +1,110 @@
-************************** COLLAPSE *****************************
-*                                                               *
-* Current Version: 0.7.6 Alpha                                  *
-* Last Updated   : 08.29.2012                                   *
-*                                                               *
-*   KNOWN BUGS:                                                 *
-*       - After quitting, the game seg-faults due to an unknown *
-*         memory leak.                                          *
-*       - The main menu cannot be used while fading is in       *
-*         progress.                                             *
-*       - The main menu renders right after the splash screen   *
-*         a single time before actually fading in properly.     *
-*                                                               *
-*   Version 0.7.6 (08.29.2012):                                 *
-*       + Graphics version is actually checked for a minimum    *
-*                                                               *
-*   Version 0.7.5 (08.28.2012):                                 *
-*       + Graphics card information is logged on launch         *
-*                                                               *
-*   Version 0.7.4 (08.28.2012):                                 *
-*       + Lighting shader implemented, currently only           *
-*         controllable via the mouse.                           *
-*                                                               *
-*   Version 0.7.3 (08.26.2012):                                 *
-*       + Implemented shaders                                   *
-*       + GLEW initialized to use latest OpenGL functions       *
-*                                                               *
-*   Version 0.7.2 (08.26.2012):                                 *
-*       + Added maps                                            *
-*       + Added AI, enemies                                     *
-*       + Added player, firing                                  *
-*       + Essentially, the re-wrote v3 has reached pre-rewrite  *
-*         state.                                                *
-*                                                               *
-*   Version 0.7.1 (08.21.2012):                                 *
-*       + Added a loading screen                                *
-*       + OpenAL source-freeing bug fixed                       *
-*                                                               *
-*   Version 0.7.0 (08.21.2012):                                 *
-*       + Re-write nearing completion                           *
-*       + Asset managers implemented                            *
-*       + Logging implemented                                   *
-*       + Splash screen added                                   *
-*       + Replaced SDL_mixer with OpenAL                        *
-*       + SDL_gfx dependency removed                            *
-*                                                               *
-*   Version 0.6.6 (6.27.2012):                                  *
-*       + Fullscreen mode by default in release build           *
-*       + Sound effects fixed                                   *
-*       + Split event system into generic and specific          *
-*                                                               *
-*   Version 0.6.5 (6.26.2012):                                  *
-*       + Added shooting                                        *
-*       + Several memory leaks removed, segfault still occurs   *
-*       + Modified intro scene                                  *
-*       - Removed old menu songs                                *
-*       + Added a new, spookier menu song                       *
-*                                                               *
-*   Version 0.6a (6.25.12):                                     *
-*       + Complete re-write of the code base, again.            *
-*       - No more enemies                                       *
-*       - No longer depends on SOIL library                     *
-*       + Now depends on the SDL_gfx library (RGBA blitting)    *
-*       + Intro scene that explains the storyline               *
-*       + Intro music                                           *
-*       + HUD system with health/ammo bars                      *
-*       + In-game pause menu                                    *
-*       + Re-named to "Collapse"                                *
-*                                                               *
-*   Version 0.5a (6.15.12):                                     *
-*       - Removed font memory leak                              *
-*       + All subsystems quit properly                          *
-*       + More code maintenance                                 *
-*       + A* implemented, no actual AI execution yet            *
-*       + Drawing of primitives added, currently applied (line) *
-*       Note: I've been considering not using A* for my AI,     *
-*       simply because actual path-finding detracts from the    *
-*       point of the enemies. I'm going to use a                *
-*       "line-of-sight" technique to "scan" an area, and        *
-*       if the player is spotted, then employ true AI           *
-*       techniques like swarming and other attack methods.      *
-*                                                               *
-*   Version 0.4a (6.15.12):                                     *
-*       + Added a game background, fixed sprite transparency.   *
-*       + Added an Options sub-menu with a music toggle.        *
-*       + Started making enemies and AI; currently there's one, *
-*         and it just stays in one place, panning with the map  *
-*         properly.                                             *
-*       + Code cleanliness improved a tad                       *
-*                                                               *
-*   Version 0.3a (6.13.12):                                     *
-*       + Added an app icon                                     *
-*       + Fixed menu music                                      *
-*                                                               *
-*   Version 0.2a (6.12.12):                                     *
-*       + Many classes completely re-written                    *
-*       + Uniform code style adopted (still WIP) (see Style.h)  *
-*       + Map scrolling implemented                             *
-*                                                               *
-*   Version 0.1a (5.24.12):                                     *
-*       + Initial release (not really, but that's when I        *
-*         started this changelog)                               *
-*       + Functional menu ("Options" doesn't work)              *
-*       + ASCII level loading                                   *
-*       + One wall, one floor, two player sprites (animated)    *
-*       + Basic level editor done                               *
-*       + Tank moves, rotates, shoots, etc.                     *
-*                                                               *
-*****************************************************************
+Current Version: 0.8.0 pre-release
+Last Updated   : 08.29.2012
+
+KNOWN BUGS:
+   - After quitting, the game seg-faults due to an unknown
+     memory leak.
+
+Version 0.8.0 (09.24.2012):
+   - Removed rasterizer system
+   - Specialized asset managers removed
+   - Temporarily removed full-screen launch
+   + Added multiple-light support to shader
+   + Added generic asset manager
+   + Added weapons and files for them
+   + Several bugs fixed
+     
+Version 0.7.6 (08.29.2012):
+   + Graphics version is actually checked for a minimum
+
+Version 0.7.5 (08.28.2012):
+   + Graphics card information is logged on launch
+
+Version 0.7.4 (08.28.2012):
+   + Lighting shader implemented, currently only
+     controllable via the mouse.
+
+Version 0.7.3 (08.26.2012):
+   + Implemented shaders
+   + GLEW initialized to use latest OpenGL functions
+
+Version 0.7.2 (08.26.2012):
+   + Added maps
+   + Added AI, enemies
+   + Added player, firing
+   + Essentially, the re-write has reached pre-rewrite
+     state.
+
+Version 0.7.1 (08.21.2012):
+   + Added a loading screen
+   + OpenAL source-freeing bug fixed
+
+Version 0.7.0 (08.21.2012):
+   + Re-write nearing completion
+   + Asset managers implemented
+   + Logging implemented
+   + Splash screen added
+   + Replaced SDL_mixer with OpenAL
+   + SDL_gfx dependency removed
+
+Version 0.6.6 (6.27.2012):
+   + Fullscreen mode by default in release build
+   + Sound effects fixed
+   + Split event system into generic and specific
+
+Version 0.6.5 (6.26.2012):
+   + Added shooting
+   + Several memory leaks removed, segfault still occurs
+   + Modified intro scene
+   - Removed old menu songs
+   + Added a new, spookier menu song
+
+Version 0.6a (6.25.12):
+   + Complete re-write of the code base, again.
+   - No more enemies
+   - No longer depends on SOIL library
+   + Now depends on the SDL_gfx library (RGBA blitting)
+   + Intro scene that explains the storyline
+   + Intro music
+   + HUD system with health/ammo bars
+   + In-game pause menu
+   + Re-named to "Collapse"
+
+Version 0.5a (6.15.12):
+   - Removed font memory leak
+   + All subsystems quit properly
+   + More code maintenance
+   +  implemented, no actual AI execution yet
+   + Drawing of primitives added, currently applied (line)
+   Note: I've been considering not using  for my AI,
+   simply because actual path-finding detracts from the
+   point of the enemies. I'm going to use a
+   "line-of-sight" technique to "scan" an area, and
+   if the player is spotted, then employ true AI
+   techniques like swarming and other attack methods.
+
+Version 0.4a (6.15.12):
+   + Added a game background, fixed sprite transparency.
+   + Added an Options sub-menu with a music toggle.
+   + Started making enemies and AI; currently there's one,
+     and it just stays in one place, panning with the map
+     properly.
+   + Code cleanliness improved a tad
+
+Version 0.3a (6.13.12):
+   + Added an app icon
+   + Fixed menu music
+
+Version 0.2a (6.12.12):
+   + Many classes completely re-written
+   + Uniform code style adopted (still WIP) (see Style.hpp)
+   + Map scrolling implemented
+
+Version 0.1a (5.24.12):
+   + Initial release (not really, but that's when I
+     started this changelog)
+   + Functional menu ("Options" doesn't work)
+   + ASCII level loading
+   + One wall, one floor, two player sprites (animated)
+   + Basic level editor done
+   + Tank moves, rotates, shoots, etc.

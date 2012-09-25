@@ -1,52 +1,50 @@
 /**
  * @file
- *  Definitions for the AL_MusicPlayer class.
+ *  Definitions for the CMusicPlayer class.
  *
  * @author George Kudrayvtsev
- * @version 1.0
- */
+ * @version 1.0.1
+ **/
 
-#include "Assets/MusicPlayer.h"
+#include "Assets/MusicPlayer.hpp"
 
-using asset::AL_MusicPlayer;
+using asset::CMusicPlayer;
+using asset::CAssetManager;
 using game::g_Log;
  
 /**
  * Cleans up all loaded music.
  * @todo Clean up assets from manager;
- */
-AL_MusicPlayer::~AL_MusicPlayer()
+ **/
+CMusicPlayer::~CMusicPlayer()
 {
 }
 
 /**
  * Load a music file and add it to the play list.
- *
  * @param char* filename
- *
  * @return TRUE if loaded, FALSE if not.
- */
-bool AL_MusicPlayer::AddSongToQueue(const char* pfilename)
+ **/
+bool CMusicPlayer::AddSongToQueue(const char* pfilename)
 {
-    m_allSongs.push_back(g_AudioAssets.LoadAudioFromFile(pfilename));
+    m_allSongs.push_back(
+        CAssetManager::Create<asset::CSound2D>(pfilename)->GetID());
     return true;
 }
 
 /**
  * Deletes all music from the current play list.
- */
-void AL_MusicPlayer::PurgeQueue()
+ **/
+void CMusicPlayer::PurgeQueue()
 {
-    /// @todo Purge from asset pool.
-
     m_allSongs.clear();
     mp_CurrentSong = NULL;
 }
 
 /**
  * Starts playing music.
- */
-void AL_MusicPlayer::Play()
+ **/
+void CMusicPlayer::Play()
 {
     if(mp_CurrentSong == NULL)
     {
@@ -58,10 +56,8 @@ void AL_MusicPlayer::Play()
         mp_CurrentSong->Play();
 }
 
-/**
- * Pauses music.
- */
-void AL_MusicPlayer::Pause()
+/// Pauses music.
+void CMusicPlayer::Pause()
 {
     if(mp_CurrentSong == NULL)      // Can't pause no song
         return;
@@ -72,10 +68,8 @@ void AL_MusicPlayer::Pause()
         mp_CurrentSong->Pause();    // Playing? Cool. Pause
 }
 
-/**
- * Stops music.
- */
-void AL_MusicPlayer::Stop()
+/// Stops music.
+void CMusicPlayer::Stop()
 {
     if(mp_CurrentSong == NULL)
         return;
@@ -85,11 +79,10 @@ void AL_MusicPlayer::Stop()
 
 /**
  * Checks if the song is done playing, if so, plays next song.
- *
- * This should be called within a loop, it will test if it is time to
- * play the next song every 2 seconds or so (assuming a 60fps game).
- */
-void AL_MusicPlayer::Update()
+ *  This should be called within a loop, it will test if it is time to
+ *  play the next song every 2 seconds or so (assuming a 60fps game).
+ **/
+void CMusicPlayer::Update()
 {
     static int frame = 0;
     frame++;
@@ -127,10 +120,9 @@ void AL_MusicPlayer::Update()
 
 /**
  * Loads the next song in the play list.
- *
  * @return bool TRUE if a song was loaded, FALSE if there are no more songs.
- */
-bool AL_MusicPlayer::NextSong()
+ **/
+bool CMusicPlayer::NextSong()
 {
     if(m_index >= m_allSongs.size())     // Done playing queue of songs
         return false;
@@ -138,7 +130,8 @@ bool AL_MusicPlayer::NextSong()
     if(mp_CurrentSong)
         mp_CurrentSong->Stop();
 
-    mp_CurrentSong = g_AudioAssets.GetAudioByID(m_allSongs[m_index]);
+    mp_CurrentSong = (asset::CSound2D*)CAssetManager::Find(
+        m_allSongs[m_index]);
     ++m_index;
 
     return true;

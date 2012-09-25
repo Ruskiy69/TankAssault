@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Collapse 2200: Data Fields - Functions</title>
+<title>Collapse: Data Fields - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,11 +20,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Collapse 2200
-   &#160;<span id="projectnumber">0.1a</span>
+   <div id="projectname">Collapse
+   &#160;<span id="projectnumber">0.7.7 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6200 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="functions_func_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="functions_func_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_func_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_func_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="functions_func_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
@@ -104,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -118,65 +120,59 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <h3><a class="anchor" id="index_s"></a>- s -</h3><ul>
 <li>Save()
-: <a class="el" href="classgame_1_1_c_l___objective_map.html#a1586127c7b0456523ac05e222fad1a24">game::CL_ObjectiveMap</a>
-, <a class="el" href="classgame_1_1_c_l___collision_map.html#a77ff2dc2f75399a340b6eb4f02c19dce">game::CL_CollisionMap</a>
-, <a class="el" href="classgame_1_1_c_l___terrain_map.html#a4a03f9cc905fbe4928ff4c3da93455ea">game::CL_TerrainMap</a>
+: <a class="el" href="classgame_1_1_c_collision_map.html#af87774712c8811e6d2e58b38fad0d82e">game::CCollisionMap</a>
+, <a class="el" href="classgame_1_1_c_objective_map.html#ab7a9be576cbf12078eda683b134aa685">game::CObjectiveMap</a>
+, <a class="el" href="classgame_1_1_c_terrain_map.html#a246ff992cc87ccefdceb6fd2a7043108">game::CTerrainMap</a>
 </li>
 <li>SetBackground()
-: <a class="el" href="classgame_1_1_c_l___menu.html#a5d953272ad1e3964f2d4acab8a321bc7">game::CL_Menu</a>
+: <a class="el" href="classgame_1_1_c_menu.html#aa0aff5b8a43debf044c12452a3027efa">game::CMenu</a>
 </li>
 <li>SetDamage()
-: <a class="el" href="classobj_1_1_obj___bullet.html#ad432db60dcd7d7af4cd1bfd37851d6b2">obj::Obj_Bullet</a>
+: <a class="el" href="classobj_1_1_c_bullet.html#a984bdc32d9da16a355fb71e37c87c426">obj::CBullet</a>
 </li>
 <li>SetDestination()
-: <a class="el" href="classai_1_1_a_i___enemy.html#a3fdb56ab56ba3ec2a784f0b0fab5c443">ai::AI_Enemy</a>
+: <a class="el" href="classai_1_1_c_enemy.html#a8eab29349b1e4ba7e4ba7484893a749c">ai::CEnemy</a>
 </li>
 <li>SetDirection()
-: <a class="el" href="classasset_1_1_a_l___sound2_d.html#ae45626cec4c6744f5b1cfd3c72affe8b">asset::AL_Sound2D</a>
-</li>
-<li>SetFilename()
-: <a class="el" href="classasset_1_1_g_l___entity.html#af50d1bccadf15973b70bbcfec95ef335">asset::GL_Entity</a>
-</li>
-<li>SetFrameRate()
-: <a class="el" href="classgame_1_1_c_l___timer.html#a3e9be9eb7d45d7851911154a596c5e34">game::CL_Timer</a>
+: <a class="el" href="classasset_1_1_c_sound2_d.html#a96670881027d1d2c8228ce68352e8fd2">asset::CSound2D</a>
 </li>
 <li>SetHoverSound()
-: <a class="el" href="classgame_1_1_c_l___menu.html#a6743af2892978734fe42d8ec0273bdba">game::CL_Menu</a>
+: <a class="el" href="classgame_1_1_c_menu.html#a57f280cca7b4499eb292a7cc6c371a8f">game::CMenu</a>
 </li>
 <li>SetPanRate()
-: <a class="el" href="classgame_1_1_c_l___map.html#afe2da0dd502ff3f9d52a7b64339772ff">game::CL_Map</a>
+: <a class="el" href="classgame_1_1_c_map.html#a3e971cde2bdd13c330bd35b07a401d4f">game::CMap</a>
 </li>
 <li>SetPosition()
-: <a class="el" href="classasset_1_1_a_l___sound2_d.html#a82943044cbc8ffcc62d76d0ab5909847">asset::AL_Sound2D</a>
-</li>
-<li>SetRenderDimensions()
-: <a class="el" href="classasset_1_1_g_l___entity.html#afb69d572f0786d8c4595217e5fb4874e">asset::GL_Entity</a>
+: <a class="el" href="classasset_1_1_c_sound2_d.html#afd1ae9ff74b40692dfe7c0ebe47904a4">asset::CSound2D</a>
 </li>
 <li>SetTitle()
-: <a class="el" href="classgame_1_1_c_l___menu.html#ae9df9f889975100d9c22e20a7c566c13">game::CL_Menu</a>
+: <a class="el" href="classgame_1_1_c_menu.html#aa0f1a63e18da2b9d25da6dd211ee833c">game::CMenu</a>
 </li>
 <li>SetVelocity()
-: <a class="el" href="classasset_1_1_a_l___sound2_d.html#ab870a86014e96041dc9188de49183ad3">asset::AL_Sound2D</a>
+: <a class="el" href="classasset_1_1_c_sound2_d.html#adc2a09c9eda80ed1643c38498b3f037c">asset::CSound2D</a>
 </li>
 <li>ShowPath()
-: <a class="el" href="classai_1_1_a_i___pathfinder.html#afbdef95babf0a6581ea09118707ba071">ai::AI_Pathfinder</a>
+: <a class="el" href="classai_1_1_c_pathfinder.html#a1cabcdb3e620adb2ebd2368db700f891">ai::CPathfinder</a>
 </li>
 <li>Spawn()
-: <a class="el" href="classai_1_1_a_i___enemy.html#a6b636d60c590dffeeccdf03dcf0ca194">ai::AI_Enemy</a>
-, <a class="el" href="classai_1_1_a_i___tank.html#a46c4076879d6ec999a30a83d15671555">ai::AI_Tank</a>
+: <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>
+, <a class="el" href="classai_1_1_c_enemy.html#a1ce3bb1d8b3704478eff24c82e204a05">ai::CEnemy</a>
+, <a class="el" href="classai_1_1_c_enemy_tank.html#abdd7c4b5c9660ca6a11e150f3f32770f">ai::CEnemyTank</a>
+, <a class="el" href="classai_1_1_c_enemy.html#a1ce3bb1d8b3704478eff24c82e204a05">ai::CEnemy</a>
+, <a class="el" href="classai_1_1_c_enemy_tank.html#a661e81c1fdf6dafd4ccce82ce0faaeba">ai::CEnemyTank</a>
 </li>
 <li>Start()
-: <a class="el" href="classgame_1_1_c_l___timer.html#acb02f1e9513f65a60bca88e241d15412">game::CL_Timer</a>
+: <a class="el" href="classgame_1_1_c_timer.html#a3f2edee13192ffc772ce410c48b9961e">game::CTimer</a>
 </li>
 <li>Stop()
-: <a class="el" href="classasset_1_1_a_l___sound2_d.html#abd7cad85419b0e3ee5def65f5d1e4e98">asset::AL_Sound2D</a>
-, <a class="el" href="classasset_1_1_a_l___music_player.html#a7acd66ebeb2ce9e6c5965a05afe39cbc">asset::AL_MusicPlayer</a>
+: <a class="el" href="classasset_1_1_c_sound2_d.html#aeabc086fe6b672845ea3926bb9abb303">asset::CSound2D</a>
+, <a class="el" href="classasset_1_1_c_music_player.html#a19c14f095fce8c431cbd8b06b389256e">asset::CMusicPlayer</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 29 2012 19:47:08 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 18:51:57 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

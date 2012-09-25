@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Collapse 2200: Data Fields - Functions</title>
+<title>Collapse: Data Fields - Functions</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,11 +20,12 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
-   <div id="projectname">Collapse 2200
-   &#160;<span id="projectnumber">0.1a</span>
+   <div id="projectname">Collapse
+   &#160;<span id="projectnumber">0.7.7 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6200 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6664 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -95,6 +96,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="functions_func_0x73.html#index_s"><span>s</span></a></li>
       <li><a href="functions_func_0x74.html#index_t"><span>t</span></a></li>
       <li><a href="functions_func_0x75.html#index_u"><span>u</span></a></li>
+      <li><a href="functions_func_0x76.html#index_v"><span>v</span></a></li>
       <li><a href="functions_func_0x7e.html#index_0x7e"><span>~</span></a></li>
     </ul>
   </div>
@@ -104,7 +106,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -117,131 +119,97 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 &#160;
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
-<li>GameLoop()
-: <a class="el" href="classgame_1_1_c_l___engine.html#aeb834b724d7b956e6613b0877bd531a7">game::CL_Engine</a>
-</li>
 <li>GetAudioState()
-: <a class="el" href="classasset_1_1_a_l___sound2_d.html#a669b012722bb0afa1c2b6a1790593055">asset::AL_Sound2D</a>
+: <a class="el" href="classasset_1_1_c_sound2_d.html#a6bb66a4d4ae88fc021478b2860d4c586">asset::CSound2D</a>
 </li>
 <li>GetAvailableEnemySpawn()
-: <a class="el" href="classgame_1_1_c_l___objective_map.html#adecbfbacc01f9df2a31467b0cef8c938">game::CL_ObjectiveMap</a>
+: <a class="el" href="classgame_1_1_c_objective_map.html#a63f84288b0220d6df818a2b343a9c030">game::CObjectiveMap</a>
 </li>
 <li>GetBarrelPosition()
-: <a class="el" href="classobj_1_1_obj___tank.html#a16b834414d91f8bd0297f237e9c8cedb">obj::Obj_Tank</a>
+: <a class="el" href="classobj_1_1_c_tank.html#a8acf031ea06bfa26cde49b663115c016">obj::CTank</a>
 </li>
 <li>GetCollisionBox()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a2b34ddb31a6e1c2c2c4592515045a67a">asset::GL_Entity</a>
-, <a class="el" href="classobj_1_1_obj___tank.html#a340d6efa601510781eb78031fd067645">obj::Obj_Tank</a>
+: <a class="el" href="classobj_1_1_c_tank.html#a1296226f65bf7bbfeb21bb684b2605af">obj::CTank</a>
 </li>
 <li>GetColumnCount()
-: <a class="el" href="classmath_1_1_m_l___matrix.html#a15bfae10fbff4d6b95dc5cf29a2f998c">math::ML_Matrix</a>
+: <a class="el" href="classmath_1_1_c_matrix.html#a1485b00d776e402e97462fdf6ed0ed3f">math::CMatrix</a>
 </li>
 <li>GetDamage()
-: <a class="el" href="classobj_1_1_obj___bullet.html#ae3092c0c432bd90f6d5d7530fb3d6f03">obj::Obj_Bullet</a>
+: <a class="el" href="classobj_1_1_c_bullet.html#a0c7af0d81b31f999bbde6581b0ffe167">obj::CBullet</a>
 </li>
 <li>GetElement()
-: <a class="el" href="classmath_1_1_m_l___matrix.html#a12e855db971dbe34ab6cf17d9727c3e1">math::ML_Matrix</a>
-</li>
-<li>GetFilename()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a0f3fa0d6e3618d4add7f8a2efe237c1a">asset::GL_Entity</a>
-</li>
-<li>GetFrame()
-: <a class="el" href="classgame_1_1_c_l___timer.html#a32f0c90123985d8e0045016f512a23cf">game::CL_Timer</a>
-</li>
-<li>GetFrameRate()
-: <a class="el" href="classgame_1_1_c_l___timer.html#ac8e9cd57b1316643b4ef32f52dad2197">game::CL_Timer</a>
-</li>
-<li>GetH()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a685958fc575c9549d6dfcc201baf5e7b">asset::GL_Entity</a>
+: <a class="el" href="classmath_1_1_c_matrix.html#a3a1d3a2273a12b81f0983be400efcb5c">math::CMatrix</a>
 </li>
 <li>GetHeight()
-: <a class="el" href="classgfx_1_1_g_l___window.html#a6cae6552b743716050085673555ea8ce">gfx::GL_Window</a>
+: <a class="el" href="classgfx_1_1_c_window.html#ab31bab975d7cb514fd6a970bc2caa52c">gfx::CWindow</a>
 </li>
 <li>GetID()
-: <a class="el" href="classai_1_1_a_i___enemy.html#ab109b051ed2e96ed088157952223633b">ai::AI_Enemy</a>
+: <a class="el" href="classai_1_1_c_enemy.html#adeb9eb1a9b7f698527c89172c27c1543">ai::CEnemy</a>
 </li>
 <li>GetLength()
-: <a class="el" href="classmath_1_1_m_l___ray2.html#ac1fadaf2b9535cf1a96592faa9d2dd7c">math::ML_Ray2</a>
+: <a class="el" href="classmath_1_1_c_ray2.html#a8f31afae6b4571ae8e8c54a1ddebfbaa">math::CRay2</a>
 </li>
 <li>GetMainEntity()
-: <a class="el" href="classai_1_1_a_i___enemy.html#affb84087d69c45f04df95d121b9d0e99">ai::AI_Enemy</a>
+: <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>
+, <a class="el" href="classai_1_1_c_enemy.html#ae3534e24be58bd9acfaa2d5eb875f48f">ai::CEnemy</a>
+, <a class="el" href="classai_1_1_c_enemy_tank.html#ae2c6cc750efd9b4b5ec367be4142e0a0">ai::CEnemyTank</a>
+, <a class="el" href="classai_1_1_c_enemy.html#a304c63f552d743934a12fe839ad13c8f">ai::CEnemy</a>
+, <a class="el" href="classai_1_1_c_enemy_tank.html#a49e14ce3c3cb40fd6bb710ac00c33972">ai::CEnemyTank</a>
+, <a class="el" href="classai_1_1_c_enemy.html#ae3534e24be58bd9acfaa2d5eb875f48f">ai::CEnemy</a>
 </li>
 <li>GetNearestPOI()
-: <a class="el" href="classgame_1_1_c_l___objective_map.html#affa53963dba9ff7cc1535758f4394a14">game::CL_ObjectiveMap</a>
+: <a class="el" href="classgame_1_1_c_objective_map.html#afce20ef9a7635a83b79bf2eb77e367da">game::CObjectiveMap</a>
 </li>
 <li>GetPanRate()
-: <a class="el" href="classgame_1_1_c_l___map.html#a5dec9af739f1890c7fbc86b1b49cd8e2">game::CL_Map</a>
+: <a class="el" href="classgame_1_1_c_map.html#a5612d00cd71389505b3763a40c434e11">game::CMap</a>
 </li>
 <li>GetPlayerSpawn()
-: <a class="el" href="classgame_1_1_c_l___objective_map.html#ac992c13bdfc7cc1885742cf49d7ba94a">game::CL_ObjectiveMap</a>
+: <a class="el" href="classgame_1_1_c_objective_map.html#ad2d96ee92a63d6e034258bee3e416fee">game::CObjectiveMap</a>
 </li>
 <li>GetPoints()
-: <a class="el" href="classmath_1_1_m_l___ray2.html#ac3c50f1da48d050b27136eaabe1cb017">math::ML_Ray2</a>
+: <a class="el" href="classmath_1_1_c_ray2.html#aa23b31d0e4c703217d66253951cc4cd7">math::CRay2</a>
 </li>
 <li>GetPosition()
-: <a class="el" href="classasset_1_1_g_l___entity.html#ab400f692e110539780efe5691ef4f6e4">asset::GL_Entity</a>
-, <a class="el" href="classai_1_1_a_i___enemy.html#a10dd730ed06e43ed6a1a37e2277a91c3">ai::AI_Enemy</a>
-</li>
-<li>GetPrimaryAmmoCount()
-: <a class="el" href="classobj_1_1_obj___tank.html#aa4553881bf2f8e5c62d4e533ab681a7c">obj::Obj_Tank</a>
-</li>
-<li>GetRotation()
-: <a class="el" href="classasset_1_1_g_l___entity.html#aae384c3e4c1800504ecb6581a7fc1bf9">asset::GL_Entity</a>
+: <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>
+, <a class="el" href="classai_1_1_c_enemy.html#a5845b2324087dd111f79df3b687b666e">ai::CEnemy</a>
+, <a class="el" href="classai_1_1_c_enemy_tank.html#a5345221c84908e1e13f6975e477e02bf">ai::CEnemyTank</a>
+, <a class="el" href="classobj_1_1_c_tank.html#a1b5670115ae7cb7f1e773256b7697e76">obj::CTank</a>
+, <a class="el" href="classai_1_1_c_enemy.html#a5845b2324087dd111f79df3b687b666e">ai::CEnemy</a>
+, <a class="el" href="classai_1_1_c_enemy_tank.html#a82b5724f2eceb0edfdd894bcfb24d715">ai::CEnemyTank</a>
 </li>
 <li>GetRowCount()
-: <a class="el" href="classmath_1_1_m_l___matrix.html#a1fb788b489c30636102c317a7c752a33">math::ML_Matrix</a>
+: <a class="el" href="classmath_1_1_c_matrix.html#af44e0dce0ace39d0fa94fd0260d463ab">math::CMatrix</a>
 </li>
 <li>GetSize()
-: <a class="el" href="classasset_1_1_f_l___font.html#ab9f510a67a7ab06957d9a5aea4830d1b">asset::FL_Font</a>
-, <a class="el" href="classmath_1_1_m_l___matrix.html#abed03205045c421d20a712e6ac1406c1">math::ML_Matrix</a>
+: <a class="el" href="classmath_1_1_c_matrix.html#a32172ee0891fc312a4bc6df4a18dcfc9">math::CMatrix</a>
+, <a class="el" href="classasset_1_1_c_font.html#a37ca51e0e85ecb1746db2c01e01cd3a7">asset::CFont</a>
 </li>
 <li>GetSlope()
-: <a class="el" href="classmath_1_1_m_l___ray2.html#a0f3c1b40b15c9ed2c5c61b1392d173f9">math::ML_Ray2</a>
-</li>
-<li>GetTactic()
-: <a class="el" href="classai_1_1_a_i___enemy.html#a8394571b99ade4e0286ea20add2d97ae">ai::AI_Enemy</a>
-</li>
-<li>GetTankPosition()
-: <a class="el" href="classobj_1_1_obj___tank.html#a7e003991e6c82472cc0dccc95dbc6814">obj::Obj_Tank</a>
+: <a class="el" href="classmath_1_1_c_ray2.html#a6699a03609098208847abcb1e0699f2c">math::CRay2</a>
 </li>
 <li>GetTextHeight()
-: <a class="el" href="classasset_1_1_f_l___font.html#abc43f5701658accaae2f0c28956da0f9">asset::FL_Font</a>
-</li>
-<li>GetTexture()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a85f037b23cded2c1e4ed95f02b8303f9">asset::GL_Entity</a>
+: <a class="el" href="classasset_1_1_c_font.html#add8ecaa10b9bc0667c8ddf70d7390289">asset::CFont</a>
 </li>
 <li>GetTextWidth()
-: <a class="el" href="classasset_1_1_f_l___font.html#ac306e8433a976efbd01dd1cfb525e38c">asset::FL_Font</a>
+: <a class="el" href="classasset_1_1_c_font.html#a0bd1a29ca5dc5640b5aac8c823acd795">asset::CFont</a>
 </li>
 <li>GetTicks()
-: <a class="el" href="classgame_1_1_c_l___timer.html#adff9a58804006c82fe32b8c4960773a9">game::CL_Timer</a>
+: <a class="el" href="classgame_1_1_c_timer.html#a2a3a9e659e918f3a301745e143f5f59d">game::CTimer</a>
 </li>
 <li>GetTiles()
-: <a class="el" href="classgame_1_1_c_l___map.html#a53294615778d98d61a9a6ee5c22d0de2">game::CL_Map</a>
+: <a class="el" href="classgame_1_1_c_map.html#a7ff11a2906a39b5df61dbaae345c5000">game::CMap</a>
 </li>
-<li>GetW()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a9c6f4087a82cffd138d8dfc0fd90ab47">asset::GL_Entity</a>
+<li>GetValueAt()
+: <a class="el" href="classgame_1_1_c_settings.html#a8acc5a1073e231437dad3e5dc1bc408d">game::CSettings</a>
 </li>
 <li>GetWidth()
-: <a class="el" href="classgfx_1_1_g_l___window.html#a00bb4b7acc86fd4272c20a7797329230">gfx::GL_Window</a>
-</li>
-<li>GetX()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a7dfb2c6b12b4989e08d2a70d0086353b">asset::GL_Entity</a>
-</li>
-<li>GetY()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a2aab34cbed1ec1a2b696329030051ca0">asset::GL_Entity</a>
-</li>
-<li>GL_Entity()
-: <a class="el" href="classasset_1_1_g_l___entity.html#a4db5b6a2d18830f5646910200a41c202">asset::GL_Entity</a>
-</li>
-<li>GL_Window()
-: <a class="el" href="classgfx_1_1_g_l___window.html#ae860630d92a473556638478b546b8300">gfx::GL_Window</a>
+: <a class="el" href="classgfx_1_1_c_window.html#a07f0de33fa7cb601087a978b467d393e">gfx::CWindow</a>
 </li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Wed Aug 29 2012 19:47:08 for Collapse 2200 by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 24 2012 18:51:57 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

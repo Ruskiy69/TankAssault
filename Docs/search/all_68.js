@@ -1,8 +1,18 @@
 var searchData=
 [
+  ['h',['h',['../struct_s_d_l___resize_event.html#a323addc213067775cccb1c1032aebf8b',1,'SDL_ResizeEvent::h()'],['../struct_s_d_l___surface.html#af33bcf87a1f5e10a99b3c7e8626b38c8',1,'SDL_Surface::h()'],['../struct_s_d_l___overlay.html#af1402a7a7cd8ba2816ddc7542c9d3e67',1,'SDL_Overlay::h()']]],
   ['handle_5ferror',['handle_error',['../namespacegk.html#a66c082203230da43e13e97362f731206',1,'gk']]],
-  ['handleevent',['HandleEvent',['../classgame_1_1_c_l___world.html#ac751b349b16601a44225b2377d9bf39d',1,'game::CL_World']]],
+  ['handlesystemevent',['HandleSystemEvent',['../classgame_1_1_c_world.html#a69e8dab5e9c0184704347a78f46a2be6',1,'game::CWorld']]],
+  ['hat',['hat',['../struct_s_d_l___joy_hat_event.html#ab1b54a6d1091e583e856f86b5af1e2f6',1,'SDL_JoyHatEvent']]],
   ['helpers',['Helpers',['../group___helpers.html',1,'']]],
-  ['helpers_2ecpp',['Helpers.cpp',['../_helpers_8cpp.html',1,'']]],
-  ['helpers_2eh',['Helpers.h',['../_helpers_8h.html',1,'']]]
+  ['helpers_2ecpp',['Helpers.cpp',['../_shader_test_2src_2_helpers_8cpp.html',1,'']]],
+  ['helpers_2ecpp',['Helpers.cpp',['../_inventory_2src_2_helpers_8cpp.html',1,'']]],
+  ['helpers_2ecpp',['Helpers.cpp',['../_collapse_2src_2_helpers_8cpp.html',1,'']]],
+  ['helpers_2ehpp',['Helpers.hpp',['../_inventory_2include_2_helpers_8hpp.html',1,'']]],
+  ['helpers_2ehpp',['Helpers.hpp',['../_collapse_2include_2_helpers_8hpp.html',1,'']]],
+  ['helpers_2ehpp',['Helpers.hpp',['../_shader_test_2include_2_helpers_8hpp.html',1,'']]],
+  ['hot_5fy',['hot_y',['../struct_s_d_l___cursor.html#a154ec5999705b912aa09b1f1bacb3275',1,'SDL_Cursor']]],
+  ['hw_5favailable',['hw_available',['../struct_s_d_l___video_info.html#a515e38f0a122a45fe67230e3929670f5',1,'SDL_VideoInfo']]],
+  ['hw_5foverlay',['hw_overlay',['../struct_s_d_l___overlay.html#a3c24f3b1805074deb9ce6ef5b14f70dc',1,'SDL_Overlay']]],
+  ['hwdata',['hwdata',['../struct_s_d_l___surface.html#a0bcd62e0de8db541355785a0c53e511a',1,'SDL_Surface']]]
 ];

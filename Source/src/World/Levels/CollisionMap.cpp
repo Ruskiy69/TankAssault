@@ -1,42 +1,43 @@
 /**
  * @file
- *  Definitions for the CL_CollisionMap class.
+ *  Definitions for the CCollisionMap class.
  *
  * @author George Kudrayvtsev
- * @version 1.2.4
- */
+ * @version 1.2.5
+ **/
 
 #include <sstream>
 #include <fstream>
 
-#include "World/Levels/CollisionMap.h"
+#include "World/Levels/CollisionMap.hpp"
 
-using game::CL_CollisionMap;
-using asset::g_TextureAssets;
+using game::CCollisionMap;
+using asset::CAssetManager;
 
 /**
  * Creates the main tile (yellow) that can be placed on the map in edit mode.
  *
  * @param bool Is it okay to edit the map?
- *
- * @see game::CL_Map::CL_Map()
- */
-CL_CollisionMap::CL_CollisionMap(bool edit) : CL_Map(edit)
+ * @see game::CMap::CMap()
+ **/
+CCollisionMap::CCollisionMap(bool edit) : CMap(edit)
 {
     mp_Overlay = gfx::create_surface_alpha(32, 32, gfx::YELLOW);
 
     if(edit)
-        mp_CurrentTile = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromSurface(mp_Overlay));
+    {
+        mp_CurrentTile = new obj::CGameObject;
+        mp_CurrentTile->LoadFromSurface(mp_Overlay);
+    }
 }
 
 /**
  * Cleans up memory by deleting the placeable tile.
- */
-CL_CollisionMap::~CL_CollisionMap()
+ **/
+CCollisionMap::~CCollisionMap()
 {
     g_Log.Flush();
-    g_Log << "[DEBUG] CL_CollisionMap::~CL_CollisionMap() called.\n";
+    g_Log << "[DEBUG] CCollisionMap::~CCollisionMap() called.\n";
 
     SDL_FreeSurface(mp_Overlay);
 }
@@ -45,10 +46,9 @@ CL_CollisionMap::~CL_CollisionMap()
  * Loads a .ccm map file. 
  *
  * @param char* Filename
- *
  * @return TRUE if loaded successfully, FALSE if not or no filename.
- */
-bool CL_CollisionMap::Load(const char* pfilename)
+ **/
+bool CCollisionMap::Load(const char* pfilename)
 {
     if(pfilename == NULL)
         return false;
@@ -93,8 +93,8 @@ bool CL_CollisionMap::Load(const char* pfilename)
         }
 
         // Set the texture id to a new tile.
-        asset::GL_Entity* pTile = g_TextureAssets.GetEntityByID(
-            g_TextureAssets.LoadEntityFromSurface(mp_Overlay));
+        obj::CGameObject* pTile = new obj::CGameObject;
+        pTile->LoadFromSurface(mp_Overlay);
 
         // Parse the x y coordinates.
         x = atoi(tileData[0].c_str());
@@ -113,19 +113,18 @@ bool CL_CollisionMap::Load(const char* pfilename)
 
     tileData.clear();
     map.close();
+
     return true;
 }
 
 /**
  * Saves a map file.
- *
+ * 
  * @param char* Filename
- *
  * @pre Edit-mode must be enabled.
- *
  * @return TRUE if saved, FALSE if failure, no filename, no tiles, or cannot edit.
- */
-bool CL_CollisionMap::Save(const char* pfilename)
+ **/
+bool CCollisionMap::Save(const char* pfilename)
 {
     if(pfilename == NULL || !m_can_edit || mp_allTiles.size() == 0)
         return false;
@@ -170,13 +169,13 @@ bool CL_CollisionMap::Save(const char* pfilename)
  *
  * @param int X-coordinate
  * @param int Y-coordinate
- */
-void CL_CollisionMap::PlaceTile(int x, int y)
+ **/
+void CCollisionMap::PlaceTile(int x, int y)
 {
     if(!m_can_edit)
         return;
 
-    asset::GL_Entity* pTile = this->FindTile(x, y);
+    obj::CGameObject* pTile = this->FindTile(x, y);
     if(pTile == NULL)
     {
         while(x % 32 != 0) x--;
@@ -185,15 +184,14 @@ void CL_CollisionMap::PlaceTile(int x, int y)
         pTile = this->FindTile(x, y);
         if(pTile == NULL)
         {
-            pTile = g_TextureAssets.GetEntityByID(
-                g_TextureAssets.LoadEntityFromSurface(mp_Overlay));
+            pTile->LoadFromSurface(mp_Overlay);
             pTile->Move(x, y);
             mp_allTiles.push_back(pTile);
         }
         else
         {
-            for(std::vector<asset::GL_Entity*>::iterator i = mp_allTiles.begin();
-                i != mp_allTiles.end(); /* no third */)
+            for(std::vector<obj::CGameObject*>::iterator i = mp_allTiles.begin();
+                i != mp_allTiles.end(); /* no third **/)
             {
                 if((*i) == pTile)
                     i = mp_allTiles.erase(i);
@@ -204,8 +202,8 @@ void CL_CollisionMap::PlaceTile(int x, int y)
     }
     else
     {
-        for(std::vector<asset::GL_Entity*>::iterator i = mp_allTiles.begin();
-            i != mp_allTiles.end(); /* no third */)
+        for(std::vector<obj::CGameObject*>::iterator i = mp_allTiles.begin();
+            i != mp_allTiles.end(); /* no third **/)
         {
             if((*i) == pTile)
                 i = mp_allTiles.erase(i);
@@ -217,21 +215,16 @@ void CL_CollisionMap::PlaceTile(int x, int y)
 
 /**
  * Updates all the tiles on-screen if edit mode is enabled.
- *
  * @param bool Should we show the main placeable tile?
- */
-void CL_CollisionMap::Update(bool show_active)
+ **/
+void CCollisionMap::Update(bool show_active)
 {
+    for(size_t i = 0; i < mp_allTiles.size(); ++i)
+        if(mp_allTiles[i] != NULL)
+            mp_allTiles[i]->Update();
+
     if(m_can_edit)
     {
-        glColor4f(1, 1, 1, 0.3f);
-        for(size_t i = 0; i < mp_allTiles.size(); ++i)
-        {
-            if(mp_allTiles[i] != NULL)
-                mp_allTiles[i]->Update();
-        }
-        glColor4f(1, 1, 1, 1);
-
         if(show_active)
         {
             int mouse_x, mouse_y;
