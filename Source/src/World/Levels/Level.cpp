@@ -76,9 +76,9 @@ void CLevel::Update()
     glColor4f(1, 1, 1, 1);
 }
 
-void CLevel::PanMaps(const math::CVector2& Pos)
+bool CLevel::PanMaps(const math::CVector2& Pos)
 {
-    m_TerrainMap.Pan(Pos);
-    m_CollisionMap.Pan(Pos);
-    m_ObjectiveMap.Pan(Pos);
+    return( m_TerrainMap.Pan(Pos)   && 
+            m_CollisionMap.Pan(Pos) &&
+            m_ObjectiveMap.Pan(Pos));
 }

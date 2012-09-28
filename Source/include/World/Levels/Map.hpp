@@ -3,7 +3,7 @@
  *  Declarations of the CMap class.
  *
  * @author      George Kudrayvtsev (switch1440)
- * @version     1.1.2
+ * @version     1.1.3
  * @copyright   Apache License v2.0
  *  Licensed under the Apache License, Version 2.0 (the "License").\n
  *  You may not use this file except in compliance with the License.\n

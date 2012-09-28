@@ -9,9 +9,15 @@ KNOWN BUGS:
    - Getting hurt more than your health allows will show
      strange numbers in the inventory screen, this is due
      to an integer overflow.
-   - Enemies will not die if you had hit them with a rocket
-     at one point.
+   - Intro song plays on menu screen instead of menu song.
 
+Version 0.8.5 (09.28.2012):
+    - Random lights removed
+    - Enemy health bugs fixed
+    + Lights added into levels
+    + Full-screen is back
+    + 'Q' quits the game at any time.
+     
 Version 0.8.2 (09.27.2012):
     + For testing purposes, multiple lights are rendered at random
     + Player can get hurt, but cannot die

@@ -133,17 +133,16 @@ void CMap::RemoveTile(const obj::CGameObject* pTile)
  **/
 bool CMap::Pan(const math::CVector2& Position)
 {
-    static int dx, dy;
-    dx = dy = 0;
+    int dx = 0, dy = 0;
     m_PanRate.Move(dx, dy);
 
-    if(Position.x > 800.0f - 100.0f)
+    if(Position.x > 800.0f - 200.0f)
         dx = -m_pan_adjustment_rate;
-    else if(Position.x < 100.0f)
+    else if(Position.x < 200.0f)
         dx = m_pan_adjustment_rate;
-    if(Position.y > 600.0f - 100.0f)
+    if(Position.y > 600.0f - 150.0f)
         dy = -m_pan_adjustment_rate;
-    else if(Position.y < 100.0f)
+    else if(Position.y < 150.0f)
         dy = m_pan_adjustment_rate;
 
     for(size_t i = 0; i < mp_allTiles.size(); i++)

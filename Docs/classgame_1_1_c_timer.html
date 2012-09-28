@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.8.2 pre-release</span>
+   &#160;<span id="projectnumber">0.8.5 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6730 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6867 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>A timer for controlling frame rates.  
 </p>
 
-<p><code>#include &quot;<a class="el" href="_collapse_2include_2_timer_8hpp_source.html">Timer.hpp</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -116,22 +116,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrame</b> () const 
 int&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrameRate</b> () const </td></tr>
 <tr class="memitem:a10ff10891a5c2dfed52c80c454eb989c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a10ff10891a5c2dfed52c80c454eb989c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFrameRate</b> (const <a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a> new_fps)</td></tr>
-<tr class="memitem:a3f2edee13192ffc772ce410c48b9961e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_timer.html#a3f2edee13192ffc772ce410c48b9961e">Start</a> ()</td></tr>
-<tr class="memdesc:a3f2edee13192ffc772ce410c48b9961e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the timer.  <a href="#a3f2edee13192ffc772ce410c48b9961e"></a><br/></td></tr>
-<tr class="memitem:af0f8fb079df9b7ea5c27e5a8a1e58d53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_timer.html#af0f8fb079df9b7ea5c27e5a8a1e58d53">DelayFPS</a> ()</td></tr>
-<tr class="memdesc:af0f8fb079df9b7ea5c27e5a8a1e58d53"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delays the current frame to be in accordance with the frame rate.  <a href="#af0f8fb079df9b7ea5c27e5a8a1e58d53"></a><br/></td></tr>
-<tr class="memitem:ae6f1025ebc5121e2c6607155c25e0a04"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_timer.html#ae6f1025ebc5121e2c6607155c25e0a04">GetTicks</a> ()</td></tr>
-<tr class="memdesc:ae6f1025ebc5121e2c6607155c25e0a04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the amount of time (in ms) that has elapsed since the last call to <a class="el" href="classgame_1_1_c_timer.html#a4c95a1f25b3ef73436d4876260a2e013" title="Starts the timer.">Start()</a>.  <a href="#ae6f1025ebc5121e2c6607155c25e0a04"></a><br/></td></tr>
-<tr class="memitem:a1089517b25aea8b1c834ad17c5b9930c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1089517b25aea8b1c834ad17c5b9930c"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrame</b> () const </td></tr>
-<tr class="memitem:ac21fbd0a074e393c6e2dca14f1033b80"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac21fbd0a074e393c6e2dca14f1033b80"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>GetFrameRate</b> () const </td></tr>
-<tr class="memitem:a59ef509db262b4318830a294375857bf"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a59ef509db262b4318830a294375857bf"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFrameRate</b> (const <a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a> new_fps)</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_collapse_2include_2_timer_8hpp_source.html#l00032">32</a> of file <a class="el" href="_collapse_2include_2_timer_8hpp_source.html">Timer.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_timer_8hpp_source.html#l00032">32</a> of file <a class="el" href="_timer_8hpp_source.html">Timer.hpp</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a43913d2aca7bb68e4f7920f1e15986a8"></a>
 <div class="memitem">
@@ -149,39 +137,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFrameRate</b> (con
 <p>This should be called at the end of every frame after <a class="el" href="classgame_1_1_c_timer.html#a4c95a1f25b3ef73436d4876260a2e013" title="Starts the timer.">Start()</a> was called at the beginning.</p>
 <p>This should be called at the end of the game loop. </p>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_timer_8cpp_source.html#l00030">30</a> of file <a class="el" href="_collapse_2src_2_timer_8cpp_source.html">Timer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="af0f8fb079df9b7ea5c27e5a8a1e58d53"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void game::CTimer::DelayFPS </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This should be called at the end of every frame after <a class="el" href="classgame_1_1_c_timer.html#a4c95a1f25b3ef73436d4876260a2e013" title="Starts the timer.">Start()</a> was called at the beginning. </p>
-
-</div>
-</div>
-<a class="anchor" id="ae6f1025ebc5121e2c6607155c25e0a04"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">float game::CTimer::GetTicks </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns:</dt><dd>Time elapsed. </dd></dl>
+<p>Definition at line <a class="el" href="_timer_8cpp_source.html#l00030">30</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
 
 </div>
 </div>
@@ -202,7 +158,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>SetFrameRate</b> (con
 <dd>
 Duration (in milliseconds) since last call of <a class="el" href="classgame_1_1_c_timer.html#a2a3a9e659e918f3a301745e143f5f59d" title="Retrieves the amount of time (in ms) that has elapsed since the last call to Start().">CTimer::GetTicks()</a>. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_timer_8cpp_source.html#l00047">47</a> of file <a class="el" href="_collapse_2src_2_timer_8cpp_source.html">Timer.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_timer_8cpp_source.html#l00047">47</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
 
 </div>
 </div>
@@ -224,36 +180,18 @@ Duration (in milliseconds) since last call of <a class="el" href="classgame_1_1_
 <dd>
 <a class="el" href="classgame_1_1_c_timer.html#a43913d2aca7bb68e4f7920f1e15986a8" title="Delays the current frame to be in accordance with the frame rate.">CTimer::DelayFPS()</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_timer_8cpp_source.html#l00020">20</a> of file <a class="el" href="_collapse_2src_2_timer_8cpp_source.html">Timer.cpp</a>.</p>
-
-</div>
-</div>
-<a class="anchor" id="a3f2edee13192ffc772ce410c48b9961e"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void game::CTimer::Start </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>This should be called at the start of every frame, with <a class="el" href="classgame_1_1_c_timer.html#a43913d2aca7bb68e4f7920f1e15986a8" title="Delays the current frame to be in accordance with the frame rate.">DelayFPS()</a> called at the end of it in order to maintain a consistent frame rate. </p>
+<p>Definition at line <a class="el" href="_timer_8cpp_source.html#l00020">20</a> of file <a class="el" href="_timer_8cpp_source.html">Timer.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Collapse/include/<a class="el" href="_collapse_2include_2_timer_8hpp_source.html">Timer.hpp</a></li>
-<li>ShaderTest/include/<a class="el" href="_shader_test_2include_2_timer_8hpp_source.html">Timer.hpp</a></li>
-<li>Collapse/src/<a class="el" href="_collapse_2src_2_timer_8cpp_source.html">Timer.cpp</a></li>
-<li>ShaderTest/src/<a class="el" href="_shader_test_2src_2_timer_8cpp_source.html">Timer.cpp</a></li>
+<li>Collapse/include/<a class="el" href="_timer_8hpp_source.html">Timer.hpp</a></li>
+<li>Collapse/src/<a class="el" href="_timer_8cpp_source.html">Timer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 27 2012 18:12:37 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 28 2012 13:17:31 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

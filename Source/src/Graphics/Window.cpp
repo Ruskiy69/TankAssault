@@ -29,7 +29,7 @@ CWindow::CWindow(const int w, const int h, const char* ptitle,
 #ifdef _DEBUG
     this->Init();
 #else
-    this->Init();//this->ToggleFullscreen();
+    this->ToggleFullscreen();
 #endif // _DEBUG
 
     // Record OpenGL data.

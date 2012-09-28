@@ -3,7 +3,7 @@
  *  Implementation of the CObjectiveMap class.
  *
  * @author George Kudrayvtsev
- * @version 1.1.3
+ * @version 1.2.3
  **/
 
 #include <sstream>
@@ -39,7 +39,7 @@ CObjectiveMap::~CObjectiveMap()
 }
 
 /**
- * Loads a .cam map file. 
+ * Loads a .cjm map file. 
  *
  * @param char* Filename
  * @return TRUE if loaded successfully, FALSE if not or no filename.
@@ -94,6 +94,8 @@ bool CObjectiveMap::Load(const char* pfilename)
             gfx::fill_rect(mp_Overlay, NULL, gfx::BLACK);
         else if(m_allTileAttributes.back() == e_ENEMY_SPAWN)
             gfx::fill_rect(mp_Overlay, NULL, gfx::RED);
+        else if(m_allTileAttributes.back() == e_LIGHT)
+            gfx::fill_rect(mp_Overlay, NULL, gfx::create_color(255, 255, 0));
 
         // Make a new tile
         obj::CGameObject* pTile = new obj::CGameObject;
@@ -108,6 +110,13 @@ bool CObjectiveMap::Load(const char* pfilename)
         // Tile them to align, just in case
         while(x % 32 != 0) x--;
         while(y % 32 != 0) y--;
+
+        // Make a light
+        if(m_allTileAttributes.back() == e_LIGHT)
+        {
+            mp_allLights.push_back(new gfx::CLight);
+            mp_allLights.back()->SetPosition(x, y);
+        }
 
         // Move the tile and it to all tiles
         pTile->Move(x, y);
@@ -297,6 +306,23 @@ void CObjectiveMap::Update(bool show_active)
 }
 
 /**
+ * Pans the map in the proper direction if the given position
+ * is within 100 pixels of the screen boundaries.
+ *
+ * @param math::CVector2& Position
+ * @return TRUE if panning was done, FALSE otherwise.
+ **/
+bool CObjectiveMap::Pan(const math::CVector2& Position)
+{
+    bool val = CMap::Pan(Position);
+
+    for(size_t i = 0; i < mp_allLights.size(); ++i)
+        mp_allLights[i]->Adjust(m_PanRate);
+
+    return val;
+}
+
+/**
  * Finds the nearest point-of-interest.
  *  Given a location, finds the nearest point of interest that is at
  *  least 64px away from the position.
@@ -390,4 +416,9 @@ obj::CGameObject* CObjectiveMap::GetPlayerSpawn() const
     }
 
     return NULL;
+}
+
+std::vector<gfx::CLight*>& CObjectiveMap::GetLights()
+{
+    return mp_allLights;
 }

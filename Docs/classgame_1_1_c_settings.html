@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.8.2 pre-release</span>
+   &#160;<span id="projectnumber">0.8.5 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6730 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6867 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,7 +101,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Handles a settings file (typically Settings.ini), which is supposed to contain critical game values such as sprite locations.  
 </p>
 
-<p><code>#include &quot;<a class="el" href="_collapse_2include_2_settings_8hpp_source.html">Settings.hpp</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -111,23 +111,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a33c2ef811679a251b5c4ed5b6bab6ee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Chooses a random value out of a list of values in a key-value pair.  <a href="#a33c2ef811679a251b5c4ed5b6bab6ee8"></a><br/></td></tr>
 <tr class="memitem:a8acc5a1073e231437dad3e5dc1bc408d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_settings.html#a8acc5a1073e231437dad3e5dc1bc408d">GetValueAt</a> (const std::string &amp;tag)</td></tr>
 <tr class="memdesc:a8acc5a1073e231437dad3e5dc1bc408d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value for a certain key.  <a href="#a8acc5a1073e231437dad3e5dc1bc408d"></a><br/></td></tr>
-<tr class="memitem:a0cbef9bed9fbc805bbf91a70bca0df42"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0cbef9bed9fbc805bbf91a70bca0df42"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>Load</b> (const std::string &amp;filename)</td></tr>
-<tr class="memitem:a43c80c63a970c9124b5c80eba6acd585"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43c80c63a970c9124b5c80eba6acd585"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>ChooseValueAt</b> (const std::string &amp;tag)</td></tr>
-<tr class="memitem:a363ff474b6a544827c0cfff599365f1a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a363ff474b6a544827c0cfff599365f1a"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>GetValueAt</b> (const std::string &amp;tag)</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a396f0116d401acfeec7f56bc167f1d01"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a396f0116d401acfeec7f56bc167f1d01"></a>
 static <a class="el" href="classgame_1_1_c_settings.html">CSettings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> ()</td></tr>
-<tr class="memitem:a7d294236836838e603f337f95efe2c5e"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7d294236836838e603f337f95efe2c5e"></a>
-static <a class="el" href="classgame_1_1_c_settings.html">CSettings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetInstance</b> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock">
-<p>Definition at line <a class="el" href="_collapse_2include_2_settings_8hpp_source.html#l00040">40</a> of file <a class="el" href="_collapse_2include_2_settings_8hpp_source.html">Settings.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_settings_8hpp_source.html#l00040">40</a> of file <a class="el" href="_settings_8hpp_source.html">Settings.hpp</a>.</p>
 </div><hr/><h2>Member Function Documentation</h2>
 <a class="anchor" id="a33c2ef811679a251b5c4ed5b6bab6ee8"></a>
 <div class="memitem">
@@ -153,7 +145,7 @@ static <a class="el" href="classgame_1_1_c_settings.html">CSettings</a> &amp;&#1
 <dl class="section pre"><dt>Precondition:</dt><dd>The settings file has been loaded. </dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classgame_1_1_c_settings.html#a31f5035441e03c6c84288b7f0525c87c" title="Loads a settings file.">CSettings::Load(const std::string&amp; filename)</a> </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_settings_8cpp_source.html#l00036">36</a> of file <a class="el" href="_collapse_2src_2_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_settings_8cpp_source.html#l00036">36</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
 
 </div>
 </div>
@@ -180,7 +172,7 @@ static <a class="el" href="classgame_1_1_c_settings.html">CSettings</a> &amp;&#1
 <dl class="section pre"><dt>Precondition:</dt><dd>The settings file has been loaded. </dd></dl>
 <dl class="section see"><dt>See also:</dt><dd><a class="el" href="classgame_1_1_c_settings.html#a31f5035441e03c6c84288b7f0525c87c" title="Loads a settings file.">CSettings::Load(const std::string&amp; filename)</a> string if the value was not found. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_settings_8cpp_source.html#l00080">80</a> of file <a class="el" href="_collapse_2src_2_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_settings_8cpp_source.html#l00080">80</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
 
 </div>
 </div>
@@ -206,20 +198,18 @@ static <a class="el" href="classgame_1_1_c_settings.html">CSettings</a> &amp;&#1
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>TRUE on a successful load, FALSE otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_settings_8cpp_source.html#l00019">19</a> of file <a class="el" href="_collapse_2src_2_settings_8cpp_source.html">Settings.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_settings_8cpp_source.html#l00019">19</a> of file <a class="el" href="_settings_8cpp_source.html">Settings.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Collapse/include/<a class="el" href="_collapse_2include_2_settings_8hpp_source.html">Settings.hpp</a></li>
-<li>ShaderTest/include/<a class="el" href="_shader_test_2include_2_settings_8hpp_source.html">Settings.hpp</a></li>
-<li>Collapse/src/<a class="el" href="_collapse_2src_2_settings_8cpp_source.html">Settings.cpp</a></li>
-<li>ShaderTest/src/<a class="el" href="_shader_test_2src_2_settings_8cpp_source.html">Settings.cpp</a></li>
+<li>Collapse/include/<a class="el" href="_settings_8hpp_source.html">Settings.hpp</a></li>
+<li>Collapse/src/<a class="el" href="_settings_8cpp_source.html">Settings.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 27 2012 18:12:37 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 28 2012 13:17:31 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

@@ -40,6 +40,7 @@ bool CEngine::Init()
     mp_Version->Move(m_GameWindow.GetWidth() - mp_Version->GetW(),
         m_GameWindow.GetHeight() - mp_Version->GetH());
 
+    // Render the "Loading..." text.
     glEnable(GL_BLEND);
     glDisable(GL_DEPTH_TEST);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
@@ -47,6 +48,9 @@ bool CEngine::Init()
     m_GameWindow.Clear();
     pLoading->Update();
     m_GameWindow.Update();
+
+    //glDisable(GL_BLEND);
+    //glEnable(GL_DEPTH_TEST);
 
     delete pLoading;
 
@@ -179,8 +183,6 @@ bool CEngine::GameLoop()
                     m_GameWindow.Update();
                     m_Timer.DelayFPS();
                 }
-
-                continue;
 #else
                 game::GameEvent* pMenu = new game::GameEvent;
                 pMenu->evt_type = game::e_STATE_CHANGE;
@@ -250,6 +252,7 @@ bool CEngine::GameLoop()
         }
         
         m_GameWindow.Update();
+        m_MusicPlayer.Update();
 
 #if REGULATE_FPS
         // No timer in debug builds
@@ -281,6 +284,8 @@ void CEngine::HandleSystemEvents()
                 m_state = game::e_INVENTORY;
             else if(m_state == game::e_INVENTORY)
                 m_state = game::e_GAME;
+            else if(Evt.key.keysym.sym == SDLK_q)
+                m_state = game::e_QUIT;
             break;
         }
 
@@ -306,8 +311,6 @@ void CEngine::HandleGameEvents()
             {
                 SDL_ShowCursor(0);
                 m_MusicPlayer.Stop();
-                //m_Renderer.SetAlphaMask(1.0f);
-                //m_Renderer.PurgeObjects();
                 m_World.HandleGameEvent(pLatest);
             }
             break;

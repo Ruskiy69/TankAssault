@@ -104,8 +104,7 @@ const math::CRect& CGameObject::GetCollisionBox() const
 
 void CGameObject::Damage(const u_int dmg)
 {
-    if(m_health > 0)
-        m_health -= dmg;
+    if(m_health > 0) m_health -= dmg;
 }
 
 bool CGameObject::IsAlive() const
@@ -113,7 +112,7 @@ bool CGameObject::IsAlive() const
     return (m_health > 0);
 }
 
-u_int CGameObject::GetHealth() const
+int CGameObject::GetHealth() const
 {
     return m_health;
 }

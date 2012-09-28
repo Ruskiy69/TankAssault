@@ -3,7 +3,7 @@
  *  Declarations of the CObjectiveMap class.
  *
  * @author      George Kudrayvtsev (switch1440)
- * @version     1.2.0
+ * @version     1.3.0
  * @copyright   Apache License v2.0
  *  Licensed under the Apache License, Version 2.0 (the "License").\n
  *  You may not use this file except in compliance with the License.\n
@@ -24,6 +24,7 @@
 
 #include <vector>
 
+#include "Graphics/Light.hpp"
 #include "World/Levels/Map.hpp"
 
 namespace game
@@ -43,16 +44,19 @@ namespace game
 
         void NextTile();
         void PlaceTile(int x, int y);
+        bool Pan(const math::CVector2& Position);
         void Update(bool show_active);
 
         obj::CGameObject* GetNearestPOI(const math::CVector2& Position) const;
         obj::CGameObject* GetAvailableEnemySpawn(
             const std::vector<const obj::CGameObject*>& p_allEnemies) const;
         obj::CGameObject* GetPlayerSpawn() const;
+        std::vector<gfx::CLight*>& GetLights();
 
     private:
-        enum TileAttributes {e_POI, e_ENEMY_SPAWN, e_PLAYER_SPAWN};
+        enum TileAttributes {e_POI, e_ENEMY_SPAWN, e_PLAYER_SPAWN, e_LIGHT};
         std::vector<TileAttributes> m_allTileAttributes;
+        std::vector<gfx::CLight*> mp_allLights;
         SDL_Surface* mp_Overlay;
     };
 }

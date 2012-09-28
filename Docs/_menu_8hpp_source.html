@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.8.2 pre-release</span>
+   &#160;<span id="projectnumber">0.8.5 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6730 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6867 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,12 +100,12 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;SystemEvents.hpp&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_system_events_8hpp.html" title="Various methods of event checking, such as keyboard and mouse states.">SystemEvents.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;Math/Math.hpp&quot;</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;Graphics/Graphics.hpp&quot;</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_math_8hpp.html" title="Simply includes all of the math-lib headers.">Math/Math.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_graphics_8hpp.html" title="Defines many functions allowing for easy manipulation of textures.">Graphics/Graphics.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_asset_manager_8hpp.html" title="Declarations for the CAssetManager class.">Assets/AssetManager.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;Assets/Sound2D.hpp&quot;</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_sound2_d_8hpp.html" title="Declarations for the OpenAL 2D sound class.">Assets/Sound2D.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="_game_object_8hpp.html" title="Declarations for the CGameObject class.">World/Objects/GameObject.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">namespace </span>game</div>
@@ -119,14 +119,14 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno"><a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#addc1783cfd1c95405cfce1977bfc249d">   50</a></span>&#160;            <span class="keywordtype">bool</span> <a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#addc1783cfd1c95405cfce1977bfc249d" title="Is the button being hovered on? This is for CMenu::CheckMouseClick()">touch</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a42afec5f17f322b7ed75741cca606df1">   53</a></span>&#160;            obj::CGameObject* <a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a42afec5f17f322b7ed75741cca606df1" title="Normal button when mouse is away.">p_Normal</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a42afec5f17f322b7ed75741cca606df1">   53</a></span>&#160;            <a class="code" href="classobj_1_1_c_game_object.html" title="The basic game object.">obj::CGameObject</a>* <a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a42afec5f17f322b7ed75741cca606df1" title="Normal button when mouse is away.">p_Normal</a>;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a97e97eae279e19b70d9b145a6399c24a">   56</a></span>&#160;            obj::CGameObject* <a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a97e97eae279e19b70d9b145a6399c24a" title="Highlighted button when mouse is on.">p_High</a>;</div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a97e97eae279e19b70d9b145a6399c24a">   56</a></span>&#160;            <a class="code" href="classobj_1_1_c_game_object.html" title="The basic game object.">obj::CGameObject</a>* <a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a97e97eae279e19b70d9b145a6399c24a" title="Highlighted button when mouse is on.">p_High</a>;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a6b8cd0736825d11209a3d280a9b70b23">   59</a></span>&#160;            obj::CGameObject* <a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a6b8cd0736825d11209a3d280a9b70b23" title="Pointer to the currently active button.">p_Active</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a6b8cd0736825d11209a3d280a9b70b23">   59</a></span>&#160;            <a class="code" href="classobj_1_1_c_game_object.html" title="The basic game object.">obj::CGameObject</a>* <a class="code" href="structgame_1_1_c_menu_1_1_menu_item.html#a6b8cd0736825d11209a3d280a9b70b23" title="Pointer to the currently active button.">p_Active</a>;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        };</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classgame_1_1_c_menu.html" title="A versatile menu class.">CMenu</a>() : mp_Background(<a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>), mp_Title(<a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>), mp_OnHover(<a class="code" href="begin__code_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4" title="Apparently this is needed by several Windows compilers.">NULL</a>){}</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        <a class="code" href="classgame_1_1_c_menu.html" title="A versatile menu class.">CMenu</a>() : mp_Background(NULL), mp_Title(NULL), mp_OnHover(NULL){}</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <a class="code" href="classgame_1_1_c_menu.html#ab2ab7e24e646bcb61ad0b9d8484f2604" title="Cleans up memory allocated for buttons.">~CMenu</a>();</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    </div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classgame_1_1_c_menu.html#ac23619d989c98fb27a881c7e2c70db8b" title="Adds a menu item to the list of buttons.">AddMenuItem</a>(<span class="keyword">const</span> <a class="code" href="structmath_1_1_c_vector2.html" title="Two dimensional vector.">math::CVector2</a>&amp; Position,</div>
@@ -144,21 +144,21 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="keywordtype">int</span> <a class="code" href="classgame_1_1_c_menu.html#a45329001ddb261a31e0943c9d7cae26d" title="Updates the menu; should be called every frame.">Update</a>();</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_menu.html#aa0aff5b8a43debf044c12452a3027efa" title="Sets an entity as the menu background.">SetBackground</a>(obj::CEntity* p_Background);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_menu.html#aa0aff5b8a43debf044c12452a3027efa" title="Sets an entity as the menu background.">SetBackground</a>(<a class="code" href="classobj_1_1_c_entity.html">obj::CEntity</a>* p_Background);</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_menu.html#a57f280cca7b4499eb292a7cc6c371a8f" title="Sets a sound to be played when buttons are hovered over.">SetHoverSound</a>(<a class="code" href="classasset_1_1_c_sound2_d.html">asset::CSound2D</a>* p_OnHover);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_menu.html#aa0f1a63e18da2b9d25da6dd211ee833c" title="Sets a title to be displayed for the menu.">SetTitle</a>(obj::CEntity* Title);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordtype">void</span> <a class="code" href="classgame_1_1_c_menu.html#aa0f1a63e18da2b9d25da6dd211ee833c" title="Sets a title to be displayed for the menu.">SetTitle</a>(<a class="code" href="classobj_1_1_c_entity.html">obj::CEntity</a>* Title);</div>
 <div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keyword">const</span> std::vector&lt;MenuItem*&gt;&amp; GetButtons() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        obj::CEntity* <span class="keyword">const</span> GetTitle() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        obj::CEntity* <span class="keyword">const</span> GetBackground() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <a class="code" href="classobj_1_1_c_entity.html">obj::CEntity</a>* <span class="keyword">const</span> GetTitle() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        <a class="code" href="classobj_1_1_c_entity.html">obj::CEntity</a>* <span class="keyword">const</span> GetBackground() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        <span class="keywordtype">int</span> CheckMouseClick();</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        std::vector&lt;MenuItem*&gt; mp_allButtons;</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        obj::CEntity*       mp_Title;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        obj::CEntity*       mp_Background;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <a class="code" href="classobj_1_1_c_entity.html">obj::CEntity</a>*       mp_Title;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="classobj_1_1_c_entity.html">obj::CEntity</a>*       mp_Background;</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="classasset_1_1_c_sound2_d.html">asset::CSound2D</a>*    mp_OnHover;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    };</div>
@@ -169,7 +169,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 27 2012 18:12:28 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 28 2012 13:17:30 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

@@ -49,7 +49,7 @@
 #include "Menus/MenuManager.hpp"
 #include "World/World.hpp"
 
-#define GAME_VERSION "VERSION 0.8.2 pre-release"
+#define GAME_VERSION "VERSION 0.8.5 pre-release"
 
 namespace game
 {

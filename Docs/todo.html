@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.8.2 pre-release</span>
+   &#160;<span id="projectnumber">0.8.5 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6730 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6867 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -67,7 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,73 +93,39 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Fix slight issues with not finding the shortest path </p>
 <p class="enddd">Make cutting corners illegal.  </p>
 </dd>
-<dt><a class="anchor" id="_todo000040"></a>Global <a class="el" href="classai_1_1_c_pathfinder.html#a2204dee0b53a516d388d479c969bb15a">ai::CPathfinder::FindPath</a>  (obj::CCollidable *pStart_Tile, obj::CCollidable *pEnd_Tile)</dt>
-<dd><p class="startdd">Remove corner-cutting when path-finding </p>
-<p>Make sure the tank can actually fit in the path </p>
-<p>Fix slight issues with not finding the shortest path </p>
-<p class="enddd">Make cutting corners illegal.  </p>
-</dd>
 <dt><a class="anchor" id="_todo000021"></a>Global <a class="el" href="classai_1_1_c_pathfinder.html#a1cabcdb3e620adb2ebd2368db700f891">ai::CPathfinder::ShowPath</a>  ()</dt>
-<dd><p class="startdd">Remove tile </p>
-<p class="enddd">Remove tile  </p>
-</dd>
-<dt><a class="anchor" id="_todo000035"></a>Global <a class="el" href="classasset_1_1_c_music_player.html#a6158e0137c8d5996abf0763e3e74072c">asset::CMusicPlayer::PurgeQueue</a>  ()</dt>
-<dd>Purge from asset pool.  </dd>
+<dd>Remove tile  </dd>
 <dt><a class="anchor" id="_todo000004"></a>Global <a class="el" href="classasset_1_1_c_music_player.html#aa6b5bea6151bccbc8fc26cafcce94f27">asset::CMusicPlayer::~CMusicPlayer</a>  ()</dt>
-<dd><p class="startdd">Clean up assets from manager; </p>
-<p class="enddd">Clean up assets from manager;  </p>
-</dd>
+<dd>Clean up assets from manager;  </dd>
 <dt><a class="anchor" id="_todo000006"></a>Global <a class="el" href="classasset_1_1_c_sound2_d.html#a6615a0df1d3bf893067be83c7c8e0fae">asset::CSound2D::Stop</a>  ()</dt>
-<dd><p class="startdd">Add looping capabilities (or lack there-of). </p>
-<p class="enddd">Add looping capabilities (or lack there-of).  </p>
-</dd>
+<dd>Add looping capabilities (or lack there-of).  </dd>
 <dt><a class="anchor" id="_todo000022"></a>Global <a class="el" href="classgame_1_1_c_map.html#acffa2a00715083bc3cd43c2accfc9bf8">game::CMap::RemoveTile</a>  (int x, int y)</dt>
-<dd><p class="startdd">This shouldn't even work. </p>
-<p class="enddd">This shouldn't even work.  </p>
-</dd>
+<dd>This shouldn't even work.  </dd>
 <dt><a class="anchor" id="_todo000011"></a>Global <a class="el" href="classgame_1_1_c_menu_manager.html#a474159f576238031334265ec22875cc2">game::CMenuManager::Init</a>  ()</dt>
 <dd>Add a credits menu item  </dd>
 <dt><a class="anchor" id="_todo000027"></a>Global <a class="el" href="classgame_1_1_c_world.html#a281a57602555258ea67eb25a3e1047c5">game::CWorld::Update</a>  ()</dt>
 <dd>Add a GetBarrelPosition() to the enemy base class.  </dd>
-<dt><a class="anchor" id="_todo000036"></a>Global <a class="el" href="classgfx_1_1_c_shader.html#adba09b444f0677ba9cfc6d9256f423ee">gfx::CShader::Link</a>  ()</dt>
-<dd>Add an error or something  </dd>
 <dt><a class="anchor" id="_todo000001"></a>Class <a class="el" href="classmath_1_1_c_collider.html">math::CCollider</a>  </dt>
-<dd><p class="startdd">Implement these functions. </p>
-<p class="enddd">Implement these functions.  </p>
-</dd>
+<dd>Implement these functions.  </dd>
 <dt><a class="anchor" id="_todo000002"></a>Class <a class="el" href="classmath_1_1_c_matrix.html">math::CMatrix</a>  </dt>
-<dd><p class="startdd">Implement determinants for matrices greater than 3x3. </p>
-<p class="enddd">Implement determinants for matrices greater than 3x3.  </p>
-</dd>
+<dd>Implement determinants for matrices greater than 3x3.  </dd>
 <dt><a class="anchor" id="_todo000010"></a>Global <a class="el" href="structmath_1_1_c_rect.html#a0ad190442a94c5eee03da1ac779e1ca6">math::CRect::IsCovering</a>  (const CRect &amp;Other) const </dt>
-<dd><p class="startdd">Clean this up, instead of just using a 0-w/h rect for each point. </p>
-<p class="enddd">Clean this up, instead of just using a 0-w/h rect for each point.  </p>
-</dd>
+<dd>Clean this up, instead of just using a 0-w/h rect for each point.  </dd>
 <dt><a class="anchor" id="_todo000003"></a>Class <a class="el" href="classmath_1_1_c_vector3.html">math::CVector3</a>  </dt>
-<dd><p class="startdd">Implement this. </p>
-<p class="enddd">Implement this.  </p>
-</dd>
+<dd>Implement this.  </dd>
 <dt><a class="anchor" id="_todo000023"></a>Global <a class="el" href="classobj_1_1_c_player.html#a2823e41083206d05b8d631ce6966984b">obj::CPlayer::Init</a>  (<a class="el" href="classgame_1_1_c_settings.html" title="Handles a settings file (typically Settings.ini), which is supposed to contain critical game values s...">game::CSettings</a> &amp;)</dt>
-<dd><p class="startdd">Fix animations. </p>
-<p class="enddd">Fix animations.  </p>
-</dd>
+<dd>Fix animations.  </dd>
 <dt><a class="anchor" id="_todo000024"></a>Global <a class="el" href="classobj_1_1_c_player.html#a39b1e8099d4d5dcb5a047cc4cb298851">obj::CPlayer::Update</a>  ()</dt>
-<dd><p class="startdd">Animate tank tower on firing. </p>
-<p class="enddd">Animate tank tower on firing.  </p>
-</dd>
+<dd>Animate tank tower on firing.  </dd>
 <dt><a class="anchor" id="_todo000025"></a>Global <a class="el" href="classobj_1_1_c_tank.html#a7d28821703644416b451796fa3711e83">obj::CTank::Aim</a>  (const float x, const float y)</dt>
-<dd><p class="startdd">Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a> </p>
-<p class="enddd">Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a>  </p>
-</dd>
+<dd>Actually use <a class="el" href="classmath_1_1_c_matrix.html" title="A matrix class supporting virtually any type of operation.">math::CMatrix</a>  </dd>
 <dt><a class="anchor" id="_todo000026"></a>Global <a class="el" href="classobj_1_1_c_tank.html#a3d7f34cf033800343877e73bc0949c80">obj::CTank::Damage</a>  (const u_int dmg)</dt>
-<dd><p class="startdd">Find where the damage should go </p>
-<p class="enddd">Find where the damage should go </p>
-</dd>
+<dd>Find where the damage should go </dd>
 </dl>
 </div></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 27 2012 18:12:36 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 28 2012 13:17:31 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

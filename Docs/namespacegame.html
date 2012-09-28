@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.8.2 pre-release</span>
+   &#160;<span id="projectnumber">0.8.5 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6730 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6867 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -73,7 +73,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -138,72 +138,21 @@ Enumerations</h2></td></tr>
 <b>e_INVENTORY</b>, 
 <b>e_QUIT</b>, 
 <br/>
-&#160;&#160;<b>e_STATE_COUNT</b>, 
-<b>e_SPLASH</b> =  0, 
-<b>e_INTRO</b>, 
-<b>e_MAINMENU</b>, 
-<br/>
-&#160;&#160;<b>e_OPTIONSMENU</b>, 
-<b>e_PAUSEMENU</b>, 
-<b>e_GAME</b>, 
-<b>e_QUIT</b>
+&#160;&#160;<b>e_STATE_COUNT</b>
 <br/>
  }</td></tr>
 <tr class="memdesc:ade18e0427d43400c7539d36c85c87657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various game states. <br/></td></tr>
-<tr class="memitem:ac13c81bbcd4d1e25239eaf29a1a7fbe7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#ac13c81bbcd4d1e25239eaf29a1a7fbe7">GameEventType</a> { <br/>
-&#160;&#160;<b>e_NONE</b> =  -1, 
+<tr class="memitem:ac13c81bbcd4d1e25239eaf29a1a7fbe7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#ac13c81bbcd4d1e25239eaf29a1a7fbe7">GameEventType</a> { <b>e_NONE</b> =  -1, 
 <b>e_MOVEMENT_REQUEST</b>, 
 <b>e_STATE_CHANGE</b>, 
-<b>e_EVENT_COUNT</b>, 
-<br/>
-&#160;&#160;<b>e_NONE</b> =  -1, 
-<b>e_MOVEMENT_REQUEST</b>, 
-<b>e_FIRING_REQUEST</b>, 
-<b>e_STATE_CHANGE</b>
-<br/>
- }</td></tr>
-<tr class="memdesc:ac13c81bbcd4d1e25239eaf29a1a7fbe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various event types. <br/></td></tr>
-<tr class="memitem:ade18e0427d43400c7539d36c85c87657"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#ade18e0427d43400c7539d36c85c87657">GameState</a> { <br/>
-&#160;&#160;<b>e_SPLASH</b> =  0, 
-<b>e_INTRO</b>, 
-<b>e_MAINMENU</b>, 
-<b>e_OPTIONSMENU</b>, 
-<br/>
-&#160;&#160;<b>e_PAUSEMENU</b>, 
-<b>e_GAME</b>, 
-<b>e_INVENTORY</b>, 
-<b>e_QUIT</b>, 
-<br/>
-&#160;&#160;<b>e_STATE_COUNT</b>, 
-<b>e_SPLASH</b> =  0, 
-<b>e_INTRO</b>, 
-<b>e_MAINMENU</b>, 
-<br/>
-&#160;&#160;<b>e_OPTIONSMENU</b>, 
-<b>e_PAUSEMENU</b>, 
-<b>e_GAME</b>, 
-<b>e_QUIT</b>
-<br/>
- }</td></tr>
-<tr class="memdesc:ade18e0427d43400c7539d36c85c87657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various game states. <br/></td></tr>
-<tr class="memitem:ac13c81bbcd4d1e25239eaf29a1a7fbe7"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#ac13c81bbcd4d1e25239eaf29a1a7fbe7">GameEventType</a> { <br/>
-&#160;&#160;<b>e_NONE</b> =  -1, 
-<b>e_MOVEMENT_REQUEST</b>, 
-<b>e_STATE_CHANGE</b>, 
-<b>e_EVENT_COUNT</b>, 
-<br/>
-&#160;&#160;<b>e_NONE</b> =  -1, 
-<b>e_MOVEMENT_REQUEST</b>, 
-<b>e_FIRING_REQUEST</b>, 
-<b>e_STATE_CHANGE</b>
-<br/>
+<b>e_EVENT_COUNT</b>
  }</td></tr>
 <tr class="memdesc:ac13c81bbcd4d1e25239eaf29a1a7fbe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Various event types. <br/></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ab13bdd02cce954813542eb0fb574dc33"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab13bdd02cce954813542eb0fb574dc33"></a>
-<a class="el" href="struct_s_d_l___color.html">gfx::Color</a>&#160;</td><td class="memItemRight" valign="bottom"><b>color_from_health</b> (const <a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a> health)</td></tr>
+gfx::Color&#160;</td><td class="memItemRight" valign="bottom"><b>color_from_health</b> (const <a class="el" href="group___helpers.html#gac319c165d52643e43249fe003e18bdf3">u_int</a> health)</td></tr>
 <tr class="memitem:a19b286e843ce9d15d47a5a2a9d3d91f2"><td class="memItemLeft" align="right" valign="top">Uint8 *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a19b286e843ce9d15d47a5a2a9d3d91f2">GetKeyState</a> ()</td></tr>
 <tr class="memdesc:a19b286e843ce9d15d47a5a2a9d3d91f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the current state of the keyboard.  <a href="#a19b286e843ce9d15d47a5a2a9d3d91f2"></a><br/></td></tr>
 <tr class="memitem:aec15c3c57df337778d2abd6e13c36b88"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#aec15c3c57df337778d2abd6e13c36b88">IsDown</a> (const SDLKey key)</td></tr>
@@ -243,24 +192,6 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 <tr class="memitem:a6223ec28d66815533880004820833ebb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6223ec28d66815533880004820833ebb"></a>
 static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a6223ec28d66815533880004820833ebb">TERRAIN_MAP_EXT</a> [] = {&quot;.ctm&quot;}</td></tr>
 <tr class="memdesc:a6223ec28d66815533880004820833ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension for terrain maps (<em>Collapse</em> Terrain Map) <br/></td></tr>
-<tr class="memitem:a43d3647f8d82d5f33c81a5a96e52a3e9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a43d3647f8d82d5f33c81a5a96e52a3e9"></a>
-static <a class="el" href="classgk_1_1_c_logging.html">gk::CLogging</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a43d3647f8d82d5f33c81a5a96e52a3e9">g_Log</a> = gk::CLogging::GetInstance()</td></tr>
-<tr class="memdesc:a43d3647f8d82d5f33c81a5a96e52a3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally accessible logging class singleton. <br/></td></tr>
-<tr class="memitem:a5d0b17a7bd578c368d93f180834d998d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a5d0b17a7bd578c368d93f180834d998d"></a>
-static <a class="el" href="classgame_1_1_c_settings.html">game::CSettings</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a5d0b17a7bd578c368d93f180834d998d">g_Settings</a> = game::CSettings::GetInstance()</td></tr>
-<tr class="memdesc:a5d0b17a7bd578c368d93f180834d998d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally accessible settings class. <br/></td></tr>
-<tr class="memitem:afb74b6e53afa2a3ce86c122814e2bf72"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="afb74b6e53afa2a3ce86c122814e2bf72"></a>
-static <a class="el" href="classgame_1_1_c_game_event_queue.html">CGameEventQueue</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#afb74b6e53afa2a3ce86c122814e2bf72">g_GameEventQueue</a> = CGameEventQueue::GetInstance()</td></tr>
-<tr class="memdesc:afb74b6e53afa2a3ce86c122814e2bf72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Globally accessible event queue. <br/></td></tr>
-<tr class="memitem:a3d1ba94e654c67e86c44362142823d4b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3d1ba94e654c67e86c44362142823d4b"></a>
-static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a3d1ba94e654c67e86c44362142823d4b">COLLISION_MAP_EXT</a> [] = {&quot;.ccm&quot;}</td></tr>
-<tr class="memdesc:a3d1ba94e654c67e86c44362142823d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension for terrain maps (<em>Collapse</em> Collision Map) <br/></td></tr>
-<tr class="memitem:a3235ce946bac3d282ef98b031b8a298a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3235ce946bac3d282ef98b031b8a298a"></a>
-static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a3235ce946bac3d282ef98b031b8a298a">OBJ_MAP_EXT</a> [] = {&quot;.cjm&quot;}</td></tr>
-<tr class="memdesc:a3235ce946bac3d282ef98b031b8a298a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The extension for objective maps. <br/></td></tr>
-<tr class="memitem:a6223ec28d66815533880004820833ebb"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a6223ec28d66815533880004820833ebb"></a>
-static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacegame.html#a6223ec28d66815533880004820833ebb">TERRAIN_MAP_EXT</a> [] = {&quot;.ctm&quot;}</td></tr>
-<tr class="memdesc:a6223ec28d66815533880004820833ebb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extension for terrain maps (<em>Collapse</em> Terrain Map) <br/></td></tr>
 </table>
 <hr/><h2>Function Documentation</h2>
 <a class="anchor" id="a19b286e843ce9d15d47a5a2a9d3d91f2"></a>
@@ -277,7 +208,7 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns:</dt><dd>An array of 8-bit integers representing the keyboard state. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html#l00011">11</a> of file <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_system_events_8cpp_source.html#l00011">11</a> of file <a class="el" href="_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
 
 </div>
 </div>
@@ -312,7 +243,7 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="e
   </dd>
 </dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html#l00040">40</a> of file <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_system_events_8cpp_source.html#l00040">40</a> of file <a class="el" href="_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
 
 </div>
 </div>
@@ -337,7 +268,7 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if down, FALSE otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html#l00016">16</a> of file <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_system_events_8cpp_source.html#l00016">16</a> of file <a class="el" href="_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
 
 </div>
 </div>
@@ -363,7 +294,7 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if found pressed, FALSE otherwise. </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html#l00021">21</a> of file <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_system_events_8cpp_source.html#l00021">21</a> of file <a class="el" href="_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
 
 </div>
 </div>
@@ -387,9 +318,9 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="e
   </dd>
 </dl>
 <dl class="section return"><dt>Returns:</dt><dd>TRUE if down, FALSE otherwise. </dd></dl>
-<dl class="section see"><dt>See also:</dt><dd><a class="el" href="_s_d_l_8h.html" title="Main include header for the SDL library.">SDL.h</a> </dd></dl>
+<dl class="section see"><dt>See also:</dt><dd>SDL.h </dd></dl>
 
-<p>Definition at line <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html#l00034">34</a> of file <a class="el" href="_collapse_2src_2_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_system_events_8cpp_source.html#l00034">34</a> of file <a class="el" href="_system_events_8cpp_source.html">SystemEvents.cpp</a>.</p>
 
 </div>
 </div>
@@ -433,7 +364,7 @@ static const char&#160;</td><td class="memItemRight" valign="bottom"><a class="e
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 27 2012 18:12:37 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 28 2012 13:17:31 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

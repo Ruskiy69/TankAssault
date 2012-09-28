@@ -52,13 +52,12 @@ void CWorld::Init()
     }
 
     // Set up shader values
-    float light_col[3]  = {1.0f, 1.0f, 1.0f};
-    float light_att[3]  = {0.0f, 0.045f, 0.0f};
-    int   screen[1]     = {600};
+    // {0.05, 0.00145, 0}{0.005} gives a soft, almost ambient light.
+    // {0.05, 0.01, 0.00001}{0.1} gives a small light that sufficiently lights around it
+    // {0.05, 0.01, 0}{0.1} is what I will use in-game
+    int screen[1]     = {600};
 
     m_Lighting.PassVariableiv("scr_height", screen, 1, 1);
-    m_Lighting.PassVariablefv("light_col", light_col, 3, 1);
-    m_Lighting.PassVariablefv("light_att", light_att, 3, 1);
 
     // Set player spawn location.
     if(!m_Player.Init(g_Settings))
@@ -71,11 +70,15 @@ void CWorld::Init()
         mp_ActiveLevel->GetObjectiveMap().GetPlayerSpawn()->GetPosition());
     m_Player.Update();
 
+    while(!mp_ActiveLevel->PanMaps(m_Player.GetPosition()));
+
     // Spawn enemies at all available spawns.
     while(this->SpawnEnemy());
 
-    // Create lights on each enemy
-    if(!m_Lighting.SetMacro("MAX_LIGHTS", mp_Enemies.size()))
+    // Add map lights to shader.
+    std::vector<gfx::CLight*>& allLights = mp_ActiveLevel->GetObjectiveMap().GetLights();
+
+    if(!m_Lighting.SetMacro("MAX_LIGHTS", allLights.size()))
     {
         g_Log.Flush();
         g_Log << "[ERROR] Failed to set shader macro!\n";
@@ -84,22 +87,55 @@ void CWorld::Init()
         gk::handle_error(g_Log.GetLastLog().c_str());
     }
 
-    mp_enemy_light_poss = new float[mp_Enemies.size() * 2];
-    mp_enemy_light_atts = new float[mp_Enemies.size() * 3];
-    mp_enemy_light_cols = new float[mp_Enemies.size() * 3];
+    float* positions    = new float[allLights.size() * 2];
+    float* attns        = new float[allLights.size() * 3];
+    float* cols         = new float[allLights.size() * 3];
+    float* brightnesses = new float[allLights.size()];
 
-    for(size_t i = 0; i < mp_Enemies.size() * 3; ++i)
-        mp_enemy_light_cols[i] = 255.0f / (rand() % 255);
-    for(size_t i = 0; i < mp_Enemies.size() * 3; ++i)
-        mp_enemy_light_atts[i] = 0.0f;
-    for(size_t i = 1; i < mp_Enemies.size() * 3; i += 3)
-        mp_enemy_light_atts[i] = 0.1f;
-    for(size_t i = 0; i < mp_Enemies.size() * 2; ++i)
-        mp_enemy_light_poss[i] = rand() % 600;
+    for(size_t i = 0; i < allLights.size(); ++i)
+    {
+        positions[i * 2]    = allLights[i]->GetPosition()[0];
+        positions[i * 2 + 1]= allLights[i]->GetPosition()[1];
 
-    m_Lighting.PassVariablefv("light_col", mp_enemy_light_cols, 3, mp_Enemies.size());
-    m_Lighting.PassVariablefv("light_att", mp_enemy_light_atts, 3, mp_Enemies.size());
-    m_Lighting.PassVariablefv("light_pos", mp_enemy_light_poss, 2, mp_Enemies.size());
+        attns[i * 3]        = allLights[i]->GetAttenuation()[0];
+        attns[i * 3 + 1]    = allLights[i]->GetAttenuation()[1];
+        attns[i * 3 + 2]    = allLights[i]->GetAttenuation()[2];
+
+        cols[i * 3]         = allLights[i]->GetColor()[0];
+        cols[i * 3 + 1]     = allLights[i]->GetColor()[1];
+        cols[i * 3 + 2]     = allLights[i]->GetColor()[2];
+
+        brightnesses[i]     = allLights[i]->GetBrightness();
+    }
+
+    m_Lighting.PassVariablefv("light_pos", positions,    2, allLights.size());
+    m_Lighting.PassVariablefv("light_att", attns,        3, allLights.size());
+    m_Lighting.PassVariablefv("light_col", cols,         3, allLights.size());
+    m_Lighting.PassVariablefv("light_brt", brightnesses, 1, allLights.size());
+
+    delete[] positions;
+    delete[] attns;
+    delete[] cols;
+    delete[] brightnesses;
+
+    //mp_enemy_light_poss = new float[mp_Enemies.size() * 2];
+    //mp_enemy_light_atts = new float[mp_Enemies.size() * 3];
+    //mp_enemy_light_cols = new float[mp_Enemies.size() * 3];
+
+    //for(size_t i = 0; i < mp_Enemies.size() * 3; ++i)
+    //    mp_enemy_light_cols[i] = 255.0f / (rand() % 255);
+    //for(size_t i = 0; i < mp_Enemies.size() * 3; i += 3)
+    //    mp_enemy_light_atts[i] = 0.05f;
+    //for(size_t i = 1; i < mp_Enemies.size() * 3; i += 3)
+    //    mp_enemy_light_atts[i] = 0.01f;
+    //for(size_t i = 2; i < mp_Enemies.size() * 3; i += 3)
+    //    mp_enemy_light_atts[i] = 0.0f;
+    //for(size_t i = 0; i < mp_Enemies.size() * 2; ++i)
+    //    mp_enemy_light_poss[i] = rand() % 600;
+
+    //m_Lighting.PassVariablefv("light_col", mp_enemy_light_cols, 3, mp_Enemies.size());
+    //m_Lighting.PassVariablefv("light_att", mp_enemy_light_atts, 3, mp_Enemies.size());
+    //m_Lighting.PassVariablefv("light_pos", mp_enemy_light_poss, 2, mp_Enemies.size());
 }
 
 CWorld::~CWorld()
@@ -229,6 +265,17 @@ void CWorld::Update()
     //    m_Player.GetPosition().y, 
     //    0.0f);
     
+    std::vector<gfx::CLight*>& allLights = mp_ActiveLevel->GetObjectiveMap().GetLights();
+    float* positions = new float[allLights.size() * 2];
+    for(size_t i = 0; i < allLights.size(); ++i)
+    {
+        positions[i * 2]    = allLights[i]->GetPosition()[0];
+        positions[i * 2 + 1]= allLights[i]->GetPosition()[1];
+    }
+
+    m_Lighting.PassVariablefv("light_pos", positions, 2, allLights.size());
+    delete[] positions;
+
     // Adjust objects to go with map panning
     m_Player.Adjust(mp_Levels[0]->GetTerrainMap().GetPanRate());
     for(std::list<ai::CEnemyTank*>::iterator i = mp_Enemies.begin();
@@ -238,14 +285,6 @@ void CWorld::Update()
         (*i)->Adjust(mp_ActiveLevel->GetTerrainMap().GetPanRate());
     }
 
-    float light_pos[2] = {
-        m_Player.GetPosition().x + m_Player.GetCollisionBox().w / 2,
-        m_Player.GetPosition().y + m_Player.GetCollisionBox().h / 2
-    };
-
-    // Pass parameters to shader.
-    //m_Lighting.PassVariablefv("light_pos", light_pos, 2, 1);
-    
     // Render everything
     m_Lighting.Link();
     m_Background.Update();
@@ -284,6 +323,7 @@ void CWorld::Update()
         }
     }
 
+    // Finished rendering.
     m_Lighting.Unlink();
 
     // World logic

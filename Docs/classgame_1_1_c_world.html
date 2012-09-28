@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.8.2 pre-release</span>
+   &#160;<span id="projectnumber">0.8.5 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6730 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6867 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -75,7 +75,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(12)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Data Structures</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Friends</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Groups</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(11)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,7 +100,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>Handles a majority of the game logic and mechanics.  
  <a href="classgame_1_1_c_world.html#details">More...</a></p>
 
-<p><code>#include &quot;<a class="el" href="_collapse_2include_2_world_2_world_8hpp_source.html">World.hpp</a>&quot;</code></p>
+<p><code>#include &quot;<a class="el" href="_world_8hpp_source.html">World.hpp</a>&quot;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -109,32 +109,20 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0e3a4bfe6d41f159fc2e83c91206f387"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e3a4bfe6d41f159fc2e83c91206f387"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
 <tr class="memitem:a0e92834a5fac438791b892bb4f64f1b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e92834a5fac438791b892bb4f64f1b8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleEvent</b> (<a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;Evt)</td></tr>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleEvent</b> (SDL_Event &amp;Evt)</td></tr>
 <tr class="memitem:a281a57602555258ea67eb25a3e1047c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_world.html#a281a57602555258ea67eb25a3e1047c5">Update</a> ()</td></tr>
 <tr class="memdesc:a281a57602555258ea67eb25a3e1047c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates all World elements.  <a href="#a281a57602555258ea67eb25a3e1047c5"></a><br/></td></tr>
-<tr class="memitem:a69e8dab5e9c0184704347a78f46a2be6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_world.html#a69e8dab5e9c0184704347a78f46a2be6">HandleSystemEvent</a> (const <a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;Evt)</td></tr>
+<tr class="memitem:a69e8dab5e9c0184704347a78f46a2be6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classgame_1_1_c_world.html#a69e8dab5e9c0184704347a78f46a2be6">HandleSystemEvent</a> (const SDL_Event &amp;Evt)</td></tr>
 <tr class="memdesc:a69e8dab5e9c0184704347a78f46a2be6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles a specific event given by game::Game_Engine.  <a href="#a69e8dab5e9c0184704347a78f46a2be6"></a><br/></td></tr>
 <tr class="memitem:a35d4e017db5ef51485b9dcf830b91e52"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a35d4e017db5ef51485b9dcf830b91e52"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleGameEvent</b> (const <a class="el" href="structgame_1_1_game_event.html">game::GameEvent</a> *pEvt)</td></tr>
 <tr class="memitem:a86c6fdcd9b5d3b48fab983a1c3626caa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a86c6fdcd9b5d3b48fab983a1c3626caa"></a>
-obj::CPlayer &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetPlayer</b> ()</td></tr>
-<tr class="memitem:adaf530865a7e0f2254b5e621ec42d1b4"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="adaf530865a7e0f2254b5e621ec42d1b4"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>CWorld</b> (<a class="el" href="classgfx_1_1_c_rasterizer.html">gfx::CRasterizer</a> &amp;Renderer, <a class="el" href="namespacegame.html#ade18e0427d43400c7539d36c85c87657">GameState</a> &amp;engine_state)</td></tr>
-<tr class="memitem:ac9ddac6495ba54912c60872cb8017171"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9ddac6495ba54912c60872cb8017171"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Init</b> ()</td></tr>
-<tr class="memitem:a0e92834a5fac438791b892bb4f64f1b8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a0e92834a5fac438791b892bb4f64f1b8"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleEvent</b> (<a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;Evt)</td></tr>
-<tr class="memitem:a52da55bd7605e04d5884fc55ed9736b3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a52da55bd7605e04d5884fc55ed9736b3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>Update</b> ()</td></tr>
-<tr class="memitem:a7a440efbdaa292dc369211231094a5c9"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a7a440efbdaa292dc369211231094a5c9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleSystemEvent</b> (const <a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;Evt)</td></tr>
-<tr class="memitem:a64749627ada477501473f7f9e6d83016"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a64749627ada477501473f7f9e6d83016"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleGameEvent</b> (const <a class="el" href="structgame_1_1_game_event.html">game::GameEvent</a> *const pEvt)</td></tr>
+<a class="el" href="classobj_1_1_c_player.html">obj::CPlayer</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetPlayer</b> ()</td></tr>
 </table>
 <hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
 <div class="textblock"><p>This is a primary subsystem of <em>Collapse</em>, one of several. Here, collision detection is performed; maps are loaded, rendered, and updated; AI logic is performed; events are analyzed and acted upon. The primary engine state can be changed from this subsystem. </p>
 
-<p>Definition at line <a class="el" href="_collapse_2include_2_world_2_world_8hpp_source.html#l00048">48</a> of file <a class="el" href="_collapse_2include_2_world_2_world_8hpp_source.html">World.hpp</a>.</p>
+<p>Definition at line <a class="el" href="_world_8hpp_source.html#l00049">49</a> of file <a class="el" href="_world_8hpp_source.html">World.hpp</a>.</p>
 </div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a9b0cd1c5e831f65e0ba11500fb9d09d9"></a>
 <div class="memitem">
@@ -168,7 +156,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleGameEvent</b> (
         <tr>
           <td class="memname">void CWorld::HandleSystemEvent </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="union_s_d_l___event.html">SDL_Event</a> &amp;&#160;</td>
+          <td class="paramtype">const SDL_Event &amp;&#160;</td>
           <td class="paramname"><em>Evt</em></td><td>)</td>
           <td></td>
         </tr>
@@ -181,11 +169,11 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>HandleGameEvent</b> (
   </dd>
 </dl>
 <dl class="section pre"><dt>Precondition:</dt><dd>The current engine state must be e_GAME. </dd></dl>
-<dl class="section see"><dt>See also:</dt><dd>CollapseDef.hpp </dd>
+<dl class="section see"><dt>See also:</dt><dd><a class="el" href="_collapse_def_8hpp.html" title="Global variable declarations and definitions for Collapse.">CollapseDef.hpp</a> </dd>
 <dd>
 game::Game_State </dd></dl>
 
-<p>Definition at line <a class="el" href="_world_8cpp_source.html#l00145">145</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_world_8cpp_source.html#l00181">181</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
 
 </div>
 </div>
@@ -203,19 +191,18 @@ game::Game_State </dd></dl>
 </div><div class="memdoc">
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>Add a GetBarrelPosition() to the enemy base class. </dd></dl>
 
-<p>Definition at line <a class="el" href="_world_8cpp_source.html#l00217">217</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_world_8cpp_source.html#l00253">253</a> of file <a class="el" href="_world_8cpp_source.html">World.cpp</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>Collapse/include/World/<a class="el" href="_collapse_2include_2_world_2_world_8hpp_source.html">World.hpp</a></li>
-<li>ShaderTest/include/World/<a class="el" href="_shader_test_2include_2_world_2_world_8hpp_source.html">World.hpp</a></li>
+<li>Collapse/include/World/<a class="el" href="_world_8hpp_source.html">World.hpp</a></li>
 <li>Collapse/src/World/<a class="el" href="_world_8cpp_source.html">World.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Sep 27 2012 18:12:37 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Fri Sep 28 2012 13:17:31 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

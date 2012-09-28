@@ -34,7 +34,7 @@ namespace game
         CLevel();
 
     	bool LoadLevel(const int level_no);
-        void PanMaps(const math::CVector2& Pos);
+        bool PanMaps(const math::CVector2& Pos);
         void Update();
 
         void SetPanRate(const float rate);

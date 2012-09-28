@@ -65,14 +65,14 @@ namespace obj
 
         // Accessors
         const math::CRect& GetCollisionBox() const;
-        u_int GetHealth() const;
-        bool  IsAlive()   const;
+        int  GetHealth() const;
+        bool IsAlive()   const;
 
     private:
         // Member variables
         math::CRect m_CollisionBox;
 
-        u_int m_health;
+        int m_health;
     };
 
     /// Temporary backward compatibility

@@ -29,6 +29,7 @@
 #include "Math/Math.hpp"
 
 #include "Graphics/Shader.hpp"
+#include "Graphics/Light.hpp"
 
 #include "World/Levels/Level.hpp"
 #include "World/Objects/Bullet.hpp"
@@ -72,6 +73,7 @@ namespace game
         gfx::CShader    m_Lighting;
 
         std::vector<game::CLevel*>  mp_Levels;
+        //std::vector<gfx::CLight*>   mp_Lights;
         std::list<ai::CEnemyTank*>  mp_Enemies;
         obj::pBulletCollection      mp_enemyBullets;
         obj::pBulletCollection      mp_playerBullets;

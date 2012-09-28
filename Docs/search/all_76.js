@@ -1,26 +1,7 @@
 var searchData=
 [
-  ['value',['value',['../struct_s_d_l___joy_axis_event.html#a53ee73e7c367934dd6edb69963be5556',1,'SDL_JoyAxisEvent::value()'],['../struct_s_d_l___joy_hat_event.html#a52b179a34407449941b61d988ca72ef4',1,'SDL_JoyHatEvent::value()']]],
-  ['vector2_2ecpp',['Vector2.cpp',['../_shader_test_2src_2_math_2_vector2_8cpp.html',1,'']]],
-  ['vector2_2ecpp',['Vector2.cpp',['../_collapse_2src_2_math_2_vector2_8cpp.html',1,'']]],
-  ['vector2_2ehpp',['Vector2.hpp',['../_collapse_2include_2_math_2_vector2_8hpp.html',1,'']]],
-  ['vector2_2ehpp',['Vector2.hpp',['../_shader_test_2include_2_math_2_vector2_8hpp.html',1,'']]],
-  ['vector3_2ecpp',['Vector3.cpp',['../_collapse_2src_2_math_2_vector3_8cpp.html',1,'']]],
-  ['vector3_2ecpp',['Vector3.cpp',['../_shader_test_2src_2_math_2_vector3_8cpp.html',1,'']]],
-  ['vector3_2ehpp',['Vector3.hpp',['../_shader_test_2include_2_math_2_vector3_8hpp.html',1,'']]],
-  ['vector3_2ehpp',['Vector3.hpp',['../_collapse_2include_2_math_2_vector3_8hpp.html',1,'']]],
-  ['vfmt',['vfmt',['../struct_s_d_l___video_info.html#a8501500d288bda9c60d8251138478f08',1,'SDL_VideoInfo']]],
-  ['video_5fmem',['video_mem',['../struct_s_d_l___video_info.html#ab706d6c856b170f8da28786e98fb5de3',1,'SDL_VideoInfo']]],
-  ['void',['void',['../struct_s_d_l___audio_spec.html#ab8a359069a60f225ab6e35a55dfb3d92',1,'SDL_AudioSpec']]],
-  ['vorbis_5fblock',['vorbis_block',['../structvorbis__block.html',1,'']]],
-  ['vorbis_5fcomment',['vorbis_comment',['../structvorbis__comment.html',1,'']]],
-  ['vorbis_5fdsp_5fstate',['vorbis_dsp_state',['../structvorbis__dsp__state.html',1,'']]],
-  ['vorbis_5fencode_5fctl',['vorbis_encode_ctl',['../vorbisenc_8h.html#a5f398a378e20b8ce5e3341a582e773bd',1,'vorbisenc.h']]],
-  ['vorbis_5fencode_5finit',['vorbis_encode_init',['../vorbisenc_8h.html#a6571d9c349c540491256f1083e1ede71',1,'vorbisenc.h']]],
-  ['vorbis_5fencode_5finit_5fvbr',['vorbis_encode_init_vbr',['../vorbisenc_8h.html#ab4e3d96c3008a29c615271d1f551c2a0',1,'vorbisenc.h']]],
-  ['vorbis_5fencode_5fsetup_5finit',['vorbis_encode_setup_init',['../vorbisenc_8h.html#ac3953ff69d05864e78d1858a544ed619',1,'vorbisenc.h']]],
-  ['vorbis_5fencode_5fsetup_5fmanaged',['vorbis_encode_setup_managed',['../vorbisenc_8h.html#ac73714f24500e18024e83104e9e09485',1,'vorbisenc.h']]],
-  ['vorbis_5fencode_5fsetup_5fvbr',['vorbis_encode_setup_vbr',['../vorbisenc_8h.html#a0f7677f216936a6cd7fa28ddbccada74',1,'vorbisenc.h']]],
-  ['vorbis_5finfo',['vorbis_info',['../structvorbis__info.html',1,'']]],
-  ['vorbisenc_2eh',['vorbisenc.h',['../vorbisenc_8h.html',1,'']]]
+  ['vector2_2ecpp',['Vector2.cpp',['../_vector2_8cpp.html',1,'']]],
+  ['vector2_2ehpp',['Vector2.hpp',['../_vector2_8hpp.html',1,'']]],
+  ['vector3_2ecpp',['Vector3.cpp',['../_vector3_8cpp.html',1,'']]],
+  ['vector3_2ehpp',['Vector3.hpp',['../_vector3_8hpp.html',1,'']]]
 ];

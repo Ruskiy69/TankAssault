@@ -1,4 +1,5 @@
-#define MAX_LIGHTS 3
+#define MAX_LIGHTS 10
+
 /**
  * @file
  *  Vertex shader for lighting.
