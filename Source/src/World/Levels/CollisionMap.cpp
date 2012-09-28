@@ -106,6 +106,7 @@ bool CCollisionMap::Load(const char* pfilename)
 
         // Move tile to parsed coordinates.
         pTile->Move(x, y);
+        pTile->Update();
 
         // Add to all ptiles.
         mp_allTiles.push_back(pTile);

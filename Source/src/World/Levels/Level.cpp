@@ -73,7 +73,7 @@ void CLevel::Update()
 #endif // _DEBUG
     m_CollisionMap.Update(false);
     m_ObjectiveMap.Update(false);
-    glColor4f(1.0f, 1.0f, 1.0f, 1.0f);
+    glColor4f(1, 1, 1, 1);
 }
 
 void CLevel::PanMaps(const math::CVector2& Pos)

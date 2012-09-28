@@ -21,6 +21,7 @@ bool CInventory::Init()
 
 void CInventory::Update()
 {
+    static gfx::Color OffBlue = gfx::create_color(20, 135, 220);
     static std::stringstream ss;
 
     mp_Font->Resize(16);
@@ -30,8 +31,7 @@ void CInventory::Update()
     ss << m_Player.GetPrimary().GetClipCount() << ", ";
     ss << m_Player.GetPrimary().GetAmmoCount() << ")";
 
-    mp_Weapon1Stats = mp_Font->RenderText(ss.str().c_str(), 
-        gfx::create_color(20, 135, 220));
+    mp_Weapon1Stats = mp_Font->RenderText(ss.str().c_str(), OffBlue);
     mp_Weapon1Stats->Move(440, 65);
 
     ss.str(std::string());
@@ -39,8 +39,7 @@ void CInventory::Update()
     ss << m_Player.GetSecondary().GetClipCount() << ", ";
     ss << m_Player.GetSecondary().GetAmmoCount() << ")";
 
-    mp_Weapon2Stats = mp_Font->RenderText(ss.str().c_str(),
-        gfx::create_color(20, 135, 220));
+    mp_Weapon2Stats = mp_Font->RenderText(ss.str().c_str(), OffBlue);
     mp_Weapon2Stats->Move(440, 240);
 
     mp_Font->Resize(20);
@@ -50,17 +49,31 @@ void CInventory::Update()
     ss << "Mechs Destroyed : " << m_Player.GetKills() << "\n\n";
     ss << "Survivors saved    : " << m_Player.GetSurvivorsSaved();
     
-    mp_PlayerStats = mp_Font->RenderText(ss.str().c_str(),
-        gfx::create_color(20, 135, 220));
+    mp_PlayerStats = mp_Font->RenderText(ss.str().c_str(), OffBlue);
     mp_PlayerStats->Move(435, 455);
 
     ss.str(std::string());
-    ss << "Tower Health: " << m_Player.GetTowerHealth() << "\n";
-    ss << "Tank Health: "  << m_Player.GetTankHealth();
+    ss << "Tower Health: \n";
+    ss << "Tank Health: ";
 
-    mp_PlayerHealth = mp_Font->RenderText(ss.str().c_str(), 
-        color_from_health(m_Player.GetTankHealth()));
+    mp_PlayerHealth = mp_Font->RenderText(ss.str().c_str(), OffBlue);
     mp_PlayerHealth->Move(40, 100);
+
+    ss.str(std::string());
+    ss << m_Player.GetTankHealth();
+
+    printf("TEXT: %d\n", mp_Font->GetTextWidth("Tower Health: "));
+
+    mp_TankHealth = mp_Font->RenderText(ss.str().c_str(), 
+        color_from_health(m_Player.GetTankHealth()));
+    mp_TankHealth->Move(225, 100);
+
+    ss.str(std::string());
+    ss << "\n" << m_Player.GetTowerHealth();
+
+    mp_TowerHealth = mp_Font->RenderText(ss.str().c_str(), 
+        color_from_health(m_Player.GetTowerHealth()));
+    mp_TowerHealth->Move(225, 100);
 
     m_Background.Update();
     m_LargePlayerIMG.Update();
@@ -68,11 +81,15 @@ void CInventory::Update()
     mp_Weapon1Stats->Update();
     mp_PlayerStats->Update();
     mp_PlayerHealth->Update();
+    mp_TowerHealth->Update();
+    mp_TankHealth->Update();
 
     delete mp_Weapon1Stats;
     delete mp_Weapon2Stats;
     delete mp_PlayerStats;
     delete mp_PlayerHealth;
+    delete mp_TankHealth;
+    delete mp_TowerHealth;
 }
 
 gfx::Color game::color_from_health(const u_int health)

@@ -6,7 +6,7 @@
  *  be initialized after an OpenGL context exists.
  *
  * @author      George Kudrayvtsev (switch1440)
- * @version     0.8.1
+ * @version     0.8.2
  * @copyright   Apache License v2.0
  *  Licensed under the Apache License, Version 2.0 (the "License").\n
  *  You may not use this file except in compliance with the License.\n
@@ -116,6 +116,9 @@ int main(int argc, char* argv[])
     UnlockResource(hbytes);
     return 0;
     **/
+
+    // Seed rng.
+    srand(time(NULL));
 
     // Initialize all libraries.
     // If initialization fails, log the error and shut down.

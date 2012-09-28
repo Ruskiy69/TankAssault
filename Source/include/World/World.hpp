@@ -77,6 +77,10 @@ namespace game
         obj::pBulletCollection      mp_playerBullets;
 
         game::GameState&    m_engine_state;
+
+        float*          mp_enemy_light_poss;
+        float*          mp_enemy_light_cols;
+        float*          mp_enemy_light_atts;
     };
 }
 

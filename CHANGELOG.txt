@@ -1,9 +1,21 @@
-Current Version: 0.8.1 pre-release
-Last Updated   : 09.24.2012
+Current Version: 0.8.2 pre-release
+Last Updated   : 09.27.2012
 
 KNOWN BUGS:
    - After quitting, the game seg-faults due to an unknown
      memory leak.
+   - A segfault may occur after opening then closing the 
+     inventory screen while an enemy is in pursuit of you.
+   - Getting hurt more than your health allows will show
+     strange numbers in the inventory screen, this is due
+     to an integer overflow.
+   - Enemies will not die if you had hit them with a rocket
+     at one point.
+
+Version 0.8.2 (09.27.2012):
+    + For testing purposes, multiple lights are rendered at random
+    + Player can get hurt, but cannot die
+    + Shader macro bug fixed
      
 Version 0.8.1 (09.24.2012):
     + Inventory re-sizing bug fixed

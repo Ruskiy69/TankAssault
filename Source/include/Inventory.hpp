@@ -50,6 +50,8 @@ namespace game
         obj::CEntity*   mp_Weapon2Stats;
         obj::CEntity*   mp_PlayerStats;
         obj::CEntity*   mp_PlayerHealth;
+        obj::CEntity*   mp_TowerHealth;
+        obj::CEntity*   mp_TankHealth;
         obj::CPlayer&   m_Player;
         asset::CFont*   mp_Font;
     };

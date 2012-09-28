@@ -133,6 +133,7 @@ bool CTerrainMap::Load(const char* pfilename)
 
         // Move tile to parsed coordinates.
         p_Tile->Move(x, y);
+        p_Tile->Update();
 
         // Add to all tiles.
         mp_allTiles.push_back(p_Tile);

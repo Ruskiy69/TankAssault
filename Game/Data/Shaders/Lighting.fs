@@ -1,3 +1,4 @@
+#define MAX_LIGHTS 3
 /**
  * @file
  *  Fragment shader for lighting.
@@ -7,7 +8,6 @@
  * @{
  */
 
-#define MAX_LIGHTS  1
  
 uniform sampler2D   tex;                    // Active texture
 uniform int         scr_height;             // Screen height

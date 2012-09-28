@@ -1,4 +1,4 @@
-Collapse v0.8.1 -- Cruising, killing, suspenseful fun
+Collapse v0.8.2 -- Cruising, killing, suspenseful fun
 Copyright 2012 George Kudrayvtsev (switch1440)
 
    Licensed under the Apache License, Version 2.0 (the "License");

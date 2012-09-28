@@ -23,9 +23,9 @@
   <td id="projectlogo"><img alt="Logo" src="tank.ico"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Collapse
-   &#160;<span id="projectnumber">0.8.1 pre-release</span>
+   &#160;<span id="projectnumber">0.8.2 pre-release</span>
    </div>
-   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6665 lines of code.</div>
+   <div id="projectbrief">An OpenGL/SDL-based tank assault game set in a post-apocalyptic setting. Currently at 6730 lines of code.</div>
   </td>
  </tr>
  </tbody>
@@ -154,14 +154,66 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        GLint   m_last_error;</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        GLchar* mp_error_str;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    };</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;}</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;<span class="preprocessor">#endif // GRAPHICS__SHADER_HPP</span></div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">bool</span> CShader::SetMacro(<span class="keyword">const</span> <span class="keywordtype">char</span>* pmacro_name, <span class="keyword">const</span> T value)</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    {</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        std::stringstream   all_data;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;        std::fstream        vshader;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        std::fstream        fshader;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;        std::string         line;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="keywordflow">if</span>(!this-&gt;IsLoaded())</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        vshader.open(m_vsfn, std::ios::in);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        fshader.open(m_fsfn, std::ios::in);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <span class="comment">// Read in the vertex shader&#39;s existing data.</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="comment">// Repeat process for fragment shader.</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::string finder = <span class="stringliteral">&quot;#define &quot;</span>;</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        finder += pmacro_name;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keywordflow">while</span>(std::getline(vshader, line))</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            <span class="keywordflow">if</span>(line.find(finder) == std::string::npos)</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;                all_data &lt;&lt; line &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="comment">// Write the macro at the beginning</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;        vshader.close();</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        vshader.open(m_vsfn, std::ios::out | std::ios::trunc);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;        vshader &lt;&lt; <span class="stringliteral">&quot;#define &quot;</span> &lt;&lt; pmacro_name &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        vshader &lt;&lt; all_data.str();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        vshader.close();</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        <span class="comment">// Clear stringstream</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;        all_data.str(std::string());</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        <span class="comment">// Repeat process for fragment shader.</span></div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;        <span class="keywordflow">while</span>(std::getline(fshader, line))</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;        {</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            <span class="keywordflow">if</span>(line.find(finder) == std::string::npos)</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                all_data &lt;&lt; line &lt;&lt; <span class="charliteral">&#39;\n&#39;</span>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        }</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;        fshader.close();</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        fshader.open(m_fsfn, std::ios::out | std::ios::trunc);</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        fshader &lt;&lt; <span class="stringliteral">&quot;#define &quot;</span> &lt;&lt; pmacro_name &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; value &lt;&lt; <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        fshader &lt;&lt; all_data.str();</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;        fshader.close();</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;        <span class="comment">// Reload the OpenGL shader programs</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;        <span class="keywordflow">return</span> this-&gt;LoadFromFile(m_vsfn.c_str(), m_fsfn.c_str());</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    }</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;}</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;<span class="preprocessor">#endif // GRAPHICS__SHADER_HPP</span></div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 24 2012 19:01:51 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Sep 27 2012 18:12:28 for Collapse by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.1.1
 </small></address>

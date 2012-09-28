@@ -111,6 +111,7 @@ bool CObjectiveMap::Load(const char* pfilename)
 
         // Move the tile and it to all tiles
         pTile->Move(x, y);
+        pTile->Update();
         mp_allTiles.push_back(pTile);
     }
 

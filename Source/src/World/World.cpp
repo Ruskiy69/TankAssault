@@ -73,6 +73,33 @@ void CWorld::Init()
 
     // Spawn enemies at all available spawns.
     while(this->SpawnEnemy());
+
+    // Create lights on each enemy
+    if(!m_Lighting.SetMacro("MAX_LIGHTS", mp_Enemies.size()))
+    {
+        g_Log.Flush();
+        g_Log << "[ERROR] Failed to set shader macro!\n";
+        g_Log << "[ERROR] " << m_Lighting.GetError() << "\n";
+        g_Log.ShowLastLog();
+        gk::handle_error(g_Log.GetLastLog().c_str());
+    }
+
+    mp_enemy_light_poss = new float[mp_Enemies.size() * 2];
+    mp_enemy_light_atts = new float[mp_Enemies.size() * 3];
+    mp_enemy_light_cols = new float[mp_Enemies.size() * 3];
+
+    for(size_t i = 0; i < mp_Enemies.size() * 3; ++i)
+        mp_enemy_light_cols[i] = 255.0f / (rand() % 255);
+    for(size_t i = 0; i < mp_Enemies.size() * 3; ++i)
+        mp_enemy_light_atts[i] = 0.0f;
+    for(size_t i = 1; i < mp_Enemies.size() * 3; i += 3)
+        mp_enemy_light_atts[i] = 0.1f;
+    for(size_t i = 0; i < mp_Enemies.size() * 2; ++i)
+        mp_enemy_light_poss[i] = rand() % 600;
+
+    m_Lighting.PassVariablefv("light_col", mp_enemy_light_cols, 3, mp_Enemies.size());
+    m_Lighting.PassVariablefv("light_att", mp_enemy_light_atts, 3, mp_Enemies.size());
+    m_Lighting.PassVariablefv("light_pos", mp_enemy_light_poss, 2, mp_Enemies.size());
 }
 
 CWorld::~CWorld()
@@ -217,7 +244,7 @@ void CWorld::Update()
     };
 
     // Pass parameters to shader.
-    m_Lighting.PassVariablefv("light_pos", light_pos, 2, 1);
+    //m_Lighting.PassVariablefv("light_pos", light_pos, 2, 1);
     
     // Render everything
     m_Lighting.Link();
@@ -284,12 +311,16 @@ void CWorld::HandleCollisions()
     for(obj::pBulletCollection::iterator i = mp_playerBullets.begin();
         i != mp_playerBullets.end(); /* no third */)
     {
+        if((*i)->GetLifetime() <= 0.0f)
+        {
+            i = mp_playerBullets.erase(i);
+            continue;
+        }
+
         obj::CGameObject* pCurrent_Tile = mp_ActiveLevel->GetCollisionMap().
             FindTile((*i)->GetPosition());
 
-        if((*i)->GetLifetime() <= 0.0f)
-            i = mp_playerBullets.erase(i);
-        else if(pCurrent_Tile != NULL)
+        if(pCurrent_Tile != NULL)
         {
             (*i)->LoadFromTexture(
                 asset::CAssetManager::Create<asset::CTexture>(
@@ -310,7 +341,11 @@ void CWorld::HandleCollisions()
                         "Data/Textures/Sprites/Spark.png"));
                     (*i)->SetLifetime(0.0f);    // It'll be deleted next frame
                     (*j)->Damage((*i)->GetDamage());
-                    if(!(*j)->IsAlive()) j = mp_Enemies.erase(j);
+                    if(!(*j)->IsAlive())
+                    {
+                        j = mp_Enemies.erase(j);
+                        m_Player.IncreaseKillCount();
+                    }
                     else ++j;
                     continue;
                 }
@@ -330,19 +365,28 @@ void CWorld::HandleCollisions()
     for(obj::pBulletCollection::iterator j = mp_enemyBullets.begin();
             j != mp_enemyBullets.end(); /* no third */)
     {
+        if((*j)->GetLifetime() <= 0.0f)
+        {
+            j = mp_enemyBullets.erase(j);
+            continue;
+        }
+
         obj::CGameObject* pCurrent_Tile = mp_ActiveLevel->GetCollisionMap().
             FindTile((*j)->GetPosition());
-
-        if((*j)->GetLifetime() <= 0.0f)
-            j = mp_enemyBullets.erase(j);
-
-        else if(pCurrent_Tile != NULL)
+        
+        if(pCurrent_Tile != NULL)
         {
             (*j)->LoadFromTexture(
                 asset::CAssetManager::Create<asset::CTexture>(
                 "Data/Textures/Sprites/Spark.png"));
             (*j)->Update();
             mp_ActiveLevel->GetCollisionMap().RemoveTile(pCurrent_Tile);
+            j = mp_enemyBullets.erase(j);
+        }
+        else if(m_Player.GetTankEntity()->CheckCollision(*j) ||
+            m_Player.GetTowerEntity()->CheckCollision(*j))
+        {
+            m_Player.Damage((*j)->GetDamage());
             j = mp_enemyBullets.erase(j);
         }
         else

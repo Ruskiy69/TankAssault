@@ -71,6 +71,9 @@ bool CShader::LoadFromFile(const char* pvs_filename,
         return false;
     }
 
+    m_vsfn = pvs_filename;
+    m_fsfn = pfs_filename;
+
     return true;
 }
 
@@ -78,51 +81,6 @@ bool CShader::LoadFromSource(const char* pvs_src, const char* pfs_src)
 {
     return (this->LoadShaderSource(pvs_src, GL_VERTEX_SHADER) &&
         this->LoadShaderSource(pfs_src, GL_FRAGMENT_SHADER));
-}
-
-template<typename T>
-bool CShader::SetMacro(const char* pmacro_name, const T value)
-{
-    std::stringstream   all_data;
-    std::fstream        vshader;
-    std::fstream        fshader;
-    std::string         line;
-
-    if(!this->IsLoaded())
-        return false;
-
-    vshader.open(m_vsfn, std::ios::in);
-    fshader.open(m_fsfn, std::ios::in);
-
-    // Read in the vertex shader's existing data.
-    while(std::getline(vshader, line))
-        all_data << line << '\n';
-
-    // Write the macro at the beginning
-    vshader.close();
-    vshader.open(m_vsfn, std::ios::out | std::ios::trunc);
-    vshader << "#define " << pmacro_name << ' ' << value << "\n\n";
-    vshader << all_data.str();
-    vshader.close();
-
-    // Clear stringstream
-    all_data.str(std::string());
-
-    // Repeat process for fragment shader.
-    while(std::getline(fshader, line))
-    {
-        if(line.find(pmacro_name) == std::string::npos)
-            all_data << line << '\n';
-    }
-
-    fshader.close();
-    fshader.open(m_fsfn, std::ios::out | std::ios::trunc);
-    fshader << "#define " << pmacro_name << ' ' << value << "\n\n";
-    fshader << all_data.str();
-    fshader.close();
-    
-    // Reload the OpenGL shader programs
-    return this->LoadFromFile(m_vsfn, m_fsfn);
 }
 
 void CShader::PassVariableiv(const char* pvar_name, int pvalues[],
