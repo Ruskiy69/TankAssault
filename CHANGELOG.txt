@@ -1,5 +1,5 @@
-Current Version: 0.8.2 pre-release
-Last Updated   : 09.27.2012
+Current Version: 0.9.0 pre-release
+Last Updated   : 09.29.2012
 
 KNOWN BUGS:
    - After quitting, the game seg-faults due to an unknown
@@ -10,7 +10,16 @@ KNOWN BUGS:
      strange numbers in the inventory screen, this is due
      to an integer overflow.
    - Intro song plays on menu screen instead of menu song.
+   - Shadows mess up if the light and tile x-values are equivalent.
 
+Version 0.9.0 (09.28.2012):
+    + Shadows
+    + Minor tweak to OpenGL initialization for optimized stencil buffer.
+    + Optimizations
+    + Player health is shown properly, you still can't die,
+      dying will be implemented in a final release.
+    - Memory leaks fixed
+   
 Version 0.8.5 (09.28.2012):
     - Random lights removed
     - Enemy health bugs fixed
